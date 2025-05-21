@@ -18,6 +18,8 @@ jobs:
             password: ${{ secrets.SSH_PASSWORD }}
             script: |
               cd /home/thetechonpoint-cryptoconvert/htdocs/cryptoconvert.thetechonpoint.com/
+              cp .env.stating .env
+              composer install
               php artisan route:cache
               php artisan view:clear
               php artisan cache:clear
