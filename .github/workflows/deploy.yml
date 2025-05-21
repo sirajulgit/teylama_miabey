@@ -7,25 +7,7 @@ name: 🚀 Deploy website on push
 
 jobs:
     job1:
-      name: 🎉 Deploy
-      runs-on: ubuntu-latest
-      steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v3
-
-      - name: 📂 Files Upload with SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: sftp
-          remote_path: /home/thetechonpoint-cryptoconvert/htdocs/cryptoconvert.thetechonpoint.com/
-          sftpArgs: '-o ConnectTimeout=5'
-
-    job2:
         name: 🎉 SSH connect and clear cache
-        needs: job1
         runs-on: ubuntu-latest
         steps:
         - name: PHP artisan using ssh
@@ -34,10 +16,8 @@ jobs:
             host: ${{ secrets.SSH_HOST }}
             username: ${{ secrets.SSH_USERNAME }}
             password: ${{ secrets.SSH_PASSWORD }}
-            port: 22
             script: |
               cd /home/thetechonpoint-cryptoconvert/htdocs/cryptoconvert.thetechonpoint.com/
               php artisan route:cache
               php artisan view:clear
               php artisan cache:clear
-              
