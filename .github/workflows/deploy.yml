@@ -1,26 +1,42 @@
 on:
-  push:
-    branches:
-      - main
+    push:
+      branches:
+        - main
 
 name: 🚀 Deploy website on push
 
 jobs:
-  web-server-deploy:
-    runs-on: ubuntu-latest
+    job1:
+      name: 🎉 Deploy
+      runs-on: ubuntu-latest
+      steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
 
-    steps:
-      - name: Deploy to main branch using SSH
-        uses: appleboy/ssh-action@master
+      - name: 📂 Files Upload with SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          script: |
-            cd /home/thetechonpoint-cryptoconvert/htdocs/cryptoconvert.thetechonpoint.com/public
-            git pull origin main
-            git status
-            composer install
-            php artisan view:clear
-            php artisan route:cache
-            php artisan cache:clear
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          protocol: sftp
+          remote_path: /home/thetechonpoint-cryptoconvert/htdocs/cryptoconvert.thetechonpoint.com/
+          sftpArgs: '-o ConnectTimeout=5'
+
+    job2:
+        name: 🎉 SSH connect and clear cache
+        needs: job1
+        runs-on: ubuntu-latest
+        steps:
+        - name: PHP artisan using ssh
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USERNAME }}
+            password: ${{ secrets.SSH_PASSWORD }}
+            port: 22
+            script: |
+              cd /home/thetechonpoint-cryptoconvert/htdocs/cryptoconvert.thetechonpoint.com/
+              php artisan route:cache
+              php artisan view:clear
+              php artisan cache:clear
