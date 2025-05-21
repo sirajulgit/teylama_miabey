@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - main
+
+name: 🚀 Deploy website on push
+
+jobs:
+  web-server-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to main branch using SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 65002
+          script: |
+            cd /home/thetechonpoint-cryptoconvert/htdocs/cryptoconvert.thetechonpoint.com/public
+            git pull origin main
+            git status
+            composer install
+            php artisan view:clear
+            php artisan route:cache
+            php artisan cache:clear
