@@ -23,11 +23,10 @@
                                 <thead>
                                     <tr>
                                         {{-- <th style="width: 1%">No</th> --}}
-                                        <th style="width: 5%">Order No</th>
-                                        <th style="width: 10%">Book Cover</th>
-                                        <th style="width: 20%">Book Title</th>
-                                        <th style="width: 20%">Amazon Link</th>
-                                        <th style="width: 8%" class="text-center">Book Status</th>
+                                        <th style="width: 5%">Name</th>
+                                        <th style="width: 10%">Email</th>
+
+                                        <th style="width: 8%" class="text-center">Status</th>
                                         <th style="width: 10%">Action</th>
                                     </tr>
                                 </thead>
@@ -35,17 +34,12 @@
                                     @foreach ($data['items'] as $item)
                                         <tr>
                                             {{-- <th>{{ $loop->index + 1 }}</th> --}}
-                                            <td style="text-align: center;">{{ $item->order_no }}</td>
+                                            <td style="text-align: center;">{{ $item->name }}</td>
                                             <td>
-                                                <img src="{{ $item->image }}" alt="" width="80px"
-                                                    height="50px" />
+                                               {{ $item->email }}
                                             </td>
-                                            <td>
-                                                {{ $item->title }}
-                                            </td>
-                                            <td>
-                                                <a href="{{ $item->link }}" target="__blank">book buy link</a>
-                                            </td>
+
+
                                             <td class="project-state">
                                                 @if ($item->status == 1)
                                                     <span class="badge badge-success">Active</span>

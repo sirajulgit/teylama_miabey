@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
-use App\Models\Book;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -19,20 +19,12 @@ class UserController extends Controller
         $data['activePageName'] = 'user';
         $data['activeSubMenu'] = '';
 
-        $items = Book::orderBy("order_no", "asc")->get();
-
-        $temp_arr = [];
-        foreach ($items as $item) {
-
-            $default_image = '/uploads/images/' . $item['image'];
-
-            $item->image = $default_image;
-
-            array_push($temp_arr, $item);
-        }
+        $items = User::orderBy("id", "asc")->get();
 
 
-        $data['items'] = $temp_arr;
+
+
+        $data['items'] = $items;
 
         return view("admin.user_list", ["data" => $data]);
     }
@@ -41,7 +33,7 @@ class UserController extends Controller
     public function create()
     {
 
-        $items = Book::orderBy("order_no", "desc")->first();
+        $items = User::orderBy("order_no", "desc")->first();
         // dd($items);
 
         $data = array();
@@ -83,7 +75,7 @@ class UserController extends Controller
         // image_resize($imageName, 148, 221);
 
 
-        $data = new Book();
+        $data = new User();
         $data->title = $request->title;
         // $data->price = $request->price;
         $data->details = $request->details;
@@ -100,7 +92,7 @@ class UserController extends Controller
     public function update(Request $request)
     {
 
-        $item = Book::find($request->id);
+        $item = User::find($request->id);
 
         $default_image = '/uploads/images/' . $item->image;
 
@@ -108,8 +100,8 @@ class UserController extends Controller
 
 
         $data = array();
-        $data['pageTitle'] = 'Book';
-        $data['activePageName'] = 'book';
+        $data['pageTitle'] = 'User';
+        $data['activePageName'] = 'user';
         $data['activeSubMenu'] = '';
 
         $data['item'] = $item;
@@ -131,7 +123,7 @@ class UserController extends Controller
             'order_no'=>'required'
         ]);
 
-        $old_image_name = Book::find($request->id)->image;
+        $old_image_name = User::find($request->id)->image;
 
         if ($request->image) {
 
@@ -156,20 +148,20 @@ class UserController extends Controller
 
 
         //////////// order reArrange ///////////
-        $book = Book::findOrFail($request->id);
+        $book = User::findOrFail($request->id);
         $currentOrder = $book->order_no;
         $newOrder=$request->order_no;
 
         if ($newOrder != $currentOrder) {
             if ($newOrder > $currentOrder) {
-                Book::whereBetween('order_no', [$currentOrder + 1, $newOrder])->decrement('order_no');
+                User::whereBetween('order_no', [$currentOrder + 1, $newOrder])->decrement('order_no');
             } else {
-                Book::whereBetween('order_no', [$newOrder, $currentOrder - 1])->increment('order_no');
+                User::whereBetween('order_no', [$newOrder, $currentOrder - 1])->increment('order_no');
             }
         }
 
 
-        Book::where("id", $request->id)->update([
+        User::where("id", $request->id)->update([
             'title' => $request->title,
             // 'price' => $request->price,
             'details' => $request->details,
@@ -186,7 +178,7 @@ class UserController extends Controller
     public function delete(Request $request)
     {
 
-        $item = Book::find($request->id);
+        $item = User::find($request->id);
 
 
         $image_path = public_path('uploads/images/' . $item->image);
@@ -202,7 +194,7 @@ class UserController extends Controller
 
 
 
-        Book::where('id', $request->id)->delete();
+        User::where('id', $request->id)->delete();
 
         // return redirect()->route('book_list')->with("success", "delete done");
         return response()->json(['status' => true, 'msg' => 'delete done']);
@@ -215,7 +207,7 @@ class UserController extends Controller
         $status = $request->status;
         $status = $status == 1 ? 0 : 1;
 
-        Book::where("id", $request->id)->update([
+        User::where("id", $request->id)->update([
             'status' => $status,
         ]);
 
