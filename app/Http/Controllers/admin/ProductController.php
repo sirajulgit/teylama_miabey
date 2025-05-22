@@ -98,7 +98,7 @@ class ProductController extends Controller
 
         Product::where("id", $request->id)->update([
             'widthdraw_perc' => $request->widthdraw_perc,
-            // 'price' => $request->price,
+
             'amount' => $request->amount,
 
             'status' => $request->status,

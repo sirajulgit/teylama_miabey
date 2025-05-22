@@ -40,7 +40,7 @@
                                         value="{{ $data['item']['username'] }}">
                                 </div>
 
-<div class="form-group col-md-6">
+                                <div class="form-group col-md-6">
                                     <label>Status</label>
                                     <select class="form-control select2" style="width: 100%;" name="status">
                                         <option value="1" {{ $data['item']['status'] == 1 ? 'selected' : '' }}>Active
