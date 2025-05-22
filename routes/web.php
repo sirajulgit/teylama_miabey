@@ -84,6 +84,13 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/user-edit/{id}', [UserController::class, 'post_update'])->name('post_user_edit');
     Route::post('/user-delete', [UserController::class, 'delete'])->name('user_delete');
 
+    Route::get('/product', [UserController::class, 'index'])->name('product_list');
+    Route::get('/product-create', [UserController::class, 'create'])->name('product_create');
+    Route::post('/product-create', [UserController::class, 'post_create'])->name('post_product_create');
+    Route::get('/product-edit/{id}', [UserController::class, 'update'])->name('product_edit');
+    Route::post('/product-edit/{id}', [UserController::class, 'post_update'])->name('post_product_edit');
+    Route::post('/product-delete', [UserController::class, 'delete'])->name('product_delete');
+
 
     Route::get('/cms-home', [CmsHomePageController::class, 'home_page'])->name('cms_home');
     Route::post('/cms-home', [CmsHomePageController::class, 'post_update'])->name('post_cms_home');

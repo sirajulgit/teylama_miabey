@@ -132,10 +132,10 @@
 
 
                 <li class="nav-item">
-                    <a href="{{ route('award_list') }}"
-                        class="nav-link {{ $data['activePageName'] == 'award' ? 'active' : '' }}">
+                    <a href="{{ route('product_list') }}"
+                        class="nav-link {{ $data['activePageName'] == 'product' ? 'active' : '' }}">
                         <i class="fa-solid fa-indian-rupee-sign"></i>
-                        <p>Currency Rate</p>
+                        <p>Currency Products</p>
                     </a>
                 </li>
 
