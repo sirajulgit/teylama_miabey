@@ -20,6 +20,7 @@ use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\CmsContactController;
 
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
