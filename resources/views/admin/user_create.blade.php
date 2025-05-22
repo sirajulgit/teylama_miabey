@@ -9,7 +9,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">User Add</h3>
+                            <h3 class="card-title">Add User</h3>
 
                             <div class="card-tools">
                                 <a href="{{ route('user_list') }}" class="btn btn-primary">Back</a>
@@ -30,55 +30,25 @@
 
 
                                 <div class="form-group col-md-6">
-                                    <label for="title">Book Title</label>
-                                    <input type="text" name="title" class="form-control" id="title"
-                                        value="{{ old('title') }}">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        value="{{ old('name') }}">
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="link">Amazon Link</label>
-                                    <input type="url" name="link" class="form-control" id="link"
-                                        value="{{ old('link') }}">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email"
+                                        value="{{ old('email') }}">
+                                </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" class="form-control" id="username"
+                                        value="{{ old('username') }}">
                                 </div>
 
-                                {{-- <div class="form-group col-md-6">
-                                    <label for="price">Book Price</label>
-                                    <input type="number" name="price" class="form-control" id="price">
-                                </div> --}}
-
-                                <div class="form-group col-md-6">
-                                    <label for="image">Book Cover</label>
-
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image"
-                                                id="image" accept="image/png, image/jpg, image/jpeg, image/webp">
-                                            {{-- <img src="{{ asset('asset/images/icons/bigg-size-upload.png') }}"> --}}
-                                        </label>
-
-                                        <div class="profile_image">
-                                            <img class="profile_img" id="thumbnail_show_image"
-                                                src="{{ asset('asset/images/default_image.png') }}" width="148px"
-                                                height="221px">
-                                        </div>
 
 
-                                    </div>
 
-                                    @if ($errors->has('image'))
-                                        <span class="form_error">{{ $errors->first('image') }}</span>
-                                    @endif
-
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="details">Book Details</label>
-                                    <textarea id="details" name="details">{{ old('details') }}</textarea>
-
-                                    @if ($errors->has('details'))
-                                        <span class="form_error">{{ $errors->first('details') }}</span>
-                                    @endif
-                                </div>
 
                             </div>
                             <!-- /.card-body -->
