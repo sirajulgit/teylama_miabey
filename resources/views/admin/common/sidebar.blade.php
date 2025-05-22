@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{route('dashboard')}}" class="brand-link">
+    <a href="{{ route('dashboard') }}" class="brand-link">
 
         <span class="brand-text font-weight-light">Admin</span>
     </a>
@@ -11,8 +11,7 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
 
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                 <li class="nav-item">
                     <a href="{{ route('dashboard') }}"
@@ -43,7 +42,7 @@
                 <li class="nav-item {{ $data['activePageName'] == 'banner' ? 'menu-open' : '' }} ">
 
                     <a href="#" class="nav-link {{ $data['activePageName'] == 'banner' ? 'active' : '' }} ">
-                         <i class="fa-solid fa-image"></i>
+                        <i class="fa-solid fa-image"></i>
                         <p>
                             Banners
 
@@ -130,7 +129,13 @@
 
 
 
-
+                <li class="nav-item">
+                    <a href="{{ route('currency_rate_list') }}"
+                        class="nav-link {{ $data['activePageName'] == 'currency' ? 'active' : '' }}">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        <p>Currency Rate</p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('product_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'product' ? 'active' : '' }}">
