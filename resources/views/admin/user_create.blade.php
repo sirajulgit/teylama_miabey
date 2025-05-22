@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="password">Password</label>
-                                    <input type="password" name="password" class="form-control" id="password"
+                                    <input type="text" name="password" class="form-control" id="password"
                                         value="{{ old('password') }}">
                                 </div>
 
@@ -76,66 +76,33 @@
     <script>
         $(document).ready(function() {
 
-            ////////// Summernote /////////////
-            $("#details").summernote({
-                height: 200
-            });
 
-
-            /////////////////// preview image ///////////////////
-            $('#image').on('change', function() {
-
-                var input = this;
-                var url = $(this).val();
-                var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
-                if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg" ||
-                        ext == 'webp')) {
-
-                    var reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        $('#thumbnail_show_image').attr('src', e.target.result);
-                    }
-                    reader.readAsDataURL(input.files[0]);
-                    $("#jquery_form_error_msg").text("");
-
-                } else {
-
-                    $('#thumbnail_show_image').attr('src', '/asset/images/default_image.png');
-
-                }
-
-
-            })
-            ///////////////// end preview image  ////////////////////
 
 
 
             ////////////// form validation ////////////////////////
             $('#quickForm').validate({
                 rules: {
-                    title: {
+                    name: {
                         required: true,
                     },
-                    order_no: {
+                    email: {
                         required: true,
+                        email:true
                     },
-                    link: {
+                    username: {
                         required: true,
-                        urlValidation: true
+
                     },
-                    image: {
+                    password: {
                         required: true
-                    },
-                    price: {
-                        required: false
                     }
                 },
                 messages: {
-                    // email: {
-                    //     required: "Please enter a email address",
-                    //     email: "Please enter a valid email address"
-                    // },
+                    email: {
+                        required: "Please enter a email address",
+                        email: "Please enter a valid email address"
+                    },
                     // password: {
                     //     required: "Please provide a password",
                     //     minlength: "Your password must be at least 5 characters long"
