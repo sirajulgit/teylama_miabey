@@ -97,7 +97,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/currency-rate-create', [CurrencyRateController::class, 'create'])->name('currency_rate_create');
     Route::post('/currency-rate-create', [CurrencyRateController::class, 'post_create'])->name('post_currency_rate_create');
     Route::get('/currency-rate-edit/{id}', [CurrencyRateController::class, 'update'])->name('currency_rate_edit');
-    Route::post('/currency-rate-edit/{id}', [CurrencyRateController::class, 'post_update'])->name('post_product_edit');
+    Route::post('/currency-rate-edit/{id}', [CurrencyRateController::class, 'post_update'])->name('post_currency_rate_edit');
     Route::post('/currency-rate-delete', [CurrencyRateController::class, 'delete'])->name('currency_rate_delete');
 
 
