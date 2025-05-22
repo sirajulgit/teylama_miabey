@@ -9,10 +9,10 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">Book Edit</h3>
+                            <h3 class="card-title">User Edit</h3>
 
                             <div class="card-tools">
-                                <a href="{{ route('book_list') }}" class="btn btn-primary">Back</a>
+                                <a href="{{ route('user_list') }}" class="btn btn-primary">Back</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
