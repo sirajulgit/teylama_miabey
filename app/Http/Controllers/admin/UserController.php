@@ -98,60 +98,25 @@ class UserController extends Controller
     {
 
         $request->validate([
-            'title' => 'required',
-            // 'price' => 'required',
-            'details' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,webp',
-            'link' => 'required|url',
-            'status' => 'required',
-            'order_no'=>'required'
+            'name' => 'required',
+            'email' => 'required',
+            'username' => 'required',
+
         ]);
 
-        $old_image_name = User::find($request->id)->image;
 
-        if ($request->image) {
-
-            $imageName = image_convert_webp($request->image);
-
-            // image_resize($imageName, 148, 221);
-
-            $image_path = public_path('uploads/images/' . $old_image_name);
-            $resize_image_path = public_path('uploads/images/resize' . $old_image_name);
-
-            if (file_exists($image_path)) {
-                unlink($image_path);
-            }
-
-            if (file_exists($resize_image_path)) {
-                unlink($resize_image_path);
-            }
-        } else {
-
-            $imageName = $old_image_name;
-        }
 
 
         //////////// order reArrange ///////////
-        $book = User::findOrFail($request->id);
-        $currentOrder = $book->order_no;
-        $newOrder=$request->order_no;
 
-        if ($newOrder != $currentOrder) {
-            if ($newOrder > $currentOrder) {
-                User::whereBetween('order_no', [$currentOrder + 1, $newOrder])->decrement('order_no');
-            } else {
-                User::whereBetween('order_no', [$newOrder, $currentOrder - 1])->increment('order_no');
-            }
-        }
 
 
         User::where("id", $request->id)->update([
-            'title' => $request->title,
+            'name' => $request->name,
             // 'price' => $request->price,
-            'details' => $request->details,
-            'image' => $imageName,
-            'link' => $request->link,
-            'order_no' => $newOrder,
+            'email' => $request->email,
+            'username' => $request->username,
+
             'status' => $request->status,
         ]);
 
