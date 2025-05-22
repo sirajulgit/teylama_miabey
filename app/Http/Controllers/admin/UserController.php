@@ -33,7 +33,7 @@ class UserController extends Controller
     public function create()
     {
 
-        $items = User::orderBy("order_no", "desc")->first();
+        $items = User::where('user_type', 2)->orderBy("order_no", "desc")->first();
         // dd($items);
 
         $data = array();
