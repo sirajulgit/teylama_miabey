@@ -28,8 +28,6 @@
                                         value="{{ $data['order_no'] }}">
                                 </div> --}}
 
-                                <input type="hidden" name="order_no" class="form-control" id="order_no"
-                                value="{{ $data['order_no'] }}">
 
                                 <div class="form-group col-md-6">
                                     <label for="title">Book Title</label>
