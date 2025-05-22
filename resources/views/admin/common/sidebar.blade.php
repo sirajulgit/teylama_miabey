@@ -26,7 +26,7 @@
                 <li class="nav-item">
                     <a href="{{ route('book_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'book' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-book"></i>
+                        <i class="fas fa-users"></i>
                         <p>Users</p>
                     </a>
                 </li>
@@ -46,7 +46,7 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Banners
-                            <i class="right fas fa-angle-left"></i>
+                            <i class="fa-solid fa-image"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
@@ -134,7 +134,7 @@
                 <li class="nav-item">
                     <a href="{{ route('award_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'award' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-trophy"></i>
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
                         <p>Currency Rate</p>
                     </a>
                 </li>

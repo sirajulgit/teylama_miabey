@@ -6,22 +6,6 @@
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-info">
-                        <div class="inner">
-                            <h3>{{ $item['book_count'] }}</h3>
-
-                            <p>Books</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-book"></i>
-                        </div>
-                        <a href="{{ route('book_list') }}" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
 
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
@@ -29,7 +13,7 @@
                         <div class="inner">
                             <h3>{{ $item['visiter_count'] }}</h3>
 
-                            <p>Visiter</p>
+                            <p>Users</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-users"></i>
