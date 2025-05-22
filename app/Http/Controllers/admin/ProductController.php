@@ -20,8 +20,8 @@ class ProductController extends Controller
         $data['activePageName'] = 'product';
         $data['activeSubMenu'] = '';
         $currencyitems = CurrencyRate::where("currency","USDT")->get();
-       echo $currencyitems[0]['currency_value'];exit;
-        $data['currency_value'] = '';
+       //echo $currencyitems[0]['currency_value'];exit;
+        $data['currency_value'] = $currencyitems[0]['currency_value'];
         $items = Product::orderBy("id", "asc")->get();
         $data['items'] = $items;
 

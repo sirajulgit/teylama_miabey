@@ -25,6 +25,7 @@
                                         {{-- <th style="width: 1%">No</th> --}}
                                         <th style="width: 5%">Withdrawl %</th>
                                         <th style="width: 10%">USDT Amount</th>
+                                        <th style="width: 10%">Amount (INR)</th>
 
                                         <th style="width: 8%" class="text-center">Status</th>
                                         <th style="width: 10%">Action</th>
@@ -37,6 +38,9 @@
                                             <td style="text-align: center;">{{ $item->widthdraw_perc }}</td>
                                             <td>
                                                {{ $item->amount }} {{ $item->currency }}
+                                            </td>
+                                            <td>
+                                               {{ $data['currency_value'] * $item->amount}} INR
                                             </td>
 
 
