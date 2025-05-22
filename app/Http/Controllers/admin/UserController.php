@@ -57,28 +57,17 @@ class UserController extends Controller
             'password'=>'required'
         ]);
 
-        // $items = Book::where("order_no", $request->order_no)->get()->toArray();
-        // if(count($items)>0)
-        // {
-        // }
 
 
-        // return response()->json(['status' => true, 'validData' => $validData]);
-
-        // dd($request->all());
-
-        $imageName = image_convert_webp($request->image);
-
-        // image_resize($imageName, 148, 221);
 
 
         $data = new User();
-        $data->title = $request->title;
+        $data->name = $request->name;
         // $data->price = $request->price;
-        $data->details = $request->details;
-        $data->image = $imageName;
-        $data->link = $request->link;
-        $data->order_no = $request->order_no;
+        $data->email = $request->email;
+
+        $data->username = $request->username;
+        $data->password = $request->password;
         $data->save();
 
 
