@@ -102,7 +102,7 @@
                     if (result.isConfirmed) {
 
 
-                        let url = "{{ route('book_delete') }}";
+                        let url = "{{ route('user_delete') }}";
 
 
                         $.ajax({

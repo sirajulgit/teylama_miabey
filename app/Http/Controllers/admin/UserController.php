@@ -127,22 +127,6 @@ class UserController extends Controller
     public function delete(Request $request)
     {
 
-        $item = User::find($request->id);
-
-
-        $image_path = public_path('uploads/images/' . $item->image);
-        $resize_image_path = public_path('uploads/images/resize' . $item->image);
-
-        if (file_exists($image_path)) {
-            unlink($image_path);
-        }
-
-        if (file_exists($resize_image_path)) {
-            unlink($resize_image_path);
-        }
-
-
-
         User::where('id', $request->id)->delete();
 
         // return redirect()->route('book_list')->with("success", "delete done");
