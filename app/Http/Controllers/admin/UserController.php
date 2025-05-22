@@ -33,14 +33,13 @@ class UserController extends Controller
     public function create()
     {
 
-        $items = User::orderBy("order_no", "desc")->first();
-        // dd($items);
+
 
         $data = array();
-        $data['pageTitle'] = 'Book';
-        $data['activePageName'] = 'book';
+        $data['pageTitle'] = 'Add User';
+        $data['activePageName'] = 'user';
         $data['activeSubMenu'] = '';
-        $data['order_no'] = $items->order_no + 1;
+
 
 
         return view("admin.user_create", ["data" => $data]);
