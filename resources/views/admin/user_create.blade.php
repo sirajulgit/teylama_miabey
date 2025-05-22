@@ -22,12 +22,6 @@
                             @csrf
 
                             <div class="card-body row">
-                                {{-- <div class="form-group col-md-6">
-                                    <label for="order_no">Order No</label>
-                                    <input type="text" name="order_no" class="form-control" id="order_no"
-                                        value="{{ $data['order_no'] }}">
-                                </div> --}}
-
 
                                 <div class="form-group col-md-6">
                                     <label for="name">Name</label>

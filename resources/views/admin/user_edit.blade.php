@@ -17,38 +17,31 @@
                         </div>
                         <!-- /.card-header -->
 
-                        <form id="quickForm" action="{{ route('post_book_edit', $data['item']['id']) }}" method="POST"
+                        <form id="quickForm" action="{{ route('post_user_edit', $data['item']['id']) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
 
-                            <div class="card-body row">
+                             <div class="card-body row">
 
                                 <div class="form-group col-md-6">
-                                    <label for="order_no">Order No</label>
-                                    <input type="text" name="order_no" class="form-control" id="order_no"
-                                        value="{{ $data['item']['order_no'] }}">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" class="form-control" id="name"
+                                          value="{{ $data['item']['name'] }}">
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="title">Book Title</label>
-                                    <input type="text" name="title" class="form-control" id="title"
-                                        value="{{ $data['item']['title'] }}">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email"
+                                        value="{{ $data['item']['email'] }}">
+                                </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" class="form-control" id="username"
+                                        value="{{ $data['item']['username'] }}">
                                 </div>
 
-                                <div class="form-group col-md-6">
-                                    <label for="link">Amazon Link</label>
-                                    <input type="url" name="link" class="form-control" id="link"
-                                        value="{{ $data['item']['link'] }}">
-                                </div>
-
-                                {{-- <div class="form-group col-md-6">
-                                    <label for="price">Book Price</label>
-                                    <input type="number" name="price" class="form-control" id="price"
-                                        value="{{ $data['item']['price'] }}">
-                                </div> --}}
-
-                                <div class="form-group col-md-6">
-                                    <label>Book Status</label>
+<div class="form-group col-md-6">
+                                    <label>Status</label>
                                     <select class="form-control select2" style="width: 100%;" name="status">
                                         <option value="1" {{ $data['item']['status'] == 1 ? 'selected' : '' }}>Active
                                         </option>
@@ -58,38 +51,8 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-6">
-                                    <label for="image">Book Cover</label>
-
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image"
-                                                id="image" accept="image/png, image/jpg, image/jpeg, image/webp">
-                                            {{-- <img src="{{ asset('asset/images/icons/bigg-size-upload.png') }}"> --}}
-                                        </label>
-
-                                        <div class="profile_image">
-                                            <img class="profile_img" id="thumbnail_show_image"
-                                                src="{{ $data['item']['image'] }}" width="148px" height="221px">
-                                        </div>
 
 
-                                    </div>
-
-                                    @if ($errors->has('image'))
-                                        <span class="form_error">{{ $errors->first('image') }}</span>
-                                    @endif
-
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="details">Book Details</label>
-                                    <textarea id="details" name="details">{{ $data['item']['details'] }}</textarea>
-
-                                    @if ($errors->has('details'))
-                                        <span class="form_error">{{ $errors->first('details') }}</span>
-                                    @endif
-                                </div>
 
                             </div>
                             <!-- /.card-body -->

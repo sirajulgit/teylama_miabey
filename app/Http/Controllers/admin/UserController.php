@@ -80,9 +80,7 @@ class UserController extends Controller
 
         $item = User::find($request->id);
 
-        $default_image = '/uploads/images/' . $item->image;
 
-        $item->image = $default_image;
 
 
         $data = array();
