@@ -27,7 +27,7 @@
                     <a href="{{ route('book_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'book' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-book"></i>
-                        <p>Books</p>
+                        <p>Users</p>
                     </a>
                 </li>
 
@@ -57,13 +57,13 @@
                                 <p>Home Banner</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('cms_book_banner_list') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_book_banner' ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Book Banner</p>
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- <li class="nav-item">
                             <a href="{{ route('cms_bibliography_banner_list') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_bibliography_banner' ? 'active' : '' }} ">
@@ -71,20 +71,20 @@
                                 <p>Bibliography Banner</p>
                             </a>
                         </li> --}}
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('cms_awardHonors_banner_list') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_awardHonors_banner' ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Award & Honors Banner</p>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                             <a href="{{ route('cms_newsEvents_banner_list') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_newsEvents_banner' ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>News & Events Banner</p>
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- <li class="nav-item">
                             <a href="{{ route('cms_blogs_banner_list') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_blogs_banner' ? 'active' : '' }} ">
@@ -96,7 +96,7 @@
                 </li>
 
 
-                <li class="nav-item {{ $data['activePageName'] == 'cms' ? 'menu-open' : '' }} ">
+                {{-- <li class="nav-item {{ $data['activePageName'] == 'cms' ? 'menu-open' : '' }} ">
 
                     <a href="#" class="nav-link {{ $data['activePageName'] == 'cms' ? 'active' : '' }} ">
                         <i class="nav-icon fas fa-th"></i>
@@ -123,7 +123,7 @@
                         </li>
 
                     </ul>
-                </li>
+                </li> --}}
 
 
 
@@ -135,7 +135,7 @@
                     <a href="{{ route('award_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'award' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-trophy"></i>
-                        <p>Awards</p>
+                        <p>Currency Rate</p>
                     </a>
                 </li>
 
@@ -144,7 +144,7 @@
                     <a href="{{ route('event_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'event' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-newspaper"></i>
-                        <p>Events & news</p>
+                        <p>Crypto App</p>
                     </a>
                 </li>
 
@@ -157,13 +157,13 @@
                 </li> --}}
 
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route('cms_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'cms_social_link_contract_email' ? 'active' : '' }} ">
                         <i class="nav-icon fas fa-th"></i>
                         <p>Social Links & Email</p>
                     </a>
-                </li>
+                </li> --}}
 
 
                 <li class="nav-item">
