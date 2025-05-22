@@ -19,7 +19,7 @@ class UserController extends Controller
         $data['activePageName'] = 'user';
         $data['activeSubMenu'] = '';
 
-        $items = User::orderBy("id", "asc")->get();
+        $items = User::where('user_type', '2')->orderBy("id", "asc")->get();
 
 
 
@@ -33,7 +33,7 @@ class UserController extends Controller
     public function create()
     {
 
-        $items = User::where('user_type', '2')->orderBy("order_no", "desc")->first();
+        $items = User::orderBy("order_no", "desc")->first();
         // dd($items);
 
         $data = array();
