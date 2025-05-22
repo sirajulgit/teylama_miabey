@@ -9,10 +9,10 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">Book List</h3>
+                            <h3 class="card-title">User List</h3>
 
                             <div class="card-tools">
-                                <a href="{{ route('book_create') }}" class="btn btn-primary">Add</a>
+                                <a href="{{ route('user_create') }}" class="btn btn-primary">Add</a>
                             </div>
 
                         </div>
@@ -54,7 +54,7 @@
                                                 @endif
                                             </td>
                                             <td class="project-actions">
-                                                <a class="btn btn-info btn-sm" href="{{ Route('book_edit', $item->id) }}">
+                                                <a class="btn btn-info btn-sm" href="{{ Route('user_edit', $item->id) }}">
                                                     <i class="fas fa-pencil-alt"></i>
                                                     Edit
                                                 </a>
