@@ -21,6 +21,7 @@ use App\Http\Controllers\admin\CmsContactController;
 
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\CurrencyRateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,6 +92,13 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/product-edit/{id}', [ProductController::class, 'update'])->name('product_edit');
     Route::post('/product-edit/{id}', [ProductController::class, 'post_update'])->name('post_product_edit');
     Route::post('/product-delete', [ProductController::class, 'delete'])->name('product_delete');
+
+    Route::get('/currency-rate', [CurrencyRateController::class, 'index'])->name('currency_rate_list');
+    Route::get('/currency-rate-create', [CurrencyRateController::class, 'create'])->name('currency_rate_create');
+    Route::post('/currency-rate-create', [CurrencyRateController::class, 'post_create'])->name('post_currency_rate_create');
+    Route::get('/currency-rate-edit/{id}', [CurrencyRateController::class, 'update'])->name('currency_rate_edit');
+    Route::post('/currency-rate-edit/{id}', [CurrencyRateController::class, 'post_update'])->name('post_product_edit');
+    Route::post('/currency-rate-delete', [CurrencyRateController::class, 'delete'])->name('currency_rate_delete');
 
 
     Route::get('/cms-home', [CmsHomePageController::class, 'home_page'])->name('cms_home');
