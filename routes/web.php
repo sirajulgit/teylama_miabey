@@ -19,6 +19,8 @@ use App\Http\Controllers\admin\BibliographyController;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\CmsContactController;
 
+use App\Http\Controllers\admin\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,14 +49,14 @@ Route::prefix('admin')->middleware('isGuest')->group(function () {
 
 
     Route::get('/forget-password', [AuthController::class, 'forget_password_page'])->name('forget_password_page');
-    Route::post('/forget-password', [AuthController::class, 'post_forget_password_page'])->name('post_forget_password_page');  
+    Route::post('/forget-password', [AuthController::class, 'post_forget_password_page'])->name('post_forget_password_page');
 
 
     Route::get('/otp', [AuthController::class, 'otp_page'])->name('otp');
-    Route::post('/otp-send', [AuthController::class, 'otp_send'])->name('otp_send'); 
-    Route::post('/otp-verify', [AuthController::class, 'otp_verify'])->name('otp_verify');  
-    
-    
+    Route::post('/otp-send', [AuthController::class, 'otp_send'])->name('otp_send');
+    Route::post('/otp-verify', [AuthController::class, 'otp_verify'])->name('otp_verify');
+
+
     Route::get('/confirm-password', [AuthController::class, 'confirmPassword_page'])->name('confirmPassword_page');
     Route::post('/confirm-password', [AuthController::class, 'post_confirmPassword_page'])->name('post_confirmPassword_page');
 });
@@ -75,13 +77,20 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/book-edit/{id}', [BookController::class, 'post_update'])->name('post_book_edit');
     Route::post('/book-delete', [BookController::class, 'delete'])->name('book_delete');
 
+    Route::get('/user', [UserController::class, 'index'])->name('user_list');
+    Route::get('/user-create', [UserController::class, 'create'])->name('user_create');
+    Route::post('/user-create', [UserController::class, 'post_create'])->name('post_user_create');
+    Route::get('/user-edit/{id}', [UserController::class, 'update'])->name('user_edit');
+    Route::post('/user-edit/{id}', [UserController::class, 'post_update'])->name('post_user_edit');
+    Route::post('/user-delete', [UserController::class, 'delete'])->name('user_delete');
+
 
     Route::get('/cms-home', [CmsHomePageController::class, 'home_page'])->name('cms_home');
-    Route::post('/cms-home', [CmsHomePageController::class, 'post_update'])->name('post_cms_home'); 
+    Route::post('/cms-home', [CmsHomePageController::class, 'post_update'])->name('post_cms_home');
     Route::post('/cms-badge-delete', [CmsHomePageController::class, 'post_badge_delete'])->name('post_badge_delete');
-    Route::post('/cms-badge-update', [CmsHomePageController::class, 'post_badge_update'])->name('post_badge_update'); 
+    Route::post('/cms-badge-update', [CmsHomePageController::class, 'post_badge_update'])->name('post_badge_update');
     Route::post('/about-right-img-delete', [CmsHomePageController::class, 'post_about_right_img_delete'])->name('post_about_right_img_delete');
-    Route::post('/del-badge-img', [CmsHomePageController::class, 'post_del_badge_img'])->name('post_del_badge_img');  
+    Route::post('/del-badge-img', [CmsHomePageController::class, 'post_del_badge_img'])->name('post_del_badge_img');
 
 
     Route::get('/cms-banner', [CmsBannerController::class, 'index'])->name('cms_banner_list');
@@ -170,12 +179,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     Route::get('/setting', [SettingController::class, 'index'])->name('setting');
     Route::post('/setting-admin-email', [SettingController::class, 'updateAdminEmail'])->name('updateAdminEmail');
-    Route::post('/setting-header-logo', [SettingController::class, 'updateHeaderLogo'])->name('updateHeaderLogo'); 
-    Route::post('/setting-footer-logo', [SettingController::class, 'updateFooterLogo'])->name('updateFooterLogo'); 
-    
-    
+    Route::post('/setting-header-logo', [SettingController::class, 'updateHeaderLogo'])->name('updateHeaderLogo');
+    Route::post('/setting-footer-logo', [SettingController::class, 'updateFooterLogo'])->name('updateFooterLogo');
+
+
     Route::get('/cms-contact', [CmsContactController::class, 'index'])->name('cms_contact');
-    Route::post('/cms-contact', [CmsContactController::class, 'post_update'])->name('post_cms_contact'); 
+    Route::post('/cms-contact', [CmsContactController::class, 'post_update'])->name('post_cms_contact');
 
 
     Route::post('/log-out', [AuthController::class, 'logout'])->name('logout');

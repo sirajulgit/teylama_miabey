@@ -24,8 +24,8 @@
 
 
                 <li class="nav-item">
-                    <a href="{{ route('book_list') }}"
-                        class="nav-link {{ $data['activePageName'] == 'book' ? 'active' : '' }}">
+                    <a href="{{ route('user_list') }}"
+                        class="nav-link {{ $data['activePageName'] == 'user' ? 'active' : '' }}">
                         <i class="fas fa-users"></i>
                         <p>Users</p>
                     </a>
