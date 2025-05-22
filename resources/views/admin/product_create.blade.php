@@ -74,8 +74,6 @@
                     amount: {
                         required: true,
                          number: true
-
-
                     }
                 },
                 messages: {
