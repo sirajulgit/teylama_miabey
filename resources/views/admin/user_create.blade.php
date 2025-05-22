@@ -95,7 +95,9 @@
 
                     },
                     password: {
-                        required: true
+                        required: true,
+                        minlength: 8
+
                     }
                 },
                 messages: {
@@ -103,10 +105,10 @@
                         required: "Please enter a email address",
                         email: "Please enter a valid email address"
                     },
-                    // password: {
-                    //     required: "Please provide a password",
-                    //     minlength: "Your password must be at least 5 characters long"
-                    // },
+                    password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 8 characters long"
+                    },
                 },
                 errorElement: 'span',
                 errorPlacement: function(error, element) {
@@ -122,34 +124,7 @@
                 submitHandler: function(form, event) {
                     event.preventDefault();
                     form.submit();
-                    // Toast.create("Voila!", "How easy was that?", TOAST_STATUS.SUCCESS, 5000);
 
-                    // var formData = new FormData();
-
-                    // var other_data = $('#chatoutForm').serializeArray();
-                    // $.each(other_data, function(key, input) {
-                    //     formData.append(input.name, input.value);
-                    // });
-
-
-                    // let url = "/cashout";
-
-                    // $.ajax({
-                    //     // headers: {
-                    //     //     'X-CSRF-TOKEN': "{{ csrf_token() }}"
-                    //     // },
-                    //     url: "/cashout",
-                    //     method: "POST",
-                    //     contentType: false,
-                    //     // processData: false,
-                    //     data: formData,
-                    //     success: function(response) {
-                    //         console.log(response);
-                    //     },
-                    //     error: function(error) {
-                    //         console.log("error" + error);
-                    //     }
-                    // });
                 }
             });
             ////////////// end form validation ////////////////////

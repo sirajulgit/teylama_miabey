@@ -51,12 +51,10 @@ class UserController extends Controller
         // dd($request->all());
 
         $request->validate([
-            'title' => 'required',
-            // 'price' => 'required',
-            'details' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,webp',
-            'link' => 'required|url',
-            'order_no'=>'required'
+            'name' => 'required',
+            'email' => 'required',
+            'username' => 'required',
+            'password'=>'required'
         ]);
 
         // $items = Book::where("order_no", $request->order_no)->get()->toArray();
