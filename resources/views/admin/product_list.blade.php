@@ -36,7 +36,7 @@
                                             {{-- <th>{{ $loop->index + 1 }}</th> --}}
                                             <td style="text-align: center;">{{ $item->widthdraw_perc }}</td>
                                             <td>
-                                               {{ $item->amount }}{{ $item->currency }}
+                                               {{ $item->amount }} {{ $item->currency }}
                                             </td>
 
 
@@ -48,7 +48,7 @@
                                                 @endif
                                             </td>
                                             <td class="project-actions">
-                                                <a class="btn btn-info btn-sm" href="{{ Route('user_edit', $item->id) }}">
+                                                <a class="btn btn-info btn-sm" href="{{ Route('product_edit', $item->id) }}">
                                                     <i class="fas fa-pencil-alt"></i>
                                                     Edit
                                                 </a>
