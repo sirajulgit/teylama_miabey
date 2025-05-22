@@ -43,10 +43,10 @@
                 <li class="nav-item {{ $data['activePageName'] == 'banner' ? 'menu-open' : '' }} ">
 
                     <a href="#" class="nav-link {{ $data['activePageName'] == 'banner' ? 'active' : '' }} ">
-                        <i class="nav-icon fas fa-th"></i>
+                         <i class="fa-solid fa-image"></i>
                         <p>
                             Banners
-                            <i class="fa-solid fa-image"></i>
+
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
