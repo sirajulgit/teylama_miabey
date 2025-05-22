@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="password">Password</label>
-                                    <input type="text" name="password" class="form-control" id="password"
+                                    <input type="password" name="password" class="form-control" id="password"
                                         value="{{ old('password') }}">
                                 </div>
 
