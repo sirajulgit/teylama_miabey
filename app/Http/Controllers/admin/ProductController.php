@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 
 use App\Models\Product;
+use App\Models\CurrencyRate;
 
 class ProductController extends Controller
 {
@@ -18,7 +19,9 @@ class ProductController extends Controller
         $data['pageTitle'] = 'Product';
         $data['activePageName'] = 'product';
         $data['activeSubMenu'] = '';
-
+        $currencyitems = CurrencyRate::where("currency","USDT")->get();
+        print_r($currencyitems);exit;
+        $data['currency_value'] = '';
         $items = Product::orderBy("id", "asc")->get();
         $data['items'] = $items;
 
