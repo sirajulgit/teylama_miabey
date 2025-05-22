@@ -113,7 +113,7 @@
                 },
                 submitHandler: function(form, event) {
                     event.preventDefault();
-                    // form.submit();
+                     form.submit();
                     // Toast.create("Voila!", "How easy was that?", TOAST_STATUS.SUCCESS, 5000);
 
                     // var formData = new FormData();
