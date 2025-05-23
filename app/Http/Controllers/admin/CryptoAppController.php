@@ -50,7 +50,7 @@ class CryptoAppController extends Controller
 
 
 
-        return view("admin.book_create", ["data" => $data]);
+        return view("admin.crypto_app_create", ["data" => $data]);
     }
 
 
