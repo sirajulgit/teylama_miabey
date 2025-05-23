@@ -42,7 +42,7 @@
                 <li class="nav-item {{ $data['activePageName'] == 'banner' ? 'menu-open' : '' }} ">
 
                     <a href="#" class="nav-link {{ $data['activePageName'] == 'banner' ? 'active' : '' }} ">
-                        <i class="fa-solid fa-image"></i>
+                       <i class="fa fa-picture-o" aria-hidden="true"></i>
                         <p>
                             Banners
 
