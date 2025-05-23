@@ -132,7 +132,7 @@
                 <li class="nav-item">
                     <a href="{{ route('currency_rate_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'currency' ? 'active' : '' }}">
-                        <i class="fa fa-money" aria-hidden="true"></i>
+                        <i class="fa fa-money" ></i>
                         <p>Currency Rate</p>
                     </a>
                 </li>
