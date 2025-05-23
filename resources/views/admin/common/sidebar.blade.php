@@ -42,7 +42,7 @@
                 <li class="nav-item {{ $data['activePageName'] == 'banner' ? 'menu-open' : '' }} ">
 
                     <a href="#" class="nav-link {{ $data['activePageName'] == 'banner' ? 'active' : '' }} ">
-                      <i class="right fas fa-angle-left"></i>
+                        <i class="fa-solid fa-image"></i>
                         <p>
                             Banners
 
@@ -132,7 +132,7 @@
                 <li class="nav-item">
                     <a href="{{ route('currency_rate_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'currency' ? 'active' : '' }}">
-                        <i class="fa fa-money" ></i>
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
                         <p>Currency Rate</p>
                     </a>
                 </li>
@@ -146,8 +146,8 @@
 
 
                 <li class="nav-item">
-                    <a href="{{ route('event_list') }}"
-                        class="nav-link {{ $data['activePageName'] == 'event' ? 'active' : '' }}">
+                    <a href="{{ route('crypto_app_list') }}"
+                        class="nav-link {{ $data['activePageName'] == 'crypto' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-newspaper"></i>
                         <p>Crypto App</p>
                     </a>

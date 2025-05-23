@@ -22,6 +22,8 @@ use App\Http\Controllers\admin\CmsContactController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CurrencyRateController;
+use App\Http\Controllers\admin\CryptoAppController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +101,13 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/currency-rate-edit/{id}', [CurrencyRateController::class, 'update'])->name('currency_rate_edit');
     Route::post('/currency-rate-edit/{id}', [CurrencyRateController::class, 'post_update'])->name('post_currency_rate_edit');
     Route::post('/currency-rate-delete', [CurrencyRateController::class, 'delete'])->name('currency_rate_delete');
+
+    Route::get('/crypto-app', [CryptoAppController::class, 'index'])->name('crypto_app_list');
+    Route::get('/crypto-app-create', [CryptoAppController::class, 'create'])->name('crypto_app_create');
+    Route::post('/crypto-app-create', [CryptoAppController::class, 'post_create'])->name('post_crypto_app_create');
+    Route::get('/crypto-app-edit/{id}', [CryptoAppController::class, 'update'])->name('crypto_app_edit');
+    Route::post('/crypto-app-edit/{id}', [CryptoAppController::class, 'post_update'])->name('post_crypto_app_edit');
+    Route::post('/crypto-app-delete', [CryptoAppController::class, 'delete'])->name('crypto_app_delete');
 
 
     Route::get('/cms-home', [CmsHomePageController::class, 'home_page'])->name('cms_home');

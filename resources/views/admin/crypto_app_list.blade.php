@@ -9,10 +9,10 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">Product List</h3>
+                            <h3 class="card-title">Crypto App</h3>
 
                             <div class="card-tools">
-                                <a href="{{ route('product_create') }}" class="btn btn-primary">Add</a>
+                                <a href="{{ route('crypto_app_create') }}" class="btn btn-primary">Add</a>
                             </div>
 
                         </div>
@@ -23,9 +23,8 @@
                                 <thead>
                                     <tr>
                                         {{-- <th style="width: 1%">No</th> --}}
-                                        <th style="width: 5%">Withdrawl %</th>
-                                        <th style="width: 10%">USDT Amount</th>
-                                        <th style="width: 10%">Amount (INR)</th>
+                                        <th style="width: 5%">Name</th>
+                                        <th style="width: 10%">Logo</th>
 
                                         <th style="width: 8%" class="text-center">Status</th>
                                         <th style="width: 10%">Action</th>
@@ -35,12 +34,10 @@
                                     @foreach ($data['items'] as $item)
                                         <tr>
                                             {{-- <th>{{ $loop->index + 1 }}</th> --}}
-                                            <td style="text-align: center;">{{ $item->widthdraw_perc }}</td>
+                                            <td style="text-align: center;">{{ $item->name }}</td>
                                             <td>
-                                               {{ $item->amount }} {{ $item->currency }}
-                                            </td>
-                                            <td>
-                                               {{ $data['currency_value'] * $item->amount}} INR
+                                                <img src="{{ $item->brand_image }}" alt="" width="80px"
+                                                    height="50px" />
                                             </td>
 
 
@@ -52,7 +49,7 @@
                                                 @endif
                                             </td>
                                             <td class="project-actions">
-                                                <a class="btn btn-info btn-sm" href="{{ Route('product_edit', $item->id) }}">
+                                                <a class="btn btn-info btn-sm" href="{{ Route('crypto_app_edit', $item->id) }}">
                                                     <i class="fas fa-pencil-alt"></i>
                                                     Edit
                                                 </a>
@@ -106,7 +103,7 @@
                     if (result.isConfirmed) {
 
 
-                        let url = "{{ route('product_delete') }}";
+                        let url = "{{ route('crypto_app_delete') }}";
 
 
                         $.ajax({
