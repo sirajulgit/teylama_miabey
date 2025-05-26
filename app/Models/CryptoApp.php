@@ -24,6 +24,6 @@ class CryptoApp extends Model
             array_push($tempData, $item);
         }
 
-        return $result;
+        return $tempData;
     }
 }
