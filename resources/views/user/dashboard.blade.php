@@ -1,6 +1,9 @@
 @extends('user.layout.auth_layout')
 
 @section('content')
+    {{-- +++++++++++++++++ | Header | +++++++++++++++++ --}}
+    @include('user.common.header')
+
 
     <main class="home-content">
         <div class="container-fluid">
@@ -166,5 +169,4 @@
 
         </div>
     </main>
-
 @endsection

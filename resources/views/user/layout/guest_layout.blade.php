@@ -25,10 +25,11 @@
 
 <body>
 
-    <main class="home-content">
-        {{-- +++++++++++++++++ | Main Content | +++++++++++++++++ --}}
-        @yield('content')
-    </main>
+
+    {{-- +++++++++++++++++ | Main Content | +++++++++++++++++ --}}
+    @yield('content')
+   
+
 
     {{-- ################# | Jquery | ################# --}}
     <!-- jquery Min js -->
@@ -48,38 +49,38 @@
     <script src="{{ asset('asset/frontend/js/custome.js') }}"></script>
 
     <script>
-        $(document).ready(function () {
-        let error = "{{ Session::has('error') ? Session::get('error') : '' }}";
-        let success = "{{ Session::has('success') ? Session::get('success') : '' }}";
-        let warning = "{{ Session::has('warning') ? Session::get('warning') : '' }}";
+        $(document).ready(function() {
+            let error = "{{ Session::has('error') ? Session::get('error') : '' }}";
+            let success = "{{ Session::has('success') ? Session::get('success') : '' }}";
+            let warning = "{{ Session::has('warning') ? Session::get('warning') : '' }}";
 
-        function showToast(message, backgroundColor = "#007bff") {
-            Toastify({
-                text: message,
-                duration: 3000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                stopOnFocus: true,
-                style: {
-                    background: backgroundColor,
-                    color: "#fff",
-                }
-            }).showToast();
-        }
+            function showToast(message, backgroundColor = "#007bff") {
+                Toastify({
+                    text: message,
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                        background: backgroundColor,
+                        color: "#fff",
+                    }
+                }).showToast();
+            }
 
-        if (error) {
-            showToast(error, "#dc3545"); // red
-        }
+            if (error) {
+                showToast(error, "#dc3545"); // red
+            }
 
-        if (success) {
-            showToast(success, "#28a745"); // green
-        }
+            if (success) {
+                showToast(success, "#28a745"); // green
+            }
 
-        if (warning) {
-            showToast(warning, "#ffc107"); // yellow
-        }
-    });
+            if (warning) {
+                showToast(warning, "#ffc107"); // yellow
+            }
+        });
     </script>
 
     {{-- custom own page script --}}

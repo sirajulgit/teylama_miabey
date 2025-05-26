@@ -1,47 +1,50 @@
 @extends('user.layout.guest_layout')
 
 @section('content')
-    <div class="container-fluid pt-3">
-        <div class="mb-5">
-            <div class="logo">
-                <img src="{{ asset('asset/frontend/images/logo.jpg') }}" alt="logo" />
+    <main class="home-content">
+        <div class="container-fluid pt-3">
+            <div class="mb-5">
+                <div class="logo">
+                    <img src="{{ asset('asset/frontend/images/logo.jpg') }}" alt="logo" />
+                </div>
             </div>
-        </div>
-        <h1 class="welcome-heading mb-5">
-            Welcome <br />
-            Back!
-        </h1>
-        <div class="password-change-from login-from">
-            <form id="form1" action="{{ route('post_user_login') }}" method="post">
-                @csrf
-                
-                <div class="mb-2">
-                    <div class="pw-area position-relative">
-                        <input name="username" class="form-control" type="text" placeholder="Please input username" />
+            <h1 class="welcome-heading mb-5">
+                Welcome <br />
+                Back!
+            </h1>
+            <div class="password-change-from login-from">
+                <form id="form1" action="{{ route('post_user_login') }}" method="post">
+                    @csrf
+
+                    <div class="mb-2">
+                        <div class="pw-area position-relative">
+                            <input name="username" class="form-control" type="text"
+                                placeholder="Please input username" />
+                        </div>
                     </div>
-                </div>
-                <div class="mb-2">
-                    <div class="pw-area position-relative">
-                        <input id="password" name="password" class="form-control" type="password"
-                            placeholder="Please Enter password" />
-                        <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>
+                    <div class="mb-2">
+                        <div class="pw-area position-relative">
+                            <input id="password" name="password" class="form-control" type="password"
+                                placeholder="Please Enter password" />
+                            <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="mt-4">
+                        <a href="home.html">
+                            <input type="submit" class="submit-btn" value="Login" />
+                        </a>
+                    </div>
+                </form>
 
                 <div class="mt-4">
-                    <a href="home.html">
-                        <input type="submit" class="submit-btn" value="Login" />
+                    <a href="{{ route('user_register') }}">
+                        <input type="submit" class="submit-btn have-account" value="Register Now" />
                     </a>
                 </div>
-            </form>
-
-            <div class="mt-4">
-                <a href="{{ route('user_register') }}">
-                    <input type="submit" class="submit-btn have-account" value="Register Now" />
-                </a>
             </div>
         </div>
-    </div>
+    </main>
 @endsection
 
 

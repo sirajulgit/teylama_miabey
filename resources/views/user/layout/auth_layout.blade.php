@@ -25,8 +25,6 @@
 
 <body>
 
-    {{-- +++++++++++++++++ | Header | +++++++++++++++++ --}}
-    @include('user.common.header')
 
     {{-- +++++++++++++++++ | Main Content | +++++++++++++++++ --}}
     @yield('content')

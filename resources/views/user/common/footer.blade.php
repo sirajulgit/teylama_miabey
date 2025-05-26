@@ -8,8 +8,8 @@
                 </a>
             </li>
 
-            <li class="text-center">
-                <a href="account-management.html">
+            <li class="text-center {{ Route::is('user_account_management') ? 'link-active' : '' }}">
+                <a href="{{ route('user_account_management') }}">
                     <i class="bi bi-wallet2"></i> <br>
                     <span> Account </span>
                 </a>
@@ -22,8 +22,8 @@
                 </a>
             </li>
 
-            <li class="text-center">
-                <a href="edit-profile.html">
+            <li class="text-center {{ Route::is('user_edit_profile') ? 'link-active' : '' }}">
+                <a href="{{ route('user_edit_profile') }}">
                     <i class="bi bi-person-square"></i> <br>
                     <span> Me </span>
                 </a>

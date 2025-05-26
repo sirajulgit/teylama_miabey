@@ -26,7 +26,9 @@ use App\Http\Controllers\admin\CryptoAppController;
 
 use App\Http\Controllers\user\AuthController;
 use App\Http\Controllers\user\DashboardController as UserDashboardController;
+use App\Http\Controllers\user\AccountManagementController;
 use App\Http\Controllers\user\LiveSupportController;
+use App\Http\Controllers\user\UserProfileController;
 
 
 /*
@@ -58,8 +60,18 @@ Route::middleware('isGuest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('user_logout');
+
+    // +++++++++++++++ | dashboard | +++++++++++++++
     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user_dashboard');
+
+    // +++++++++++++++ | account management | +++++++++++++++
+    Route::get('/account-management', [AccountManagementController::class, 'index'])->name('user_account_management');
+
+    // +++++++++++++++ | live support | +++++++++++++++
     Route::get('/live-support', [LiveSupportController::class, 'index'])->name('user_live_support');
+
+    // +++++++++++++++ | user profile | +++++++++++++++
+    Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('user_edit_profile');
 });
 
 
