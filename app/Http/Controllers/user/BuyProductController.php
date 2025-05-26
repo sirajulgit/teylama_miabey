@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CmsBanner;
+use App\Models\CryptoApp;
 use App\Models\Product;
 use App\Models\CurrencyRate;
 use App\Models\PurchaseRequest;
@@ -17,11 +18,15 @@ class BuyProductController extends Controller
 
     protected $purchaseRequestModel;
     protected $productModel;
+    protected $cryptoAppModel;
+    protected $currencyRateModel;
 
     public function __construct()
     {
         $this->purchaseRequestModel = new PurchaseRequest();
         $this->productModel = new Product();
+        $this->cryptoAppModel = new CryptoApp();
+        $this->currencyRateModel = new CurrencyRate();
     }
 
     public function index(Request $request)
@@ -31,10 +36,11 @@ class BuyProductController extends Controller
             'page_title' => 'Buy USDT',
         ];
 
-        $currencyitems = CurrencyRate::where("currency", "USDT")->get();
+        $currencyitems = $this->currencyRateModel->where("currency", "USDT")->get();
         //echo $currencyitems[0]['currency_value'];exit;
         $currency_value = $currencyitems[0]['currency_value'];
-        $productdata = Product::find($request->id);
+        $productdata = $this->productModel->find($request->id);
+        $crypto_app_list = $this->cryptoAppModel->getCryptoAppList();
 
         $data['currency_value'] = $currency_value;
         $data['product_id'] = $request->id;
@@ -42,6 +48,7 @@ class BuyProductController extends Controller
         $data['product_widthdraw_perc'] = $productdata->widthdraw_perc;
         $data['product_currency'] = $productdata->currency;
         $data['product_title'] = $productdata->title;
+        $data['crypto_app_list'] = $crypto_app_list;
 
         return view('user.product_buy', ['data' => $data]);
     }
@@ -56,7 +63,7 @@ class BuyProductController extends Controller
             [
                 'product_id' => 'required|exists:currency_product,id',
                 'qnty' => 'required|numeric|min:1',
-                // 'crypto_app_id' => 'required|exists:crypto_app,id',
+                'crypto_app_id' => 'required|exists:crypto_app,id',
             ]
         );
 
@@ -69,25 +76,24 @@ class BuyProductController extends Controller
         }
         ///////////// End Validated ///////////////////
 
-        // $productdata = Product::find($request->product_id);
+        $productdata = $this->productModel->find($request->product_id);
 
-        // $total_amount = $request->qnty * $productdata->unit_amount;
+        $total_amount = $request->qnty * $productdata->unit_amount;
 
-        // $result = $this->purchaseRequestModel->create([
-        //     'user_id' => Auth::user()->id,
-        //     'product_id' => $request->product_id,
-        //     'qnty' => $request->qnty,
-        //     'crypto_app_id' => $request->crypto_app_id,
-        //     'unit_amount' => $productdata->amount,
-        //     'total_amount' => $total_amount,
-        //     'currency' => $productdata->currency,
-        // ]);
+        $result = $this->purchaseRequestModel->create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $request->product_id,
+            'qnty' => $request->qnty,
+            'crypto_app_id' => $request->crypto_app_id,
+            'unit_amount' => $productdata->amount,
+            'total_amount' => $total_amount,
+            'currency' => $productdata->currency,
+        ]);
 
         return  json_encode([
             'status' => 'success',
             'message' => 'Order placed successfully.',
-            'purchase_request_id' => 1,
-            // 'purchase_request_id' => $result->id,
+            'purchase_request_id' => $result->id,
         ]);
     }
 

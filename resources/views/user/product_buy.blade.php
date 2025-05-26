@@ -18,7 +18,8 @@
 
         <div class="container-fluid">
             <div class="price-part pt-3 pb-3">
-                <p>Contract unit price: <span id="unit-price"> {{ $data['product_amount'] }} </span> {{ $data['product_currency'] }} </p>
+                <p>Contract unit price: <span id="unit-price"> {{ $data['product_amount'] }} </span>
+                    {{ $data['product_currency'] }} </p>
 
                 <label class="mb-2">Buy shares</label>
                 <div class="d-flex align-items-center price-inc-part mb-2">
@@ -32,7 +33,8 @@
                 </div>
 
                 <div class="text-end total-width-price">
-                    <p>Total: <span id="total-amount"> {{ $data['product_amount'] }} </span> {{ $data['product_currency'] }} </p>
+                    <p>Total: <span id="total-amount"> {{ $data['product_amount'] }} </span> {{ $data['product_currency'] }}
+                    </p>
                     <p>= <span id="total-inr"> {{ number_format($data['product_amount'] * 100, 2) }} </span> INR </p>
                 </div>
             </div>
@@ -52,6 +54,21 @@
                 <p> please select mode of payment</p>
                 <i class="bi bi-chevron-right"></i>
             </div>
+
+            <div id="payment-options" class="container-fluid p-3" style="display: none;">
+                @foreach ($data['crypto_app_list'] as $item)
+                    <div class="form-check d-flex align-items-center mb-2">
+                        <input class="form-check-input me-2" type="radio" name="payment_method" id="usdt"
+                            value="usdt">
+                        <label class="form-check-label d-flex align-items-center" for="usdt">
+                            <img src="{{ asset('asset/frontend/images/Bitget.svg') }}" alt="USDT"
+                                style="width: 40px; height: 40px;" class="me-2">
+                            Bitget
+                        </label>
+                    </div>
+                @endforeach
+            </div>
+
             <div id="payment-options" class="container-fluid p-3" style="display: none;">
                 <div class="form-check d-flex align-items-center mb-2">
                     <input class="form-check-input me-2" type="radio" name="payment_method" id="usdt" value="usdt">
@@ -177,7 +194,8 @@
                     //alert(response.message);
                     // window.location.href = response.redirect_url;
 
-                    window.location.href = "{{ route('user_account.payment_qr_generate', '__ID__') }}".replace('__ID__', response.purchase_request_id);
+                    window.location.href = "{{ route('user_account.payment_qr_generate', '__ID__') }}"
+                        .replace('__ID__', response.purchase_request_id);
 
                 },
                 error: function(xhr) {
