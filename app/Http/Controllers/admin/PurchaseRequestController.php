@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\CurrencyRate;
+use App\Models\PurchaseRequest;
 
 class PurchaseRequestController extends Controller
 {
@@ -20,8 +21,15 @@ class PurchaseRequestController extends Controller
         $currencyitems = CurrencyRate::where("currency","USDT")->get();
        //echo $currencyitems[0]['currency_value'];exit;
         $data['currency_value'] = $currencyitems[0]['currency_value'];
-        $items = Product::orderBy("id", "asc")->get();
+
+    $items = PurchaseRequest::join('users', 'users.id', '=', 'purchase_request.user_id')
+    ->select('purchase_request.*', 'users.username', 'users.email')
+            ->orderBy("purchase_request.id", "desc")
+            ->get();
         $data['items'] = $items;
+        echo "<pre>";
+        print_r($data['items']);
+        exit;
 
         return view("admin.purchase_request_list", ["data" => $data]);
     }
