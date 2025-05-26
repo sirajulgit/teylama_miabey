@@ -50,8 +50,6 @@ class BuyProductController extends Controller
         $data['product_title'] = $productdata->title;
         $data['crypto_app_list'] = $crypto_app_list;
 
-        dd($crypto_app_list);
-
         return view('user.product_buy', ['data' => $data]);
     }
 
