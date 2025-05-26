@@ -146,6 +146,7 @@
         });
 
          // 💳 AJAX Payment Submission
+
         $('#make-payment-btn').on('click', function() {
             const paymentMethod = $('input[name="payment_method"]:checked').val();
             const totalAmount = $('#total-amount').text();
@@ -156,25 +157,25 @@
                 return;
             }
 
-            $.ajax({
-                url: '{{ route("make_payment") }}', // Update this to your route
-                type: 'POST',
-                data: {
+            // $.ajax({
+            //     url: '{{ route("make_payment") }}', // Update this to your route
+            //     type: 'POST',
+            //     data: {
 
-                    product_id: productId,
-                    payment_method: paymentMethod,
-                    total_amount: totalAmount
-                },
-                success: function(response) {
-                    console.log(response);
-                    // Optional: redirect or show success message
-                    //alert(response.message);
-                    // window.location.href = response.redirect_url;
-                },
-                error: function(xhr) {
-                    alert("Payment failed: " + xhr.responseJSON?.message || "Unknown error.");
-                }
-            });
+            //         product_id: productId,
+            //         payment_method: paymentMethod,
+            //         total_amount: totalAmount
+            //     },
+            //     success: function(response) {
+            //         console.log(response);
+            //         // Optional: redirect or show success message
+            //         //alert(response.message);
+            //         // window.location.href = response.redirect_url;
+            //     },
+            //     error: function(xhr) {
+            //         alert("Payment failed: " + xhr.responseJSON?.message || "Unknown error.");
+            //     }
+            // });
         });
     </script>
 @endsection
