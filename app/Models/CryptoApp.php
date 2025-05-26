@@ -16,8 +16,14 @@ class CryptoApp extends Model
     {
         $result= $this->where('status', 1)->get();
 
+        $tempData= [];
+
         foreach ($result as $item) {
-            $result["brand_image_url"]= asset('/uploads/images/' . $item['brand_image']);
+            
+            $item["brand_image_url"]= asset('/uploads/images/' . $item['brand_image']);
+            array_push($tempData, $item);
         }
+
+        return $result;
     }
 }
