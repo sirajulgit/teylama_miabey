@@ -101,9 +101,9 @@ class BuyProductController extends Controller
 
     public function paymentQRGenerate($purchase_request_id, Request $request)
     {
-        $request->validate([
-            'purchase_request_id' => 'required|exists:purchase_request,id',
-        ]);
+        // $request->validate([
+        //     'purchase_request_id' => 'required|exists:purchase_request,id',
+        // ]);
 
         $data = [
             'page_title' => 'Payment QR Code',
