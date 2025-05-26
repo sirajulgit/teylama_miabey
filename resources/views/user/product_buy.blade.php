@@ -164,6 +164,7 @@
                 url: '{{ route("make_payment") }}', // Update this to your route
                 type: 'POST',
                 data: {
+                    _token: '{{ csrf_token() }}', // Include CSRF token for security
 
                     product_id: productId,
                     payment_method: paymentMethod,
