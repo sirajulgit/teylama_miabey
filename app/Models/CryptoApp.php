@@ -10,6 +10,7 @@ class CryptoApp extends Model
     use HasFactory;
 
     protected $table='crypto_app';
+    
 
 
     public function getCryptoAppList()
@@ -24,6 +25,6 @@ class CryptoApp extends Model
             array_push($tempData, $item);
         }
 
-        return $result;
+        return $tempData;
     }
 }
