@@ -90,7 +90,7 @@
                 </div>
             </div>
         </div>
-        <input type="hidden" id="product-id" value="{{ $product_id }}">
+        <input type="hidden" id="product-id" value="{{ $data['product_id'] }}">
         <div class="mt-4">
 
             <input type="button" id="make-payment-btn" class="submit-btn" value="Make Payment" />
