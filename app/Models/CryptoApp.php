@@ -19,5 +19,7 @@ class CryptoApp extends Model
         foreach ($result as $item) {
             $result["brand_image_url"]= asset('/uploads/images/' . $item['brand_image']);
         }
+
+        return $result;
     }
 }
