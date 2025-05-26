@@ -55,7 +55,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const unitPrice = parseFloat(document.getElementById('unit-price').innerText);
-    const inrRate = 100; // Assume 1 USDT = 100 INR (adjust if needed)
+    const inrRate = {{ $currency_value }}; // Assume 1 USDT = 100 INR (adjust if needed)
     const shareInput = document.getElementById('share-input');
     const totalAmount = document.getElementById('total-amount');
     const totalINR = document.getElementById('total-inr');
