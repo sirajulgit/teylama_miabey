@@ -68,16 +68,16 @@ Route::middleware('auth')->group(function () {
     // +++++++++++++++ | account management | +++++++++++++++
     Route::get('/account-management', [AccountManagementController::class, 'index'])->name('user_account.index');
 
+    // +++++++++++++++ | Buy product | +++++++++++++++
+    Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('buy_product');
+
+    Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('make_payment');
+
     // +++++++++++++++ | live support | +++++++++++++++
     Route::get('/live-support', [LiveSupportController::class, 'index'])->name('user_live_support');
 
     // +++++++++++++++ | user profile | +++++++++++++++
     Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('user_profile.index');
-
-    // +++++++++++++++ | Buy product | +++++++++++++++
-    Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('buy_product');
-
-    Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('make_payment');
 });
 
 
