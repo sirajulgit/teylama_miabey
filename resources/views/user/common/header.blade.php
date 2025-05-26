@@ -6,6 +6,5 @@
 
         <div class="app-download">
             <span style="cursor: pointer;">App Download</span>
-            <span id="user_logout" style="cursor: pointer;">Logout</span>
         </div>
 </header>

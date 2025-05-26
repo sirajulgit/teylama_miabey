@@ -67,6 +67,9 @@
 
                 </ul>
 
+                <ul class="mb-3">
+                    <li class="d-flex align-items-center justify-content-between" id="user_logout">Logout</li>
+                </ul>
 
             </div>
 
