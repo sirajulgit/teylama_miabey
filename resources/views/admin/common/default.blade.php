@@ -191,10 +191,10 @@
             }
 
 
-            /////////////// logOUT //////////////////
+            /////////////// admin logOUT //////////////////
             $(".logOUT").on("click", function() {
 
-                let url = "{{ route('logout') }}";
+                let url = "{{ route('admin_logout') }}";
 
                 $.ajax({
                     headers: {
