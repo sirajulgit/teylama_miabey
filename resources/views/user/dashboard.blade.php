@@ -78,7 +78,7 @@
  @foreach ($productdata as $item)
             <div class="price-list mb-2">
                 <p>withdraw money immediately after purchase</p>
-                <a href="{{ Route('buy_product', $item->id) }}">
+                <a href="{{ Route('user_account.buy_product', $item->id) }}">
                     <div class="middle-price d-flex justify-content-between">
                         <div class="left-price">
                             <div class="d-flex justify-content-between pb-2">

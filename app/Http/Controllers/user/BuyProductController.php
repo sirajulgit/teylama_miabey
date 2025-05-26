@@ -7,10 +7,22 @@ use Illuminate\Http\Request;
 use App\Models\CmsBanner;
 use App\Models\Product;
 use App\Models\CurrencyRate;
+use App\Models\PurchaseRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class BuyProductController extends Controller
 {
     //
+
+    protected $purchaseRequestModel;
+    protected $productModel;
+
+    public function __construct()
+    {
+        $this->purchaseRequestModel = new PurchaseRequest();
+        $this->productModel = new Product();
+    }
 
     public function index(Request $request)
     {
@@ -19,40 +31,68 @@ class BuyProductController extends Controller
             'page_title' => 'Buy USDT',
         ];
 
-         $currencyitems = CurrencyRate::where("currency","USDT")->get();
-       //echo $currencyitems[0]['currency_value'];exit;
+        $currencyitems = CurrencyRate::where("currency", "USDT")->get();
+        //echo $currencyitems[0]['currency_value'];exit;
         $currency_value = $currencyitems[0]['currency_value'];
-        $productdata =Product::find($request->id);
+        $productdata = Product::find($request->id);
 
         $data['currency_value'] = $currency_value;
         $data['product_id'] = $request->id;
         $data['product_amount'] = $productdata->amount;
         $data['product_widthdraw_perc'] = $productdata->widthdraw_perc;
         $data['product_currency'] = $productdata->currency;
-         $data['product_title'] = $productdata->title;
+        $data['product_title'] = $productdata->title;
 
         return view('user.product_buy', $data);
     }
+
+
     public function makePayment(Request $request)
     {
-        // Validate the request data
-        // $request->validate([
-        //     'product_id' => 'required|exists:products,id',
-        //     'amount' => 'required|numeric|min:0.01',
-        //     'currency' => 'required|string',
-        // ]);
 
-        // Process the payment logic here
-        // For example, you might interact with a payment gateway
+        ///////////// Validated ///////////////////
+        $validateData = Validator::make(
+            $request->all(),
+            [
+                'product_id' => 'required|exists:currency_product,id',
+                'qnty' => 'required|numeric|min:1',
+                // 'crypto_app_id' => 'required|exists:crypto_app,id',
+            ]
+        );
 
-        // Redirect back with success message
-        // return redirect()->back()->with('success', 'Payment successful for product ID: ' . $request->product_id);
-        return       json_encode([
-                'status' => 'success',
-                'message' => 'Payment successful for product ID: ' . $request->product_id,
-                'product_id' => $request->product_id,
-                'payment_method' => $request->payment_method,
-                'total_amount' => $request->total_amount,
-            ]) ;
+        if ($validateData->fails()) {
+            return response()->json([
+                'status' => false,
+                'msg' => 'validation error',
+                'errors' => $validateData->errors()
+            ], 202);
+        }
+        ///////////// End Validated ///////////////////
+
+        $productdata = Product::find($request->product_id);
+
+        $total_amount = $request->qnty * $productdata->unit_amount;
+
+        $this->purchaseRequestModel->create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $request->product_id,
+            'qnty' => $request->qnty,
+            'crypto_app_id' => $request->crypto_app_id,
+            'unit_amount' => $productdata->amount,
+            'total_amount' => $total_amount,
+            'currency' => $productdata->currency,
+        ]);
+
+        return  json_encode([
+            'status' => 'success',
+            'message' => 'Order placed successfully.',
+            // 'redirect_url' => route('user.product.buy.success', ['id' => $request->product_id])
+        ]);
+    }
+
+
+    public function paymentQRGenerate(Request $request)
+    {
+        
     }
 }

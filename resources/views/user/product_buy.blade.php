@@ -91,17 +91,15 @@
             </div>
         </div>
         <input type="hidden" id="product-id" value="{{ $product_id }}">
-         <div class="mt-4">
+        <div class="mt-4">
 
-                            <input type="button" id="make-payment-btn"  class="submit-btn" value="Make Payment" />
+            <input type="button" id="make-payment-btn" class="submit-btn" value="Make Payment" />
 
-                    </div>
+        </div>
     </main>
-
-
 @endsection
 @section('script_content')
- <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const unitPrice = parseFloat(document.getElementById('unit-price').innerText);
             const inrRate = {{ $currency_value }}; // Assume 1 USDT = 100 INR (adjust if needed)
@@ -148,27 +146,28 @@
             }
         });
 
-         // 💳 AJAX Payment Submission
+        // 💳 AJAX Payment Submission
 
         $('#make-payment-btn').on('click', function() {
-            const paymentMethod = $('input[name="payment_method"]:checked').val();
-            const totalAmount = $('#total-amount').text();
+            const qnty = $('#shareInput').val();
+            const crypto_app_id = $('input[name="payment_method"]:checked').val();
             const productId = $('#product-id').val();
 
-            if (!paymentMethod) {
+            if (!crypto_app_id) {
                 alert("Please select a payment method.");
                 return;
             }
 
             $.ajax({
-                url: '{{ route("make_payment") }}', // Update this to your route
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                url: "{{ route('user_account.make_payment') }}",
                 type: 'POST',
                 data: {
-                    _token: '{{ csrf_token() }}', // Include CSRF token for security
-
                     product_id: productId,
-                    payment_method: paymentMethod,
-                    total_amount: totalAmount
+                    qnty: qnty,
+                    crypto_app_id: crypto_app_id,
                 },
                 success: function(response) {
                     console.log(response);
