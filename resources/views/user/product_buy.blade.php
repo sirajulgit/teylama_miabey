@@ -61,7 +61,7 @@
                         <input class="form-check-input me-2" type="radio" name="payment_method" id="{{ $item['name'] }}"
                             value="{{ $item['name'] }}">
                         <label class="form-check-label d-flex align-items-center" for="{{ $item['name'] }}">
-                            <img src="{{ asset('uploads/images/' . $item['brand_image']) }}" alt="{{ $item['name'] }}"
+                            <img src="{{ $item['brand_image_url'] }}" alt="{{ $item['name'] }}"
                                 style="width: 40px; height: 40px;" class="me-2">
                             {{ $item['name'] }}
                         </label>

@@ -15,7 +15,7 @@ class CryptoApp extends Model
 
     public static  function getCryptoAppList()
     {
-        $result = self::where('status', 1)->get();
+        $result = self::where('status', '1')->get();
 
         return $result->map(function ($item) {
             $item['brand_image_url'] = asset('uploads/images/' . $item->brand_image);
