@@ -36,7 +36,7 @@
                                             {{-- <th>{{ $loop->index + 1 }}</th> --}}
                                             <td style="text-align: center;">{{ $item->username }}</td>
                                             <td>
-                                               {{ $item->amount }} {{ $item->currency }}
+                                               {{ $item->unit_amount }} {{ $item->currency }}
                                             </td>
                                             <td>
                                                {{ $item->qnty }}
