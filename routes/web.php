@@ -65,13 +65,19 @@ Route::middleware('auth')->group(function () {
     // +++++++++++++++ | dashboard | +++++++++++++++
     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user_dashboard');
 
-    // +++++++++++++++ | account management | +++++++++++++++
+    
+    // ################ | Start account management | ################
+
+    // +++++++++++++++ | account management  | +++++++++++++++
     Route::get('/account-management', [AccountManagementController::class, 'index'])->name('user_account.index');
 
     // +++++++++++++++ | Buy product | +++++++++++++++
-    Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('buy_product');
+    Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('user_account.buy_product');
 
     Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('make_payment');
+
+    // ################ | End account management | ################
+
 
     // +++++++++++++++ | live support | +++++++++++++++
     Route::get('/live-support', [LiveSupportController::class, 'index'])->name('user_live_support');
