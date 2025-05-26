@@ -12,13 +12,13 @@
     <main class="home-content">
         <div class="container-fluid p-0">
             <div class="product-title">
-                <h3> Product Title: {{ $product_title }} </h3>
+                <h3> Product Title: {{ $data['product_title'] }} </h3>
             </div>
         </div>
 
         <div class="container-fluid">
             <div class="price-part pt-3 pb-3">
-                <p>Contract unit price: <span id="unit-price"> {{ $product_amount }} </span> {{ $product_currency }} </p>
+                <p>Contract unit price: <span id="unit-price"> {{ $data['product_amount'] }} </span> {{ $data['product_currency'] }} </p>
 
                 <label class="mb-2">Buy shares</label>
                 <div class="d-flex align-items-center price-inc-part mb-2">
@@ -32,8 +32,8 @@
                 </div>
 
                 <div class="text-end total-width-price">
-                    <p>Total: <span id="total-amount"> {{ $product_amount }} </span> {{ $product_currency }} </p>
-                    <p>= <span id="total-inr"> {{ number_format($product_amount * 100, 2) }} </span> INR </p>
+                    <p>Total: <span id="total-amount"> {{ $data['product_amount'] }} </span> {{ $data['product_currency'] }} </p>
+                    <p>= <span id="total-inr"> {{ number_format($data['product_amount'] * 100, 2) }} </span> INR </p>
                 </div>
             </div>
         </div>
