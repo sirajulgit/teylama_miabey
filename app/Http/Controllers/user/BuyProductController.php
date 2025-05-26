@@ -79,7 +79,7 @@ class BuyProductController extends Controller
 
         $productdata = $this->productModel->find($request->product_id);
 
-        $total_amount = $request->qnty * $productdata->unit_amount;
+        $total_amount = $request->qnty * $productdata->amount;
 
         $result = $this->purchaseRequestModel->create([
             'user_id' => Auth::user()->id,
