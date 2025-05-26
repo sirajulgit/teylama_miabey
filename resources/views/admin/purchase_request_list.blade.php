@@ -67,7 +67,7 @@
                                                 @endif
                                             </td>
                                             <td class="project-actions">
-                                                <a class="btn btn-info btn-sm" href="{{ Route('puchase_request_edit', $item->id) }}">
+                                                <a class="btn btn-info btn-sm" href="{{ Route('purchase_request_edit', $item->id) }}">
                                                     <i class="fas fa-pencil-alt"></i>
                                                     Edit
                                                 </a>
