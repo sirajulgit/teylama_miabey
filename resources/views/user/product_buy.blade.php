@@ -12,13 +12,13 @@
     <main class="home-content">
         <div class="container-fluid p-0">
             <div class="product-title">
-                <h3> Product Title: {{ $product_title }} </h3>
+                <h3> Product Title: {{ $data['product_title'] }} </h3>
             </div>
         </div>
 
         <div class="container-fluid">
             <div class="price-part pt-3 pb-3">
-                <p>Contract unit price: <span id="unit-price"> {{ $product_amount }} </span> {{ $product_currency }} </p>
+                <p>Contract unit price: <span id="unit-price"> {{ $data['product_amount'] }} </span> {{ $data['product_currency'] }} </p>
 
                 <label class="mb-2">Buy shares</label>
                 <div class="d-flex align-items-center price-inc-part mb-2">
@@ -32,8 +32,8 @@
                 </div>
 
                 <div class="text-end total-width-price">
-                    <p>Total: <span id="total-amount"> {{ $product_amount }} </span> {{ $product_currency }} </p>
-                    <p>= <span id="total-inr"> {{ number_format($product_amount * 100, 2) }} </span> INR </p>
+                    <p>Total: <span id="total-amount"> {{ $data['product_amount'] }} </span> {{ $data['product_currency'] }} </p>
+                    <p>= <span id="total-inr"> {{ number_format($data['product_amount'] * 100, 2) }} </span> INR </p>
                 </div>
             </div>
         </div>
@@ -90,21 +90,19 @@
                 </div>
             </div>
         </div>
-        <input type="hidden" id="product-id" value="{{ $product_id }}">
-         <div class="mt-4">
+        <input type="hidden" id="product-id" value="{{ $data['product_id'] }}">
+        <div class="mt-4">
 
-                            <input type="button" id="make-payment-btn"  class="submit-btn" value="Make Payment" />
+            <input type="button" id="make-payment-btn" class="submit-btn" value="Make Payment" />
 
-                    </div>
+        </div>
     </main>
-
-
 @endsection
 @section('script_content')
- <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const unitPrice = parseFloat(document.getElementById('unit-price').innerText);
-            const inrRate = {{ $currency_value }}; // Assume 1 USDT = 100 INR (adjust if needed)
+            const inrRate = {{ $data['currency_value'] }}; // Assume 1 USDT = 100 INR (adjust if needed)
             const shareInput = document.getElementById('share-input');
             const totalAmount = document.getElementById('total-amount');
             const totalINR = document.getElementById('total-inr');
@@ -148,27 +146,28 @@
             }
         });
 
-         // 💳 AJAX Payment Submission
+        // 💳 AJAX Payment Submission
 
         $('#make-payment-btn').on('click', function() {
-            const paymentMethod = $('input[name="payment_method"]:checked').val();
-            const totalAmount = $('#total-amount').text();
+            const qnty = $('#shareInput').val();
+            const crypto_app_id = $('input[name="payment_method"]:checked').val();
             const productId = $('#product-id').val();
 
-            if (!paymentMethod) {
+            if (!crypto_app_id) {
                 alert("Please select a payment method.");
                 return;
             }
 
             $.ajax({
-                url: '{{ route("make_payment") }}', // Update this to your route
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                url: "{{ route('user_account.make_payment') }}",
                 type: 'POST',
                 data: {
-                    _token: '{{ csrf_token() }}', // Include CSRF token for security
-
                     product_id: productId,
-                    payment_method: paymentMethod,
-                    total_amount: totalAmount
+                    qnty: qnty,
+                    crypto_app_id: crypto_app_id,
                 },
                 success: function(response) {
                     console.log(response);

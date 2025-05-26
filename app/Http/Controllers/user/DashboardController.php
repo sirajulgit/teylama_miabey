@@ -17,7 +17,8 @@ class DashboardController extends Controller
         $data = [
             'page_title' => 'Dashboard',
         ];
-         $items = CmsBanner::where('type', 'home_page')->orderBy("id", "asc")->get();
+
+        $items = CmsBanner::where('type', 'home_page')->orderBy("id", "asc")->get();
 
         $temp_arr = [];
         foreach ($items as $item) {
@@ -28,12 +29,13 @@ class DashboardController extends Controller
 
             array_push($temp_arr, $item);
         }
-         $currencyitems = CurrencyRate::where("currency","USDT")->get();
-       //echo $currencyitems[0]['currency_value'];exit;
+        $currencyitems = CurrencyRate::where("currency", "USDT")->get();
+        //echo $currencyitems[0]['currency_value'];exit;
         $currency_value = $currencyitems[0]['currency_value'];
         $productdata = Product::orderBy("id", "asc")->get();
 
 
-        return view('user.dashboard', ['bannerdata' => $temp_arr,'currency_value'=>$currency_value,'productdata'=>$productdata]);
+        return view('user.dashboard', 
+        ['bannerdata' => $temp_arr, 'currency_value' => $currency_value, 'productdata' => $productdata, 'data' => $data]);
     }
 }
