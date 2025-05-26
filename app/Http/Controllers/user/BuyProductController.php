@@ -40,7 +40,7 @@ class BuyProductController extends Controller
         //echo $currencyitems[0]['currency_value'];exit;
         $currency_value = $currencyitems[0]['currency_value'];
         $productdata = $this->productModel->find($request->id);
-        $crypto_app_list = $this->cryptoAppModel->getCryptoAppList();
+        $crypto_app_list = $this->cryptoAppModel->where('status', 1)->get();
 
         $data['currency_value'] = $currency_value;
         $data['product_id'] = $request->id;
