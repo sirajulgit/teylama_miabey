@@ -76,6 +76,8 @@ Route::middleware('auth')->group(function () {
 
     // +++++++++++++++ | Buy product | +++++++++++++++
     Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('buy_product');
+
+    Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('make_payment');
 });
 
 
