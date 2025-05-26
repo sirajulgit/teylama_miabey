@@ -13,7 +13,11 @@
         <div class="container-fluid">
             <div class="price-part pt-3 pb-3">
                 <img src="{{ $data['payment_qr_code_img'] }}" alt="QR Code" class="img-fluid mb-3">
-                <p>Payment QR Code: <span style="word-break: break-word;"> {{ $data['payment_qr_code'] }} </span> </p>
+                
+                <p class="mb-5">Payment QR Code: <span style="word-break: break-word;"> {{ $data['payment_qr_code'] }} </span> </p>
+                
+                <a href="{{route('user_dashboard')}}" class="btn btn-primary">Back to Dashboard</a>
+
             </div>
         </div>
     </main>
