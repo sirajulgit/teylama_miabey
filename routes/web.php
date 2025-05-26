@@ -30,6 +30,7 @@ use App\Http\Controllers\user\AccountManagementController;
 use App\Http\Controllers\user\LiveSupportController;
 use App\Http\Controllers\user\UserProfileController;
 use App\Http\Controllers\user\BuyProductController;
+use App\Http\Controllers\user\PurchaseRequestController;
 
 
 /*
@@ -78,6 +79,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('buy_product');
 
     Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('make_payment');
+
+
 });
 
 
@@ -147,6 +150,12 @@ Route::prefix('admin')->middleware(['admin.auth'])->group(function () {
     Route::get('/crypto-app-edit/{id}', [CryptoAppController::class, 'update'])->name('crypto_app_edit');
     Route::post('/crypto-app-edit/{id}', [CryptoAppController::class, 'post_update'])->name('post_crypto_app_edit');
     Route::post('/crypto-app-delete', [CryptoAppController::class, 'delete'])->name('crypto_app_delete');
+
+    Route::get('/purchase-request', [PurchaseRequestController::class, 'index'])->name('purchase_request_list');
+
+    Route::get('/purchase-request-edit/{id}', [PurchaseRequestController::class, 'update'])->name('purchase_request_edit');
+    Route::post('/purchase-request-edit/{id}', [PurchaseRequestController::class, 'post_update'])->name('post_purchase_request_edit');
+    Route::post('/purchase-request-delete', [PurchaseRequestController::class, 'delete'])->name('purchase_request_delete');
 
 
     Route::get('/cms-home', [CmsHomePageController::class, 'home_page'])->name('cms_home');
