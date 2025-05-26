@@ -98,6 +98,7 @@
         </div>
     </main>
 @endsection
+
 @section('script_content')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -149,7 +150,7 @@
         // 💳 AJAX Payment Submission
 
         $('#make-payment-btn').on('click', function() {
-            const qnty = $('#shareInput').val();
+            const qnty = $('#share-input').val();
             const crypto_app_id = $('input[name="payment_method"]:checked').val();
             const productId = $('#product-id').val();
 
@@ -170,10 +171,14 @@
                     crypto_app_id: crypto_app_id,
                 },
                 success: function(response) {
-                    console.log(response);
+                    response = JSON.parse(response);
+                    // console.log(response);
                     // Optional: redirect or show success message
                     //alert(response.message);
                     // window.location.href = response.redirect_url;
+
+                    window.location.href = "{{ route('user_account.payment_qr_generate', '__ID__') }}".replace('__ID__', response.purchase_request_id);
+
                 },
                 error: function(xhr) {
                     alert("Payment failed: " + xhr.responseJSON?.message || "Unknown error.");

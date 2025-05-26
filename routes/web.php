@@ -70,13 +70,14 @@ Route::middleware('auth')->group(function () {
 
     // ################ | Start account management | ################
 
-    // +++++++++++++++ | account management  | +++++++++++++++
     Route::get('/account-management', [AccountManagementController::class, 'index'])->name('user_account.index');
 
     // +++++++++++++++ | Buy product | +++++++++++++++
     Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('user_account.buy_product');
 
     Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('user_account.make_payment');
+
+    Route::get('/payment-qr/{purchase_request_id}', [BuyProductController::class, 'paymentQRGenerate'])->name('user_account.payment_qr_generate');
 
     // ################ | End account management | ################
 

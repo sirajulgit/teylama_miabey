@@ -69,34 +69,38 @@ class BuyProductController extends Controller
         }
         ///////////// End Validated ///////////////////
 
-        $productdata = Product::find($request->product_id);
+        // $productdata = Product::find($request->product_id);
 
-        $total_amount = $request->qnty * $productdata->unit_amount;
+        // $total_amount = $request->qnty * $productdata->unit_amount;
 
-        $this->purchaseRequestModel->create([
-            'user_id' => Auth::user()->id,
-            'product_id' => $request->product_id,
-            'qnty' => $request->qnty,
-            'crypto_app_id' => $request->crypto_app_id,
-            'unit_amount' => $productdata->amount,
-            'total_amount' => $total_amount,
-            'currency' => $productdata->currency,
-        ]);
+        // $result = $this->purchaseRequestModel->create([
+        //     'user_id' => Auth::user()->id,
+        //     'product_id' => $request->product_id,
+        //     'qnty' => $request->qnty,
+        //     'crypto_app_id' => $request->crypto_app_id,
+        //     'unit_amount' => $productdata->amount,
+        //     'total_amount' => $total_amount,
+        //     'currency' => $productdata->currency,
+        // ]);
 
         return  json_encode([
             'status' => 'success',
             'message' => 'Order placed successfully.',
-            // 'redirect_url' => route('user.product.buy.success', ['id' => $request->product_id])
+            'purchase_request_id' => 1,
+            // 'purchase_request_id' => $result->id,
         ]);
     }
 
 
-    public function paymentQRGenerate(Request $request)
+    public function paymentQRGenerate($purchase_request_id, Request $request)
     {
+        $request->validate([
+            'purchase_request_id' => 'required|exists:purchase_request,id',
+        ]);
 
-        $data=[
+        $data = [
             'page_title' => 'Payment QR Code',
-            'purchase_request_id' => $request->id,
+            'purchase_request_id' => $purchase_request_id,
             'payment_qr_code_img' => asset('uploads/QR/payment-qr.jpg'),
             'payment_qr_code' => "TFY6cHEYSovpyhPg8RJ6zedV12jYvSv8mk",
         ];
