@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="banner pt-3">
                 <div class="banner-slider m-0">
-                     @foreach ($item->banner as $item)
+                     @foreach ($banner as $item)
                     <div class="rounded-3 overflow-hidden"><img src="{{ $item->image }}"></div>
                      @endforeach
                 </div>
