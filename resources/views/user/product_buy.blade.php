@@ -59,7 +59,7 @@
                 @foreach ($data['crypto_app_list'] as $item)
                     <div class="form-check d-flex align-items-center mb-2">
                         <input class="form-check-input me-2" type="radio" name="payment_method" id="{{ $item['name'] }}"
-                            value="{{ $item['name'] }}">
+                            value="{{ $item['id'] }}">
                         <label class="form-check-label d-flex align-items-center" for="{{ $item['name'] }}">
                             <img src="{{ $item['brand_image_url'] }}" alt="{{ $item['name'] }}"
                                 style="width: 40px; height: 40px;" class="me-2">
