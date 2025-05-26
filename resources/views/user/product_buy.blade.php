@@ -58,18 +58,18 @@
             <div id="payment-options" class="container-fluid p-3" style="display: none;">
                 @foreach ($data['crypto_app_list'] as $item)
                     <div class="form-check d-flex align-items-center mb-2">
-                        <input class="form-check-input me-2" type="radio" name="payment_method" id="usdt"
-                            value="usdt">
-                        <label class="form-check-label d-flex align-items-center" for="usdt">
-                            <img src="{{ asset('asset/frontend/images/Bitget.svg') }}" alt="USDT"
+                        <input class="form-check-input me-2" type="radio" name="payment_method" id="{{ $item['name'] }}"
+                            value="{{ $item['name'] }}">
+                        <label class="form-check-label d-flex align-items-center" for="{{ $item['name'] }}">
+                            <img src="{{ $item['brand_image_url'] }}" alt="{{ $item['name'] }}"
                                 style="width: 40px; height: 40px;" class="me-2">
-                            Bitget
+                            {{ $item['name'] }}
                         </label>
                     </div>
                 @endforeach
             </div>
 
-            <div id="payment-options" class="container-fluid p-3" style="display: none;">
+            {{-- <div id="payment-options" class="container-fluid p-3" style="display: none;">
                 <div class="form-check d-flex align-items-center mb-2">
                     <input class="form-check-input me-2" type="radio" name="payment_method" id="usdt" value="usdt">
                     <label class="form-check-label d-flex align-items-center" for="usdt">
@@ -105,7 +105,7 @@
                         HTX
                     </label>
                 </div>
-            </div>
+            </div> --}}
         </div>
         <input type="hidden" id="product-id" value="{{ $data['product_id'] }}">
         <div class="mt-4">
