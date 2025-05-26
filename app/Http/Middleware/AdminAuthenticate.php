@@ -5,9 +5,11 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use stdClass;
 use Symfony\Component\HttpFoundation\Response;
 
-class CoustomGuestMiddleware
+
+class AdminAuthenticate
 {
     /**
      * Handle an incoming request.
@@ -17,15 +19,18 @@ class CoustomGuestMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check()) {
+
             if (Auth::user()->user_type == 1) {
-                // ###### | go to admin dashboard page | ######
-                return redirect()->route('dashboard');
+                // ###### | go to admin any page | ######
+                return $next($request);
             } else {
                 // ###### | go to user dashboard page | ######
                 return redirect()->route('user_dashboard');
             }
         } else {
-            return $next($request);
+
+            // ###### | go to admin login page | ######
+            return redirect()->route('login');
         }
     }
 }

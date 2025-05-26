@@ -1124,6 +1124,7 @@
         },
         {
             "name": "intervention/image",
+<<<<<<< HEAD
             "version": "3.11.2",
             "source": {
                 "type": "git",
@@ -1134,6 +1135,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/Intervention/image/zipball/ebbb711871fb261c064cf4c422f5f3c124fe1842",
                 "reference": "ebbb711871fb261c064cf4c422f5f3c124fe1842",
+=======
+            "version": "3.11.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "d0f097b8a3fa8fb758efc9440b513aa3833cda17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/d0f097b8a3fa8fb758efc9440b513aa3833cda17",
+                "reference": "d0f097b8a3fa8fb758efc9440b513aa3833cda17",
+>>>>>>> 2034ccaf3dcb819e93441672519f6c40f0ee8d39
                 "shasum": ""
             },
             "require": {
@@ -1180,7 +1193,11 @@
             ],
             "support": {
                 "issues": "https://github.com/Intervention/image/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/Intervention/image/tree/3.11.2"
+=======
+                "source": "https://github.com/Intervention/image/tree/3.11.3"
+>>>>>>> 2034ccaf3dcb819e93441672519f6c40f0ee8d39
             },
             "funding": [
                 {
@@ -1196,7 +1213,11 @@
                     "type": "ko_fi"
                 }
             ],
+<<<<<<< HEAD
             "time": "2025-02-27T13:08:55+00:00"
+=======
+            "time": "2025-05-22T17:26:23+00:00"
+>>>>>>> 2034ccaf3dcb819e93441672519f6c40f0ee8d39
         },
         {
             "name": "laravel/framework",

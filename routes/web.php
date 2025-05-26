@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardController;
-use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\admin\AuthController as AdminAuthController;
 use App\Http\Controllers\admin\BookController;
 use App\Http\Controllers\admin\CmsHomePageController;
 use App\Http\Controllers\admin\CmsBannerController;
@@ -24,6 +24,10 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CurrencyRateController;
 use App\Http\Controllers\admin\CryptoAppController;
 
+use App\Http\Controllers\user\AuthController;
+use App\Http\Controllers\user\DashboardController as UserDashboardController;
+use App\Http\Controllers\user\LiveSupportController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,40 +40,57 @@ use App\Http\Controllers\admin\CryptoAppController;
 |
 */
 
+
+
+
+// +++++++++++++++++++++++ |  User Routes  |  ++++++++++++++++++++++++++++++++++++
 Route::middleware('isGuest')->group(function () {
     Route::get('/', function () {
-        return redirect('/admin/login');
+        return redirect()->route('user_login');
     });
+
+    Route::get('/login', [AuthController::class, 'login'])->name('user_login');
+    Route::post('/login', [AuthController::class, 'post_login'])->name('post_user_login');
+    Route::get('/register', [AuthController::class, 'register'])->name('user_register');
+    Route::post('/register', [AuthController::class, 'post_register'])->name('post_user_register');
+
 });
 
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('user_logout');
+    Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user_dashboard');
+    Route::get('/live-support', [LiveSupportController::class, 'index'])->name('user_live_support');
+});
+
+
+
+// +++++++++++++++++++++++ |  Admin Routes  |  ++++++++++++++++++++++++++++++++++++
 Route::prefix('admin')->middleware('isGuest')->group(function () {
 
     Route::get('/', function () {
         return redirect('login');
     });
 
-    Route::get('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/login', [AuthController::class, 'post_login'])->name('post_login');
+    Route::get('/login', [AdminAuthController::class, 'login'])->name('login');
+    Route::post('/login', [AdminAuthController::class, 'post_login'])->name('post_login');
 
 
-    Route::get('/forget-password', [AuthController::class, 'forget_password_page'])->name('forget_password_page');
-    Route::post('/forget-password', [AuthController::class, 'post_forget_password_page'])->name('post_forget_password_page');
+    Route::get('/forget-password', [AdminAuthController::class, 'forget_password_page'])->name('forget_password_page');
+    Route::post('/forget-password', [AdminAuthController::class, 'post_forget_password_page'])->name('post_forget_password_page');
 
 
-    Route::get('/otp', [AuthController::class, 'otp_page'])->name('otp');
-    Route::post('/otp-send', [AuthController::class, 'otp_send'])->name('otp_send');
-    Route::post('/otp-verify', [AuthController::class, 'otp_verify'])->name('otp_verify');
+    Route::get('/otp', [AdminAuthController::class, 'otp_page'])->name('otp');
+    Route::post('/otp-send', [AdminAuthController::class, 'otp_send'])->name('otp_send');
+    Route::post('/otp-verify', [AdminAuthController::class, 'otp_verify'])->name('otp_verify');
 
 
-    Route::get('/confirm-password', [AuthController::class, 'confirmPassword_page'])->name('confirmPassword_page');
-    Route::post('/confirm-password', [AuthController::class, 'post_confirmPassword_page'])->name('post_confirmPassword_page');
+    Route::get('/confirm-password', [AdminAuthController::class, 'confirmPassword_page'])->name('confirmPassword_page');
+    Route::post('/confirm-password', [AdminAuthController::class, 'post_confirmPassword_page'])->name('post_confirmPassword_page');
 });
 
 
 
-
-
-Route::prefix('admin')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->middleware(['admin.auth'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -212,5 +233,5 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/cms-contact', [CmsContactController::class, 'post_update'])->name('post_cms_contact');
 
 
-    Route::post('/log-out', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/admin-log-out', [AdminAuthController::class, 'logout'])->name('admin_logout');
 });
