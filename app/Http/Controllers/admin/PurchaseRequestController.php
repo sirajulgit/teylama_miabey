@@ -22,8 +22,8 @@ class PurchaseRequestController extends Controller
        //echo $currencyitems[0]['currency_value'];exit;
         $data['currency_value'] = $currencyitems[0]['currency_value'];
 
-    $items = PurchaseRequest::join('users', 'users.id', '=', 'purchase_request.user_id')
-    ->select('purchase_request.*', 'users.username', 'users.email')
+    $items = PurchaseRequest::join('users', 'purchase_request.user_id', '=', 'users.id')
+    ->select('purchase_request.*', 'users.username')
             ->orderBy("purchase_request.id", "desc")
             ->get();
         $data['items'] = $items;
