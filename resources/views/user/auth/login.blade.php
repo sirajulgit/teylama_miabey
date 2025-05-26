@@ -31,9 +31,9 @@
                     </div>
 
                     <div class="mt-4">
-                        <a href="home.html">
+
                             <input type="submit" class="submit-btn" value="Login" />
-                        </a>
+
                     </div>
                 </form>
 
