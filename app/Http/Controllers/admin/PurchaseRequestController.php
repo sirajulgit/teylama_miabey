@@ -27,7 +27,7 @@ class PurchaseRequestController extends Controller
             ->orderBy("purchase_request.id", "desc")
             ->get();
         $data['items'] = $items;
-        dd($data['items']);
+        //dd($data['items']);
 
         return view("admin.purchase_request_list", ["data" => $data]);
     }
