@@ -43,7 +43,7 @@ class BuyProductController extends Controller
         $data['product_currency'] = $productdata->currency;
         $data['product_title'] = $productdata->title;
 
-        return view('user.product_buy', $data);
+        return view('user.product_buy', ['data' => $data]);
     }
 
 
@@ -93,6 +93,14 @@ class BuyProductController extends Controller
 
     public function paymentQRGenerate(Request $request)
     {
-        
+
+        $data=[
+            'page_title' => 'Payment QR Code',
+            'purchase_request_id' => $request->id,
+            'payment_qr_code_img' => asset('uploads/QR/payment-qr.jpg'),
+            'payment_qr_code' => "TFY6cHEYSovpyhPg8RJ6zedV12jYvSv8mk",
+        ];
+
+        return view('user.payment_qr', ['data' => $data]);
     }
 }
