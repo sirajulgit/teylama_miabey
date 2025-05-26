@@ -98,7 +98,10 @@
                     </div>
     </main>
 
-    <script>
+
+@endsection
+@section('script_content')
+ <script>
         document.addEventListener('DOMContentLoaded', function() {
             const unitPrice = parseFloat(document.getElementById('unit-price').innerText);
             const inrRate = {{ $currency_value }}; // Assume 1 USDT = 100 INR (adjust if needed)
@@ -157,25 +160,25 @@
                 return;
             }
 
-            // $.ajax({
-            //     url: '{{ route("make_payment") }}', // Update this to your route
-            //     type: 'POST',
-            //     data: {
+            $.ajax({
+                url: '{{ route("make_payment") }}', // Update this to your route
+                type: 'POST',
+                data: {
 
-            //         product_id: productId,
-            //         payment_method: paymentMethod,
-            //         total_amount: totalAmount
-            //     },
-            //     success: function(response) {
-            //         console.log(response);
-            //         // Optional: redirect or show success message
-            //         //alert(response.message);
-            //         // window.location.href = response.redirect_url;
-            //     },
-            //     error: function(xhr) {
-            //         alert("Payment failed: " + xhr.responseJSON?.message || "Unknown error.");
-            //     }
-            // });
+                    product_id: productId,
+                    payment_method: paymentMethod,
+                    total_amount: totalAmount
+                },
+                success: function(response) {
+                    console.log(response);
+                    // Optional: redirect or show success message
+                    //alert(response.message);
+                    // window.location.href = response.redirect_url;
+                },
+                error: function(xhr) {
+                    alert("Payment failed: " + xhr.responseJSON?.message || "Unknown error.");
+                }
+            });
         });
     </script>
 @endsection
