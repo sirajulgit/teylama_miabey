@@ -12,8 +12,9 @@ class BuyProductController extends Controller
 {
     //
 
-    public function index()
+    public function index(Request $request)
     {
+        echo $request->id;exit;
         $data = [
             'page_title' => 'Buy USDT',
         ];
