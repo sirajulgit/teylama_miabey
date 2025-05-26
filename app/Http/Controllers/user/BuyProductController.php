@@ -23,12 +23,13 @@ class BuyProductController extends Controller
        //echo $currencyitems[0]['currency_value'];exit;
         $currency_value = $currencyitems[0]['currency_value'];
         $productdata =Product::find($request->id);
-        $data['productdata'] = $productdata;
+
         $data['currency_value'] = $currency_value;
         $data['product_id'] = $request->id;
         $data['product_amount'] = $productdata->amount;
         $data['product_widthdraw_perc'] = $productdata->widthdraw_perc;
         $data['product_currency'] = $productdata->currency;
+         $data['product_title'] = $productdata->title;
 
         return view('user.product_buy', $data);
     }

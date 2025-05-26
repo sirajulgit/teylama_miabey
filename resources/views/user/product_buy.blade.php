@@ -19,14 +19,14 @@
 
   <div class="container-fluid p-0">
     <div class="product-title">
-      <h3> Product Title: 10USDT INVEST </h3>
+      <h3> Product Title: {{$product_title}} </h3>
     </div>
 
   </div>
 
   <div class="container-fluid">
     <div class="price-part pt-3 pb-3">
-    <p>Contract unit price: <span> 10.00 </span> USDT </p>
+    <p>Contract unit price: <span> {{$product_amount}} </span> {{$product_currency}} </p>
 
 
     <label class="mb-2">Buy shares</label>
