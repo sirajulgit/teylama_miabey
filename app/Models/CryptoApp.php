@@ -9,22 +9,17 @@ class CryptoApp extends Model
 {
     use HasFactory;
 
-    protected $table='crypto_app';
-    
+    protected $table = 'crypto_app';
 
 
-    public function getCryptoAppList()
+
+    public static  function getCryptoAppList()
     {
-        $result= $this->where('status', 1)->get();
+        $result = self::where('status', 1)->get();
 
-        $tempData= [];
-
-        foreach ($result as $item) {
-            
-            $item["brand_image_url"]= asset('/uploads/images/' . $item['brand_image']);
-            array_push($tempData, $item);
-        }
-
-        return $tempData;
+        return $result->map(function ($item) {
+            $item['brand_image_url'] = asset('uploads/images/' . $item->brand_image);
+            return $item;
+        })->toArray();
     }
 }
