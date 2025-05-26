@@ -44,6 +44,9 @@
     </div>
   </div>
 
+
+
+
   <div class="container-fluid p-0">
     <div class="mode-payment-title d-flex justify-content-between align-items-center">
       <p> please select mode of payment</p>
@@ -53,24 +56,32 @@
   <div class="form-check d-flex align-items-center mb-2">
     <input class="form-check-input me-2" type="radio" name="payment_method" id="usdt" value="usdt">
     <label class="form-check-label d-flex align-items-center" for="usdt">
-      <img src="/images/usdt.png" alt="USDT" style="width: 40px; height: 40px;" class="me-2">
-      USDT Wallet
+      <img src="{{ asset('asset/frontend/images/Bitget.svg') }}" alt="USDT" style="width: 40px; height: 40px;" class="me-2">
+      Bitget
     </label>
   </div>
 
   <div class="form-check d-flex align-items-center mb-2">
     <input class="form-check-input me-2" type="radio" name="payment_method" id="bank" value="bank">
     <label class="form-check-label d-flex align-items-center" for="bank">
-      <img src="/images/bank.png" alt="Bank" style="width: 40px; height: 40px;" class="me-2">
-      Bank Transfer
+      <img src="{{ asset('asset/frontend/images/binance.svg') }}" alt="Bank" style="width: 40px; height: 40px;" class="me-2">
+      Binance
     </label>
   </div>
 
   <div class="form-check d-flex align-items-center mb-2">
     <input class="form-check-input me-2" type="radio" name="payment_method" id="card" value="card">
     <label class="form-check-label d-flex align-items-center" for="card">
-      <img src="/images/card.png" alt="Card" style="width: 40px; height: 40px;" class="me-2">
-      Credit/Debit Card
+      <img src="{{ asset('asset/frontend/images/bybit.svg') }}" alt="Card" style="width: 40px; height: 40px;" class="me-2">
+      Bybit
+    </label>
+  </div>
+
+  <div class="form-check d-flex align-items-center mb-2">
+    <input class="form-check-input me-2" type="radio" name="payment_method" id="card" value="card">
+    <label class="form-check-label d-flex align-items-center" for="card">
+      <img src="{{ asset('asset/frontend/images/htx.svg') }}" alt="Card" style="width: 40px; height: 40px;" class="me-2">
+      HTX
     </label>
   </div>
 </div>
