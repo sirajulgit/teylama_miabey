@@ -23,6 +23,7 @@ use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CurrencyRateController;
 use App\Http\Controllers\admin\CryptoAppController;
+use App\Http\Controllers\admin\PurchaseRequestController;
 
 use App\Http\Controllers\user\AuthController;
 use App\Http\Controllers\user\DashboardController as UserDashboardController;
@@ -30,7 +31,7 @@ use App\Http\Controllers\user\AccountManagementController;
 use App\Http\Controllers\user\LiveSupportController;
 use App\Http\Controllers\user\UserProfileController;
 use App\Http\Controllers\user\BuyProductController;
-use App\Http\Controllers\user\PurchaseRequestController;
+
 
 
 /*
