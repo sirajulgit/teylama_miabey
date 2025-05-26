@@ -65,7 +65,7 @@ Route::middleware('auth')->group(function () {
     // +++++++++++++++ | dashboard | +++++++++++++++
     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user_dashboard');
 
-    
+
     // ################ | Start account management | ################
 
     // +++++++++++++++ | account management  | +++++++++++++++
@@ -74,7 +74,7 @@ Route::middleware('auth')->group(function () {
     // +++++++++++++++ | Buy product | +++++++++++++++
     Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('user_account.buy_product');
 
-    Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('make_payment');
+    Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('user_account.make_payment');
 
     // ################ | End account management | ################
 
