@@ -29,6 +29,7 @@ use App\Http\Controllers\user\DashboardController as UserDashboardController;
 use App\Http\Controllers\user\AccountManagementController;
 use App\Http\Controllers\user\LiveSupportController;
 use App\Http\Controllers\user\UserProfileController;
+use App\Http\Controllers\user\BuyProductController;
 
 
 /*
@@ -72,6 +73,9 @@ Route::middleware('auth')->group(function () {
 
     // +++++++++++++++ | user profile | +++++++++++++++
     Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('user_profile.index');
+
+    // +++++++++++++++ | Buy product | +++++++++++++++
+    Route::get('/buy-product/{id}', [BuyProductController::class, 'buy_product'])->name('buy_product');
 });
 
 
