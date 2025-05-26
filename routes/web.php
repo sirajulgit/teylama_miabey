@@ -75,7 +75,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('user_profile.index');
 
     // +++++++++++++++ | Buy product | +++++++++++++++
-    Route::get('/buy-product/{id}', [BuyProductController::class, 'buy_product'])->name('buy_product');
+    Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('buy_product');
 });
 
 
