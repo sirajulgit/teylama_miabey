@@ -49,6 +49,31 @@
       <p> please select mode of payment</p>
       <i class="bi bi-chevron-right"></i>
     </div>
+    <div id="payment-options" class="container-fluid p-3" style="display: none;">
+  <div class="form-check d-flex align-items-center mb-2">
+    <input class="form-check-input me-2" type="radio" name="payment_method" id="usdt" value="usdt">
+    <label class="form-check-label d-flex align-items-center" for="usdt">
+      <img src="/images/usdt.png" alt="USDT" style="width: 40px; height: 40px;" class="me-2">
+      USDT Wallet
+    </label>
+  </div>
+
+  <div class="form-check d-flex align-items-center mb-2">
+    <input class="form-check-input me-2" type="radio" name="payment_method" id="bank" value="bank">
+    <label class="form-check-label d-flex align-items-center" for="bank">
+      <img src="/images/bank.png" alt="Bank" style="width: 40px; height: 40px;" class="me-2">
+      Bank Transfer
+    </label>
+  </div>
+
+  <div class="form-check d-flex align-items-center mb-2">
+    <input class="form-check-input me-2" type="radio" name="payment_method" id="card" value="card">
+    <label class="form-check-label d-flex align-items-center" for="card">
+      <img src="/images/card.png" alt="Card" style="width: 40px; height: 40px;" class="me-2">
+      Credit/Debit Card
+    </label>
+  </div>
+</div>
   </div>
 </main>
 
@@ -87,6 +112,17 @@
     shareInput.addEventListener('input', updateTotals);
     updateTotals(); // Initial call
   });
+
+  const modePaymentTitle = document.querySelector('.mode-payment-title');
+const paymentOptions = document.getElementById('payment-options');
+
+modePaymentTitle.addEventListener('click', function () {
+  if (paymentOptions.style.display === 'none') {
+    paymentOptions.style.display = 'block';
+  } else {
+    paymentOptions.style.display = 'none';
+  }
+});
 </script>
 
 @endsection
