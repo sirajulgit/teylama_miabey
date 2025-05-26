@@ -9,11 +9,9 @@
         <div class="container-fluid">
             <div class="banner pt-3">
                 <div class="banner-slider m-0">
-                    <div class="rounded-3 overflow-hidden"><img src="{{ asset('asset/frontend/images/Banner-1.jpg') }}"></div>
-                    <div class="rounded-3 overflow-hidden"><img src="{{ asset('asset/frontend/images/Banner-1.jpg') }}">
-                    </div>
-                    <div class="rounded-3 overflow-hidden"><img src="{{ asset('asset/frontend/images/Banner-1.jpg') }}">
-                    </div>
+                     @foreach ($item->banner as $item)
+                    <div class="rounded-3 overflow-hidden"><img src="{{ $item->image }}"></div>
+                     @endforeach
                 </div>
             </div>
 

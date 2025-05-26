@@ -26,7 +26,7 @@ class DashboardController extends Controller
 
             array_push($temp_arr, $item);
         }
-        print_r($temp_arr);exit;
+         $data['banner'] = $temp_arr;
 
         return view('user.dashboard', ['data' => $data]);
     }
