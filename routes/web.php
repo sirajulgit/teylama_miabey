@@ -65,13 +65,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user_dashboard');
 
     // +++++++++++++++ | account management | +++++++++++++++
-    Route::get('/account-management', [AccountManagementController::class, 'index'])->name('user_account_management.index');
+    Route::get('/account-management', [AccountManagementController::class, 'index'])->name('user_account.index');
 
     // +++++++++++++++ | live support | +++++++++++++++
     Route::get('/live-support', [LiveSupportController::class, 'index'])->name('user_live_support');
 
     // +++++++++++++++ | user profile | +++++++++++++++
-    Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('user_profile.edit');
+    Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('user_profile.index');
 });
 
 
