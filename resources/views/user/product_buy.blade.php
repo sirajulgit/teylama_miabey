@@ -90,9 +90,10 @@
                 </div>
             </div>
         </div>
+        <input type="hidden" id="product-id" value="{{ $product_id }}">
          <div class="mt-4">
                         <a href="home.html">
-                            <input type="button" class="submit-btn" value="Make Payment" />
+                            <input type="button" id="make-payment-btn"  class="submit-btn" value="Make Payment" />
                         </a>
                     </div>
     </main>
@@ -142,6 +143,37 @@
             } else {
                 paymentOptions.style.display = 'none';
             }
+        });
+
+         // 💳 AJAX Payment Submission
+        $('#make-payment-btn').on('click', function() {
+            const paymentMethod = $('input[name="payment_method"]:checked').val();
+            const totalAmount = $('#total-amount').text();
+            const productId = $('#product-id').val();
+
+            if (!paymentMethod) {
+                alert("Please select a payment method.");
+                return;
+            }
+
+            $.ajax({
+                url: '{{ route("user.makePayment") }}', // Update this to your route
+                type: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}', // Include CSRF token for security
+                    product_id: productId,
+                    payment_method: paymentMethod,
+                    total_amount: totalAmount
+                },
+                success: function(response) {
+                    // Optional: redirect or show success message
+                    alert(response.message);
+                    // window.location.href = response.redirect_url;
+                },
+                error: function(xhr) {
+                    alert("Payment failed: " + xhr.responseJSON?.message || "Unknown error.");
+                }
+            });
         });
     </script>
 @endsection
