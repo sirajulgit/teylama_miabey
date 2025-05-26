@@ -152,6 +152,13 @@
                         <p>Crypto App</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('purchase_request_list') }}"
+                        class="nav-link {{ $data['activePageName'] == 'purchase_request' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-newspaper"></i>
+                        <p>Purchase Request</p>
+                    </a>
+                </li>
 
                 {{-- <li class="nav-item">
                     <a href="{{ route('blog_list') }}"
