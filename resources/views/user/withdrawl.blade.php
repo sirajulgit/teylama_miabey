@@ -90,9 +90,9 @@
                     event.preventDefault();
                     var wallet_bal= "{{auth()->user()->wallet_bal}}";
                     var withdrawl_amt = $("#withdrawl_amount").val();
-alert(wallet_bal+"wallet_bal")
-alert(withdrawl_amt+"withdrawl_amt")
-                    if(withdrawl_amt >= wallet_bal){
+//alert(wallet_bal+"wallet_bal")
+//alert(withdrawl_amt+"withdrawl_amt")
+                    if(parseInt(withdrawl_amt) <= parseInt(wallet_bal)){
                         form.submit();
 
                     }else{
