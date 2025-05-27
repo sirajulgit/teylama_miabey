@@ -5,6 +5,9 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
+use App\Models\UserBankAccount;
+
 class AccountManagementController extends Controller
 {
     //
@@ -33,7 +36,7 @@ class AccountManagementController extends Controller
 
 
 
-        $data = new User();
+        $data = new UserBankAccount();
         $data->user_id = auth()->user()->id;
         $data->bank_name = $request->bank_name;
         $data->account_holder_name = $request->account_holder_name;
