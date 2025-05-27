@@ -16,7 +16,7 @@
 
             <div class="right-details-balance text-end">
                 <p>Balance</p>
-                <strong> <i class="bi bi-currency-rupee"></i> 0.00 </strong>
+                <strong> <i class="bi bi-currency-rupee"></i> {{auth()->user()->wallet_bal}}</strong>
             </div>
 
         </div>
@@ -88,7 +88,17 @@
                 },
                 submitHandler: function(form, event) {
                     event.preventDefault();
-                    form.submit();
+                    var wallet_bal= "{{auth()->user()->wallet_bal}}";
+                    var withdrawl_amt = $("#withdrawl_amount").val();
+                    alert(wallet_bal+"wallet_bal");
+                    alert(withdrawl_amt+"withdrawl_amt");
+                    if(withdrawl_amt <= wallet_bal){
+                        //form.submit();
+
+                    }else{
+                        alert("Invalid Amount");
+                    }
+
 
                 }
             });

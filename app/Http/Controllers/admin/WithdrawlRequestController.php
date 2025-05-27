@@ -19,7 +19,7 @@ class WithdrawlRequestController extends Controller
         $data['activePageName'] = 'withdrawl_request';
         $data['activeSubMenu'] = '';
         $currencyitems = CurrencyRate::where("currency","USDT")->get();
-       //echo $currencyitems[0]['currency_value'];exit;
+
         $data['currency_value'] = $currencyitems[0]['currency_value'];
 
         $items = UserWithdrawlRequest::join('users', 'user_withdrawl_request.user_id', '=', 'users.id')

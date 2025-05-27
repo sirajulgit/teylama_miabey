@@ -16,6 +16,7 @@ class WithdrawlController extends Controller
             'page_title' => 'Withdrawl',
         ];
 
+
         return view('user.withdrawl', ['data' => $data]);
     }
         public function post_withdrawl_create(Request $request)

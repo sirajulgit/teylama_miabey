@@ -16,7 +16,7 @@
 
             <div class="right-details-balance text-end">
                 <p>Balance</p>
-                <strong> <i class="bi bi-currency-rupee"></i> 0.00 </strong>
+                <strong> <i class="bi bi-currency-rupee"></i> {{uth()->user()->wallet_bal}}</strong>
             </div>
 
         </div>
