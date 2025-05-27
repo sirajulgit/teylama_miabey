@@ -24,13 +24,13 @@ class AccountManagementController extends Controller
     {
         // dd($request->all());
 
-        $request->validate([
-            'bank_name' => 'required',
-            'account_holder_name' => 'required',
-            'ac_no' => 'required',
-            'ifsc_code' => 'required',
+        // $request->validate([
+        //     'bank_name' => 'required',
+        //     'account_holder_name' => 'required',
+        //     'ac_no' => 'required',
+        //     'ifsc_code' => 'required',
 
-        ]);
+        // ]);
 
 
 
