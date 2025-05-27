@@ -16,7 +16,7 @@
 
             <div class="right-details-balance text-end">
                 <p>Balance</p>
-                <strong> <i class="bi bi-currency-rupee"></i> {{auth()->user()->wallet_bal}}</strong>
+                <strong> {{auth()->user()->wallet_bal}} USDT</strong>
             </div>
 
         </div>
