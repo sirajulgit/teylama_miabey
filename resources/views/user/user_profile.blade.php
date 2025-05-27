@@ -10,7 +10,7 @@
                 </div>
                 <div>
                     <span class="vipo">VIPO</span><br>
-                    <strong class="profile-name">Dear0082</strong>
+                    <strong class="profile-name">{{auth()->user()->username}}</strong>
                 </div>
             </div>
 
