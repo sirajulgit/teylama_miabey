@@ -81,13 +81,57 @@
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Modal Title</h5>
+                    <h5 class="modal-title" id="myModalLabel">Bank Information</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <!-- Modal Body -->
                 <div class="modal-body">
-                    This is the body of the modal.
+                  <form id="form1" method="POST" action="{{ route('post_user_register') }}">
+                    @csrf
+
+                    <div class="mb-2">
+                        <div class="pw-area position-relative">
+                            <input name="invitation_code" class="form-control" type="text"
+                                placeholder="Please enter the 8-digit invitation code" minlength="8" maxlength="8"
+                                value="{{ old('invitation_code') }}" />
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <div class="pw-area position-relative">
+                            <input name="username" class="form-control" type="text" placeholder="Please enter username"
+                                value="{{ old('username') }}" />
+
+                            {{-- +++++ | error message | +++++ --}}
+                            @if ($errors->has('username'))
+                                <span class="form_error">{{ $errors->first('username') }}</span>
+                            @endif
+                        </div>
+
+                    </div>
+
+                    <div class="mb-2">
+                        <div class="pw-area position-relative">
+                            <input name="phn_no" class="form-control" type="text"
+                                placeholder="Please enter phone number" minlength="10" maxlength="10"
+                                value="{{ old('phn_no') }}" />
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label class="mb-2 label-design"> Set Password </label>
+                        <div class="pw-area position-relative">
+                            <input name="password" id="password" class="form-control" type="password"
+                                placeholder="Please Enter 6 to 16 characters" value="{{ old('password') }}" />
+                            <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <input type="submit" class="submit-btn" value="Register" />
+                    </div>
+                </form>
                 </div>
 
                 <!-- Modal Footer -->
