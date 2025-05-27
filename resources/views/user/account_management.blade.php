@@ -36,28 +36,30 @@
                         </div>
 
                         <!-- <div class="bank-list p-3 rounded-3 mb-3">
-                            <div class="d-flex align-items-center mb-3">
-                            <img src="images/pnb.png" alt="">
-                            <p>Punjab National Bank </p>
-                            </div>
-                            <strong class="ac-number">0326 **** **** 2784 </strong>
-                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                        <img src="images/pnb.png" alt="">
+                                        <p>Punjab National Bank </p>
+                                        </div>
+                                        <strong class="ac-number">0326 **** **** 2784 </strong>
+                                    </div>
 
-                        <div class="bank-list p-3 rounded-3 mb-3">
-                            <div class="d-flex align-items-center mb-3">
-                            <img src="images/pnb.png" alt="">
-                            <p>Punjab National Bank </p>
-                            </div>
-                            <strong class="ac-number">0326 **** **** 2784 </strong>
-                        </div> -->
+                                    <div class="bank-list p-3 rounded-3 mb-3">
+                                        <div class="d-flex align-items-center mb-3">
+                                        <img src="images/pnb.png" alt="">
+                                        <p>Punjab National Bank </p>
+                                        </div>
+                                        <strong class="ac-number">0326 **** **** 2784 </strong>
+                                    </div> -->
 
                         <div class="bank-list p-3 rounded-3 mb-3">
                             <div class="text-center" data-toggle="modal" data-target="#exampleModal">
                                 <span class="borderd-plus">+</span>
                                 <p class="mt-3">Add Bank Card </p>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#myModal">
+                                    Launch Modal
+                                </button>
                             </div>
                         </div>
 
@@ -72,26 +74,30 @@
 
         </div>
 
-
     </main>
+
+
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Modal Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    This is the body of the modal.
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 @endsection
