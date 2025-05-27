@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\UserWithdrawlRequest;
+use App\Models\CurrencyRate;
 
 class WithdrawlController extends Controller
 {
@@ -31,15 +32,19 @@ class WithdrawlController extends Controller
 
         if($request->withdrawl_amount <= auth()->user()->wallet_bal){
 
+         $currencyitems = CurrencyRate::where("currency", "USDT")->get();
+        //echo $currencyitems[0]['currency_value'];exit;
+        $currency_value = $currencyitems[0]['currency_value'];
 
         $data = new UserWithdrawlRequest();
         $data->user_id = auth()->user()->id;
         $data->withdrawl_amount = $request->withdrawl_amount;
+        $data->withdrawl_amount_inr = $request->withdrawl_amount * $currency_value;
 
         $data->save();
 
 
-        return redirect()->back()->with("success", "Create Successful");
+        return redirect()->back()->with("success", "Withdrawl Request has been Successfully");
 
 
         } else {
