@@ -52,14 +52,12 @@
                                     </div> -->
 
                         <div class="bank-list p-3 rounded-3 mb-3">
-                            <div class="text-center" data-toggle="modal" data-target="#exampleModal">
+                            <div class="text-center" data-bs-toggle="modal"
+                                    data-bs-target="#myModal">
                                 <span class="borderd-plus">+</span>
                                 <p class="mt-3">Add Bank Card </p>
 
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#myModal">
-                                    Launch Modal
-                                </button>
+
                             </div>
                         </div>
 
