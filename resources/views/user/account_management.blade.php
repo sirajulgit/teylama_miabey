@@ -196,6 +196,9 @@
                         url: "{{ route('user_account.post_create') }}",
                         type: "POST",
                         contentType: "application/json; charset=utf-8",
+                        headers: {
+                            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                        },
 
 
                         data: formData,
