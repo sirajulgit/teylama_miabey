@@ -26,6 +26,24 @@
 
     <main class="home-content">
         <div class="container-fluid">
+            <form id="withdrawlForm"  action="{{ route('user_account.post_withdrawl_create') }}" method="post">
+                    @csrf
+
+                    <div class="mb-2">
+                         <label class="mb-2 label-design"> Withdrawl Amount</label>
+                        <div class="pw-area position-relative">
+                            <input name="withdrawl_amount" class="form-control" type="text"
+                                placeholder="Please enter Withdrawl Amount"
+                                value="{{ old('withdrawl_amount') }}" />
+                        </div>
+                    </div>
+
+
+
+                    <div class="mt-4">
+                        <input type="submit" class="submit-btn" value="Send Withdrawl Request" />
+                    </div>
+                </form>
 
 
 
@@ -33,4 +51,48 @@
         </div>
     </main>
 
+@endsection
+@section('script_content')
+    <script>
+        $(document).ready(function() {
+
+
+
+
+
+            ////////////// form validation ////////////////////////
+            $('#quickForm').validate({
+                rules: {
+                    withdrawl_amount: {
+                        required: true,
+                        number: true,
+                    }
+                },
+                messages: {
+                    withdrawl_amount: {
+                        required: "Please enter Withdrawl Amount",
+                        number: "Please enter a valid number",
+                    }
+
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                },
+                submitHandler: function(form, event) {
+                    event.preventDefault();
+                    form.submit();
+
+                }
+            });
+            ////////////// end form validation ////////////////////
+        })
+    </script>
 @endsection

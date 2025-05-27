@@ -80,7 +80,7 @@ Route::middleware('auth')->group(function () {
     // ################ | withdrawl | ################
 
     Route::get('/withdrawl', [WithdrawlController::class, 'index'])->name('user_account.withdrawl');
-    Route::post('/withdrawl-request', [WithdrawlController::class, 'post_create'])->name('user_account.post_create');
+    Route::post('/withdrawl-request', [WithdrawlController::class, 'post_create'])->name('user_account.post_withdrawl_create');
 
 
     // +++++++++++++++ | Buy product | +++++++++++++++
