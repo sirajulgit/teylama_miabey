@@ -71,6 +71,7 @@ Route::middleware('auth')->group(function () {
     // ################ | Start account management | ################
 
     Route::get('/account-management', [AccountManagementController::class, 'index'])->name('user_account.index');
+    Route::post('/account-management', [AccountManagementController::class, 'post_create'])->name('user_account.post_create');
 
     // +++++++++++++++ | Buy product | +++++++++++++++
     Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('user_account.buy_product');
