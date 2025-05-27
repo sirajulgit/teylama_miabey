@@ -40,8 +40,13 @@ class WithdrawlController extends Controller
         $data->user_id = auth()->user()->id;
         $data->withdrawl_amount = $request->withdrawl_amount;
         $data->withdrawl_amount_inr = $request->withdrawl_amount * $currency_value;
-
         $data->save();
+
+        $debit_wallet_val= auth()->user()->wallet_bal - $request->withdrawl_amount;
+         User::where("id", auth()->user()->id)->update([
+            'wallet_bal' => $debit_wallet_val,
+
+        ]);
 
 
         return redirect()->back()->with("success", "Withdrawl Request has been Successfully");
