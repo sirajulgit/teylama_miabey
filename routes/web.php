@@ -176,6 +176,9 @@ Route::prefix('admin')->middleware(['admin.auth'])->group(function () {
     Route::post('/purchase-request-delete', [PurchaseRequestController::class, 'delete'])->name('purchase_request_delete');
 
     Route::get('/withdrawl-request', [WithdrawlRequestController::class, 'index'])->name('withdrawl_request_list');
+    Route::get('/withdrawl-request-edit/{id}', [WithdrawlRequestController::class, 'update'])->name('withdrawl_request_edit');
+    Route::post('/withdrawl-request-edit/{id}', [WithdrawlRequestController::class, 'post_update'])->name('post_withdrawl_request_edit');
+
 
 
     Route::get('/cms-home', [CmsHomePageController::class, 'home_page'])->name('cms_home');

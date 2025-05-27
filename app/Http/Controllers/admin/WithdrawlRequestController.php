@@ -53,7 +53,7 @@ class WithdrawlRequestController extends Controller
             'amount' => 'required',
 
         ]);
-        $data = new Product();
+        $data = new UserWithdrawlRequest();
         $data->widthdraw_perc = $request->widthdraw_perc;
         // $data->price = $request->price;
         $data->amount = $request->amount;
@@ -70,7 +70,7 @@ class WithdrawlRequestController extends Controller
     public function update(Request $request)
     {
 
-        $item = Product::find($request->id);
+        $item = UserWithdrawlRequest::find($request->id);
 
 
 
@@ -103,7 +103,7 @@ class WithdrawlRequestController extends Controller
 
 
 
-        Product::where("id", $request->id)->update([
+        UserWithdrawlRequest::where("id", $request->id)->update([
             'widthdraw_perc' => $request->widthdraw_perc,
 
             'amount' => $request->amount,
@@ -118,7 +118,7 @@ class WithdrawlRequestController extends Controller
     public function delete(Request $request)
     {
 
-        Product::where('id', $request->id)->delete();
+        UserWithdrawlRequest::where('id', $request->id)->delete();
 
         // return redirect()->route('book_list')->with("success", "delete done");
         return response()->json(['status' => true, 'msg' => 'delete done']);
@@ -131,7 +131,7 @@ class WithdrawlRequestController extends Controller
         $status = $request->status;
         $status = $status == 1 ? 0 : 1;
 
-        Product::where("id", $request->id)->update([
+        UserWithdrawlRequest::where("id", $request->id)->update([
             'status' => $status,
         ]);
 

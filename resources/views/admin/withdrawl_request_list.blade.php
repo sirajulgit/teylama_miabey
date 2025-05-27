@@ -9,11 +9,9 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">User List</h3>
+                            <h3 class="card-title">Withdrawl Request List</h3>
 
-                            <div class="card-tools">
-                                <a href="{{ route('user_create') }}" class="btn btn-primary">Add</a>
-                            </div>
+
 
                         </div>
                         <!-- /.card-header -->
@@ -23,8 +21,10 @@
                                 <thead>
                                     <tr>
                                         {{-- <th style="width: 1%">No</th> --}}
-                                        <th style="width: 5%">Name</th>
-                                        <th style="width: 10%">Email</th>
+                                        <th style="width: 5%">Username</th>
+                                        <th style="width: 10%">Withdrawl Amount (USDT)</th>
+                                        <th style="width: 10%">Withdrawl Amount (INR)</th>
+
 
                                         <th style="width: 8%" class="text-center">Status</th>
                                         <th style="width: 10%">Action</th>
@@ -34,30 +34,33 @@
                                     @foreach ($data['items'] as $item)
                                         <tr>
                                             {{-- <th>{{ $loop->index + 1 }}</th> --}}
-                                            <td style="text-align: center;">{{ $item->name }}</td>
+                                            <td style="text-align: center;">{{ $item->username }}</td>
                                             <td>
-                                               {{ $item->email }}
+                                               {{ $item->withdrawl_amount }} {{ $item->currency }}
                                             </td>
+                                            <td>
+                                               {{ $item->withdrawl_amount_inr }} INR
+                                            </td>
+
 
 
                                             <td class="project-state">
-                                                @if ($item->status == 1)
-                                                    <span class="badge badge-success">Active</span>
+                                                @if ($item->status == "complete")
+                                                    <span class="badge badge-success">Complete</span>
+                                                  @elseif ($item->status == "pending")
+                                                    <span class="badge badge-warning">Pending</span>
                                                 @else
-                                                    <span class="badge badge-danger">Not Active</span>
+                                                    <span class="badge badge-danger">{{$item->status}}</span>
                                                 @endif
                                             </td>
+
                                             <td class="project-actions">
-                                                <a class="btn btn-info btn-sm" href="{{ Route('user_edit', $item->id) }}">
+                                                <a class="btn btn-info btn-sm" href="{{ Route('withdrawl_request_edit', $item->id) }}">
                                                     <i class="fas fa-pencil-alt"></i>
                                                     Edit
                                                 </a>
 
-                                                <button type="submit" class="btn btn-danger btn-sm del-record"
-                                                    data-id="{{ $item->id }}" style="display: inline;">
-                                                    <i class="fas fa-trash"></i>
-                                                    Delete
-                                                </button>
+
 
                                             </td>
                                         </tr>
@@ -102,7 +105,7 @@
                     if (result.isConfirmed) {
 
 
-                        let url = "{{ route('user_delete') }}";
+                        let url = "{{ route('product_delete') }}";
 
 
                         $.ajax({
