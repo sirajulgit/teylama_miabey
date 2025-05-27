@@ -55,6 +55,9 @@
                             <div class="text-center" data-toggle="modal" data-target="#exampleModal">
                                 <span class="borderd-plus">+</span>
                                 <p class="mt-3">Add Bank Card </p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
                             </div>
                         </div>
 
