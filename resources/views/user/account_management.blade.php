@@ -187,32 +187,33 @@
                     $(element).removeClass('is-invalid');
                 },
                 submitHandler: function(form, event) {
-                    event.preventDefault();
+                    //event.preventDefault();
                     //form.submit();
 
                     var formData = $(form).serialize();
-                    $.ajax({
-                        url: "{{ route('user_account.post_create') }}",
-                        type: "POST",
-                        data: formData,
-                        success: function(response) {
-                            if (response.status == 'success') {
-                                console.log(response)
-                                // $('#myModal').modal('hide');
-                                // toastr.success(response.message);
+                    console.log(formData);
+                    // $.ajax({
+                    //     url: "{{ route('user_account.post_create') }}",
+                    //     type: "POST",
+                    //     data: formData,
+                    //     success: function(response) {
+                    //         if (response.status == 'success') {
+                    //             console.log(response)
+                    //             // $('#myModal').modal('hide');
+                    //             // toastr.success(response.message);
 
-                                // location.reload();
-                            } else {
-                                toastr.error(response.message);
-                            }
-                        },
-                        error: function(xhr) {
-                            var errors = xhr.responseJSON.errors;
-                            $.each(errors, function(key, value) {
-                                toastr.error(value[0]);
-                            });
-                        }
-                    });
+                    //             // location.reload();
+                    //         } else {
+                    //             toastr.error(response.message);
+                    //         }
+                    //     },
+                    //     error: function(xhr) {
+                    //         var errors = xhr.responseJSON.errors;
+                    //         $.each(errors, function(key, value) {
+                    //             toastr.error(value[0]);
+                    //         });
+                    //     }
+                    // });
 
                 }
             });
