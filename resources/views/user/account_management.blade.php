@@ -191,10 +191,13 @@
                     //form.submit();
 
                     var formData = $(form).serialize();
-                    console.log(formData);
+                   // console.log(formData);
                     $.ajax({
                         url: "{{ route('user_account.post_create') }}",
                         type: "POST",
+                        contentType: "application/json; charset=utf-8",
+
+
                         data: formData,
                         success: function(response) {
                             if (response.status == 'success') {
