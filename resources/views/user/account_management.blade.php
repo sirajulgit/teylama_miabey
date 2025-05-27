@@ -87,49 +87,52 @@
 
                 <!-- Modal Body -->
                 <div class="modal-body">
-                  <form id="form1" method="POST" action="{{ route('post_user_register') }}">
+                  <form id="form1" method="POST" >
                     @csrf
 
                     <div class="mb-2">
                         <div class="pw-area position-relative">
-                            <input name="invitation_code" class="form-control" type="text"
-                                placeholder="Please enter the 8-digit invitation code" minlength="8" maxlength="8"
-                                value="{{ old('invitation_code') }}" />
+                            <input name="bank_name" class="form-control" type="text"
+                                placeholder="Please enter Bank Name"
+                                value="{{ old('bank_name') }}" />
                         </div>
                     </div>
 
                     <div class="mb-2">
                         <div class="pw-area position-relative">
-                            <input name="username" class="form-control" type="text" placeholder="Please enter username"
-                                value="{{ old('username') }}" />
+                            <input name="account_holder_name" class="form-control" type="text" placeholder="Account Holder Name"
+                                value="{{ old('account_holder_name') }}" />
 
                             {{-- +++++ | error message | +++++ --}}
-                            @if ($errors->has('username'))
-                                <span class="form_error">{{ $errors->first('username') }}</span>
+                            @if ($errors->has('account_holder_name'))
+                                <span class="form_error">{{ $errors->first('account_holder_name') }}</span>
                             @endif
                         </div>
 
                     </div>
 
+
+
                     <div class="mb-2">
+                        <label class="mb-2 label-design"> Account Number  </label>
                         <div class="pw-area position-relative">
-                            <input name="phn_no" class="form-control" type="text"
-                                placeholder="Please enter phone number" minlength="10" maxlength="10"
-                                value="{{ old('phn_no') }}" />
+                            <input name="ac_no" id="ac_no" class="form-control" type="text"
+                                placeholder="Please Enter Account Number" value="{{ old('ac_no') }}" />
+
                         </div>
                     </div>
 
                     <div class="mb-2">
-                        <label class="mb-2 label-design"> Set Password </label>
+                        <label class="mb-2 label-design">IFSC code</label>
                         <div class="pw-area position-relative">
-                            <input name="password" id="password" class="form-control" type="password"
-                                placeholder="Please Enter 6 to 16 characters" value="{{ old('password') }}" />
-                            <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>
+                            <input name="ifsc_code" id="ifsc_code" class="form-control" type="text"
+                                placeholder="Please Enter IFSC code" value="{{ old('ifsc_code') }}" />
+
                         </div>
                     </div>
 
                     <div class="mt-4">
-                        <input type="submit" class="submit-btn" value="Register" />
+                        <input type="submit" class="submit-btn" value="Save" />
                     </div>
                 </form>
                 </div>
@@ -137,7 +140,7 @@
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+
                 </div>
             </div>
         </div>
