@@ -68,6 +68,8 @@
                                         <div class="d-flex align-items-center mb-3">
 
                                         <p>{{$item->upi}} </p>
+                                        <i  class="bi bi-trash3 ms-2 del-record"
+                                                    data-id="{{ $item->id }}" style="color: red"></i>
                                         </div>
 
                                     </div>
