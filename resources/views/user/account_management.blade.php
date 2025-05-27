@@ -87,7 +87,7 @@
 
                 <!-- Modal Body -->
                 <div class="modal-body">
-                  <form id="form1" method="POST" >
+                   <form id="myForm" class="modal-content needs-validation" novalidate>
                     @csrf
 
                     <div class="mb-2">
@@ -153,7 +153,7 @@
 
 
             ////////////// form validation ////////////////////////
-            $('#form1').validate({
+            $('#myForm').validate({
                 rules: {
                     bank_name: {
                         required: true,
@@ -188,7 +188,7 @@
                 },
                 submitHandler: function(form, event) {
                     event.preventDefault();
-                    form.submit();
+                    //form.submit();
 
                 }
             });
