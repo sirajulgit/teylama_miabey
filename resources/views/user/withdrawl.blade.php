@@ -32,7 +32,7 @@
                     <div class="mb-2">
                          <label class="mb-2 label-design"> Withdrawl Amount</label>
                         <div class="pw-area position-relative">
-                            <input name="withdrawl_amount" class="form-control" type="text"
+                            <input name="withdrawl_amount" id="withdrawl_amount" class="form-control" type="text"
                                 placeholder="Please enter Withdrawl Amount"
                                 value="{{ old('withdrawl_amount') }}" />
                         </div>
