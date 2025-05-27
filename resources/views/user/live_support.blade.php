@@ -21,6 +21,7 @@
                 <i class="bi bi-chevron-right text-white"></i>
             </div>
 
+            <a href="https://t.me/Cryptoconvertcs" target="_blank">
             <div class="livesupport teligrame-color mb-3 d-flex align-items-center justify-content-between">
                 <div class="common-left-part d-flex align-items-center">
                     <div class="rounded-client">
@@ -33,6 +34,8 @@
                 </div>
                 <i class="bi bi-chevron-right text-white"></i>
             </div>
+            </a>
+
 
             <div class="livesupport whatsapp-color mb-3 d-flex align-items-center justify-content-between">
                 <div class="common-left-part d-flex align-items-center">
