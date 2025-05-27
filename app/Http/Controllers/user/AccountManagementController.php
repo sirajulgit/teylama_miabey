@@ -17,7 +17,9 @@ class AccountManagementController extends Controller
         $data = [
             'page_title' => 'Account Management',
         ];
-        $data['bank_accounts'] = UserBankAccount::where('user_id', auth()->user()->id)->get();
+        $data['bank_accounts'] = UserBankAccount::where('user_id', auth()->user()->id)->where('account_type','bank')->get();
+
+        $data['upi_accounts'] = UserBankAccount::where('user_id', auth()->user()->id)->where('account_type','bank')->get();
 
         return view('user.account_management', ['data' => $data]);
     }

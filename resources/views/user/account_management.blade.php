@@ -60,13 +60,13 @@
                     </div>
                     <div class="tab-pane fade" id="pills-upi" role="tabpanel" aria-labelledby="pills-upi-tab">
 
- @foreach ($data['bank_accounts'] as $item)
+ @foreach ($data['upi_accounts'] as $item)
                         <div class="bank-list p-3 rounded-3 mb-3">
                                         <div class="d-flex align-items-center mb-3">
-                                        <img src="images/pnb.png" alt="">
-                                        <p>{{$item->bank_name}} </p>
+
+                                        <p>{{$item->upi}} </p>
                                         </div>
-                                        <strong class="ac-number">{{$item->ac_no}} </strong>
+
                                     </div>
 
                         @endforeach
