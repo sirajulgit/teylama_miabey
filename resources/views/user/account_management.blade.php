@@ -73,9 +73,9 @@
 
                         <div class="bank-list p-3 rounded-3 mb-3">
                             <div class="text-center" data-bs-toggle="modal"
-                                    data-bs-target="#myModal">
+                                    data-bs-target="#upiModal">
                                 <span class="borderd-plus">+</span>
-                                <p class="mt-3">Add Bank Card </p>
+                                <p class="mt-3">Add UPI </p>
 
 
                             </div>
@@ -93,7 +93,7 @@
     </main>
 
 
-    <!-- Modal -->
+    <!-- Bank Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -146,6 +146,47 @@
 
                         </div>
                     </div>
+
+                    <div class="mt-4">
+                        <input type="submit" class="submit-btn" value="Save" />
+                    </div>
+                </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPI Modal -->
+    <div class="modal fade" id="upiModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">UPI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                   <form id="upiForm" class="modal-content needs-validation" novalidate>
+                    @csrf
+
+                    <div class="mb-2">
+                         <label class="mb-2 label-design"> UPI ID</label>
+                        <div class="pw-area position-relative">
+                            <input name="upi" class="form-control" type="text"
+                                placeholder="Please enter UPI ID"
+                                value="{{ old('upi') }}" />
+                        </div>
+                    </div>
+
+
 
                     <div class="mt-4">
                         <input type="submit" class="submit-btn" value="Save" />
