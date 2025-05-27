@@ -29,7 +29,7 @@ class WithdrawlController extends Controller
         ]);
 
 
-
+        if($request->withdrawl_amount <= auth()->user()->wallet_bal){
 
 
         $data = new UserWithdrawlRequest();
@@ -40,5 +40,10 @@ class WithdrawlController extends Controller
 
 
         return redirect()->back()->with("success", "Create Successful");
+
+
+        } else {
+            return redirect()->back()->with("error", "Invalid Withdrawl Amount!!");
+        }
     }
 }
