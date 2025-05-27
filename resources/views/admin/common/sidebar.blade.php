@@ -159,6 +159,13 @@
                         <p>Purchase Request</p>
                     </a>
                 </li>
+                 <li class="nav-item">
+                    <a href="{{ route('withdrawl_request_list') }}"
+                        class="nav-link {{ $data['activePageName'] == 'withdrawl_request' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-newspaper"></i>
+                        <p>withdrawl Request</p>
+                    </a>
+                </li>
 
                 {{-- <li class="nav-item">
                     <a href="{{ route('blog_list') }}"

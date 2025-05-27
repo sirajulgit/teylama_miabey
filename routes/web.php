@@ -24,6 +24,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\CurrencyRateController;
 use App\Http\Controllers\admin\CryptoAppController;
 use App\Http\Controllers\admin\PurchaseRequestController;
+use App\Http\Controllers\admin\WithdrawlRequestController;
 
 use App\Http\Controllers\user\AuthController;
 use App\Http\Controllers\user\DashboardController as UserDashboardController;
@@ -173,6 +174,8 @@ Route::prefix('admin')->middleware(['admin.auth'])->group(function () {
     Route::get('/purchase-request-edit/{id}', [PurchaseRequestController::class, 'update'])->name('purchase_request_edit');
     Route::post('/purchase-request-edit/{id}', [PurchaseRequestController::class, 'post_update'])->name('post_purchase_request_edit');
     Route::post('/purchase-request-delete', [PurchaseRequestController::class, 'delete'])->name('purchase_request_delete');
+
+    Route::get('/withdrawl-request', [WithdrawlRequestController::class, 'index'])->name('withdrawl_request_list');
 
 
     Route::get('/cms-home', [CmsHomePageController::class, 'home_page'])->name('cms_home');
