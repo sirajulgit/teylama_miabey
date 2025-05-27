@@ -61,7 +61,7 @@
 
 
             ////////////// form validation ////////////////////////
-            $('#quickForm').validate({
+            $('#withdrawlForm').validate({
                 rules: {
                     withdrawl_amount: {
                         required: true,
