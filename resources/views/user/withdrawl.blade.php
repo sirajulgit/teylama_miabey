@@ -92,7 +92,7 @@
                     var withdrawl_amt = $("#withdrawl_amount").val();
 alert(wallet_bal+"wallet_bal")
 alert(withdrawl_amt+"withdrawl_amt")
-                    if(withdrawl_amt <= wallet_bal){
+                    if(withdrawl_amt >= wallet_bal){
                         form.submit();
 
                     }else{
