@@ -91,6 +91,7 @@
                     @csrf
 
                     <div class="mb-2">
+                         <label class="mb-2 label-design"> Bank Name</label>
                         <div class="pw-area position-relative">
                             <input name="bank_name" class="form-control" type="text"
                                 placeholder="Please enter Bank Name"
@@ -99,14 +100,11 @@
                     </div>
 
                     <div class="mb-2">
+                        <label class="mb-2 label-design">Account Holder Name</label>
                         <div class="pw-area position-relative">
                             <input name="account_holder_name" class="form-control" type="text" placeholder="Account Holder Name"
                                 value="{{ old('account_holder_name') }}" />
 
-                            {{-- +++++ | error message | +++++ --}}
-                            @if ($errors->has('account_holder_name'))
-                                <span class="form_error">{{ $errors->first('account_holder_name') }}</span>
-                            @endif
                         </div>
 
                     </div>
@@ -145,4 +143,56 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script_content')
+    <script>
+        $(document).ready(function() {
+
+
+
+
+
+            ////////////// form validation ////////////////////////
+            $('#form1').validate({
+                rules: {
+                    bank_name: {
+                        required: true,
+                    },
+                    account_holder_name: {
+                        required: true,
+
+                    },
+                    ac_no: {
+                        required: true,
+
+                    },
+                    ifsc_code: {
+                        required: true,
+
+
+                    }
+                },
+                messages: {
+
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                },
+                submitHandler: function(form, event) {
+                    event.preventDefault();
+                    form.submit();
+
+                }
+            });
+            ////////////// end form validation ////////////////////
+        })
+    </script>
 @endsection
