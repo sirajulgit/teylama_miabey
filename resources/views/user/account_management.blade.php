@@ -58,7 +58,30 @@
 
 
                     </div>
-                    <div class="tab-pane fade" id="pills-upi" role="tabpanel" aria-labelledby="pills-upi-tab">...</div>
+                    <div class="tab-pane fade" id="pills-upi" role="tabpanel" aria-labelledby="pills-upi-tab">
+
+ @foreach ($data['bank_accounts'] as $item)
+                        <div class="bank-list p-3 rounded-3 mb-3">
+                                        <div class="d-flex align-items-center mb-3">
+                                        <img src="images/pnb.png" alt="">
+                                        <p>{{$item->bank_name}} </p>
+                                        </div>
+                                        <strong class="ac-number">{{$item->ac_no}} </strong>
+                                    </div>
+
+                        @endforeach
+
+                        <div class="bank-list p-3 rounded-3 mb-3">
+                            <div class="text-center" data-bs-toggle="modal"
+                                    data-bs-target="#myModal">
+                                <span class="borderd-plus">+</span>
+                                <p class="mt-3">Add Bank Card </p>
+
+
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
 
