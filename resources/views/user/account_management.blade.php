@@ -195,7 +195,7 @@
                     $.ajax({
                         url: "{{ route('user_account.post_create') }}",
                         type: "POST",
-                        contentType: "application/json; charset=utf-8",
+
                         headers: {
                             'X-CSRF-TOKEN': "{{ csrf_token() }}"
                         },
@@ -203,6 +203,7 @@
 
                         data: formData,
                         success: function(response) {
+                               response = JSON.parse(response);
                             if (response.status == 'success') {
                                 console.log(response)
                                 // $('#myModal').modal('hide');
