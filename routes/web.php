@@ -31,6 +31,7 @@ use App\Http\Controllers\user\AccountManagementController;
 use App\Http\Controllers\user\LiveSupportController;
 use App\Http\Controllers\user\UserProfileController;
 use App\Http\Controllers\user\BuyProductController;
+use App\Http\Controllers\user\WithdrawlController;
 
 
 
@@ -75,6 +76,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/upi-management', [AccountManagementController::class, 'post_upi_create'])->name('user_account.post_upi_create');
 
     Route::post('/account-delete', [AccountManagementController::class, 'delete'])->name('user_account.delete');
+
+    // ################ | withdrawl | ################
+
+    Route::get('/withdrawl', [WithdrawlController::class, 'index'])->name('user_account.index');
+    Route::post('/withdrawl-request', [WithdrawlController::class, 'post_create'])->name('user_account.post_create');
+
 
     // +++++++++++++++ | Buy product | +++++++++++++++
     Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('user_account.buy_product');
