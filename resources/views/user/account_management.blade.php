@@ -52,7 +52,7 @@
                         </div> -->
 
                         <div class="bank-list p-3 rounded-3 mb-3">
-                            <div class="text-center">
+                            <div class="text-center" data-toggle="modal" data-target="#exampleModal">
                                 <span class="borderd-plus">+</span>
                                 <p class="mt-3">Add Bank Card </p>
                             </div>
@@ -71,4 +71,24 @@
 
 
     </main>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 @endsection

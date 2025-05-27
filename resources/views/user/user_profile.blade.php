@@ -9,7 +9,7 @@
                     <img src="{{ asset('asset/frontend/images/call-us.jpg') }}" alt="">
                 </div>
                 <div>
-                    <span class="vipo">VIPO</span><br>
+
                     <strong class="profile-name">{{auth()->user()->username}}</strong>
                 </div>
             </div>
@@ -76,4 +76,5 @@
 
         </div>
     </main>
+
 @endsection
