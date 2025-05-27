@@ -31,25 +31,20 @@
 
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-bank" role="tabpanel" aria-labelledby="pills-upi-tab">
-                        <div class="card-bound mb-3">
+                        {{-- <div class="card-bound mb-3">
                             <p> Up to 99 cards can be bound </p>
-                        </div>
+                        </div> --}}
 
-                        <!-- <div class="bank-list p-3 rounded-3 mb-3">
+ @foreach ($bank_accounts as $item)
+                        <div class="bank-list p-3 rounded-3 mb-3">
                                         <div class="d-flex align-items-center mb-3">
                                         <img src="images/pnb.png" alt="">
-                                        <p>Punjab National Bank </p>
+                                        <p>{{$item->bank_name}} </p>
                                         </div>
-                                        <strong class="ac-number">0326 **** **** 2784 </strong>
+                                        <strong class="ac-number">{{$item->ac_no}} </strong>
                                     </div>
 
-                                    <div class="bank-list p-3 rounded-3 mb-3">
-                                        <div class="d-flex align-items-center mb-3">
-                                        <img src="images/pnb.png" alt="">
-                                        <p>Punjab National Bank </p>
-                                        </div>
-                                        <strong class="ac-number">0326 **** **** 2784 </strong>
-                                    </div> -->
+                        @endforeach
 
                         <div class="bank-list p-3 rounded-3 mb-3">
                             <div class="text-center" data-bs-toggle="modal"
@@ -206,12 +201,12 @@
                                response = JSON.parse(response);
                             if (response.status == 'success') {
                                 console.log(response)
-                                // $('#myModal').modal('hide');
-                                // toastr.success(response.message);
+                                 $('#myModal').modal('hide');
+                                 alert(response.message);
 
-                                // location.reload();
+                                location.reload();
                             } else {
-                                //toastr.error(response.message);
+                                alert(response.message);
                             }
                         },
                         error: function(xhr) {
