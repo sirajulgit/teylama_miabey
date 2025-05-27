@@ -74,6 +74,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/account-management', [AccountManagementController::class, 'post_create'])->name('user_account.post_create');
     Route::post('/upi-management', [AccountManagementController::class, 'post_upi_create'])->name('user_account.post_upi_create');
 
+    Route::post('/account-delete', [AccountManagementController::class, 'delete'])->name('user_account.delete');
+
     // +++++++++++++++ | Buy product | +++++++++++++++
     Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('user_account.buy_product');
 

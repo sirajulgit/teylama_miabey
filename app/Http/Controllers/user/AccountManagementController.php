@@ -63,4 +63,14 @@ class AccountManagementController extends Controller
 
         ]);
     }
+
+    public function delete(Request $request)
+    {
+
+        UserBankAccount::where('id', $request->id)->delete();
+
+        // return redirect()->route('book_list')->with("success", "delete done");
+        return response()->json(['status' => true, 'msg' => 'delete done']);
+    }
+
 }

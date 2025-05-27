@@ -41,7 +41,8 @@
 
                                         <p>{{$item->bank_name}} </p>
 
-                                        <i class="bi bi-trash3 ms-2"></i>
+                                        <i  class="bi bi-trash3 ms-2 del-record"
+                                                    data-id="{{ $item->id }}" style="color: red"></i>
                                         </div>
                                         <strong class="ac-number">{{$item->ac_no}} </strong>
                                     </div>
@@ -349,6 +350,51 @@
                 }
             });
             ////////////// end form validation ////////////////////
+
+
+               $(document).on('click', '.del-record', function() {
+
+                var data_id = $(this).attr('data-id');
+
+                Swal.fire({
+                    title: "Do you want to delete?",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes",
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+
+
+                        let url = "{{ route('user_account.delete') }}";
+
+
+                        $.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                            },
+                            url: `${url}`,
+                            method: "POST",
+                            contentType: "application/json; charset=utf-8",
+                            traditional: true,
+                            data: JSON.stringify({
+                                id: data_id
+                            }),
+                            success: function(response) {
+                                console.log(response);
+                                window.location.reload();
+                            },
+                            error: function(error) {
+                                console.log("error" + error);
+                            }
+                        });
+
+
+
+                    }
+                });
+
+
+            })
         })
     </script>
 @endsection

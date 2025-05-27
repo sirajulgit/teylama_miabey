@@ -21,6 +21,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/toastify.min.css') }}" />
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/style.css') }}" />
+
+     <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ asset('asset/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+
+
 </head>
 
 <body>
@@ -50,6 +55,8 @@
     <script type="text/javascript" src="{{ asset('asset/frontend/js/toastify.min.js') }}"></script>
     <!-- Custome js -->
     <script src="{{ asset('asset/frontend/js/custome.js') }}"></script>
+    <!-- SweetAlert2 -->
+    <script src="{{ asset('asset/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 
 
     <script>
