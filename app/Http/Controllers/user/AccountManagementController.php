@@ -23,18 +23,6 @@ class AccountManagementController extends Controller
     }
     public function post_create(Request $request)
     {
-        // dd($request->all());
-
-        // $request->validate([
-        //     'bank_name' => 'required',
-        //     'account_holder_name' => 'required',
-        //     'ac_no' => 'required',
-        //     'ifsc_code' => 'required',
-
-        // ]);
-
-
-
 
 
         $data = new UserBankAccount();
@@ -44,6 +32,25 @@ class AccountManagementController extends Controller
         $data->ac_no = $request->ac_no;
         $data->ifsc_code = $request->ifsc_code;
         $data->account_type = 'bank';
+        $data->save();
+
+
+        return json_encode([
+            'status' => 'success',
+            'message' => 'Bank account details saved successfully.',
+            'post_data' => $request->all()
+
+        ]);
+    }
+     public function post_upi_create(Request $request)
+    {
+
+
+        $data = new UserBankAccount();
+        $data->user_id = auth()->user()->id;
+
+        $data->upi = $request->upi;
+        $data->account_type = 'upi';
         $data->save();
 
 

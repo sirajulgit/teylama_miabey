@@ -284,6 +284,69 @@
                 }
             });
             ////////////// end form validation ////////////////////
+
+
+
+            ////////////// UPI form validation ////////////////////////
+            $('#upiForm').validate({
+                rules: {
+                    upi: {
+                        required: true,
+                    }
+                },
+                messages: {
+
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                },
+                submitHandler: function(form, event) {
+                    //event.preventDefault();
+                    //form.submit();
+
+                    var formData = $(form).serialize();
+                   // console.log(formData);
+                    $.ajax({
+                        url: "{{ route('user_account.post_upi_create') }}",
+                        type: "POST",
+
+                        headers: {
+                            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                        },
+
+
+                        data: formData,
+                        success: function(response) {
+                               response = JSON.parse(response);
+                            if (response.status == 'success') {
+                                console.log(response)
+                                 $('#upiModal').modal('hide');
+                                 alert(response.message);
+
+                                location.reload();
+                            } else {
+                                alert(response.message);
+                            }
+                        },
+                        error: function(xhr) {
+                            var errors = xhr.responseJSON.errors;
+                            $.each(errors, function(key, value) {
+                               // toastr.error(value[0]);
+                            });
+                        }
+                    });
+
+                }
+            });
+            ////////////// end form validation ////////////////////
         })
     </script>
 @endsection
