@@ -38,11 +38,10 @@
                 @foreach ($data['bank_accounts'] as $item)
                         <div class="bank-list p-3 rounded-3 mb-3">
                                         <div class="d-flex align-items-center mb-3">
-                                        <img src="images/pnb.png" alt="">
-                                        <p>{{$item->bank_name}} </p>
-                                        <div class="ms-auto">
 
-                                            <i class="bi bi-trash3 ms-2"></i>
+                                        <p>{{$item->bank_name}} </p>
+
+                                        <i class="bi bi-trash3 ms-2"></i>
                                         </div>
                                         <strong class="ac-number">{{$item->ac_no}} </strong>
                                     </div>
