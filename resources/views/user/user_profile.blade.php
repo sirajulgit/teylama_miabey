@@ -43,7 +43,7 @@
                 <ul class="mb-3">
                     <li class="d-flex align-items-center justify-content-between">Change Payment Password <i
                             class="bi bi-chevron-right"></i></li>
-                     <a href="{{ route('withdrawl') }}"><li class="d-flex align-items-center justify-content-between">Withdrawal <i
+                     <a href="{{ route('user_account.withdrawl') }}"><li class="d-flex align-items-center justify-content-between">Withdrawal <i
                             class="bi bi-chevron-right"></i></li></a>
                     <li class="d-flex align-items-center justify-content-between">Transaction Record <i
                             class="bi bi-chevron-right"></i></li>
