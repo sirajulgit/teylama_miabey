@@ -35,7 +35,7 @@
                             <p> Up to 99 cards can be bound </p>
                         </div> --}}
 
- @foreach ($bank_accounts as $item)
+ @foreach ($data['bank_accounts'] as $item)
                         <div class="bank-list p-3 rounded-3 mb-3">
                                         <div class="d-flex align-items-center mb-3">
                                         <img src="images/pnb.png" alt="">
