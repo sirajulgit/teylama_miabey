@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\CurrencyRate;
 use App\Models\PurchaseRequest;
+use App\Models\UserTransactionHistory;
+
 
 class PurchaseRequestController extends Controller
 {
@@ -89,27 +91,35 @@ class PurchaseRequestController extends Controller
     public function post_update(Request $request)
     {
 
-        $request->validate([
-            'widthdraw_perc' => 'required',
-            'amount' => 'required',
 
 
-        ]);
-
-
-
-
+        $purchase_request_data = PurchaseRequest::find($request->id);
+        dd($purchase_request_data);exit;
         //////////// order reArrange ///////////
 
 
 
-        Product::where("id", $request->id)->update([
-            'widthdraw_perc' => $request->widthdraw_perc,
+        PurchaseRequest::where("id", $request->id)->update([
 
-            'amount' => $request->amount,
 
-            'status' => $request->status,
+            'payment_status' => $request->payment_status,
         ]);
+        if($request->payment_status=="complete"){
+            $data = new UserTransactionHistory();
+            $data->user_id = auth()->user()->id;
+            // $data->price = $request->price;
+            $data->trans_type = "credit";
+            $data->product_id = $purchase_request_data->product_id;
+             $data->crypto_app_id = $purchase_request_data->crypto_app_id;
+              $data->qnty = $purchase_request_data->qnty;
+
+
+            $data->amount = $purchase_request_data->amount;
+            $data->payment_status = "complete";
+            $data->save();
+
+
+        }
 
         return redirect()->back()->with("success", "Update Successful");
     }

@@ -57,7 +57,7 @@
                                             </td>
                                             <td class="project-state">
                                                 @if ($item->status == "complete")
-                                                    <span class="badge badge-success">Active</span>
+                                                    <span class="badge badge-success">Complete</span>
                                                 @elseif ($item->status == "cancel")
                                                     <span class="badge badge-danger">Cancel</span>
                                                 @elseif ($item->status == "pending")
