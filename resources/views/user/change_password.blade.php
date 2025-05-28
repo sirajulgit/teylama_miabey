@@ -8,7 +8,9 @@
 
 <div class="top-cover d-flex align-items-center justify-content-between">
 
+<a href="{{ url()->previous() }}">
 <button class="btn-back-frw"> <i class="bi bi-chevron-left"></i> </button>
+</a>
 
  <strong class="center-heading">Change Password </strong>
  <strong> </strong>
