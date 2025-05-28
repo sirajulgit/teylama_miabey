@@ -94,7 +94,7 @@ class PurchaseRequestController extends Controller
 
 
         $purchase_request_data = PurchaseRequest::find($request->id);
-        dd($purchase_request_data);exit;
+        //dd($purchase_request_data);exit;
         //////////// order reArrange ///////////
 
 
@@ -114,7 +114,7 @@ class PurchaseRequestController extends Controller
               $data->qnty = $purchase_request_data->qnty;
 
 
-            $data->amount = $purchase_request_data->amount;
+            $data->amount = $purchase_request_data->total_amount;
             $data->payment_status = "complete";
             $data->save();
 
