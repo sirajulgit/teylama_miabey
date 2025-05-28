@@ -34,6 +34,7 @@ use App\Http\Controllers\user\UserProfileController;
 use App\Http\Controllers\user\BuyProductController;
 use App\Http\Controllers\user\WithdrawlController;
 use App\Http\Controllers\user\PurchaseHistoryController;
+use App\Http\Controllers\user\TransactionHistoryController;
 
 
 
@@ -87,6 +88,10 @@ Route::middleware('auth')->group(function () {
     // ################ | Purchase History | ################
 
     Route::get('/purchase-history', [PurchaseHistoryController::class, 'index'])->name('user_account.purchase_history');
+
+    // ################ | Transaction History | ################
+
+    Route::get('/transaction-history', [TransactionHistoryController::class, 'index'])->name('user_account.transaction_history');
 
 
 

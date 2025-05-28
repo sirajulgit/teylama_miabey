@@ -35,23 +35,21 @@
                             <p> Up to 99 cards can be bound </p>
                         </div> --}}
 
-                @foreach ($data['bank_accounts'] as $item)
-                        <div class="bank-list p-3 rounded-3 mb-3">
-                                        <div class="d-flex align-items-center mb-3">
+                        @foreach ($data['bank_accounts'] as $item)
+                            <div class="bank-list p-3 rounded-3 mb-3">
+                                <div class="d-flex align-items-center mb-3">
 
-                                        <p>{{$item->bank_name}} </p>
+                                    <p>{{ $item->bank_name }} </p>
 
-                                        <i  class="bi bi-trash3 ms-2 del-record"
-                                                    data-id="{{ $item->id }}" style="color: red"></i>
-                                        </div>
-                                        <strong class="ac-number">{{$item->ac_no}} </strong>
-                                    </div>
-
+                                    <i class="bi bi-trash3 ms-2 del-record" data-id="{{ $item->id }}"
+                                        style="color: red"></i>
+                                </div>
+                                <strong class="ac-number">{{ $item->ac_no }} </strong>
+                            </div>
                         @endforeach
 
                         <div class="bank-list p-3 rounded-3 mb-3">
-                            <div class="text-center" data-bs-toggle="modal"
-                                    data-bs-target="#myModal">
+                            <div class="text-center" data-bs-toggle="modal" data-bs-target="#myModal">
                                 <span class="borderd-plus">+</span>
                                 <p class="mt-3">Add Bank Card </p>
 
@@ -63,22 +61,20 @@
                     </div>
                     <div class="tab-pane fade" id="pills-upi" role="tabpanel" aria-labelledby="pills-upi-tab">
 
- @foreach ($data['upi_accounts'] as $item)
-                        <div class="bank-list p-3 rounded-3 mb-3">
-                                        <div class="d-flex align-items-center mb-3">
+                        @foreach ($data['upi_accounts'] as $item)
+                            <div class="bank-list p-3 rounded-3 mb-3">
+                                <div class="d-flex align-items-center mb-3">
 
-                                        <p>{{$item->upi}} </p>
-                                        <i  class="bi bi-trash3 ms-2 del-record"
-                                                    data-id="{{ $item->id }}" style="color: red"></i>
-                                        </div>
+                                    <p>{{ $item->upi }} </p>
+                                    <i class="bi bi-trash3 ms-2 del-record" data-id="{{ $item->id }}"
+                                        style="color: red"></i>
+                                </div>
 
-                                    </div>
-
+                            </div>
                         @endforeach
 
                         <div class="bank-list p-3 rounded-3 mb-3">
-                            <div class="text-center" data-bs-toggle="modal"
-                                    data-bs-target="#upiModal">
+                            <div class="text-center" data-bs-toggle="modal" data-bs-target="#upiModal">
                                 <span class="borderd-plus">+</span>
                                 <p class="mt-3">Add UPI </p>
 
@@ -110,52 +106,51 @@
 
                 <!-- Modal Body -->
                 <div class="modal-body">
-                   <form id="myForm" class="modal-content needs-validation" novalidate>
-                    @csrf
+                    <form id="myForm" class="modal-content needs-validation" novalidate>
+                        @csrf
 
-                    <div class="mb-2">
-                         <label class="mb-2 label-design"> Bank Name</label>
-                        <div class="pw-area position-relative">
-                            <input name="bank_name" class="form-control" type="text"
-                                placeholder="Please enter Bank Name"
-                                value="{{ old('bank_name') }}" />
-                        </div>
-                    </div>
-
-                    <div class="mb-2">
-                        <label class="mb-2 label-design">Account Holder Name</label>
-                        <div class="pw-area position-relative">
-                            <input name="account_holder_name" class="form-control" type="text" placeholder="Account Holder Name"
-                                value="{{ old('account_holder_name') }}" />
-
+                        <div class="mb-2">
+                            <label class="mb-2 label-design"> Bank Name</label>
+                            <div class="pw-area position-relative">
+                                <input name="bank_name" class="form-control" type="text"
+                                    placeholder="Please enter Bank Name" value="{{ old('bank_name') }}" />
+                            </div>
                         </div>
 
-                    </div>
+                        <div class="mb-2">
+                            <label class="mb-2 label-design">Account Holder Name</label>
+                            <div class="pw-area position-relative">
+                                <input name="account_holder_name" class="form-control" type="text"
+                                    placeholder="Account Holder Name" value="{{ old('account_holder_name') }}" />
 
-
-
-                    <div class="mb-2">
-                        <label class="mb-2 label-design"> Account Number  </label>
-                        <div class="pw-area position-relative">
-                            <input name="ac_no" id="ac_no" class="form-control" type="text"
-                                placeholder="Please Enter Account Number" value="{{ old('ac_no') }}" />
+                            </div>
 
                         </div>
-                    </div>
 
-                    <div class="mb-2">
-                        <label class="mb-2 label-design">IFSC code</label>
-                        <div class="pw-area position-relative">
-                            <input name="ifsc_code" id="ifsc_code" class="form-control" type="text"
-                                placeholder="Please Enter IFSC code" value="{{ old('ifsc_code') }}" />
 
+
+                        <div class="mb-2">
+                            <label class="mb-2 label-design"> Account Number </label>
+                            <div class="pw-area position-relative">
+                                <input name="ac_no" id="ac_no" class="form-control" type="text"
+                                    placeholder="Please Enter Account Number" value="{{ old('ac_no') }}" />
+
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="mt-4">
-                        <input type="submit" class="submit-btn" value="Save" />
-                    </div>
-                </form>
+                        <div class="mb-2">
+                            <label class="mb-2 label-design">IFSC code</label>
+                            <div class="pw-area position-relative">
+                                <input name="ifsc_code" id="ifsc_code" class="form-control" type="text"
+                                    placeholder="Please Enter IFSC code" value="{{ old('ifsc_code') }}" />
+
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <input type="submit" class="submit-btn" value="Save" />
+                        </div>
+                    </form>
                 </div>
 
                 <!-- Modal Footer -->
@@ -179,24 +174,23 @@
 
                 <!-- Modal Body -->
                 <div class="modal-body">
-                   <form id="upiForm" class="modal-content needs-validation" novalidate>
-                    @csrf
+                    <form id="upiForm" class="modal-content needs-validation" novalidate>
+                        @csrf
 
-                    <div class="mb-2">
-                         <label class="mb-2 label-design"> UPI ID</label>
-                        <div class="pw-area position-relative">
-                            <input name="upi" class="form-control" type="text"
-                                placeholder="Please enter UPI ID"
-                                value="{{ old('upi') }}" />
+                        <div class="mb-2">
+                            <label class="mb-2 label-design"> UPI ID</label>
+                            <div class="pw-area position-relative">
+                                <input name="upi" class="form-control" type="text"
+                                    placeholder="Please enter UPI ID" value="{{ old('upi') }}" />
+                            </div>
                         </div>
-                    </div>
 
 
 
-                    <div class="mt-4">
-                        <input type="submit" class="submit-btn" value="Save" />
-                    </div>
-                </form>
+                        <div class="mt-4">
+                            <input type="submit" class="submit-btn" value="Save" />
+                        </div>
+                    </form>
                 </div>
 
                 <!-- Modal Footer -->
@@ -255,7 +249,7 @@
                     //form.submit();
 
                     var formData = $(form).serialize();
-                   // console.log(formData);
+                    // console.log(formData);
                     $.ajax({
                         url: "{{ route('user_account.post_create') }}",
                         type: "POST",
@@ -267,11 +261,11 @@
 
                         data: formData,
                         success: function(response) {
-                               response = JSON.parse(response);
+                            response = JSON.parse(response);
                             if (response.status == 'success') {
                                 console.log(response)
-                                 $('#myModal').modal('hide');
-                                 alert(response.message);
+                                $('#myModal').modal('hide');
+                                alert(response.message);
 
                                 location.reload();
                             } else {
@@ -281,7 +275,7 @@
                         error: function(xhr) {
                             var errors = xhr.responseJSON.errors;
                             $.each(errors, function(key, value) {
-                               // toastr.error(value[0]);
+                                // toastr.error(value[0]);
                             });
                         }
                     });
@@ -318,7 +312,7 @@
                     //form.submit();
 
                     var formData = $(form).serialize();
-                   // console.log(formData);
+                    // console.log(formData);
                     $.ajax({
                         url: "{{ route('user_account.post_upi_create') }}",
                         type: "POST",
@@ -330,11 +324,11 @@
 
                         data: formData,
                         success: function(response) {
-                               response = JSON.parse(response);
+                            response = JSON.parse(response);
                             if (response.status == 'success') {
                                 console.log(response)
-                                 $('#upiModal').modal('hide');
-                                 alert(response.message);
+                                $('#upiModal').modal('hide');
+                                alert(response.message);
 
                                 location.reload();
                             } else {
@@ -344,7 +338,7 @@
                         error: function(xhr) {
                             var errors = xhr.responseJSON.errors;
                             $.each(errors, function(key, value) {
-                               // toastr.error(value[0]);
+                                // toastr.error(value[0]);
                             });
                         }
                     });
@@ -354,7 +348,7 @@
             ////////////// end form validation ////////////////////
 
 
-               $(document).on('click', '.del-record', function() {
+            $(document).on('click', '.del-record', function() {
 
                 var data_id = $(this).attr('data-id');
 

@@ -45,8 +45,11 @@
                             class="bi bi-chevron-right"></i></li>
                      <a href="{{ route('user_account.withdrawl') }}"><li class="d-flex align-items-center justify-content-between">Withdrawal <i
                             class="bi bi-chevron-right"></i></li></a>
+
+                      <a href="{{ route('user_account.transaction_history') }}">
                     <li class="d-flex align-items-center justify-content-between">Transaction Record <i
                             class="bi bi-chevron-right"></i></li>
+                    </a>
                     <a href="{{ route('user_account.purchase_history') }}"><li class="d-flex align-items-center justify-content-between"> Purchase History <i
                             class="bi bi-chevron-right"></i></li></a>
                 </ul>
