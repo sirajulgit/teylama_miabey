@@ -5,9 +5,10 @@
     <div class="edit-profile-banner pt-3 p-3">
         <div class="top-details d-flex align-items-center justify-content-between">
             <div class="left-details d-flex align-items-center">
-                <div class="client-image">
-                    <img src="{{ asset('asset/frontend/images/call-us.jpg') }}" alt="">
-                </div>
+
+<a href="{{ url()->previous() }}">
+<button class="btn-back-frw"> <i class="bi bi-chevron-left"></i> </button>
+</a>
                 <div>
 
                     <strong class="profile-name">{{auth()->user()->username}}</strong>
