@@ -41,8 +41,12 @@
 
             <div class="changes-profile-details mt-3">
                 <ul class="mb-3">
+
+
+                    <a href="{{ route('user_account.change_password') }}">
                     <li class="d-flex align-items-center justify-content-between">Change Payment Password <i
                             class="bi bi-chevron-right"></i></li>
+                    </a>
                      <a href="{{ route('user_account.withdrawl') }}"><li class="d-flex align-items-center justify-content-between">Withdrawal <i
                             class="bi bi-chevron-right"></i></li></a>
 
