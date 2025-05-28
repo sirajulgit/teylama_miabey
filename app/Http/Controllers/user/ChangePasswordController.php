@@ -8,19 +8,16 @@ use App\Models\UserWithdrawlRequest;
 use App\Models\CurrencyRate;
 use App\Models\User;
 
-class PurchaseHistoryController extends Controller
+class ChangePasswordController extends Controller
 {
-    //
 
     public function index()
     {
         $data = [
-            'page_title' => 'Purchase History',
+            'page_title' => 'Change Password',
         ];
-
-
-
-        return view('user.purchase_history', ['data' => $data]);
+        return view('user.change_password', ['data' => $data]);
     }
+
 
 }

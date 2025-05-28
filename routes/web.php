@@ -35,6 +35,7 @@ use App\Http\Controllers\user\BuyProductController;
 use App\Http\Controllers\user\WithdrawlController;
 use App\Http\Controllers\user\PurchaseHistoryController;
 use App\Http\Controllers\user\TransactionHistoryController;
+use App\Http\Controllers\user\ChangePasswordController;
 
 
 
@@ -93,7 +94,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/transaction-history', [TransactionHistoryController::class, 'index'])->name('user_account.transaction_history');
 
+ // ################ | Change Password | ################
 
+    Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('user_account.change_password');
 
     // +++++++++++++++ | Buy product | +++++++++++++++
     Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('user_account.buy_product');
