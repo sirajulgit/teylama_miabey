@@ -8,7 +8,7 @@ use App\Models\Product;
 use App\Models\CurrencyRate;
 use App\Models\PurchaseRequest;
 use App\Models\UserTransactionHistory;
-
+use App\Models\User;
 
 class PurchaseRequestController extends Controller
 {
@@ -27,6 +27,7 @@ class PurchaseRequestController extends Controller
     $items = PurchaseRequest::join('users', 'purchase_request.user_id', '=', 'users.id')
     ->select('purchase_request.*', 'users.username')
             ->orderBy("purchase_request.id", "desc")
+            ->where("payment_status","pending")
             ->get();
         $data['items'] = $items;
         //dd($data['items']);
@@ -94,6 +95,7 @@ class PurchaseRequestController extends Controller
 
 
         $purchase_request_data = PurchaseRequest::find($request->id);
+         $user_data = User::find(auth()->user()->id);
         //dd($purchase_request_data);exit;
         //////////// order reArrange ///////////
 
@@ -117,6 +119,13 @@ class PurchaseRequestController extends Controller
             $data->amount = $purchase_request_data->total_amount;
             $data->payment_status = "complete";
             $data->save();
+
+
+
+            User::where("id", auth()->user()->id)->update([
+            'wallet_bal' => $user_data->wallet_bal  + $purchase_request_data->total_amount,
+
+            ]);
 
 
         }
