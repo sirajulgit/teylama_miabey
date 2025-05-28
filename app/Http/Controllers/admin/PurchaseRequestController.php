@@ -108,7 +108,7 @@ class PurchaseRequestController extends Controller
         ]);
         if($request->payment_status=="complete"){
             $data = new UserTransactionHistory();
-            $data->user_id = auth()->user()->id;
+            $data->user_id = $purchase_request_data->user_id;
             // $data->price = $request->price;
             $data->trans_type = "credit";
             $data->product_id = $purchase_request_data->product_id;
@@ -122,7 +122,7 @@ class PurchaseRequestController extends Controller
 
 
 
-            User::where("id", auth()->user()->id)->update([
+            User::where("id", $purchase_request_data->user_id)->update([
             'wallet_bal' => $user_data->wallet_bal  + $purchase_request_data->total_amount,
 
             ]);
