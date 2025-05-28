@@ -31,7 +31,7 @@
             </div>
             <p>V1</p>
         </div>
-        <p> Still Need to buy <span>10.00</span> USDT Can be promoted to VIP1 </p>
+        {{-- <p> Still Need to buy <span>10.00</span> USDT Can be promoted to VIP1 </p> --}}
 
     </div>
 
@@ -47,8 +47,8 @@
                             class="bi bi-chevron-right"></i></li></a>
                     <li class="d-flex align-items-center justify-content-between">Transaction Record <i
                             class="bi bi-chevron-right"></i></li>
-                    <li class="d-flex align-items-center justify-content-between"> Purchase History <i
-                            class="bi bi-chevron-right"></i></li>
+                    <a href="{{ route('user_account.purchase_history') }}"><li class="d-flex align-items-center justify-content-between"> Purchase History <i
+                            class="bi bi-chevron-right"></i></li></a>
                 </ul>
 
                 <ul class="mb-3">

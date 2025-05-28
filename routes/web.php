@@ -33,6 +33,7 @@ use App\Http\Controllers\user\LiveSupportController;
 use App\Http\Controllers\user\UserProfileController;
 use App\Http\Controllers\user\BuyProductController;
 use App\Http\Controllers\user\WithdrawlController;
+use App\Http\Controllers\user\PurchaseHistoryController;
 
 
 
@@ -82,6 +83,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/withdrawl', [WithdrawlController::class, 'index'])->name('user_account.withdrawl');
     Route::post('/withdrawl-request', [WithdrawlController::class, 'post_withdrawl_create'])->name('user_account.post_withdrawl_create');
+
+    // ################ | Purchase History | ################
+
+    Route::get('/purchase-history', [PurchaseHistoryController::class, 'index'])->name('user_account.purchase_history');
+
 
 
     // +++++++++++++++ | Buy product | +++++++++++++++
