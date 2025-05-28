@@ -15,8 +15,8 @@ class PurchaseRequestController extends Controller
     public function index()
     {
         $data = array();
-        $data['pageTitle'] = 'Product';
-        $data['activePageName'] = 'product';
+        $data['pageTitle'] = 'Purchase Request';
+        $data['activePageName'] = 'purchase_request';
         $data['activeSubMenu'] = '';
         $currencyitems = CurrencyRate::where("currency","USDT")->get();
        //echo $currencyitems[0]['currency_value'];exit;
@@ -70,7 +70,7 @@ class PurchaseRequestController extends Controller
     public function update(Request $request)
     {
 
-        $item = Product::find($request->id);
+        $item = PurchaseRequest::find($request->id);
 
 
 
@@ -82,7 +82,7 @@ class PurchaseRequestController extends Controller
 
         $data['item'] = $item;
 
-        return view("admin.product_edit", ["data" => $data]);
+        return view("admin.purchase_request_edit", ["data" => $data]);
     }
 
 
