@@ -16,7 +16,7 @@
 
             <div class="right-details-balance text-end">
                 <p>Balance</p>
-                <strong>  {{uth()->user()->wallet_bal}} USDT</strong>
+                <strong>  {{auth()->user()->wallet_bal}} USDT</strong>
             </div>
 
         </div>
