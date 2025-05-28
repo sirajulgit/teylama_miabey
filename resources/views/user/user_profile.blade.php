@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div class="progress-area text-center p-2">
+    {{-- <div class="progress-area text-center p-2">
         <p>Progress 0% > </p>
         <div class="bar-area d-flex align-items-center justify-content-between">
             <p>V0</p>
@@ -31,9 +31,9 @@
             </div>
             <p>V1</p>
         </div>
-        {{-- <p> Still Need to buy <span>10.00</span> USDT Can be promoted to VIP1 </p> --}}
+        <p> Still Need to buy <span>10.00</span> USDT Can be promoted to VIP1 </p>
 
-    </div>
+    </div> --}}
 
 
     <main class="home-content">

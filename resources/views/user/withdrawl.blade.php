@@ -11,7 +11,7 @@
 </a>
                 <div>
 
-                    <strong class="profile-name">{{auth()->user()->username}}</strong>
+
                 </div>
             </div>
 

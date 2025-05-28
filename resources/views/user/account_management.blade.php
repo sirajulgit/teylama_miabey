@@ -5,7 +5,9 @@
     <header>
         <div class="top-cover d-flex align-items-center justify-content-between">
 
-            <button class="btn-back-frw"> <i class="bi bi-chevron-left"></i> </button>
+      <a href="{{ url()->previous() }}">
+<button class="btn-back-frw"> <i class="bi bi-chevron-left"></i> </button>
+</a>
 
             <strong class="center-heading">Account Management</strong>
             <strong> </strong>
