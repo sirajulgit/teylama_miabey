@@ -2,6 +2,18 @@
 
 
 @section('content')
+
+<header>
+
+
+<div class="top-cover d-flex align-items-center justify-content-between">
+
+<button class="btn-back-frw"> <i class="bi bi-chevron-left"></i> </button>
+
+ <strong class="center-heading">Purchase History</strong>
+ <strong> </strong>
+
+</header>
     <main class="home-content">
 
   <div class="container-fluid">
