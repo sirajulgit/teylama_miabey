@@ -5,7 +5,6 @@
 
 <header>
 
-
 <div class="top-cover d-flex align-items-center justify-content-between">
 
 <button class="btn-back-frw"> <i class="bi bi-chevron-left"></i> </button>
