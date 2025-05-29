@@ -38,7 +38,10 @@
                 </form>
 
                 <div class="mt-4">
-                    <a href="{{ route('user_register') }}">
+                    {{-- <a href="{{ route('user_register') }}">
+                        <input type="submit" class="submit-btn have-account" value="Register Now" />
+                    </a> --}}
+                    <a href="#">
                         <input type="submit" class="submit-btn have-account" value="Register Now" />
                     </a>
                 </div>
