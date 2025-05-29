@@ -30,21 +30,18 @@
                         </div>
                     </div>
 
-                    <div class="mt-4">
+                    {{-- <div class="mt-4">
 
                             <input type="submit" class="submit-btn" value="Login" />
 
-                    </div>
+                    </div> --}}
                 </form>
 
-                <div class="mt-4">
-                    {{-- <a href="{{ route('user_register') }}">
-                        <input type="submit" class="submit-btn have-account" value="Register Now" />
-                    </a> --}}
-                    <a href="#">
+                {{-- <div class="mt-4">
+                    <a href="{{ route('user_register') }}">
                         <input type="submit" class="submit-btn have-account" value="Register Now" />
                     </a>
-                </div>
+                </div> --}}
             </div>
             <div>
                 <p style="font-size: 20px;color:red">
