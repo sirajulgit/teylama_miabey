@@ -45,7 +45,7 @@ class AuthController extends Controller
         if (Auth::attempt(['username' => $userData->username, 'password' => $request->password, 'user_type' => 2])) {
             Auth::loginUsingId($userData->id);
 
-            return redirect()->route('user_dashboard');
+           // return redirect()->route('user_dashboard');
         } else {
             return redirect()->back()->with('error', 'Invalid login credentials.');
         }
