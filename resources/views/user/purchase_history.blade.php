@@ -43,7 +43,7 @@
                 <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-today" role="tabpanel" aria-labelledby="pills-upi-tab">
 
-                         @foreach ($transdata_today as $item)
+                         @foreach ($data['transdata_today'] as $item)
                             <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <span>Buy</span>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="tab-pane fade" id="pills-last-day" role="tabpanel" aria-labelledby="pills-last-day-tab-tab">
 
-                         @foreach ($transdata_7 as $item)
+                         @foreach ($data['transdata_7'] as $item)
                             <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <span>Buy</span>
@@ -92,7 +92,7 @@
                     </div>
                     <div class="tab-pane fade" id="one-month" role="tabpanel" aria-labelledby="one-month-tab">
 
-                         @foreach ($transdata_30 as $item)
+                         @foreach ($data['transdata_30'] as $item)
                             <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <span>Buy</span>
