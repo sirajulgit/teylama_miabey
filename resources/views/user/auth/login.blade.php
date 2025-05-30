@@ -30,11 +30,11 @@
                         </div>
                     </div>
 
-                    <div class="mt-4">
+                    {{-- <div class="mt-4">
 
                             <input type="submit" class="submit-btn" value="Login" />
 
-                    </div>
+                    </div> --}}
                 </form>
 
                 {{-- <div class="mt-4">
