@@ -20,6 +20,7 @@ class PurchaseHistoryController extends Controller
             'page_title' => 'Purchase History',
         ];
          $transdata = UserTransactionHistory::where("user_id", auth()->user()->id)
+         ->where("trans_type","credit")
     ->where("created_at", ">=", Carbon::now()->subDays(7))
     ->orderBy("id", "asc")
     ->get();
