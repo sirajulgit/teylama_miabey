@@ -20,7 +20,8 @@ class PurchaseHistoryController extends Controller
             'page_title' => 'Purchase History',
         ];
          $transdata = UserTransactionHistory::join('currency_product', 'user_transaction_history.product_id', '=', 'currency_product.id')
-            ->select('user_transaction_history.*', 'currency_product.title','currency_product.amount as unit_amount')
+         ->join('crypto_app', 'user_transaction_history.crypto_app_id', '=', 'crypto_app.id')
+            ->select('user_transaction_history.*', 'currency_product.title','currency_product.amount as unit_amount','crypto_app.name as platform')
             ->where("user_transaction_history.user_id", auth()->user()->id)
             ->where("trans_type","credit")
             ->where("user_transaction_history.created_at", ">=", Carbon::now()->subDays(7))
