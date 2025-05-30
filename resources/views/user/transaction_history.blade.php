@@ -39,33 +39,21 @@
     <div class="tab-pane fade show active" id="pills-today" role="tabpanel" aria-labelledby="pills-upi-tab">
 
 
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
+       @foreach ($data['transdata_today'] as $item)
+                            <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span>Buy</span>
+                                    <div class="pay-info">
+                                        <b>{{ $item->title }}</b>
+                                        <p>{{ $item->created_at }}</p>
+                                    </div>
+                                </div>
+                                <div class="hist-amount text-end">
+                                    <strong>{{ $item->amount }} USDT</strong>
+                                    <p>{{ $item->platform }}</p>
+                                </div>
+                            </div>
+                         @endforeach
 
 
 
@@ -73,121 +61,41 @@
     </div>
     <div class="tab-pane fade" id="pills-last-day" role="tabpanel" aria-labelledby="pills-last-day-tab-tab">
 
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
+       @foreach ($data['transdata_7'] as $item)
+                            <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span>Buy</span>
+                                    <div class="pay-info">
+                                        <b>{{ $item->title }}</b>
+                                        <p>{{ $item->created_at }}</p>
+                                    </div>
+                                </div>
+                                <div class="hist-amount text-end">
+                                    <strong>{{ $item->amount }} USDT</strong>
+                                    <p>{{ $item->platform }}</p>
+                                </div>
+                            </div>
+                         @endforeach
 
 
     </div>
     <div class="tab-pane fade" id="one-month" role="tabpanel" aria-labelledby="one-month-tab">
 
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
+       @foreach ($data['transdata_30'] as $item)
+                            <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span>Buy</span>
+                                    <div class="pay-info">
+                                        <b>{{ $item->title }}</b>
+                                        <p>{{ $item->created_at }}</p>
+                                    </div>
+                                </div>
+                                <div class="hist-amount text-end">
+                                    <strong>{{ $item->amount }} USDT</strong>
+                                    <p>{{ $item->platform }}</p>
+                                </div>
+                            </div>
+                         @endforeach
 
       <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
         <div class="d-flex align-items-center justify-content-between">
