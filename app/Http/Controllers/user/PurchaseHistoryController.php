@@ -21,10 +21,10 @@ class PurchaseHistoryController extends Controller
         ];
          $transdata = UserTransactionHistory::join('currency_product', 'user_transaction_history.product_id', '=', 'currency_product.id')
             ->select('user_transaction_history.*', 'currency_product.title','currency_product.amount as unit_amount')
-            ->where("user_id", auth()->user()->id)
+            ->where("user_transaction_history.user_id", auth()->user()->id)
             ->where("trans_type","credit")
-            ->where("created_at", ">=", Carbon::now()->subDays(7))
-            ->orderBy("id", "asc")
+            ->where("user_transaction_history.created_at", ">=", Carbon::now()->subDays(7))
+            ->orderBy("user_transaction_history.id", "asc")
             ->get();
             dd($transdata);exit;
 
