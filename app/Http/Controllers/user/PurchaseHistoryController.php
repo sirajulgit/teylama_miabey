@@ -19,12 +19,14 @@ class PurchaseHistoryController extends Controller
         $data = [
             'page_title' => 'Purchase History',
         ];
-         $transdata = UserTransactionHistory::where("user_id", auth()->user()->id)
-         ->where("trans_type","credit")
-    ->where("created_at", ">=", Carbon::now()->subDays(7))
-    ->orderBy("id", "asc")
-    ->get();
-    dd($transdata);exit;
+         $transdata = UserTransactionHistory::join('currency_product', 'user_transaction_history.product_id', '=', 'currency_product.id')
+
+            ->where("user_id", auth()->user()->id)
+            ->where("trans_type","credit")
+            ->where("created_at", ">=", Carbon::now()->subDays(7))
+            ->orderBy("id", "asc")
+            ->get();
+            dd($transdata);exit;
 
 
 
