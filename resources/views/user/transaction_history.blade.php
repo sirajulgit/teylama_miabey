@@ -97,89 +97,8 @@
                             </div>
                          @endforeach
 
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
 
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
 
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
-
-      <div class="tra-list p-3 d-flex align-items-center justify-content-between mb-2">
-        <div class="d-flex align-items-center justify-content-between">
-         <span>Buy</span>
-         <div class="pay-info">
-          <b>10USDT INVEST</b>
-          <p>15:28:46 20/May 2025</p>
-         </div>
-         </div>
-         <div class="hist-amount text-end">
-          <strong>10.00 USDT</strong>
-          <p>Revoked</p>
-         </div>
-      </div>
 
 
     </div>
