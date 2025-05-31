@@ -17,7 +17,7 @@ jobs:
             username: ${{ secrets.SSH_USERNAME }}
             password: ${{ secrets.SSH_PASSWORD }}
             script: |
-              cd /home/thetechonpoint-cryptoconvert/htdocs/cryptoconvert.thetechonpoint.com/
+              cd /home/teylamamiabey-dev/htdocs/dev.teylamamiabey.com/
               git pull origin main
               cp .env.stating .env
               composer install
