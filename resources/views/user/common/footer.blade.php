@@ -1,33 +1,58 @@
-<footer>
-    <div class="foot-link">
-        <ul class="d-flex align-items-center justify-content-between">
-            <li class="text-center {{ Route::is('user_dashboard') ? 'link-active' : '' }}">
-                <a href="{{ route('user_dashboard') }}">
-                    <i class="bi bi-house-fill"></i> <br>
-                    <span> Home </span>
-                </a>
-            </li>
 
-            <li class="text-center {{ Route::is('user_account.*') ? 'link-active' : '' }}">
-                <a href="{{ route('user_account.index') }}">
-                    <i class="bi bi-wallet2"></i> <br>
-                    <span> Account </span>
-                </a>
-            </li>
-
-            <li class="text-center {{ Route::is('user_live_support') ? 'link-active' : '' }}">
-                <a href="{{ route('user_live_support') }}">
-                    <i class="bi bi-telephone-fill"></i> <br>
-                    <span> Support </span>
-                </a>
-            </li>
-
-            <li class="text-center {{ Route::is('user_profile.*') ? 'link-active' : '' }}">
-                <a href="{{ route('user_profile.index') }}">
-                    <i class="bi bi-person-square"></i> <br>
-                    <span> Me </span>
-                </a>
-            </li>
-        </ul>
+<footer class="pt-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-4 col-md-6">
+        <div class="foot-description d-flex align-items-center">
+          <span class="round-icon"> <i class="bi bi-geo-alt"></i> </span>
+          <div>
+            <b>Our Location</b>
+            <p> XYZ Hilton Street, 125 Town <br> United State </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="foot-description d-flex align-items-center">
+          <span class="round-icon"> <i class="bi bi-telephone"></i> </span>
+          <div>
+            <p> 009-215-5599 </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="foot-description d-flex align-items-center">
+          <span class="round-icon"> <i class="bi bi-envelope"></i> </span>
+          <div>
+            <p> hello@infopoliticia.com </p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="midle-footer d-flex align-items-center justify-content-between">
+      <div>
+        <ul class="d-flex social-footer">
+          <li class="me-4">Social: </li>
+          <li><a href=""><i class="bi bi-facebook"></i> </a></li>
+          <li><a href=""> <i class="bi bi-twitter-x"></i> </a></li>
+          <li><a href=""> <i class="bi bi-instagram"></i> </a></li>
+          <li><a href=""> <i class="bi bi-youtube"></i> </a></li>
+        </ul>
+      </div>
+
+      <ul class="d-flex footer-link">
+        <li><a href="">Terms & Conditions </a></li>
+        <li><a href=""> Privacy Policy </a></li>
+      </ul>
+
+
+    </div>
+
+    <div class="copy-right text-center pt-4 pb-4">
+      <p> Copyright © 2025 Teylama  Miabey  </p>
+    </div>
+
+
+
+  </div>
 </footer>

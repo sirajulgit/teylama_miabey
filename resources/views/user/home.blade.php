@@ -1,4 +1,4 @@
-@extends('user.layout.auth_layout')
+@extends('user.layout.guest_layout')
 
 
 @section('content')
