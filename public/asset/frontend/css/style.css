@@ -7,7 +7,7 @@
 	width: 100%;
 	overflow-x: hidden;
 } */
- 
+
 * {
     text-decoration: none !important;
     outline: none !important;
@@ -32,7 +32,7 @@ body {
     color: #333333;
 }
 
-html 
+html
 {
     overflow: hidden;
 }
@@ -101,12 +101,12 @@ a:visited {
     color: #21a108;
 }
 
-/* ::selection 
+/* ::selection
 {
     background: #21a108;
     color: #fff;
 }
-::-moz-selection 
+::-moz-selection
 {
     background: #21a108;
     color: #fff;
@@ -121,13 +121,13 @@ button:focus {
     outline: none;
 }
 
- 
+
 header
 {
     background: #fff;
     padding: 12px 10px;
     z-index: 9;
-    box-shadow: 0 0 10px #b5b5b5; 
+    box-shadow: 0 0 10px #b5b5b5;
     border-bottom: 1px solid #cacaca;
 }
 
@@ -135,7 +135,7 @@ header
     max-width: 150px;
 }
 
-.banner 
+.banner
 {
     margin: 0 auto;
 }
@@ -173,13 +173,13 @@ header
         width: 65px;
 }
 
-.slick-dots .slick-active button 
+.slick-dots .slick-active button
 {
     background: #ff9b3c;
 }
 
- 
-.banner .slick-slide img 
+
+.banner .slick-slide img
 {
     width: 100%;
 }
@@ -191,17 +191,17 @@ header
     border-radius: 10px;
 }
 
-.video-btn 
+.video-btn
 {
     background: transparent;
     border: none;
     padding: 0;
     text-transform: capitalize;
-    color: #FFF; 
+    color: #FFF;
     font-weight: 600;
 }
 
-.home-content 
+.home-content
 {
     background: #f0f5ff !important;
     padding-bottom: calc(90px + 6vw);
@@ -220,7 +220,7 @@ header
     height: 100dvh;
 }
 
- .link-area ul li img 
+ .link-area ul li img
  {
     width: 60px;
  }
@@ -233,27 +233,27 @@ header
     box-shadow: 0 2px 5px #e1e1e1;
 }
 
-.price-list > p 
+.price-list > p
 {
     text-transform: capitalize;
     font-size: 14px;
-    margin-bottom: 8px; 
+    margin-bottom: 8px;
     color: #000;
 }
 
-.left-price strong 
+.left-price strong
 {
     font-size: 22px;
-    font-weight: bold !important; 
+    font-weight: bold !important;
     color: #000;
 }
 
-.left-price p 
+.left-price p
 {
     color: #8c8b95;
 }
 
-.right-price > span 
+.right-price > span
 {
     font-size: 28px;
     font-weight: bold;
@@ -261,19 +261,19 @@ header
     font-family: "Oswald", sans-serif;
 }
 
-.right-price > span.small-price 
+.right-price > span.small-price
 {
     font-size: 20px;
 }
 
-.link-area li p 
+.link-area li p
 {
     color: var(--blue-text);
-    margin-top: 10px; 
+    margin-top: 10px;
     font-weight: 500;
 }
 
-.how-buy span 
+.how-buy span
 {
     color: #fff;
 }
@@ -284,7 +284,7 @@ header
     font-weight: 600;
 }
 
-.btn-back-frw 
+.btn-back-frw
 {
     background: #333;
     color: #FFF;
@@ -292,28 +292,28 @@ header
     border-radius: 5px;
 }
 
-.center-heading 
+.center-heading
 {
-    color: #000; 
+    color: #000;
     font-size: 20px;
 }
 
-.product-title 
+.product-title
 {
-    border-top: 1px solid #e1e1e1; 
-    border-bottom: 1px solid #e1e1e1; 
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
 }
 
-.ctrl-wid-price 
+.ctrl-wid-price
 {
     width: 60%;
 }
 
 .product-title h3
 {
-    padding: 10px 15px; 
-    color: #000; 
-    font-size: 18px; 
+    padding: 10px 15px;
+    color: #000;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -323,30 +323,30 @@ header
     color: #000;
     border: none;
     border-radius: 5px;
-    padding: 5px 15px; 
+    padding: 5px 15px;
     font-size: 25px;
 }
 
-.inc-dec-btn button:hover 
+.inc-dec-btn button:hover
 {
-    background: #d4d4d4; 
+    background: #d4d4d4;
     color: var(--blue-text);
 }
 
 .price-inc-part input
 {
-    box-shadow: none !important; 
+    box-shadow: none !important;
     outline: none !important;
 }
 
-.total-width-price 
+.total-width-price
 {
     width: 180px;
 }
 
-.payment-title 
+.payment-title
 {
-    background: #f6914e; 
+    background: #f6914e;
     padding: 10px 15px;
     text-transform: capitalize;
 }
@@ -357,19 +357,19 @@ header
     text-transform: capitalize;
 }
 
-.payment-title h3 
+.payment-title h3
 {
-    font-size: 16px; 
+    font-size: 16px;
     font-weight: 600;
 }
 
-.price-part p span 
+.price-part p span
 {
     font-size: 22px;
     color: #000;
 }
 
-.account-tab ul 
+.account-tab ul
 {
     /* border-top: 1px solid #cacaca; */
     padding: 10px;
@@ -379,42 +379,42 @@ header
 .card-bound {
     background: #ffebeb;
     padding: 10px 15px;
-    
+
 }
 
-.bank-list 
+.bank-list
 {
     background: #FFF;
 }
 
-.bank-list img 
+.bank-list img
 {
-    width: 35px; 
+    width: 35px;
     margin-right: 10px;
 }
 
-.bank-list p 
+.bank-list p
 {
-    font-weight: 600; 
+    font-weight: 600;
     font-weight: 600;
 }
 
-.ac-number 
+.ac-number
 {
     font-size: 30px;
     font-weight: 700;
 }
 
-.card-bound p 
+.card-bound p
 {
     color: #2c2c2c;
 }
 
 
-.borderd-plus 
+.borderd-plus
 {
     border: 1px dashed var(--blue-text);
-    width: 30px; 
+    width: 30px;
     height: 30px;
     display: flex;
     align-items: center;
@@ -423,12 +423,12 @@ header
     margin: 0 auto;
 }
 
-.banner-image img 
+.banner-image img
 {
     width: 100%;
 }
 
- 
+
 
 .livesupport {
     background: #3e8bff;
@@ -436,19 +436,19 @@ header
     border-radius: 15px;
 }
 
-.live-content strong 
+.live-content strong
 {
     color: #FFF;
-    font-size: 22px; 
+    font-size: 22px;
     font-weight: 400 !important;
 }
 
-.live-content p 
+.live-content p
 {
     color: #FFF;
 }
 
-.teligrame-color 
+.teligrame-color
 {
     background: #3a75bf;
 }
@@ -462,57 +462,57 @@ header
     margin-right: 15px;
 }
 
-.whatsapp-color 
+.whatsapp-color
 {
     background: #409a2c;
 }
 
-.rounded-client img 
+.rounded-client img
 {
     object-fit: cover;
     height: 100%;
 }
 
 
-.edit-profile-banner 
+.edit-profile-banner
 {
     background: #f6914e;
-    
+
 }
 
-.client-image 
+.client-image
 {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    overflow: hidden; 
+    overflow: hidden;
     margin-right: 15px;
 }
-.client-image  img 
+.client-image  img
 {
     height: 100%;
     object-fit: cover;
 }
 
-.left-details .vipo 
+.left-details .vipo
 {
     background:  #000;
     color: #FFF;
-    padding: 5px 20px; 
+    padding: 5px 20px;
     border-radius: 50px;
     display: inline-block;
     font-size: 14px;
-    line-height: 18px; 
+    line-height: 18px;
     margin-bottom: 5px;
 }
 
-.left-details .profile-name 
+.left-details .profile-name
 {
-    font-size: 18px; 
+    font-size: 18px;
     color: #FFF;
 }
 
-.right-details-balance p, .right-details-balance strong 
+.right-details-balance p, .right-details-balance strong
 {
     color: #FFF;
 }
@@ -523,7 +523,7 @@ header
     font-size: 14px;
 }
 
-.bar-area p 
+.bar-area p
 {
     margin: 0 10px;
 }
@@ -539,26 +539,26 @@ header
     font-weight: 600;
 }
 
-.amount-area-withdraw input[type="text"] 
+.amount-area-withdraw input[type="text"]
 {
     border-radius: 0;
     height: 45px;
     font-size: 14px;
     outline: none !important;
     box-shadow: none;
-    padding-left: 50px; 
+    padding-left: 50px;
     position: relative;
 }
 
 
-.amount-area-withdraw input[type="number"] 
+.amount-area-withdraw input[type="number"]
 {
     border-radius: 0;
     height: 45px;
     font-size: 14px;
     outline: none !important;
     box-shadow: none;
-    padding-left: 50px; 
+    padding-left: 50px;
     position: relative;
 }
 
@@ -572,17 +572,17 @@ header
 
 
 
-.password-change-from label 
+.password-change-from label
 {
     font-size: 14px;
     color: #000;
 }
 
 .password-change-from input[type="password"] {
-     
+
     height: 45px;
-    font-size: 14px; 
-    outline: none !important; 
+    font-size: 14px;
+    outline: none !important;
     box-shadow: none;
     padding-right: 30px;
     border-radius: 10px;
@@ -591,8 +591,8 @@ header
 .login-from input[type="text"] {
     border-radius: 10px;
     height: 45px;
-    font-size: 14px; 
-    outline: none !important; 
+    font-size: 14px;
+    outline: none !important;
     box-shadow: none;
     padding-right: 30px;
 }
@@ -617,12 +617,12 @@ header
     box-shadow: 3px 5px 5px #cbcbcb;
 }
 
-.live-support p 
+.live-support p
 {
     font-size: 14px;
 }
 
-.live-support p a 
+.live-support p a
 {
     color: var(--blue-text);
 }
@@ -633,9 +633,9 @@ header
     font-size: 14px;
 }
 
-.amount-area-withdraw 
+.amount-area-withdraw
 {
-    background: #FFF; 
+    background: #FFF;
     padding: 10px;
 }
 
@@ -650,19 +650,19 @@ header
     font-size: 12px;
 }
 
-.account-tab button 
+.account-tab button
 {
-    font-size: 14px; 
+    font-size: 14px;
     padding: 5px 15px;
 }
 
-.tra-list  
+.tra-list
 {
-    background: #FFF; 
+    background: #FFF;
     border-radius: 5px;
 }
 
-.tra-list span 
+.tra-list span
 {
     font-weight: bold;
     padding: 0 30px;
@@ -687,27 +687,27 @@ header
     font-size: 20px;
 }
 
-.hist-amount p 
+.hist-amount p
 {
     color: #a0a0a0;
 }
 
 
-.account-tab .nav-link 
+.account-tab .nav-link
 {
     color: #000;
 }
 
 .video-area video, .video-area iframe
 {
-    border-radius: 5px; 
+    border-radius: 5px;
     overflow: hidden;
 }
 
-.video-part h4 
+.video-part h4
 {
-    font-size: 18px; 
-    font-weight: 600; 
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -726,7 +726,7 @@ header
     width: 100%;
     border: none;
     padding: 10px 15px;
-    color: #ffffff; 
+    color: #ffffff;
     font-size: 14px;
 }
 
@@ -750,7 +750,7 @@ footer {
     box-shadow: 0 0 10px #b5b5b5;
 }
 
-.foot-link ul li 
+.foot-link ul li
 {
     width: 25%;
     text-align: center;
@@ -758,18 +758,18 @@ footer {
 }
 
 
-.foot-link li a 
+.foot-link li a
 {
     color: #000;
 }
 
-.link-active 
+.link-active
 {
-    background: #f79345; 
+    background: #f79345;
     color: #fff;
 }
 
-.link-active a 
+.link-active a
 {
     color: #fff !important;
 }

@@ -56,64 +56,64 @@ use App\Http\Controllers\user\ChangePasswordController;
 // +++++++++++++++++++++++ |  User Routes  |  ++++++++++++++++++++++++++++++++++++
 Route::middleware('isGuest')->group(function () {
     Route::get('/', function () {
-        return redirect()->route('user_login');
+        return redirect()->route('home');
     });
 
-    Route::get('/login', [AuthController::class, 'login'])->name('user_login');
-    Route::post('/login', [AuthController::class, 'post_login'])->name('post_user_login');
-    Route::get('/register', [AuthController::class, 'register'])->name('user_register');
-    Route::post('/register', [AuthController::class, 'post_register'])->name('post_user_register');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    // Route::post('/login', [AuthController::class, 'post_login'])->name('post_user_login');
+    // Route::get('/register', [AuthController::class, 'register'])->name('user_register');
+    // Route::post('/register', [AuthController::class, 'post_register'])->name('post_user_register');
 
 });
 
-Route::middleware('auth')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout'])->name('user_logout');
+// Route::middleware('auth')->group(function () {
+//     Route::post('/logout', [AuthController::class, 'logout'])->name('user_logout');
 
-    // +++++++++++++++ | dashboard | +++++++++++++++
-    Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user_dashboard');
-
-
-    // ################ | Start account management | ################
-
-    Route::get('/account-management', [AccountManagementController::class, 'index'])->name('user_account.index');
-    Route::post('/account-management', [AccountManagementController::class, 'post_create'])->name('user_account.post_create');
-    Route::post('/upi-management', [AccountManagementController::class, 'post_upi_create'])->name('user_account.post_upi_create');
-
-    Route::post('/account-delete', [AccountManagementController::class, 'delete'])->name('user_account.delete');
-
-    // ################ | withdrawl | ################
-
-    Route::get('/withdrawl', [WithdrawlController::class, 'index'])->name('user_account.withdrawl');
-    Route::post('/withdrawl-request', [WithdrawlController::class, 'post_withdrawl_create'])->name('user_account.post_withdrawl_create');
-
-    // ################ | Purchase History | ################
-
-    Route::get('/purchase-history', [PurchaseHistoryController::class, 'index'])->name('user_account.purchase_history');
-
-    // ################ | Transaction History | ################
-
-    Route::get('/transaction-history', [TransactionHistoryController::class, 'index'])->name('user_account.transaction_history');
-
- // ################ | Change Password | ################
-
-    Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('user_account.change_password');
-
-    // +++++++++++++++ | Buy product | +++++++++++++++
-    Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('user_account.buy_product');
-
-    Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('user_account.make_payment');
-
-    Route::get('/payment-qr/{purchase_request_id}', [BuyProductController::class, 'paymentQRGenerate'])->name('user_account.payment_qr_generate');
-
-    // ################ | End account management | ################
+//     // +++++++++++++++ | dashboard | +++++++++++++++
+//     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user_dashboard');
 
 
-    // +++++++++++++++ | live support | +++++++++++++++
-    Route::get('/live-support', [LiveSupportController::class, 'index'])->name('user_live_support');
+//     // ################ | Start account management | ################
 
-    // +++++++++++++++ | user profile | +++++++++++++++
-    Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('user_profile.index');
-});
+//     Route::get('/account-management', [AccountManagementController::class, 'index'])->name('user_account.index');
+//     Route::post('/account-management', [AccountManagementController::class, 'post_create'])->name('user_account.post_create');
+//     Route::post('/upi-management', [AccountManagementController::class, 'post_upi_create'])->name('user_account.post_upi_create');
+
+//     Route::post('/account-delete', [AccountManagementController::class, 'delete'])->name('user_account.delete');
+
+//     // ################ | withdrawl | ################
+
+//     Route::get('/withdrawl', [WithdrawlController::class, 'index'])->name('user_account.withdrawl');
+//     Route::post('/withdrawl-request', [WithdrawlController::class, 'post_withdrawl_create'])->name('user_account.post_withdrawl_create');
+
+//     // ################ | Purchase History | ################
+
+//     Route::get('/purchase-history', [PurchaseHistoryController::class, 'index'])->name('user_account.purchase_history');
+
+//     // ################ | Transaction History | ################
+
+//     Route::get('/transaction-history', [TransactionHistoryController::class, 'index'])->name('user_account.transaction_history');
+
+//  // ################ | Change Password | ################
+
+//     Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('user_account.change_password');
+
+//     // +++++++++++++++ | Buy product | +++++++++++++++
+//     Route::get('/buy-product/{id}', [BuyProductController::class, 'index'])->name('user_account.buy_product');
+
+//     Route::post('/make-payment', [BuyProductController::class, 'makePayment'])->name('user_account.make_payment');
+
+//     Route::get('/payment-qr/{purchase_request_id}', [BuyProductController::class, 'paymentQRGenerate'])->name('user_account.payment_qr_generate');
+
+//     // ################ | End account management | ################
+
+
+//     // +++++++++++++++ | live support | +++++++++++++++
+//     Route::get('/live-support', [LiveSupportController::class, 'index'])->name('user_live_support');
+
+//     // +++++++++++++++ | user profile | +++++++++++++++
+//     Route::get('/edit-profile', [UserProfileController::class, 'index'])->name('user_profile.index');
+// });
 
 
 
