@@ -16,16 +16,17 @@ class CoustomGuestMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check()) {
-            if (Auth::user()->user_type == 1) {
-                // ###### | go to admin dashboard page | ######
-                return redirect()->route('dashboard');
-            } else {
-                // ###### | go to user dashboard page | ######
-                return redirect()->route('user_dashboard');
-            }
-        } else {
-            return $next($request);
-        }
+        // if (Auth::check()) {
+        //     if (Auth::user()->user_type == 1) {
+        //         // ###### | go to admin dashboard page | ######
+        //         return redirect()->route('dashboard');
+        //     } else {
+        //         // ###### | go to user dashboard page | ######
+        //         return redirect()->route('user_dashboard');
+        //     }
+        // } else {
+        //     return $next($request);
+        // }
+         return $next($request);
     }
 }
