@@ -22,11 +22,15 @@
 </head>
 
 <body>
+ {{-- +++++++++++++++++ | Header | +++++++++++++++++ --}}
+    @include('user.common.header')
 
 
     {{-- +++++++++++++++++ | Main Content | +++++++++++++++++ --}}
     @yield('content')
 
+ {{-- +++++++++++++++++ | Footer | +++++++++++++++++ --}}
+    @include('user.common.footer')
 
 
     {{-- ################# | Jquery | ################# --}}
