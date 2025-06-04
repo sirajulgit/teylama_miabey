@@ -22,13 +22,13 @@
                 </li>
 
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route('user_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'user' ? 'active' : '' }}">
                         <i class="fas fa-users"></i>
                         <p>Users</p>
                     </a>
-                </li>
+                </li> --}}
 
                 {{-- <li class="nav-item">
                     <a href="{{ route('bibliography_list') }}"
@@ -95,7 +95,7 @@
                 </li>
 
 
-                {{-- <li class="nav-item {{ $data['activePageName'] == 'cms' ? 'menu-open' : '' }} ">
+                <li class="nav-item {{ $data['activePageName'] == 'cms' ? 'menu-open' : '' }} ">
 
                     <a href="#" class="nav-link {{ $data['activePageName'] == 'cms' ? 'active' : '' }} ">
                         <i class="nav-icon fas fa-th"></i>
@@ -122,7 +122,7 @@
                         </li>
 
                     </ul>
-                </li> --}}
+                </li>
 
 
 
