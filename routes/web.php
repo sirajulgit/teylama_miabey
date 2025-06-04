@@ -36,6 +36,8 @@ use App\Http\Controllers\user\WithdrawlController;
 use App\Http\Controllers\user\PurchaseHistoryController;
 use App\Http\Controllers\user\TransactionHistoryController;
 use App\Http\Controllers\user\ChangePasswordController;
+use App\Http\Controllers\user\HomeController;
+
 
 
 
