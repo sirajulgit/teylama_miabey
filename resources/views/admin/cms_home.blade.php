@@ -769,14 +769,20 @@
             ////////////// form validation ////////////////////////
             $('#aboutForm').validate({
                 rules: {
+                    head_title:{
+                        required: true,
+                    }
                     title_1: {
                         required: true,
                     },
                     content: {
                         required: true
                     },
-                    file_1: {
-                        extension: "pdf"
+                    image_1_text_1: {
+                        required: true
+                    },
+                    image_1_text_2: {
+                        required: true
                     },
                 },
                 messages: {
