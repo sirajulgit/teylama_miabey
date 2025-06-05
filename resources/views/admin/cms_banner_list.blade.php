@@ -40,9 +40,7 @@
                                                     height="120px" />
                                             </td>
                                             <td class="project-state text-center">
-                                                @if ($item->type == "home_page")
-                                                    <span class="badge badge-info">Home Page</span>
-                                                @endif
+                                                <span class="badge badge-info">{{ ucwords(str_replace('_', ' ', $item->type)) }}</span>
                                             </td>
                                             <td>
                                                 {{ $item->title_1 }}
