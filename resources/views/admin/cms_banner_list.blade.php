@@ -62,11 +62,11 @@
                                                     Edit
                                                 </a>
 
-                                                <button type="submit" class="btn btn-danger btn-sm del-record"
+                                                {{-- <button type="submit" class="btn btn-danger btn-sm del-record"
                                                     data-id="{{ $item->id }}" style="display: inline;">
                                                     <i class="fas fa-trash"></i>
                                                     Delete
-                                                </button>
+                                                </button> --}}
                                             </td>
                                         </tr>
                                     @endforeach
