@@ -18,3 +18,13 @@ yarn-error.log
 /.idea
 /.vscode
 composer.lock
+
+/public/uploads/files/*
+!/public/uploads/files/.gitkeep
+/public/uploads/images/*
+!/public/uploads/images/.gitkeep
+!/public/uploads/images/resize
+/public/uploads/images/resize/*
+!/public/uploads/images/resize/.gitkeep
+/public/uploads/QR/*
+!/public/uploads/QR/.gitkeep
