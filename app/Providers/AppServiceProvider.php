@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
     $fb_link_data = Cms::where('type', 'fb_link')->first();
     $insra_link_data = Cms::where('type', 'insra_link')->first();
     $youtube_link_data = Cms::where('type', 'youtube_link')->first();
+    $contact_no_data = Cms::where('type', 'contact_no')->first();
 
     $setting_data = [
         "contact_email" => optional($email_data)->details,
@@ -36,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
         "fb_link"       => optional($fb_link_data)->details,
         "insra_link"    => optional($insra_link_data)->details,
         "youtube_link"  => optional($youtube_link_data)->details,
+        "contact_no"  => optional($contact_no_data)->details,
     ];
 
     $view->with('settings', $setting_data);

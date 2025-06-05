@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="top-cover d-flex align-items-center justify-content-between">
         <ul class="d-flex left-head">
-          <li><a href=""><i class="bi bi-telephone-fill"></i> 009-215-5599</a></li>
+          <li><a href=""><i class="bi bi-telephone-fill"></i> {{$settings['contact_no']}}</a></li>
           <li><a href=""><i class="bi bi-envelope-fill"></i> {{$settings['contact_email']}} </a></li>
         </ul>
 
