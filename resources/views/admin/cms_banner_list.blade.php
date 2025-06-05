@@ -26,7 +26,7 @@
                                         <th style="width: 20%">Image</th>
                                         <th style="width: 10%">Banner Type</th>
                                         <th style="width: 20%">Title 1</th>
-                                        {{-- <th style="width: 20%">Title 2</th> --}}
+                                        <th style="width: 20%">Details</th>
                                         <th style="width: 8%" class="text-center">Status</th>
                                         <th style="width: 10%">Action</th>
                                     </tr>
@@ -48,7 +48,7 @@
                                                 {{ $item->title_1 }}
                                             </td>
                                             <td>
-                                                {{ $item->title_2 }}
+                                                {{ $item->details }}
                                             </td>
                                             <td class="project-state text-center">
                                                 @if ($item->status == 1)
