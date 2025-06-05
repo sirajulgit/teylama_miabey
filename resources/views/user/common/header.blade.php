@@ -9,10 +9,10 @@
         </ul>
 
         <ul class="d-flex social-head">
-          <li><a href=""><i class="bi bi-facebook"></i> </a></li>
-          <li><a href=""> <i class="bi bi-twitter-x"></i> </a></li>
-          <li><a href=""> <i class="bi bi-instagram"></i> </a></li>
-          <li><a href=""> <i class="bi bi-youtube"></i> </a></li>
+          <li><a href="{{$settings['fb_link']}}"><i class="bi bi-facebook"></i> </a></li>
+          <li><a href="{{$settings['twitter_link']}}"> <i class="bi bi-twitter-x"></i> </a></li>
+          <li><a href="{{$settings['insra_link']}}"> <i class="bi bi-instagram"></i> </a></li>
+          <li><a href="{{$settings['youtube_link']}}"> <i class="bi bi-youtube"></i> </a></li>
         </ul>
 
         <a href="#" id="pull">
