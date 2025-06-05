@@ -42,7 +42,7 @@
                 <li class="nav-item">
                     <a href="{{ route('cms_banner_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'banner' ? 'active' : '' }}">
-                        <i class="fa-solid fa-image"></i>
+                        <i class="nav-icon fa-solid fa-image"></i>
                         <p>Banners</p>
                     </a>
                 </li>
