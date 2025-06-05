@@ -57,14 +57,15 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-12">
                                     <label for="image_1_text_1">Image 1 Text 1</label>
-                                    <textarea id="image_1_text_1" name="image_1_text_1" class="form-control" rows="5">{{ $items['about']['image_1_text_1'] }}</textarea>
+                                    <textarea id="image_1_text_1_1" name="image_1_text_1" class="form-control" rows="5">{{ $items['about']['image_1_text_1'] }}</textarea>
+                                    
                                 </div>
 
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-12">
                                     <label for="image_1_text_2">Image 1 Text 2</label>
-                                    <textarea id="image_1_text_2" name="image_1_text_2" class="form-control" rows="5">{{ $items['about']['image_1_text_2'] }}</textarea>
+                                    <textarea id="image_1_text_2_1" name="image_1_text_2" class="form-control" rows="5">{{ $items['about']['image_1_text_2'] }}</textarea>
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -533,6 +534,12 @@
                 height: 200,
             });
             $("#head_title1").summernote({
+                height: 100,
+            });
+            $("#image_1_text_1_1").summernote({
+                height: 100,
+            });
+            $("#image_1_text_2_1").summernote({
                 height: 100,
             });
 
