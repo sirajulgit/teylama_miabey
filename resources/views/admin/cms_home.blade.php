@@ -530,11 +530,11 @@
 
             
             ////////// Summernote /////////////
-            $("#content1").summernote({
-                height: 200,
-            });
             $("#head_title1").summernote({
                 height: 100,
+            });
+            $("#content1").summernote({
+                height: 200,
             });
             $("#image_1_text_1_1").summernote({
                 height: 100,
@@ -772,9 +772,6 @@
                     head_title:{
                         required: true,
                     }
-                    title_1: {
-                        required: true,
-                    },
                     content: {
                         required: true
                     },
