@@ -1181,6 +1181,11 @@ footer::after
     color: #FFF;
 }
 
+footer::after, footer::before 
+{
+    z-index: -1;
+}
+
 /**************** About **************/ 
 
 .testimo-content p {
@@ -1448,6 +1453,7 @@ footer::after
     font-size: 25px;
     margin-bottom: 20px;
 }
+
 
 
 
