@@ -11,7 +11,7 @@
 
 </div>
   <div class="home-banner-content">
-    <img data-aos="fade-right" data-aos-duration="2000" src="images/hello-i-am.png">
+    <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png')}}">
     <h1 data-aos="fade-right" data-aos-duration="2000"> Teylama Miabey  </h1>
 
   </div>
