@@ -76,11 +76,11 @@
                                             <input type="file" class="form-control mt-3 uploadFile" name="image_2"
                                                 id="image_2_about" accept="image/png, image/jpg, image/jpeg, image/webp">
 
-                                            @if (!is_null($items['about']['image_2']))
+                                            {{-- @if (!is_null($items['about']['image_2']))
                                                 <button type="button" data-id="{{ $items['about']['id'] }}"
                                                     data-field-name="image_2"
                                                     class="btn btn-sm btn-danger del_about_right_img mt-3 mb-3"><i class="fas fa-trash" aria-hidden="true"></i> Delete</button>
-                                            @endif
+                                            @endif --}}
                                         </label>
 
                                         <div class="profile_image">
