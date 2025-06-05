@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
         //
-       View::composer('user.common.header', function ($view) {
+       View::composer(['user.common.header', 'user.common.footer'], function ($view) {
     $email_data = Cms::where('type', 'contact_email')->first();
     $gmail_link_data = Cms::where('type', 'gmail_link')->first();
     $twitter_link_data = Cms::where('type', 'twitter_link')->first();
