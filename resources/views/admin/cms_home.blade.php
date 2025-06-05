@@ -57,12 +57,12 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-3">
                                     <label for="image_1_text_1">Image 1 Text 1</label>
                                     <textarea id="image_1_text_1" name="image_1_text_1" class="form-control" rows="5">{{ $items['about']['image_1_text_1'] }}</textarea>
                                 </div>
 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-3">
                                     <label for="image_1_text_2">Image 1 Text 2</label>
                                     <textarea id="image_1_text_2" name="image_1_text_2" class="form-control" rows="5">{{ $items['about']['image_1_text_2'] }}</textarea>
                                 </div>
