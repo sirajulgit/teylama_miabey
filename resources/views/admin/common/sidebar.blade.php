@@ -129,60 +129,27 @@
 
 
 
-                <li class="nav-item">
-                    <a href="{{ route('currency_rate_list') }}"
-                        class="nav-link {{ $data['activePageName'] == 'currency' ? 'active' : '' }}">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>
-                        <p>Currency Rate</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('product_list') }}"
-                        class="nav-link {{ $data['activePageName'] == 'product' ? 'active' : '' }}">
-                        <i class="fa-solid fa-indian-rupee-sign"></i>
-                        <p>Currency Products</p>
-                    </a>
-                </li>
+
+
+
 
 
                 <li class="nav-item">
-                    <a href="{{ route('crypto_app_list') }}"
-                        class="nav-link {{ $data['activePageName'] == 'crypto' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-newspaper"></i>
-                        <p>Crypto App</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ route('purchase_request_list') }}"
-                        class="nav-link {{ $data['activePageName'] == 'purchase_request' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-newspaper"></i>
-                        <p>Purchase Request</p>
-                    </a>
-                </li>
-                 <li class="nav-item">
-                    <a href="{{ route('withdrawl_request_list') }}"
-                        class="nav-link {{ $data['activePageName'] == 'withdrawl_request' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-newspaper"></i>
-                        <p>withdrawl Request</p>
-                    </a>
-                </li>
-
-                {{-- <li class="nav-item">
                     <a href="{{ route('blog_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'blog' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-rss"></i>
                         <p>Blogs</p>
                     </a>
-                </li> --}}
+                </li>
 
 
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a href="{{ route('cms_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'cms_social_link_contract_email' ? 'active' : '' }} ">
                         <i class="nav-icon fas fa-th"></i>
                         <p>Social Links & Email</p>
                     </a>
-                </li> --}}
+                </li>
 
 
                 <li class="nav-item">
