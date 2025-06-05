@@ -15,7 +15,7 @@
         <div class="foot-description d-flex align-items-center">
           <span class="round-icon"> <i class="bi bi-telephone"></i> </span>
           <div>
-            <p> 009-215-5599 </p>
+            <p>  {{$settings['contact_no']}} </p>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
         <div class="foot-description d-flex align-items-center">
           <span class="round-icon"> <i class="bi bi-envelope"></i> </span>
           <div>
-            <p> hello@infopoliticia.com </p>
+            <p> {{$settings['contact_email']}}  </p>
           </div>
         </div>
       </div>
@@ -33,10 +33,10 @@
       <div>
         <ul class="d-flex social-footer">
           <li class="me-4">Social: </li>
-          <li><a href=""><i class="bi bi-facebook"></i> </a></li>
-          <li><a href=""> <i class="bi bi-twitter-x"></i> </a></li>
-          <li><a href=""> <i class="bi bi-instagram"></i> </a></li>
-          <li><a href=""> <i class="bi bi-youtube"></i> </a></li>
+          <li><a href="{{$settings['fb_link']}}"><i class="bi bi-facebook"></i> </a></li>
+          <li><a href="{{$settings['twitter_link']}}"> <i class="bi bi-twitter-x"></i> </a></li>
+          <li><a href="{{$settings['insra_link']}}"> <i class="bi bi-instagram"></i> </a></li>
+          <li><a href="{{$settings['youtube_link']}}"> <i class="bi bi-youtube"></i> </a></li>
         </ul>
       </div>
 
