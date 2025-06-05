@@ -17,7 +17,7 @@ class CmsBannerController extends Controller
         $data['activePageName'] = 'banner';
         $data['activeSubMenu'] = 'cms_banner';
 
-        $items = CmsBanner::where("status", 1)->get();
+        $items = CmsBanner::get();
 
         $temp_arr = [];
         foreach ($items as $item) {
