@@ -785,19 +785,6 @@
                         required: true
                     },
                 },
-                messages: {
-                    // email: {
-                    //     required: "Please enter a email address",
-                    //     email: "Please enter a valid email address"
-                    // },
-                    // password: {
-                    //     required: "Please provide a password",
-                    //     minlength: "Your password must be at least 5 characters long"
-                    // },
-                    file_1: {
-                        extension: "plese select .pdf format file"
-                    }
-                },
                 errorElement: 'span',
                 errorPlacement: function(error, element) {
                     error.addClass('invalid-feedback');
@@ -811,7 +798,7 @@
                 },
                 submitHandler: function(form, event) {
                     event.preventDefault();
-                    form.submit();
+                    // form.submit();
                 }
             });
             
