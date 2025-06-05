@@ -771,7 +771,7 @@
                 rules: {
                     head_title:{
                         required: true,
-                    }
+                    },
                     content: {
                         required: true
                     },
@@ -795,7 +795,7 @@
                 },
                 submitHandler: function(form, event) {
                     event.preventDefault();
-                    // form.submit();
+                    form.submit();
                 }
             });
             
