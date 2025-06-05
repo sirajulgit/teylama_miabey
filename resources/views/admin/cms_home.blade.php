@@ -11,7 +11,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title badge badge-success font-weight-bold ">About Miabey</h3>
+                            <h3 class="card-title badge badge-success font-weight-bold ">About</h3>
                         </div>
                         <!-- /.card-header -->
 
