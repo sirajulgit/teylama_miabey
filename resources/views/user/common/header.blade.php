@@ -34,12 +34,12 @@
 
       <div class="nav d-flex justify-content-center">
         <ul id="menu-bg">
-          <li class="current-menu-item"><a href=""> Home </a></li>
-          <li><a href=""> About Me </a> </li>
-          <li><a href=""> Blog </a></li>
-          <li><a href=""> Events </a></li>
-          <li><a href=""> Gallery </a></li>
-          <li><a href=""> Contact Me </a></li>
+          <li class="current-menu-item"><a href="{{ route('home') }}"> Home </a></li>
+          <li><a href="{{ route('about_us') }}"> About Me </a> </li>
+          <li><a href="{{ route('blogs') }}"> Blog </a></li>
+          <li><a href="{{ route('events') }}"> Events </a></li>
+          <li><a href="{{ route('gallery') }}"> Gallery </a></li>
+          <li><a href="{{ route('contact_us') }}"> Contact Me </a></li>
         </ul>
       </div>
       <!-- MENU -->

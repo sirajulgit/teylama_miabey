@@ -37,7 +37,12 @@ use App\Http\Controllers\user\PurchaseHistoryController;
 use App\Http\Controllers\user\TransactionHistoryController;
 use App\Http\Controllers\user\ChangePasswordController;
 use App\Http\Controllers\user\HomeController;
+use App\Http\Controllers\user\AboutUsController;
+use App\Http\Controllers\user\BlogsController;
+use App\Http\Controllers\user\ContactUsController;
+use App\Http\Controllers\user\EventsController;
 
+use App\Http\Controllers\user\GalleryController;
 
 
 
@@ -62,6 +67,11 @@ Route::middleware('isGuest')->group(function () {
     });
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/about-me', [AboutUsController::class, 'index'])->name('about_us');
+    Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs');
+    Route::get('/contact-me', [ContactUsController::class, 'index'])->name('contact_us');
+    Route::get('/events', [EventsController::class, 'index'])->name('events');
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
     // Route::post('/login', [AuthController::class, 'post_login'])->name('post_user_login');
     // Route::get('/register', [AuthController::class, 'register'])->name('user_register');
     // Route::post('/register', [AuthController::class, 'post_register'])->name('post_user_register');
