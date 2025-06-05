@@ -11,7 +11,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title badge badge-success font-weight-bold ">About Me</h3>
+                            <h3 class="card-title badge badge-success font-weight-bold ">About Miabey</h3>
                         </div>
                         <!-- /.card-header -->
 
@@ -30,15 +30,13 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="title_1">Title</label>
-                                    <input type="text" name="title_1" class="form-control" id="title_1"
-                                        value="{{ $items['about']['title_1'] }}">
+                                    <label for="content">Details</label>
+                                    <textarea id="content1" name="content" class="form-control" rows="5">{{ $items['about']['content'] }}</textarea>
                                 </div>
 
 
-
-                                <div class="form-group col-md-4">
-                                    <label for="image">Left Image</label>
+                                <div class="form-group col-md-6">
+                                    <label for="image">Image 1</label>
 
                                     <div class="admin_upload">
                                         <label class="admin-upload-wrap">
@@ -57,11 +55,20 @@
                                             @endif
                                         </div>
                                     </div>
-
                                 </div>
 
-                                <div class="form-group col-md-4">
-                                    <label for="image">Right Image</label>
+                                <div class="form-group col-md-12">
+                                    <label for="image_1_text_1">Image 1 Text 1</label>
+                                    <textarea id="image_1_text_1" name="image_1_text_1" class="form-control" rows="5">{{ $items['about']['image_1_text_1'] }}</textarea>
+                                </div>
+
+                                <div class="form-group col-md-12">
+                                    <label for="image_1_text_2">Image 1 Text 2</label>
+                                    <textarea id="image_1_text_2" name="image_1_text_2" class="form-control" rows="5">{{ $items['about']['image_1_text_2'] }}</textarea>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="image">Image 2</label>
 
                                     <div class="admin_upload">
                                         <label class="admin-upload-wrap">
@@ -87,31 +94,6 @@
                                             @endif
                                         </div>
                                     </div>
-
-                                </div>
-
-
-                                <div class="form-group col-md-4">
-                                    <label for="image">Curriculum vitae (CV)</label>
-
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="file_1"
-                                                id="image_2_about" accept="application/pdf">
-
-                                            @if ($items['about']['file_1'])
-                                                <a href="{{ $items['about']['file_1'] }}"
-                                                    class="btn btn-primary btn-lg mt-4" target="__blank"><i
-                                                        class="fa fa-download fa-lg" aria-hidden="true"></i></a>
-                                            @endif
-                                        </label>
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="content">Details</label>
-                                    <textarea id="content1" name="content" class="form-control" rows="5">{{ $items['about']['content'] }}</textarea>
                                 </div>
 
                             </div>
