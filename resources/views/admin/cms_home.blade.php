@@ -795,7 +795,7 @@
                 },
                 submitHandler: function(form, event) {
                     event.preventDefault();
-                    // form.submit();
+                    form.submit();
                 }
             });
             
