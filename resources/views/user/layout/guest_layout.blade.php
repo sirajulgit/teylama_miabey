@@ -38,20 +38,22 @@
     <!-- Scroll Top -->
   <div class="scrollup"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
 
-  <!-- jquery Min js -->
+ <!-- jquery Min js -->
   <script src="{{ asset('asset/frontend/js/jquery-3.7.1.min.js')}}"></script>
   <!-- Bootstrap JS -->
   <script src="{{ asset('asset/frontend/js/bootstrap.bundle.min.js')}}"></script>
+   <!-- Animation js -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
   <!-- Gallery JS -->
   <script src="{{ asset('asset/frontend/js/baguetteBox.js')}}"></script>
   <!-- Slider JS -->
-  <script src="{{ asset('asset/frontend/js/slick.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('asset/frontend/js/slick.js" type="text/javascript')}}"></script>
+
   <!-- matchHeight js -->
   <script src="{{ asset('asset/frontend/js/jquery.matchHeight-min.js')}}"></script>
   <!-- Custome js -->
   <script src="{{ asset('asset/frontend/js/custome.js')}}"></script>
-
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 
 
