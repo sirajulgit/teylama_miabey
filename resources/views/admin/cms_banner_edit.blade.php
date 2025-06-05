@@ -21,6 +21,20 @@
                             method="POST" enctype="multipart/form-data">
                             @csrf
 
+                            <div class="form-group col-md-6">
+                                <label>Banner Type</label>
+                                <select disabled class="form-control select2" style="width: 100%;" name="type">
+                                    <option value="">Select Banner Type</option>
+                                    <option value="home_page" {{ $data['item']['type'] == 'home_page' ? 'selected' : '' }}>Home Page</option>
+                                    <option value="about_page" {{ $data['item']['type'] == 'about_page' ? 'selected' : '' }}>About Page</option>
+                                    <option value="blog_page" {{ $data['item']['type'] == 'blog_page' ? 'selected' : '' }}>Blog Page</option>
+                                    <option value="event_page" {{ $data['item']['type'] == 'event_page' ? 'selected' : '' }}>Event Page</option>
+                                    <option value="gallery_page" {{ $data['item']['type'] == 'gallery_page' ? 'selected' : '' }}>Gallery Page</option>
+                                    <option value="contact_page" {{ $data['item']['type'] == 'contact_page' ? 'selected' : '' }}>Contact Page</option>
+                                </select>
+                            </div>
+
+
                             <div class="card-body row">
                                 <div class="form-group col-md-6">
                                     <label for="title_1">Title 1</label>
@@ -28,22 +42,12 @@
                                         value="{{ $data['item']['title_1'] }}">
                                 </div>
 
+
                                 {{-- <div class="form-group col-md-6">
                                     <label for="title_2">Title 2</label>
                                     <input type="text" name="title_2" class="form-control" id="title_2"
                                         value="{{ $data['item']['title_2'] }}">
                                 </div> --}}
-
-
-                                {{-- <div class="form-group col-md-6">
-                                    <label>Banner Type</label>
-                                    <select class="form-control select2" style="width: 100%;" name="type">
-                                        <option value="home_page"
-                                            {{ $data['item']['type'] == 'home_page' ? 'selected' : '' }}>Home Page</option>
-                                    </select>
-                                </div> --}}
-
-                                <input type="hidden" name="type" value="{{ $data['item']['type'] }}">
 
 
                                 <div class="form-group col-md-12">
