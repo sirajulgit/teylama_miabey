@@ -42,6 +42,8 @@
   <script src="{{ asset('asset/frontend/js/jquery-3.7.1.min.js')}}"></script>
   <!-- Bootstrap JS -->
   <script src="{{ asset('asset/frontend/js/bootstrap.bundle.min.js')}}"></script>
+
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <!-- Gallery JS -->
   <script src="{{ asset('asset/frontend/js/baguetteBox.js')}}"></script>
   <!-- Slider JS -->
@@ -51,7 +53,7 @@
   <!-- Custome js -->
   <script src="{{ asset('asset/frontend/js/custome.js')}}"></script>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 
 
 
