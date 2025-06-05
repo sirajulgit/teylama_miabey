@@ -22,50 +22,54 @@
                             @csrf
 
                             <div class="card-body row">
+
+                                <div class="form-group col-md-6">
+                                    <label>Banner Type</label>
+                                    <select class="form-control select2" style="width: 100%;" name="type">
+                                        <option value="">Select Banner Type</option>
+                                        <option value="home_page">Home Page</option>
+                                        <option value="about_page">About Page</option>
+                                        <option value="blog_page">Blog Page</option>
+                                        <option value="event_page">Event Page</option>
+                                        <option value="gallery_page">Gallery Page</option>
+                                        <option value="contact_page">Contact Page</option>
+                                    </select>
+                                </div>
+
                                 <div class="form-group col-md-6">
                                     <label for="title_1">Title 1</label>
                                     <input type="text" name="title_1" class="form-control" id="title_1">
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <label for="title_2">Title 2</label>
-                                    <input type="text" name="title_2" class="form-control" id="title_2">
-                                </div>
-
-
-                                {{-- <div class="form-group col-md-6">
-                                    <label>Banner Type</label>
-                                    <select class="form-control select2" style="width: 100%;" name="type">
-                                        <option value="home_page">Home Page</option>
-                                    </select>
-                                </div> --}}
-
-                                <input type="hidden" name="type" value="home_page">
-
-
-                                <div class="form-group col-md-12">
-                                    <label for="image">Image</label>
-
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image"
-                                                id="image" accept="image/png, image/jpg, image/jpeg, image/webp">
-                                            {{-- <img src="{{ asset('asset/images/icons/bigg-size-upload.png') }}"> --}}
-                                        </label>
-
-                                        <div class="profile_image">
-                                            <img class="profile_img" id="thumbnail_show_image"
-                                                src="{{ asset('asset/images/default_image.png') }}" width="100%"
-                                                height="714px">
-                                        </div>
-                                    </div>
-
                                 </div>
 
                                 <div class="form-group col-md-12">
                                     <label for="details">Details</label>
                                     <textarea id="details" name="details" class="form-control" rows="5"></textarea>
                                 </div>
+
+                                {{-- <div class="form-group col-md-6">
+                                    <label for="title_2">Title 2</label>
+                                    <input type="text" name="title_2" class="form-control" id="title_2">
+                                </div> --}}
+
+
+                                <div class="form-group col-md-6">
+                                    <label for="image">Banner Image</label>
+
+                                    <input type="file" class="form-control mt-3 uploadFile" name="image" id="image" accept="image/png, image/jpg, image/jpeg, image/webp">
+                                </div>
+
+                                {{-- ###### | preview image | ###### --}}
+                                <div class="form-group col-md-12">
+                                    <div class="admin_upload">
+                                        <div class="profile_image">
+                                            <img class="profile_img" id="thumbnail_show_image"
+                                                src="{{ asset('asset/images/default_image.png') }}" width="100%"
+                                                height="714px">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
 
                             </div>
                             <!-- /.card-body -->
