@@ -135,7 +135,7 @@ class CmsBannerController extends Controller
             'title_2' => $request->title_2,
             'details' => $request->details,
             'image' => $imageName,
-            'status' => $request->status,
+            // 'status' => $request->status,
         ]);
 
         return redirect()->back()->with("success", "Update Successful");
