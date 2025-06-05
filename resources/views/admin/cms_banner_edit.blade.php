@@ -17,8 +17,8 @@
                         </div>
                         <!-- /.card-header -->
 
-                        <form id="quickForm" action="{{ route('post_cms_banner_edit', $data['item']['id']) }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form id="quickForm" action="{{ route('post_cms_banner_edit', $data['item']['id']) }}"
+                            method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="card-body row">
@@ -28,11 +28,11 @@
                                         value="{{ $data['item']['title_1'] }}">
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                {{-- <div class="form-group col-md-6">
                                     <label for="title_2">Title 2</label>
                                     <input type="text" name="title_2" class="form-control" id="title_2"
                                         value="{{ $data['item']['title_2'] }}">
-                                </div>
+                                </div> --}}
 
 
                                 {{-- <div class="form-group col-md-6">
@@ -43,9 +43,16 @@
                                     </select>
                                 </div> --}}
 
-                                <input type="hidden" name="type" value="{{$data['item']['type']}}">
+                                <input type="hidden" name="type" value="{{ $data['item']['type'] }}">
 
-                                <div class="form-group col-md-6">
+
+                                <div class="form-group col-md-12">
+                                    <label for="details">Details</label>
+                                    <textarea id="details" name="details" class="form-control" rows="5">{{ $data['item']['details'] }}</textarea>
+                                </div>
+
+
+                                {{-- <div class="form-group col-md-6">
                                     <label>Status</label>
                                     <select class="form-control select2" style="width: 100%;" name="status">
                                         <option value="1" {{ $data['item']['status'] == 1 ? 'selected' : '' }}>Active
@@ -54,32 +61,25 @@
                                             Active
                                         </option>
                                     </select>
+                                </div> --}}
+
+
+                                <div class="form-group col-md-6">
+                                    <label for="image">Banner Image</label>
+                                    <input type="file" class="form-control mt-3 uploadFile" name="image" id="image"
+                                        accept="image/png, image/jpg, image/jpeg, image/webp">
                                 </div>
 
-
                                 <div class="form-group col-md-12">
-                                    <label for="image">Image</label>
-
                                     <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image"
-                                                id="image" accept="image/png, image/jpg, image/jpeg, image/webp">
-                                            {{-- <img src="{{ asset('asset/images/icons/bigg-size-upload.png') }}"> --}}
-                                        </label>
-
                                         <div class="profile_image">
                                             <img class="profile_img" id="thumbnail_show_image"
-                                                src="{{ $data['item']['image'] }}" width="100%"
-                                                height="714px">
+                                                src="{{ $data['item']['image'] }}" width="100%" height="714px">
                                         </div>
                                     </div>
-
                                 </div>
 
-                                <div class="form-group col-md-12">
-                                    <label for="details">Details</label>
-                                    <textarea id="details" name="details" class="form-control" rows="5">{{ $data['item']['details'] }}</textarea>
-                                </div>
+
 
                             </div>
                             <!-- /.card-body -->
