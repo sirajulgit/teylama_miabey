@@ -8,6 +8,8 @@
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"); 
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
@@ -1179,10 +1181,283 @@ footer::after
     color: #FFF;
 }
 
+/**************** About **************/ 
+
+.testimo-content p {
+    font-size: 22px;
+    line-height: 35px;
+    font-family: "Playfair Display", serif;
+    position: relative;
+    padding-left: 15%;
+}
+
+.client-speak 
+{
+    margin-top: -90px;
+    z-index: 1;
+    position: relative;
+}
+
+.testimo-content p::before 
+{
+    content: ''; 
+    position: absolute; 
+    left: 0;
+    top:-30px;
+    width: 86px; 
+    height: 86px;
+    background: url(../images/quotes.png) no-repeat left;
+}
+
+.testimo-content span 
+{
+     position: relative; 
+     font-weight: 600;
+}
+
+.testimo-content span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -15px;
+    width: 50px;
+    height: 2px;
+    background: #474747;
+}
+
+
+.professor 
+{
+    background: #F6FBFF; 
+    padding: 80px 0;
+}
+
+.prof-content p 
+{
+    margin-bottom: 15px; 
+    line-height: 30px;
+}
+
+.prof-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 650px;
+}
+
+.activities 
+{
+    padding: 70px 0;
+}
+
+.activities-image-list li {
+    width: 25%;
+    flex: 0 0 25%;
+    min-height: 516px;
+    max-height: 567px;
+    background-size: contain !important;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 3px solid #ffffff;
+}
+
+.activities-image-list li > img {
+    width: 90px;
+    position: relative;
+    left: 10px;
+    top: 25px;
+}
+
+.activities-text {
+    padding: 15px; 
+    padding-left: 30px;
+    padding-bottom: 50px;
+}
+
+.activities-text h4 
+{
+    color: #FFF; 
+    font-size: 30px; 
+    font-weight: bold; 
+    margin-bottom: 15px;
+}
+
+.activities-text p  
+{
+    color: #FFF;
+}
+
+
+
+/*********************************/ 
+
+.politician
+{
+    background: url(../images/politician-bg.png) no-repeat center;
+    background-size: cover; 
+    padding: 60px 0;
+}
+
+.politi-content p  
+{
+    font-size: 18px;
+}
+
+
+.secgment li {
+    background: #FFF;
+    width: 204px;
+    height: 225px;
+    flex: 0 0 204px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center; 
+    margin: 15px;
+}
+
+.secgment li img {
+    max-width: 110px;
+    max-height: 110px;
+}
+
+
+.secgment li span  
+{
+    font-size: 18px; 
+    font-weight: 600;
+}
+
+.politi-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagination-area 
+{
+    justify-content: center;
+    display: flex;
+}
+
+
+/****************** Contact Us **************************/ 
+
+.details-contact {
+    background: #131A1F;
+    height: 100%;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+
+.call-nowarea {
+    background: #d0ae5f;
+    padding: 50px 0;
+}
+
+.middle-call {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+
+.call-now-btn {
+    background: #000;
+    color: #FFF !important;
+    display: inline-block;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.heading-contact 
+{
+    font-size: 30px;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.contact-form {
+    background: #f0f8ff;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.contact-form input[type="text"] {
+    height: 55px;
+    box-shadow: none !important;
+    outline: none !important;
+    border-radius: 25px;
+    padding: 0 20px;
+}
+
+.contact-form textarea
+{
+    
+    box-shadow: none !important; 
+    outline: none !important;
+    border-radius: 0;  
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.contact-form .heading 
+{
+    text-align: center; 
+    font-size: 30px; 
+    line-height: 40px; 
+    font-weight: 600;
+}
+
+.submit-btn {
+    background: #0088FF;
+    padding: 10px 20px;
+    color: #FFF;
+    display: inline-block;
+    font-weight: 600;
+    border: none; 
+    width: 200px; 
+    text-transform: uppercase;
+}
+
+/***************** Details ********************/
+
+.details-content 
+{
+    padding: 60px 0;
+}
+
+.details-content-area p 
+{
+    padding-bottom: 15px; 
+    line-height: 28px;
+}
+
+.details-content-area h2 
+{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.details-content-area h3 
+{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+
 
 /***********Responsive**************/
 
 @media only screen and (max-width: 1400px) {
+
+    .prof-image {
+    position: relative; 
+    }
 
     .home-banner-content {
     position: absolute;
@@ -1250,6 +1525,11 @@ footer::after
 
 
 @media only screen and (max-width: 1200px) {
+    
+    .activities-image-list li 
+    {
+        background-size: cover !important;
+    }
 
     .tab-area button {
         background: transparent !important;
@@ -1277,6 +1557,29 @@ footer::after
 
 
 @media only screen and (max-width: 992px) {
+
+    .secgment
+    {
+        justify-content: center !important;
+        flex-flow: wrap;
+    } 
+
+    .politician .about-content-right 
+    {
+        text-align: center;
+    }
+
+    .activities-image-list li {
+    width: 50%;
+    flex: 0 0 50%;
+    min-height: 516px;
+    max-height: 567px; 
+    }
+
+    .activities ul 
+    {
+        flex-flow: wrap;
+    }
 
     /*******************************
 ********NAV BAR*****************
@@ -1452,6 +1755,24 @@ footer::after
     {
         padding-top: 20px;
     }
+
+    .client-speak 
+    {
+        margin: 0;
+    } 
+
+
+    .professor 
+    {
+        padding-bottom: 0;
+    }
+
+    .politi-content {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+}
+    
 
 
 }
@@ -1733,9 +2054,26 @@ footer::after, footer::before
         margin-bottom: 20px;
     }
 
+
+
+
 }
 
-@media only screen and (max-width: 576px) {}
+@media only screen and (max-width: 576px) {
+
+    .activities-image-list li {
+    width: 100%;
+    flex: 0 0 100%;
+    min-height: 516px;
+    max-height: 567px; 
+    }
+
+    .secgment li {
+    
+    margin: 10px;
+}
+
+}
 
 @media only screen and (max-width: 480px) {}
 

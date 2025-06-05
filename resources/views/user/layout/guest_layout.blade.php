@@ -5,20 +5,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ env('APP_NAME') }} | {{ $data['page_title'] ?? '' }}</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('asset/frontend/css/bootstrap.min.css') }}" />
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ asset('asset/frontend/css/bootstrap.min.css')}}">
   <!-- Animate CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/animate.min.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   <!-- Gallery CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/baguetteBox.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/baguetteBox.min.css')}}">
   <!-- Slider CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/slick.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/slick-theme.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/slick.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/slick-theme.css')}}">
   <!-- Font Awesome JS -->
-  <link rel="stylesheet" href="{{ asset('asset/frontend/css/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('asset/frontend/css/font-awesome.min.css')}}">
   <!-- Style CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/style.css')}}">
 </head>
 
 <body>
@@ -49,6 +50,10 @@
   <script src="{{ asset('asset/frontend/js/jquery.matchHeight-min.js')}}"></script>
   <!-- Custome js -->
   <script src="{{ asset('asset/frontend/js/custome.js')}}"></script>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+
 
     {{-- custom own page script --}}
     @yield('script_content')

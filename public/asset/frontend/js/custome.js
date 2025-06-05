@@ -61,46 +61,30 @@ jQuery(document).ready(function ($) {
     });
 
     //scroll top
-    // Counter
-    $('.counter').each(function () {
-        var $this = $(this),
-            countTo = $this.attr('data-count');
-        $({ countNum: $this.text() }).animate({
-            countNum: countTo
-        },
-            {
-                duration: 8000,
-                easing: 'linear',
-                step: function () {
-                    $this.text(Math.floor(this.countNum));
-                },
-                complete: function () {
-                    $this.text(this.countNum);
-                    //alert('finished');
-                }
-            });
-    });
-    // Counter
-
+     
     
     //   Slider
 
-    $('.center').slick({
-    dots: true,
+    $('.banner-slide').slick({
+    dots: false,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
-    adaptiveHeight: true
+    adaptiveHeight: true, 
+    autoplay: true, 
+     fade: true,
     });
 
      
-    //machheight
-    jQuery(".matchHeight").matchHeight();
 
     AOS.init();
+    
+    //machheight
+    jQuery(".matchHeight").matchHeight();
+    
 });
 //GALLERY
-// baguetteBox.run('.tz-gallery');
+baguetteBox.run('.tz-gallery');
 
 
 

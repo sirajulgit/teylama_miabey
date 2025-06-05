@@ -2,20 +2,30 @@
 
 
 @section('content')
-<div class="banner-area position-relative">
-  <img src="{{ asset('asset/frontend/images/banner.png')}}">
+
+ <div class="banner-area position-relative">
+<div class="banner-slide">
+  <div>
+    <img src="{{ asset('asset/frontend/images/banner.png')}}">
+  </div>
+  <div>
+    <img src="{{ asset('asset/frontend/images/banner.png')}}">
+  </div>
+</div>
   <div class="home-banner-content">
-    <img src="{{ asset('asset/frontend/images/hello-i-am.png')}}">
-    <h1> Teylama Miabey  </h1>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum, metus nec lobortis gravida, sapien eros scelerisque quam. </p>
+    <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png')}}">
+    <h1 data-aos="fade-right" data-aos-duration="2000"> Teylama Miabey  </h1>
+    <p data-aos="fade-right" data-aos-duration="2000"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum, metus nec lobortis gravida, sapien eros scelerisque quam. </p>
   </div>
  </div>
+
+
 
  <div class="about-miabey pt-5">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <div class="about-image position-relative">
+        <div class="about-image position-relative" data-aos="fade-right" data-aos-duration="1000">
           <img src="{{ asset('asset/frontend/images/about-image-1.png')}}" alt="">
           <div class="ab-img-2">
             <img src="{{ asset('asset/frontend/images/about-image-2.png')}}">
@@ -33,7 +43,7 @@
         </div>
       </div>
       <div class="col-lg-6 ">
-        <div class="about-content-right ps-lg-5 ms-lg-5">
+        <div class="about-content-right ps-lg-5 ms-lg-5" data-aos="fade-left" data-aos-duration="1000">
           <h2>About <strong>Miabey</strong></h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis, sit amet malesuada justo scelerisque a.</p>
           <p> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse faucibus diam nulla, nec dapibus lorem suscipit sed. Proin non risus mi.  </p>
@@ -67,7 +77,7 @@
   </div>
  </div>
 
- <div class="what-we-do">
+ <div class="what-we-do" data-aos="fade-up" data-aos-duration="1500">
   <div class="container">
       <div class="about-content-right">
         <h2>What <strong>We Do</strong></h2>
@@ -157,17 +167,17 @@
   </div>
  </div>
 
- <div class="video-sec mt-5 mb-5">
+ <div class="video-sec mt-5 mb-5" data-aos="fade-up" data-aos-duration="1500">
   <div class="container">
     <div class="row align-items-center">
 
       <div class="col-lg-7">
-        <div class="video-area">
+        <div class="video-area" data-aos="fade-right" data-aos-duration="1000">
           <iframe width="100%" height="480" src="https://www.youtube.com/embed/gErbKpIozNE?si=mLiatg3nJPeLTv4F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
       <div class="col-lg-5">
-        <div class="video-content ps-lg-5">
+        <div class="video-content ps-lg-5" data-aos="fade-left" data-aos-duration="1000">
           <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h3>
           <p> Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis, sit amet malesuada justo scelerisque a. </p>
 
@@ -185,7 +195,7 @@
   </div>
  </div>
 
- <div class="congo-president">
+ <div class="congo-president" data-aos="fade-up" data-aos-duration="1500">
   <div class="container">
     <div class="row">
       <div class="col-lg-7">
@@ -207,7 +217,7 @@
 
 
 
- <div class="grid-gallery">
+ <div class="grid-gallery" data-aos="fade-up" data-aos-duration="1500">
   <div class="container">
 
     <div class="about-content-right text-center mb-5">
@@ -316,6 +326,7 @@
 
   </div>
 </div>
+
 
 @endsection
 
