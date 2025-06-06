@@ -323,12 +323,12 @@
                                     <div class="preview_video">
                                         @if ($items['video_section']['video_1'])
                                             <!-- Video container -->
-                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;height:400px;">
+                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
                                                 <!-- Dynamic content will be injected here -->
                                             </div>
                                         @else
                                             <!-- Video container -->
-                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;height:400px;">
+                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
                                                 <!-- Dynamic content will be injected here -->
                                             </div>
                                         @endif
@@ -720,8 +720,8 @@
 
                 if (type === 'file') {
                     $container.html(`
-                        <video id="dynamic-player" class="plyr" controls>
-                        <source src="${url}" type="video/mp4" />
+                        <video id="dynamic-player" class="plyr" controls style="height:400px;">
+                            <source src="${url}" type="video/mp4" />
                         </video>
                     `);
                 }
@@ -730,7 +730,7 @@
                     const ytId = extractYouTubeId(url);
                     if (ytId) {
                         $container.html(`
-                            <div id="dynamic-player" data-plyr-provider="youtube" data-plyr-embed-id="${ytId}"></div>
+                            <div id="dynamic-player" data-plyr-provider="youtube" data-plyr-embed-id="${ytId}" style="height:400px;"></div>
                             `);
                     }
                 }
@@ -739,7 +739,7 @@
                     const vimeoId = extractVimeoId(url);
                     if (vimeoId) {
                         $container.html(`
-                            <div id="dynamic-player" data-plyr-provider="vimeo" data-plyr-embed-id="${vimeoId}"></div>
+                            <div id="dynamic-player" data-plyr-provider="vimeo" data-plyr-embed-id="${vimeoId}" style="height:400px;"></div>
                             `);
                     }
                 }
