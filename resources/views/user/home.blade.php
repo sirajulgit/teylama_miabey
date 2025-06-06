@@ -34,18 +34,17 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="about-image position-relative" data-aos="fade-right" data-aos-duration="1000">
-          <img src="{{ asset('asset/frontend/images/about-image-1.png')}}" alt="">
+          <img src="{{ $homedata['about']['image_1']}}" alt="">
           <div class="ab-img-2">
-            <img src="{{ asset('asset/frontend/images/about-image-2.png')}}">
+            <img src="{{ $homedata['about']['image_2']}}">
           </div>
 
           <div class="about-image-content d-flex align-items-center">
             <div class="text-center pe-2">
-              <h2>25</h2>
-              <span>years</span>
+             {!! $homedata['about']['image_1_text_1']!!}
             </div>
             <div class="small-text-about">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+             {!! $homedata['about']['image_1_text_2']!!}
             </div>
           </div>
         </div>
@@ -53,8 +52,7 @@
       <div class="col-lg-6 ">
         <div class="about-content-right ps-lg-5 ms-lg-5" data-aos="fade-left" data-aos-duration="1000">
           <h2>{!! $homedata['about']['head_title'] !!}</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis, sit amet malesuada justo scelerisque a.</p>
-          <p> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse faucibus diam nulla, nec dapibus lorem suscipit sed. Proin non risus mi.  </p>
+          {!! $homedata['about']['content'] !!}
 
           <div class="about-poinnt mt-5">
             <ul class="d-flex flex-wrap">
