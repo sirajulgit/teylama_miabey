@@ -32,7 +32,7 @@ class BlogController extends Controller
 
         $data['items'] = $temp_arr;
 
-        return view("admin.blog_list", ["data" => $data]);
+        return view("admin.blogs.blog_list", ["data" => $data]);
     }
 
 
@@ -44,7 +44,7 @@ class BlogController extends Controller
         $data['activePageName'] = 'blog';
         $data['activeSubMenu'] = '';
 
-        return view("admin.blog_create", ["data" => $data]);
+        return view("admin.blogs.blog_create", ["data" => $data]);
     }
 
 
@@ -99,7 +99,7 @@ class BlogController extends Controller
 
         $data['item'] = $item;
 
-        return view("admin.blog_edit", ["data" => $data]);
+        return view("admin.blogs.blog_edit", ["data" => $data]);
     }
 
 
