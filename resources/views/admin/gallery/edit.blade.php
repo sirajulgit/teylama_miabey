@@ -50,10 +50,10 @@
                                 <div class="form-group col-md-6">
                                     <label>Status</label>
                                     <select class="form-control select2" style="width: 100%;" name="status">
-                                        <option value="1" {{ $data['item']['status'] == 'active' ? 'selected' : '' }}>
+                                        <option value="active" {{ $data['item']['status'] == 'active' ? 'selected' : '' }}>
                                             Active
                                         </option>
-                                        <option value="0"
+                                        <option value="inactive"
                                             {{ $data['item']['status'] == 'inactive' ? 'selected' : '' }}>Inactive
                                         </option>
                                     </select>
