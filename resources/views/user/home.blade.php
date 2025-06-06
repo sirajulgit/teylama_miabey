@@ -243,7 +243,7 @@
           <div class="blog-content">
           <span class="date-blog"><i class="bi bi-calendar-check-fill"></i> {{ $item->created_at}}</span>
           <h4> {{ $item->title}}</h4>
-          <p>{{ $item->short_description}}</p>
+          {!! $item->short_description !!}
           </div>
           <div class="readmore-btn">
             <a href=""> Read More <i class="bi bi-arrow-right"></i> </a>
