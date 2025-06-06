@@ -56,14 +56,18 @@ class CmsAboutPageController extends Controller
 
 
 
-            if ($item['type'] == "about") {
-                $items["about"] = $item;
-            } elseif ($item['type'] == "what_we_do") {
-                $items["what_we_do"] = $item;
+            if ($item['type'] == "section_1") {
+                $items["section_1"] = $item;
+            }elseif ($item['type'] == "section_2") {
+                $items["section_2"] = $item;
+            } elseif ($item['type'] == "activities_section") {
+                $items["activities_section"] = $item;
+            } elseif ($item['type'] == "politician_section") {
+                $items["politician_section"] = $item;
 
-                $cmsBadge = CmsBadge::where('type', 'what_we_do')->orderBy("id", "asc")->get()->toArray();
+                $cmsBadge = CmsBadge::where('type', 'politician_section')->orderBy("id", "asc")->get()->toArray();
 
-                $items['what_we_do']["badge_data"] = [];
+                $items['politician_section']["badge_data"] = [];
 
                 foreach ($cmsBadge as $item2) {
 
@@ -89,13 +93,9 @@ class CmsAboutPageController extends Controller
                         $item2['badge_image_1'] = $default_file;
                     }
 
-                    $items['what_we_do']["badge_data"][] = $item2;
+                    $items['politician_section']["badge_data"][] = $item2;
                 }
-            } elseif ($item['type'] == "video_section") {
-                $items["video_section"] = $item;
-            } elseif ($item['type'] == "info_section") {
-                $items["info_section"] = $item;
-            }
+            } 
         }
 
 
@@ -253,7 +253,7 @@ class CmsAboutPageController extends Controller
 
 
 
-            ////// cms badge modal insert (what_we_do) //////////////
+            ////// cms badge modal insert (politician_section) //////////////
             if (array_key_exists("badge_text_1", $formData)) {
 
                 for ($item = 0; $item < count($formData['badge_text_1']); $item++) {
@@ -261,7 +261,7 @@ class CmsAboutPageController extends Controller
 
                     $data = new CmsBadge();
                     $data->page_type= 'about_page';
-                    $data->type = 'what_we_do';
+                    $data->type = 'politician_section';
 
                     // bade_text_1 (category name)
                     if (array_key_exists("badge_text_1", $formData)) {
