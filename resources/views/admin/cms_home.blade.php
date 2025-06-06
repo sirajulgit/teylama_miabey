@@ -748,7 +748,7 @@
                     <iframe src="${embedUrl}" width="560" height="315" frameborder="0" allowfullscreen></iframe>
                 `);
 
-                // $('#video_1_3').val(embedUrl);
+                $('#video_1_3').val(embedUrl);
             });
             /////////////////// end preview video ///////////////////
 
