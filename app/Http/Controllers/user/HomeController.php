@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\CmsBanner;
 use App\Models\CmsHomePage;
 use App\Models\CmsBadge;
+use App\Models\Gallery;
 
 class HomeController extends Controller
 {
@@ -105,7 +106,23 @@ class HomeController extends Controller
         }
         //dd($items);exit;
 
-        return view('user.home', ['bannerdata' => $temp_arr, 'data' => $data, 'homedata' => $items]);
+        $gallery = Gallery::orderBy("id", "desc")->get();
+
+        $gallery_arr = [];
+        foreach ($gallery as $item) {
+
+            $default_image = '/uploads/images/' . $item['image'];
+
+            $item->image = $default_image;
+
+            array_push($gallery_arr, $item);
+        }
+
+
+
+
+
+        return view('user.home', ['bannerdata' => $temp_arr, 'data' => $data, 'homedata' => $items,'gallerydata' => $gallery_arr]);
     }
 
 }

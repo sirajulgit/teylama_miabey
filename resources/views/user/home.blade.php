@@ -194,21 +194,12 @@
       </div>
 
     <div class="grid-container">
-      <div class="item1">
-        <img src="{{ asset('asset/frontend/images/gallery-1.png')}}">
+       @foreach ($homedata['what_we_do']['badge_data'] as $index => $item)
+      <div class="item{{$index}}">
+        <img src="{{ $item->image}}">
       </div>
-      <div class="item2">
-        <img src="{{ asset('asset/frontend/images/gallery-2.png')}}">
-      </div>
-      <div class="item3">
-        <img src="{{ asset('asset/frontend/images/gallery-3.png')}}">
-      </div>
-      <div class="item4">
-        <img src="{{ asset('asset/frontend/images/gallery-4.png')}}">
-      </div>
-      <div class="item5">
-        <img src="{{ asset('asset/frontend/images/gallery-5.png')}}">
-      </div>
+      @endforeach
+
     </div>
   </div>
  </div>
