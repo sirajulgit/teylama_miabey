@@ -1106,10 +1106,10 @@
                 var badge_id = $(current_pointer).attr("data-badge-id");
                 var badge_text_1 = $(`.badge_text_1_${badge_id}`).val() || "";
                 var badge_text_2 = $(`.badge_text_2_${badge_id}`).val() || "";
-                var badge_file_1 = $(`.badge_file_1_${badge_id}`).prop('files')[0] || "";
-                var badge_file_2 = $(`.badge_file_2_${badge_id}`).prop('files')[0] || "";
-                var badge_icon_1 = $(`.badge_icon_1_${badge_id}`).prop('files')[0] || "";
-                var badge_image_1 = $(`.badge_image_1_${badge_id}`).prop('files')[0] || "";
+                var badge_file_1 = $(`.badge_file_1_${badge_id}`).prop('files')[0] ?? "";
+                var badge_file_2 = $(`.badge_file_2_${badge_id}`).prop('files')[0] ?? "";
+                var badge_icon_1 = $(`.badge_icon_1_${badge_id}`).prop('files')[0] ?? "";
+                var badge_image_1 = $(`.badge_image_1_${badge_id}`).prop('files')[0] ?? "";
                 var badge_title_1 = $(`.badge_title_1_${badge_id}`).val() || "";
                 var badge_details_1 = $(`.badge_details_1_${badge_id}`).val() || "";
 
