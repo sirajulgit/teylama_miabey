@@ -23,8 +23,9 @@
 
                             <div class="card-body row">
                                 <div class="form-group col-md-6">
-                                    <label for="title">Blog Title</label>
-                                    <input type="text" name="title" class="form-control" id="title" value="{{ old('title') }}">
+                                    <label for="title">Title</label>
+                                    <input type="text" name="title" class="form-control" id="title"
+                                        value="{{ old('title') }}">
 
                                     @if ($errors->has('title'))
                                         <span class="form_error">{{ $errors->first('title') }}</span>
@@ -32,7 +33,17 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label for="image">Blog Image</label>
+                                    <label for="slug">Slug</label>
+                                    <input type="text" name="slug" class="form-control" id="slug"
+                                        value="{{ old('slug') }}">
+
+                                    @if ($errors->has('slug'))
+                                        <span class="form_error">{{ $errors->first('slug') }}</span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="image">Image</label>
 
                                     <div class="admin_upload">
                                         <label class="admin-upload-wrap">
@@ -58,9 +69,8 @@
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="short_description">Blog Short Details</label>
+                                    <label for="short_description">Short Details</label>
                                     <textarea id="short_description" name="short_description" class="form-control" rows="5">{{ old('short_description') }}</textarea>
-                                    {{-- <h5 id="maxContentPost" style="text-align:right"></h5> --}}
 
                                     @if ($errors->has('short_description'))
                                         <span class="form_error">{{ $errors->first('short_description') }}</span>
@@ -68,7 +78,7 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="long_description">Blog Long Details</label>
+                                    <label for="long_description">Long Details</label>
                                     <textarea id="long_description" name="long_description" class="form-control">{{ old('long_description') }}</textarea>
 
                                     @if ($errors->has('long_description'))
@@ -178,6 +188,9 @@
                     title: {
                         required: true,
                     },
+                    slug: {
+                        required: true,
+                    }
                     image: {
                         required: true
                     },

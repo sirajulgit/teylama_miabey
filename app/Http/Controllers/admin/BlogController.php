@@ -54,6 +54,7 @@ class BlogController extends Controller
 
         $request->validate([
             'title' => 'required',
+            'slug' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,webp',
             'short_description' => 'required',
             'long_description' => 'required',
@@ -70,6 +71,7 @@ class BlogController extends Controller
 
         $data = new Blog();
         $data->title = $request->title;
+        $data->slug = $request->slug;
         $data->image = $imageName;
         $data->short_description = $request->short_description;
         $data->long_description = $request->long_description;
@@ -106,6 +108,7 @@ class BlogController extends Controller
 
         $request->validate([
             'title' => 'required',
+            'slug' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,webp',
             'short_description' => 'required',
             'long_description' => 'required',
@@ -137,6 +140,7 @@ class BlogController extends Controller
 
         Blog::where("id", $request->id)->update([
             'title' => $request->title,
+            'slug' => $request->slug,
             'image' => $imageName,
             'short_description' => $request->short_description,
             'long_description' => $request->long_description,

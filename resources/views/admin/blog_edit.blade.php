@@ -23,7 +23,7 @@
 
                             <div class="card-body row">
                                 <div class="form-group col-md-6">
-                                    <label for="title">Blog Title</label>
+                                    <label for="title">Title</label>
                                     <input type="text" name="title" class="form-control" id="title"
                                         value="{{ $data['item']['title'] }}">
 
@@ -34,7 +34,18 @@
 
 
                                 <div class="form-group col-md-6">
-                                    <label for="image">Blog Image</label>
+                                    <label for="slug">Slug</label>
+                                    <input type="text" name="slug" class="form-control" id="slug"
+                                        value="{{ $data['item']['slug'] }}">
+
+                                    @if ($errors->has('slug'))
+                                        <span class="form_error">{{ $errors->first('slug') }}</span>
+                                    @endif
+                                </div>
+
+
+                                <div class="form-group col-md-6">
+                                    <label for="image">Image</label>
 
                                     <div class="admin_upload">
                                         <label class="admin-upload-wrap">
@@ -57,11 +68,13 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>Blog Status</label>
+                                    <label>Status</label>
                                     <select class="form-control select2" style="width: 100%;" name="status">
-                                        <option value="1" {{ $data['item']['status'] == "active" ? 'selected' : '' }}>Active
+                                        <option value="1" {{ $data['item']['status'] == 'active' ? 'selected' : '' }}>
+                                            Active
                                         </option>
-                                        <option value="0" {{ $data['item']['status'] == "inactive" ? 'selected' : '' }}>Inactive
+                                        <option value="0"
+                                            {{ $data['item']['status'] == 'inactive' ? 'selected' : '' }}>Inactive
                                         </option>
                                     </select>
 
@@ -72,7 +85,7 @@
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="short_description">Blog Short Details</label>
+                                    <label for="short_description">Short Details</label>
                                     <textarea id="short_description" name="short_description" class="form-control" rows="5">{{ $data['item']['short_description'] }}</textarea>
                                     {{-- <h5 id="maxContentPost" style="text-align:right"></h5> --}}
 
@@ -82,7 +95,7 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="long_description">Blog Long Details</label>
+                                    <label for="long_description">Long Details</label>
                                     <textarea id="long_description" name="long_description" class="form-control">{{ $data['item']['long_description'] }}</textarea>
 
                                     @if ($errors->has('long_description'))
@@ -192,11 +205,8 @@
                     title: {
                         required: true,
                     },
-                    start_date: {
+                    slug: {
                         required: true,
-                    },
-                    end_date: {
-                        required: true
                     },
                     image: {
                         required: false
