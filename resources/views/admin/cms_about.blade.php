@@ -304,7 +304,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title badge badge-success font-weight-bold">What We Do</h3>
+                            <h3 class="card-title badge badge-success font-weight-bold">Politician</h3>
                         </div>
                         <!-- /.card-header -->
 
