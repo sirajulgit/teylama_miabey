@@ -39,7 +39,7 @@
           <p>Choosing the right builder is crucial for the success of your construction...</p>
           </div>
           <div class="readmore-btn">
-            <a href="{{ route('blog_details','aaaaaaaaaaaa') }}"> Read More <i class="bi bi-arrow-right"></i> </a>
+            <a href="{{ route('blog_details','demo') }}"> Read More <i class="bi bi-arrow-right"></i> </a>
           </div>
         </div>
       </div>
