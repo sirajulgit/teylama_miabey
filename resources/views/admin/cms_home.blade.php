@@ -331,29 +331,28 @@
                                 </div>
 
 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-6" id="video_1_3_container" style="display: none">
                                     <label for="video_1_3">Video URL</label>
-                                    <input type="url" class="form-control" name="video_1"
-                                        id="video_1_3" value="{{ $items['video_section']['video_1'] }}">
+                                    <input type="url" class="form-control" name="video_1" id="video_1_3"
+                                        value="{{ $items['video_section']['video_1'] }}">
                                 </div>
 
 
                                 <div class="form-group col-md-12">
-                                    <div class="preview_video">
-                                        @if ($items['video_section']['video_1'])
-                                            <!-- Video container -->
-                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
-                                                <!-- Dynamic content will be injected here -->
-                                                <iframe src="{{ $items['video_section']['video_1'] }}" width="560"
-                                                    height="315" frameborder="0" allowfullscreen></iframe>
-                                            </div>
-                                        @else
-                                            <!-- Video container -->
-                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
-                                                <!-- Dynamic content will be injected here -->
-                                            </div>
-                                        @endif
-                                    </div>
+
+                                    @if ($items['video_section']['video_1'])
+                                        <!-- Video container -->
+                                        <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
+                                            <!-- Dynamic content will be injected here -->
+                                            <iframe src="{{ $items['video_section']['video_1'] }}" width="560"
+                                                height="315" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    @else
+                                        <!-- Video container -->
+                                        <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
+                                            <!-- Dynamic content will be injected here -->
+                                        </div>
+                                    @endif
 
                                     {{-- <div class="admin_upload">
                                         <label class="admin-upload-wrap">
@@ -733,10 +732,24 @@
                 return null;
             }
 
+            $("#video_1_type_3").on("change", function() {
+                const value = $(this).val();
+                if (value) {
+                    $("#video_1_3_container").show();
+                } else {
+                    $("#video_1_3_container").hide();
+                    $("#videoPlayerContainer_3_video_section").html("");
+                }
+            });
 
             $('#video_1_3').on('change', function() {
                 const inputUrl = $(this).val().trim();
                 const embedUrl = videoUrlConvertToEmbedUrl(inputUrl);
+
+                if (inputUrl == "") {
+                    $('#videoPlayerContainer_3_video_section').html("");
+                    return;
+                }
 
                 if (!embedUrl) {
                     $('#videoPlayerContainer_3_video_section').html(
