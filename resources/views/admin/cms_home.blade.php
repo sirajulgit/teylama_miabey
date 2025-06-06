@@ -386,7 +386,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title badge badge-success font-weight-bold ">Featured Books</h3>
+                            <h3 class="card-title badge badge-success font-weight-bold ">Info Section</h3>
                         </div>
                         <!-- /.card-header -->
 
