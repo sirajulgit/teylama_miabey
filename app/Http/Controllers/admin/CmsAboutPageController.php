@@ -254,66 +254,66 @@ class CmsAboutPageController extends Controller
 
 
             ////// cms badge modal insert (politician_section) //////////////
-            if (array_key_exists("badge_text_1", $formData)) {
+            // if (array_key_exists("badge_text_1", $formData)) {
 
-                for ($item = 0; $item < count($formData['badge_text_1']); $item++) {
-
-
-                    $data = new CmsBadge();
-                    $data->page_type= 'about_page';
-                    $data->type = 'politician_section';
-
-                    // bade_text_1 (category name)
-                    if (array_key_exists("badge_text_1", $formData)) {
-                        if ($formData['badge_text_1'][$item]) {
-                            $data->badge_text_1 = $formData['badge_text_1'][$item];
-                        }
-                    }
+            //     for ($item = 0; $item < count($formData['badge_text_1']); $item++) {
 
 
-                    // badge_icon_1 (category icon)
-                    if (array_key_exists("badge_icon_1", $formData)) {
-                        if ($formData['badge_icon_1'][$item]) {
-                            $random = Str::random(12);
-                            $fileName = $random . '-' . time() . '.' . $formData['badge_icon_1'][$item]->extension();
-                            $formData['badge_icon_1'][$item]->move(public_path('uploads/images'), $fileName);
+            //         $data = new CmsBadge();
+            //         $data->page_type= 'about_page';
+            //         $data->type = 'politician_section';
 
-                            $data->badge_icon_1 = $fileName;
-                        }
-                    }
-
-
-                    // badge_title_1 (category title)
-                    if (array_key_exists("badge_title_1", $formData)) {
-                        if ($formData['badge_title_1'][$item]) {
-                            $data->badge_title_1 = $formData['badge_title_1'][$item];
-                        }
-                    }
+            //         // bade_text_1 (category name)
+            //         if (array_key_exists("badge_text_1", $formData)) {
+            //             if ($formData['badge_text_1'][$item]) {
+            //                 $data->badge_text_1 = $formData['badge_text_1'][$item];
+            //             }
+            //         }
 
 
-                    // badge_details_1 (category details)
-                    if (array_key_exists("badge_details_1", $formData)) {
-                        if ($formData['badge_details_1'][$item]) {
-                            $data->badge_details_1 = $formData['badge_details_1'][$item];
-                        }
-                    }
+            //         // badge_icon_1 (category icon)
+            //         if (array_key_exists("badge_icon_1", $formData)) {
+            //             if ($formData['badge_icon_1'][$item]) {
+            //                 $random = Str::random(12);
+            //                 $fileName = $random . '-' . time() . '.' . $formData['badge_icon_1'][$item]->extension();
+            //                 $formData['badge_icon_1'][$item]->move(public_path('uploads/images'), $fileName);
+
+            //                 $data->badge_icon_1 = $fileName;
+            //             }
+            //         }
 
 
-                    // badge_image_1(category image)
-                    if (array_key_exists("badge_image_1", $formData)) {
-                        if ($formData['badge_image_1'][$item]) {
-                            $random = Str::random(12);
-                            $fileName = $random . '-' . time() . '.' . $formData['badge_image_1'][$item]->extension();
-                            $formData['badge_image_1'][$item]->move(public_path('uploads/images'), $fileName);
-
-                            $data->badge_image_1 = $fileName;
-                        }
-                    }
+            //         // badge_title_1 (category title)
+            //         if (array_key_exists("badge_title_1", $formData)) {
+            //             if ($formData['badge_title_1'][$item]) {
+            //                 $data->badge_title_1 = $formData['badge_title_1'][$item];
+            //             }
+            //         }
 
 
-                    $data->save();
-                }
-            }
+            //         // badge_details_1 (category details)
+            //         if (array_key_exists("badge_details_1", $formData)) {
+            //             if ($formData['badge_details_1'][$item]) {
+            //                 $data->badge_details_1 = $formData['badge_details_1'][$item];
+            //             }
+            //         }
+
+
+            //         // badge_image_1(category image)
+            //         if (array_key_exists("badge_image_1", $formData)) {
+            //             if ($formData['badge_image_1'][$item]) {
+            //                 $random = Str::random(12);
+            //                 $fileName = $random . '-' . time() . '.' . $formData['badge_image_1'][$item]->extension();
+            //                 $formData['badge_image_1'][$item]->move(public_path('uploads/images'), $fileName);
+
+            //                 $data->badge_image_1 = $fileName;
+            //             }
+            //         }
+
+
+            //         $data->save();
+            //     }
+            // }
 
 
             // return json_encode(array(
