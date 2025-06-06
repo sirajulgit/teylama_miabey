@@ -323,12 +323,12 @@
                                     <div class="preview_video">
                                         @if ($items['video_section']['video_1'])
                                             <!-- Video container -->
-                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
+                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;height:400px;">
                                                 <!-- Dynamic content will be injected here -->
                                             </div>
                                         @else
                                             <!-- Video container -->
-                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
+                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;height:400px;">
                                                 <!-- Dynamic content will be injected here -->
                                             </div>
                                         @endif
