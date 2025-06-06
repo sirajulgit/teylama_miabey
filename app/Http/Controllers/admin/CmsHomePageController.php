@@ -54,10 +54,6 @@ class CmsHomePageController extends Controller
                 $item['file_1'] = $default_file;
             }
 
-            if (!is_null($item['video_1'])) {
-                $default_file = '/uploads/videos/' . $item['video_1'];
-                $item['video_1'] = $default_file;
-            }
 
 
             if ($item['type'] == "about") {
@@ -244,36 +240,6 @@ class CmsHomePageController extends Controller
                                 unlink($file_path);
                             }
                         }
-
-                        $newFormData[$key] = $fileName;
-                    }
-                } elseif ($key == "video_1") {
-
-                    $old_file_name = CmsHomePage::find($request->id)->video_1;
-
-                    if ($request->video_1) {
-
-                        if (is_null($old_file_name)) {
-
-                            $random = Str::random(12);
-
-                            $fileName = $random . '-' . time() . '.' . $request->video_1->extension();
-
-                            $request->video_1->move(public_path('uploads/videos'), $fileName);
-                        } else {
-
-                            $random = Str::random(12);
-
-                            $fileName = $random . '-' . time() . '.' . $request->video_1->extension();
-
-                            $request->video_1->move(public_path('uploads/videos'), $fileName);
-
-                            $file_path = public_path('uploads/videos/' . $old_file_name);
-                            if (file_exists($file_path)) {
-                                unlink($file_path);
-                            }
-                        }
-
 
                         $newFormData[$key] = $fileName;
                     }
