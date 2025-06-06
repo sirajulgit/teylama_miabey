@@ -39,16 +39,16 @@
                 </li> --}}
 
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="{{ route('cms_banner_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'banner' ? 'active' : '' }}">
                         <i class="nav-icon fa-solid fa-image"></i>
                         <p>Banners</p>
                     </a>
-                </li>
+                </li> --}}
 
 
-                {{-- <li class="nav-item {{ $data['activePageName'] == 'banner' ? 'menu-open' : '' }} ">
+               <li class="nav-item {{ $data['activePageName'] == 'banner' ? 'menu-open' : '' }} ">
 
                     <a href="#" class="nav-link {{ $data['activePageName'] == 'banner' ? 'active' : '' }} ">
                         <i class="fa-solid fa-image"></i>
@@ -64,7 +64,7 @@
                                 <p>Home Banner</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{--  <li class="nav-item">
                             <a href="{{ route('cms_book_banner_list') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_book_banner' ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
