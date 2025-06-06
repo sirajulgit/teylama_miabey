@@ -234,53 +234,25 @@
 
     <div class="row">
 
+         @foreach ($blogdata as $index => $item)
       <div class="col-lg-4">
         <div class="blog-card">
           <div class="blog-image">
-            <img src="{{ asset('asset/frontend/images/blog-1.png')}}">
+            <img src="{{ $item->image}}">
           </div>
           <div class="blog-content">
-          <span class="date-blog"><i class="bi bi-calendar-check-fill"></i> May 24, 2023 </span>
-          <h4> Maecenas sollicitudin molestie lorem ac fringilla. </h4>
-          <p>Choosing the right builder is crucial for the success of your construction...</p>
+          <span class="date-blog"><i class="bi bi-calendar-check-fill"></i> {{ $item->created_at}}</span>
+          <h4> {{ $item->title}}</h4>
+          <p>{{ $item->short_description}}</p>
           </div>
           <div class="readmore-btn">
             <a href=""> Read More <i class="bi bi-arrow-right"></i> </a>
           </div>
         </div>
       </div>
+  @endforeach
 
-       <div class="col-lg-4">
-        <div class="blog-card">
-          <div class="blog-image">
-            <img src="{{ asset('asset/frontend/images/blog-2.png')}}">
-          </div>
-          <div class="blog-content">
-          <span class="date-blog"><i class="bi bi-calendar-check-fill"></i> May 24, 2023 </span>
-          <h4> Maecenas sollicitudin molestie lorem ac fringilla. </h4>
-          <p>Choosing the right builder is crucial for the success of your construction...</p>
-          </div>
-          <div class="readmore-btn">
-            <a href=""> Read More <i class="bi bi-arrow-right"></i> </a>
-          </div>
-        </div>
-      </div>
 
-       <div class="col-lg-4">
-        <div class="blog-card">
-          <div class="blog-image">
-            <img src="{{ asset('asset/frontend/images/blog-3.png')}}">
-          </div>
-          <div class="blog-content">
-          <span class="date-blog"><i class="bi bi-calendar-check-fill"></i> May 24, 2023 </span>
-          <h4> Maecenas sollicitudin molestie lorem ac fringilla. </h4>
-          <p>Choosing the right builder is crucial for the success of your construction...</p>
-          </div>
-          <div class="readmore-btn">
-            <a href=""> Read More <i class="bi bi-arrow-right"></i> </a>
-          </div>
-        </div>
-      </div>
 
     </div>
 

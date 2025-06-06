@@ -8,6 +8,7 @@ use App\Models\CmsBanner;
 use App\Models\CmsHomePage;
 use App\Models\CmsBadge;
 use App\Models\Gallery;
+use App\Models\Blog;
 
 class HomeController extends Controller
 {
@@ -119,10 +120,27 @@ class HomeController extends Controller
         }
 
 
+          $blog = Blog::orderBy("id", "desc")->get();
+
+        $blog_arr = [];
+        foreach ($blog as $item) {
+
+            $default_image = '/uploads/images/' . $item['image'];
+
+            $item->image = $default_image;
+
+            array_push($blog_arr, $item);
+        }
 
 
 
-        return view('user.home', ['bannerdata' => $temp_arr, 'data' => $data, 'homedata' => $items,'gallerydata' => $gallery_arr]);
+
+
+
+
+
+
+        return view('user.home', ['bannerdata' => $temp_arr, 'data' => $data, 'homedata' => $items,'gallerydata' => $gallery_arr,'blogdata'=>$blog_arr]);
     }
 
 }
