@@ -7,7 +7,7 @@
           <span class="round-icon"> <i class="bi bi-geo-alt"></i> </span>
           <div>
             <b>Our Location</b>
-            <p> XYZ Hilton Street, 125 Town <br> United State </p>
+            <p>{{$settings['address']}} </p>
           </div>
         </div>
       </div>

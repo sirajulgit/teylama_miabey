@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
 
         //
        View::composer(['user.common.header', 'user.common.footer'], function ($view) {
-    $email_data = Cms::where('type', 'contact_email')->first();
+    //$email_data = Cms::where('type', 'contact_email')->first();
     $gmail_link_data = Cms::where('type', 'gmail_link')->first();
     $twitter_link_data = Cms::where('type', 'twitter_link')->first();
     $fb_link_data = Cms::where('type', 'fb_link')->first();
@@ -33,13 +33,14 @@ class AppServiceProvider extends ServiceProvider
     $contact_no_data = CmsContact::first();
 
     $setting_data = [
-        "contact_email" => optional($email_data)->details,
+        "contact_email" => optional($contact_no_data)->email,
         "gmail_link"    => optional($gmail_link_data)->details,
         "twitter_link"  => optional($twitter_link_data)->details,
         "fb_link"       => optional($fb_link_data)->details,
         "insra_link"    => optional($insra_link_data)->details,
         "youtube_link"  => optional($youtube_link_data)->details,
         "contact_no"  => optional($contact_no_data)->phone,
+         "address"  => optional($contact_no_data)->address,
     ];
 
     $view->with('settings', $setting_data);
