@@ -10,7 +10,7 @@
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #3498db;">
                             <h3 class="card-title badge badge-success font-weight-bold ">Section 1</h3>
                         </div>
                         <!-- /.card-header -->
@@ -72,7 +72,7 @@
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #3498db;">
                             <h3 class="card-title badge badge-success font-weight-bold ">Section 2</h3>
                         </div>
                         <!-- /.card-header -->
@@ -133,7 +133,7 @@
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #3498db;">
                             <h3 class="card-title badge badge-success font-weight-bold ">Activities</h3>
                         </div>
                         <!-- /.card-header -->
@@ -303,7 +303,7 @@
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #3498db;">
                             <h3 class="card-title badge badge-success font-weight-bold">Politician</h3>
                         </div>
                         <!-- /.card-header -->
