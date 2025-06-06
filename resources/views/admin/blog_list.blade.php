@@ -25,6 +25,7 @@
                                         <th style="width: 1%">No</th>
                                         <th style="width: 10%">Image</th>
                                         <th style="width: 20%">Blog Title</th>
+                                        <th style="width: 20%">Blog Slug</th>
                                         <th style="width: 10%">Date</th>
                                         <th style="width: 8%" class="text-center">Blog Status</th>
                                         <th style="width: 10%">Action</th>
@@ -42,13 +43,16 @@
                                                 {{ $item->title }}
                                             </td>
                                             <td>
+                                                {{ $item->slug }}
+                                            </td>
+                                            <td>
                                                 {{ Carbon\Carbon::parse($item->created_at)->format('d/m/Y') }}
                                             </td>
                                             <td class="project-state">
-                                                @if ($item->status == 1)
+                                                @if ($item->status == "active")
                                                     <span class="badge badge-success">Active</span>
                                                 @else
-                                                    <span class="badge badge-danger">Not Active</span>
+                                                    <span class="badge badge-danger">Inactive</span>
                                                 @endif
                                             </td>
                                             <td class="project-actions">

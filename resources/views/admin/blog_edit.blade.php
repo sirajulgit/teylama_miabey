@@ -59,10 +59,9 @@
                                 <div class="form-group col-md-6">
                                     <label>Blog Status</label>
                                     <select class="form-control select2" style="width: 100%;" name="status">
-                                        <option value="1" {{ $data['item']['status'] == 1 ? 'selected' : '' }}>Active
+                                        <option value="1" {{ $data['item']['status'] == "active" ? 'selected' : '' }}>Active
                                         </option>
-                                        <option value="0" {{ $data['item']['status'] == 0 ? 'selected' : '' }}>No
-                                            Active
+                                        <option value="0" {{ $data['item']['status'] == "inactive" ? 'selected' : '' }}>Inactive
                                         </option>
                                     </select>
 
