@@ -39,7 +39,7 @@
           <p>Choosing the right builder is crucial for the success of your construction...</p>
           </div>
           <div class="readmore-btn">
-            <a href="details.html"> Read More <i class="bi bi-arrow-right"></i> </a>
+            <a href="{{'blog_details','aaaaaa'}}"> Read More <i class="bi bi-arrow-right"></i> </a>
           </div>
         </div>
       </div>
