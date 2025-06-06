@@ -14,14 +14,16 @@
 
 </div>
 @foreach ($bannerdata as $item)
+  @if ($item->id ==1)
   <div class="home-banner-content">
-    @if ($item->title_1!=="")
+
           <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png')}}">
     <h1 data-aos="fade-right" data-aos-duration="2000"> {{ $item->title_1 }}  </h1>
     <p data-aos="fade-right" data-aos-duration="2000"> {{ $item->details }}</p>
-    @endif
+
 
   </div>
+   @endif
   @endforeach
  </div>
 
