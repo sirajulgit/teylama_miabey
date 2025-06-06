@@ -331,7 +331,8 @@
                                 </div>
 
 
-                                <div class="form-group col-md-6" id="video_1_3_container" style="{{ $items['video_section']['video_1'] ? '' : 'display: none;' }}">
+                                <div class="form-group col-md-6" id="video_1_3_container"
+                                    style="{{ $items['video_section']['video_1'] ? '' : 'display: none;' }}">
                                     <label for="video_1_3">Video URL</label>
                                     <input type="url" class="form-control" name="video_1" id="video_1_3"
                                         value="{{ $items['video_section']['video_1'] }}">
@@ -735,27 +736,47 @@
             $("#video_1_type_3").on("change", function() {
                 const value = $(this).val();
                 if (value) {
-                    
+
+                    $("#video_1_3").val("");
+                    $("#videoPlayerContainer_3_video_section").html("");
+
+                    const videoUrlType = "{{ $items['video_section']['video_1_type'] }}";
                     const videoUrl = "{{ $items['video_section']['video_1'] }}";
-                    if(videoUrl){
-                        $("#video_1_3").val(videoUrl);
-                        $("#videoPlayerContainer_3_video_section").html(`
+                    
+                    if (videoUrlType == "facebook") {
+                        if (videoUrl) {
+                            $("#video_1_3").val(videoUrl);
+                            $("#videoPlayerContainer_3_video_section").html(`
                         <iframe src="${videoUrl}" width="560" height="315" frameborder="0" allowfullscreen></iframe>
                         `);
-                    }else{
-                        $("#video_1_3").val("");
-                        $("#videoPlayerContainer_3_video_section").html("");
+                        }
+                    }
+                    else if (videoUrlType == "youtube") {
+                        if (videoUrl) {
+                            $("#video_1_3").val(videoUrl);
+                            $("#videoPlayerContainer_3_video_section").html(`
+                        <div id="dynamic-player" data-plyr-provider="youtube" data-plyr-embed-id="${videoUrl}" style="height:400px;"></div>
+                        `);
+                        }
+                    }
+                    else if (videoUrlType == "vimeo") {
+                        if (videoUrl) {
+                            $("#video_1_3").val(videoUrl);
+                            $("#videoPlayerContainer_3_video_section").html(`
+                        <div id="dynamic-player" data-plyr-provider="vimeo" data-plyr-embed-id="${videoUrl}" style="height:400px;"></div>
+                        `);
+                        }
                     }
 
                     $("#video_1_3_container").show();
                 } else {
-                    
+
                     $("#video_1_3").val("");
                     $("#videoPlayerContainer_3_video_section").html("");
 
                     $("#video_1_3_container").hide();
                 }
-                
+
             });
 
             $('#video_1_3').on('change', function() {
