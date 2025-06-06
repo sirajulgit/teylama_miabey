@@ -219,7 +219,7 @@
                                     <div id="inputContainer">
                                         @if (count($items['what_we_do']['badge_data']) > 0)
                                             @foreach ($items['what_we_do']['badge_data'] as $item)
-                                                <div class="row">
+                                                <div class="row multi_choice_sections">
 
                                                     {{-- Category ID --}}
                                                     <input type="hidden" value="{{ $item['id'] }}"
@@ -288,7 +288,7 @@
                                                 </div>
                                             @endforeach
                                         @else
-                                            <div class="row">
+                                            <div class="row multi_choice_sections">
                                                 <input type="hidden" value="" name="badge_id[]" />
 
 
@@ -1065,7 +1065,7 @@
                 }
 
                 $('#inputContainer').append(`
-                    <div class="row">
+                    <div class="row multi_choice_sections">
                         <input type="hidden" value="" name="badge_id[]" />
 
                         <div class="form-group col-md-4">
