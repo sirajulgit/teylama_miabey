@@ -797,14 +797,14 @@
 
                     /////////// dynamic text validate /////////////
                     var isValid = true;
-                    $('#inputContainer input[type="text"]').each(function() {
-                        if ($(this).val() == '') {
-                            isValid = false;
-                            $(this).addClass('is-invalid');
-                        } else {
-                            $(this).removeClass('is-invalid');
-                        }
-                    });
+                    // $('#inputContainer input[type="text"]').each(function() {
+                    //     if ($(this).val() == '') {
+                    //         isValid = false;
+                    //         $(this).addClass('is-invalid');
+                    //     } else {
+                    //         $(this).removeClass('is-invalid');
+                    //     }
+                    // });
 
                     ///////// dynamic textarea validate /////////////
                     // $('#inputContainer textarea').each(function() {
