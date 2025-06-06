@@ -264,16 +264,16 @@
                                                     {{-- Category Image --}}
                                                     <div class="form-group col-md-4">
                                                         <input type="file"
-                                                            class="form-control file-input badge_file_1_{{ $item['id'] }}"
-                                                            name="old_badge_file_1[]" placeholder="Category Image"
+                                                            class="form-control file-input badge_image_1_{{ $item['id'] }}"
+                                                            name="old_badge_image_1[]" placeholder="Category Image"
                                                             accept="image/png, image/jpg, image/jpeg, image/webp">
                                                     </div>
 
                                                     {{-- Category Action Button --}}
                                                     <div class="form-group col-md-4">
 
-                                                        @if (!is_null($item['badge_file_1']))
-                                                            <a href="{{ $item['badge_file_1'] }}"
+                                                        @if (!is_null($item['badge_image_1']))
+                                                            <a href="{{ $item['badge_image_1'] }}"
                                                                 class="btn btn-primary btn-lg " target="__blank"><i
                                                                     class="fa fa-download " aria-hidden="true"></i></a>
                                                         @endif
@@ -319,7 +319,7 @@
                                                 {{-- Category Image --}}
                                                 <div class="form-group col-md-4">
                                                     <input type="file" class="form-control file-input"
-                                                        name="badge_file_1[]" placeholder="Category Image"
+                                                        name="badge_image_1[]" placeholder="Category Image"
                                                         accept="image/png, image/jpg, image/jpeg, image/webp">
                                                 </div>
 
@@ -1090,7 +1090,7 @@
 
                         <div class="form-group col-md-4">
                             <input type="file" class="form-control file-input"
-                                name="badge_file_1[]" placeholder="Category Image"
+                                name="badge_image_1[]" placeholder="Category Image"
                                 accept="image/png, image/jpg, image/jpeg, image/webp">
                         </div>
 

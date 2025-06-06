@@ -107,7 +107,10 @@ class CmsHomePageController extends Controller
 
             ////// cms home modal insert //////////////
             foreach ($formData as $key => $val) {
-                if ($key == "_token" ||  $key == "badge_text" || $key == "badge_file" || $key == 'badge_id' ||  $key == "old_badge_text" || $key == "old_badge_file") {
+
+                $not_allow_keys = ["_token", "badge_text_1", "badge_text_2", "badge_file_1", "badge_file_2", "badge_icon_1", "badge_image_1", "badge_title_1", "badge_details_1", "old_badge_text_1", "old_badge_text_2", "old_badge_file_1", "old_badge_file_2", "old_badge_icon_1", "badge_image_1", "old_badge_title_1", "old_badge_details_1"];
+
+                if (in_array($key, $not_allow_keys)) {
                     continue;
                 } elseif ($key == "id") {
                     $table_id = $val;
@@ -246,8 +249,8 @@ class CmsHomePageController extends Controller
                     $data->type = 'what_we_do';
 
                     // bade_text_1 (category name)
-                    if(array_key_exists("badge_text_1", $formData)){
-                        if($formData['badge_text_1'][$item]){
+                    if (array_key_exists("badge_text_1", $formData)) {
+                        if ($formData['badge_text_1'][$item]) {
                             $data->badge_text_1 = $formData['badge_text_1'][$item];
                         }
                     }
@@ -266,34 +269,34 @@ class CmsHomePageController extends Controller
 
 
                     // badge_title_1 (category title)
-                    if(array_key_exists("badge_title_1", $formData)){
-                        if($formData['badge_title_1'][$item]){
+                    if (array_key_exists("badge_title_1", $formData)) {
+                        if ($formData['badge_title_1'][$item]) {
                             $data->badge_title_1 = $formData['badge_title_1'][$item];
                         }
                     }
 
 
                     // badge_details_1 (category details)
-                    if(array_key_exists("badge_details_1", $formData)){
-                        if($formData['badge_details_1'][$item]){
+                    if (array_key_exists("badge_details_1", $formData)) {
+                        if ($formData['badge_details_1'][$item]) {
                             $data->badge_details_1 = $formData['badge_details_1'][$item];
                         }
                     }
 
 
-                    // badge_file_1(category image)
-                    if (array_key_exists("badge_file_1", $formData)) {
-                        if ($formData['badge_file_1'][$item]) {
+                    // badge_image_1(category image)
+                    if (array_key_exists("badge_image_1", $formData)) {
+                        if ($formData['badge_image_1'][$item]) {
                             $random = Str::random(12);
-                            $fileName = $random . '-' . time() . '.' . $formData['badge_file_1'][$item]->extension();
-                            $formData['badge_file_1'][$item]->move(public_path('uploads/files'), $fileName);
+                            $fileName = $random . '-' . time() . '.' . $formData['badge_image_1'][$item]->extension();
+                            $formData['badge_image_1'][$item]->move(public_path('uploads/files'), $fileName);
 
-                            $data->badge_file_1 = $fileName;
+                            $data->badge_image_1 = $fileName;
                         }
                     }
 
 
-                    
+
 
 
                     $data->save();
@@ -334,13 +337,38 @@ class CmsHomePageController extends Controller
             $item = CmsBadge::find($badgeId);
 
 
-            if (!is_null($item->badge_file)) {
-                $file_path = public_path('uploads/files/' . $item->badge_file);
+            if (!is_null($item->badge_file_1)) {
+                $file_path = public_path('uploads/files/' . $item->badge_file_1);
 
                 if (file_exists($file_path)) {
                     unlink($file_path);
                 }
             }
+
+            if (!is_null($item->badge_file_2)) {
+                $file_path = public_path('uploads/files/' . $item->badge_file_2);
+
+                if (file_exists($file_path)) {
+                    unlink($file_path);
+                }
+            }
+
+            if (!is_null($item->badge_icon_1)) {
+                $file_path = public_path('uploads/images/' . $item->badge_icon_1);
+
+                if (file_exists($file_path)) {
+                    unlink($file_path);
+                }
+            }
+
+            if (!is_null($item->badge_image_1)) {
+                $file_path = public_path('uploads/images/' . $item->badge_image_1);
+
+                if (file_exists($file_path)) {
+                    unlink($file_path);
+                }
+            }
+
 
             CmsBadge::where('id', $badgeId)->delete();
 
@@ -362,16 +390,64 @@ class CmsHomePageController extends Controller
     {
         try {
 
+            $data = [];
 
-            $old_file_name = CmsBadge::find($request->badge_id)->badge_file;
+            if ($request->badge_text_1) {
+                $data['badge_text_1'] = $request->badge_text_1;
+            }
 
-            if ($request->badge_file) {
+            if ($request->badge_text_2) {
+                $data['badge_text_2'] = $request->badge_text_2;
+            }
 
+            if ($request->badge_title_1) {
+                $data['badge_title_1'] = $request->badge_title_1;
+            }
+
+            if ($request->badge_details_1) {
+                $data['badge_details_1'] = $request->badge_details_1;
+            }
+
+            if ($request->badge_icon_1) {
                 $random = Str::random(12);
+                $fileName = $random . '-' . time() . '.' . $request->badge_icon_1->extension();
+                $request->badge_icon_1->move(public_path('uploads/images'), $fileName);
+                $data['badge_icon_1'] = $fileName;
 
-                $fileName = $random . '-' . time() . '.' . $request->badge_file->extension();
+                $old_file_name = CmsBadge::find($request->badge_id)->badge_icon_1;
 
-                $request->badge_file->move(public_path('uploads/files'), $fileName);
+                if (!is_null($old_file_name)) {
+                    $file_path = public_path('uploads/images/' . $old_file_name);
+                    if (file_exists($file_path)) {
+                        unlink($file_path);
+                    }
+                }
+            }
+
+
+            if ($request->badge_image_1) {
+                $random = Str::random(12);
+                $fileName = $random . '-' . time() . '.' . $request->badge_image_1->extension();
+                $request->badge_image_1->move(public_path('uploads/images'), $fileName);
+                $data['badge_image_1'] = $fileName;
+
+                $old_file_name = CmsBadge::find($request->badge_id)->badge_image_1;
+
+                if (!is_null($old_file_name)) {
+                    $file_path = public_path('uploads/images/' . $old_file_name);
+                    if (file_exists($file_path)) {
+                        unlink($file_path);
+                    }
+                }
+            }
+
+            if ($request->badge_file_1) {
+                $random = Str::random(12);
+                $fileName = $random . '-' . time() . '.' . $request->badge_file_1->extension();
+                $request->badge_file_1->move(public_path('uploads/files'), $fileName);
+                $data['badge_file_1'] = $fileName;
+
+                $old_file_name = CmsBadge::find($request->badge_id)->badge_file_1;
 
                 if (!is_null($old_file_name)) {
                     $file_path = public_path('uploads/files/' . $old_file_name);
@@ -379,15 +455,27 @@ class CmsHomePageController extends Controller
                         unlink($file_path);
                     }
                 }
-            } else {
-
-                $fileName = $old_file_name;
             }
 
-            CmsBadge::where("id", $request->badge_id)->update([
-                'badge_text' => $request->badge_text,
-                'badge_file' => $fileName,
-            ]);
+            if ($request->badge_file_2) {
+                $random = Str::random(12);
+                $fileName = $random . '-' . time() . '.' . $request->badge_file_2->extension();
+                $request->badge_file_2->move(public_path('uploads/files'), $fileName);
+                $data['badge_file_2'] = $fileName;
+
+                $old_file_name = CmsBadge::find($request->badge_id)->badge_file_2;
+
+                if (!is_null($old_file_name)) {
+                    $file_path = public_path('uploads/files/' . $old_file_name);
+                    if (file_exists($file_path)) {
+                        unlink($file_path);
+                    }
+                }
+            }
+
+            if (!empty($data)) {
+                CmsBadge::where("id", $request->badge_id)->update($data);
+            }
 
             return response()->json([
                 "status" => true,
