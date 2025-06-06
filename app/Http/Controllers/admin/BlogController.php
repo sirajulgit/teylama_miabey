@@ -54,7 +54,7 @@ class BlogController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'slug' => 'required',
+            'slug' => 'required|unique:blogs,slug',
             'image' => 'required|image|mimes:jpeg,png,jpg,webp',
             'short_description' => 'required',
             'long_description' => 'required',
@@ -108,7 +108,7 @@ class BlogController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'slug' => 'required',
+            'slug' => 'required|unique:blogs,slug,' . $request->id,
             'image' => 'image|mimes:jpeg,png,jpg,webp',
             'short_description' => 'required',
             'long_description' => 'required',
