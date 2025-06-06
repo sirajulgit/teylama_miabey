@@ -333,7 +333,7 @@
 
                                 <div class="form-group col-md-6">
                                     <label for="video_1_3">Video URL</label>
-                                    <input type="url" class="form-control mt-3 uploadFile" name="video_1"
+                                    <input type="url" class="form-control" name="video_1"
                                         id="video_1_3" value="{{ $items['video_section']['video_1'] }}">
                                 </div>
 
