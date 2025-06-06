@@ -261,8 +261,8 @@
                                                             accept="image/png, image/jpg, image/jpeg, image/webp">
 
                                                         @if($item['badge_icon_1'])
-                                                            <img src="{{ asset($item['badge_icon_1']) }}" alt="" width="320px"
-                                                                height="120px" />
+                                                            <img src="{{ asset($item['badge_icon_1']) }}" alt="" width="128px"
+                                                                height="128px" />
                                                         @endif
                                                     </div>
 
@@ -276,8 +276,8 @@
                                                             accept="image/png, image/jpg, image/jpeg, image/webp">
 
                                                             @if($item['badge_image_1'])
-                                                            <img src="{{ asset($item['badge_image_1']) }}" alt="" width="320px"
-                                                                height="120px" />
+                                                            <img src="{{ asset($item['badge_image_1']) }}" alt="" width="464.8px"
+                                                                height="456.4px" />
                                                         @endif
                                                     </div>
 
