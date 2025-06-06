@@ -882,7 +882,6 @@
                     },
                     video_1: {
                         required: true
-                        urlValidation: true
                     },
                 },
                 errorElement: 'span',
