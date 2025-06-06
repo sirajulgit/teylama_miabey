@@ -924,14 +924,14 @@
 
 
                     ///////// dynamic file validate /////////////
-                    $('#inputContainer input[type="file"]').each(function() {
-                        if ($(this).val() == '') {
-                            isValid = false;
-                            $(this).addClass('is-invalid');
-                        } else {
-                            $(this).removeClass('is-invalid');
-                        }
-                    });
+                    // $('#inputContainer input[type="file"]').each(function() {
+                    //     if ($(this).val() == '') {
+                    //         isValid = false;
+                    //         $(this).addClass('is-invalid');
+                    //     } else {
+                    //         $(this).removeClass('is-invalid');
+                    //     }
+                    // });
 
 
 
