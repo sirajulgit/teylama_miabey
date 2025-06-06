@@ -259,6 +259,11 @@
                                                             class="form-control file-input badge_icon_1_{{ $item['id'] }}"
                                                             name="old_badge_icon_1[]" placeholder="Category Icon"
                                                             accept="image/png, image/jpg, image/jpeg, image/webp">
+
+                                                        @if($item['badge_icon_1'])
+                                                            <img src="{{ asset($item['badge_icon_1']) }}" alt="" width="320px"
+                                                                height="120px" />
+                                                        @endif
                                                     </div>
 
 
@@ -269,18 +274,16 @@
                                                             class="form-control file-input badge_image_1_{{ $item['id'] }}"
                                                             name="old_badge_image_1[]" placeholder="Category Image"
                                                             accept="image/png, image/jpg, image/jpeg, image/webp">
+
+                                                            @if($item['badge_image_1'])
+                                                            <img src="{{ asset($item['badge_image_1']) }}" alt="" width="320px"
+                                                                height="120px" />
+                                                        @endif
                                                     </div>
 
                                                     {{-- Category Action Button --}}
                                                     <div class="form-group col-md-4">
-
-                                                        @if (!is_null($item['badge_image_1']))
-                                                            <a href="{{ $item['badge_image_1'] }}"
-                                                                class="btn btn-primary btn-lg " target="__blank"><i
-                                                                    class="fa fa-download " aria-hidden="true"></i></a>
-                                                        @endif
-
-
+                                                        
                                                         <button type="button" class="btn btn-info mb-3 updateInput"
                                                             data-badge-id="{{ $item['id'] }}">Update</button>
 
