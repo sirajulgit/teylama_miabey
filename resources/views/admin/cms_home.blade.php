@@ -440,42 +440,6 @@
                 </div>
 
 
-                {{-- /////////////// event /////////////////// --}}
-                <div class="col-lg-12 mb-5">
-                    <div class="card">
-
-                        <div class="card-header">
-                            <h3 class="card-title badge badge-success font-weight-bold ">Upcoming Events</h3>
-                        </div>
-                        <!-- /.card-header -->
-
-                        <form id="eventForm" action="{{ route('post_cms_home') }}" method="POST"
-                            enctype="multipart/form-data">
-                            @csrf
-
-                            <input type="hidden" name="id" value="{{ $items['event']['id'] }}" />
-
-                            <div class="card-body row">
-
-                                <div class="form-group col-md-12">
-                                    <label for="head_title">Title</label>
-                                    <textarea id="head_title5" name="head_title" class="form-control" rows="5">{{ $items['event']['head_title'] }}</textarea>
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="content">Details</label>
-                                    <textarea id="content5" name="content" class="form-control" rows="5">{{ $items['event']['content'] }}</textarea>
-                                </div>
-
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Update</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
 
             </div>
             <!-- /.row -->
@@ -533,12 +497,7 @@
             });
 
 
-            $("#content5").summernote({
-                height: 200,
-            });
-            $("#head_title5").summernote({
-                height: 100,
-            });
+           
 
 
             /////////////////// preview image ///////////////////
@@ -983,52 +942,12 @@
 
             $('#info_section').validate({
                 rules: {
+                    title_1: {
+                        required: true,
+                    },
                     content: {
                         required: false
                     },
-                },
-                messages: {
-                    // email: {
-                    //     required: "Please enter a email address",
-                    //     email: "Please enter a valid email address"
-                    // },
-                    // password: {
-                    //     required: "Please provide a password",
-                    //     minlength: "Your password must be at least 5 characters long"
-                    // },
-                },
-                errorElement: 'span',
-                errorPlacement: function(error, element) {
-                    error.addClass('invalid-feedback');
-                    element.closest('.form-group').append(error);
-                },
-                highlight: function(element, errorClass, validClass) {
-                    $(element).addClass('is-invalid');
-                },
-                unhighlight: function(element, errorClass, validClass) {
-                    $(element).removeClass('is-invalid');
-                },
-                submitHandler: function(form, event) {
-                    event.preventDefault();
-                    form.submit();
-                }
-            });
-
-            $('#eventForm').validate({
-                rules: {
-                    content: {
-                        required: false
-                    },
-                },
-                messages: {
-                    // email: {
-                    //     required: "Please enter a email address",
-                    //     email: "Please enter a valid email address"
-                    // },
-                    // password: {
-                    //     required: "Please provide a password",
-                    //     minlength: "Your password must be at least 5 characters long"
-                    // },
                 },
                 errorElement: 'span',
                 errorPlacement: function(error, element) {

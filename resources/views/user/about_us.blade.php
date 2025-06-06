@@ -145,7 +145,7 @@
           <span>Environment</span>
         </li>
         <li>
-          <img src="images/policy.png">
+          <img src="{{ asset('asset/frontend/images/policy.png')}}">
           <span>Foreign Policy</span>
         </li>
       </ul>

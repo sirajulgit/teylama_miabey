@@ -95,8 +95,6 @@ class CmsHomePageController extends Controller
                 $items["video_section"] = $item;
             } elseif ($item['type'] == "info_section") {
                 $items["info_section"] = $item;
-            } elseif ($item['type'] == "event") {
-                $items["event"] = $item;
             }
         }
 
