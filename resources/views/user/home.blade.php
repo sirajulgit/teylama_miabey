@@ -169,14 +169,14 @@
     <div class="row">
       <div class="col-lg-7">
         <div class="congo-text">
-          <h3>Congo President</h3>
-          <p>Congo President Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. </p>
+          {!! $homedata['info_section']['title_1'] !!}
+           {!! $homedata['info_section']['content'] !!}
         </div>
       </div>
 
       <div class="col-lg-5">
         <div class="congo-image">
-        <img src="{{ asset('asset/frontend/images/congo-president-image.png')}}">
+        <img src="{{ $homedata['info_section']['image_1'] }}">
         </div>
       </div>
 
