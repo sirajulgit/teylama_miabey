@@ -68,10 +68,29 @@ class CmsHomePageController extends Controller
 
                 foreach ($cmsBadge as $item2) {
 
-                    if (!is_null($item2['badge_file'])) {
-                        $default_file = '/uploads/files/' . $item2['badge_file'];
-                        $item2['badge_file'] = $default_file;
+                    if (!is_null($item2['badge_file_1'])) {
+                        $default_file = '/uploads/files/' . $item2['badge_file_1'];
+                        $item2['badge_file_1'] = $default_file;
                     }
+
+                    if (!is_null($item2['badge_file_2'])) {
+                        $default_file = '/uploads/files/' . $item2['badge_file_2'];
+                        $item2['badge_file_2'] = $default_file;
+                    }
+
+
+                    if (!is_null($item2['badge_icon_1'])) {
+                        $default_file = '/uploads/images/' . $item2['badge_icon_1'];
+                        $item2['badge_icon_1'] = $default_file;
+                    }
+
+
+                    if (!is_null($item2['badge_image_1'])) {
+                        $default_file = '/uploads/images/' . $item2['badge_image_1'];
+                        $item2['badge_image_1'] = $default_file;
+                    }
+
+
 
                     $items['what_we_do']["badge_data"][] = $item2;
                 }
