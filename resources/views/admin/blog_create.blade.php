@@ -208,7 +208,7 @@
                     },
                     slug: {
                         required: true,
-                    }
+                    },
                     image: {
                         required: true
                     },
