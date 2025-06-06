@@ -239,7 +239,7 @@
 
                                         <div class="admin_upload">
                                             <label class="admin-upload-wrap">
-                                                <input type="file" class="form-control uploadFile" name="image_2"
+                                                <input type="file" class="form-control uploadFile" name="image_3"
                                                     id="image_3_3_activities_section"
                                                     accept="image/png, image/jpg, image/jpeg, image/webp">
                                             </label>
@@ -275,7 +275,7 @@
 
                                         <div class="admin_upload">
                                             <label class="admin-upload-wrap">
-                                                <input type="file" class="form-control uploadFile" name="image_2"
+                                                <input type="file" class="form-control uploadFile" name="image_4"
                                                     id="image_4_3_activities_section"
                                                     accept="image/png, image/jpg, image/jpeg, image/webp">
                                             </label>
