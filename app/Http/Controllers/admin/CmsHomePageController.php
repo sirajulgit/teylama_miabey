@@ -62,12 +62,8 @@ class CmsHomePageController extends Controller
 
                 $cmsBadge = CmsBadge::where('type', 'what_we_do')->orderBy("id", "asc")->get()->toArray();
 
-                if (count($cmsBadge) == 0) {
-                    $items['what_we_do']["badge_data"] = [];
-                }
-
-
-
+                $items['what_we_do']["badge_data"] = [];
+                
                 foreach ($cmsBadge as $item2) {
 
                     if (!is_null($item2['badge_file_1'])) {
@@ -93,10 +89,10 @@ class CmsHomePageController extends Controller
                     }
 
 
-                    dd($item2);
-
+                    
                     $items['what_we_do']["badge_data"][] = $item2;
                 }
+                dd($items['what_we_do']["badge_data"]);
             } elseif ($item['type'] == "my_expertise") {
                 $items["my_expertise"] = $item;
             } elseif ($item['type'] == "book") {
