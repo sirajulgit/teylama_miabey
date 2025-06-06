@@ -70,6 +70,7 @@ Route::middleware('isGuest')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/about-me', [AboutUsController::class, 'index'])->name('about_us');
     Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs');
+    Route::get('/blogs/{slug}', [BlogsController::class, 'blog_details'])->name('blog_details');
     Route::get('/contact-me', [ContactUsController::class, 'index'])->name('contact_us');
     Route::get('/events', [EventsController::class, 'index'])->name('events');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
