@@ -158,6 +158,14 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('gallery_list') }}"
+                        class="nav-link {{ $data['activePageName'] == 'gallery' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-rss"></i>
+                        <p>Gallery</p>
+                    </a>
+                </li>
+
 
                 <li class="nav-item">
                     <a href="{{ route('cms_list') }}"

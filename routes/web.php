@@ -19,6 +19,7 @@ use App\Http\Controllers\admin\AwardController;
 use App\Http\Controllers\admin\BibliographyController;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\CmsContactController;
+use App\Http\Controllers\admin\GalleryController;
 
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\ProductController;
@@ -39,11 +40,10 @@ use App\Http\Controllers\user\TransactionHistoryController;
 use App\Http\Controllers\user\ChangePasswordController;
 use App\Http\Controllers\user\HomeController;
 use App\Http\Controllers\user\AboutUsController;
-use App\Http\Controllers\user\BlogsController;
+use App\Http\Controllers\user\BlogsController as UserBlogsController;
 use App\Http\Controllers\user\ContactUsController;
-use App\Http\Controllers\user\EventsController;
-
-use App\Http\Controllers\user\GalleryController;
+use App\Http\Controllers\user\EventsController as UserEventsController;
+use App\Http\Controllers\user\GalleryController as UserGalleryController;
 
 
 
@@ -69,11 +69,11 @@ Route::middleware('isGuest')->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/about-me', [AboutUsController::class, 'index'])->name('about_us');
-    Route::get('/blogs', [BlogsController::class, 'index'])->name('blogs');
-    Route::get('/blogs/{slug}', [BlogsController::class, 'blog_details'])->name('blog_details');
+    Route::get('/blogs', [UserBlogsController::class, 'index'])->name('blogs');
+    Route::get('/blogs/{slug}', [UserBlogsController::class, 'blog_details'])->name('blog_details');
     Route::get('/contact-me', [ContactUsController::class, 'index'])->name('contact_us');
-    Route::get('/events', [EventsController::class, 'index'])->name('events');
-    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+    Route::get('/events', [UserEventsController::class, 'index'])->name('events');
+    Route::get('/gallery', [UserGalleryController::class, 'index'])->name('gallery');
     // Route::post('/login', [AuthController::class, 'post_login'])->name('post_user_login');
     // Route::get('/register', [AuthController::class, 'register'])->name('user_register');
     // Route::post('/register', [AuthController::class, 'post_register'])->name('post_user_register');
@@ -294,6 +294,15 @@ Route::prefix('admin')->middleware(['admin.auth'])->group(function () {
     Route::get('/blog-edit/{id}', [BlogController::class, 'update'])->name('blog_edit');
     Route::post('/blog-edit/{id}', [BlogController::class, 'post_update'])->name('post_blog_edit');
     Route::post('/blog-delete', [BlogController::class, 'delete'])->name('blog_delete');
+
+
+    // ############ | gallery | ################
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery_list');
+    Route::get('/gallery-create', [GalleryController::class, 'create'])->name('gallery_create');
+    Route::post('/gallery-create', [GalleryController::class, 'post_create'])->name('post_gallery_create');
+    Route::get('/gallery-edit/{id}', [GalleryController::class, 'update'])->name('gallery_edit');
+    Route::post('/gallery-edit/{id}', [GalleryController::class, 'post_update'])->name('post_gallery_edit');
+    Route::post('/gallery-delete', [GalleryController::class, 'delete'])->name('gallery_delete');
 
 
     Route::get('/award', [AwardController::class, 'index'])->name('award_list');
