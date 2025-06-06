@@ -262,7 +262,7 @@
 
                                                         @if($item['badge_icon_1'])
                                                             <img src="{{ asset($item['badge_icon_1']) }}" alt="" width="128px"
-                                                                height="128px" />
+                                                                height="128px" class="mt-3" />
                                                         @endif
                                                     </div>
 
@@ -277,7 +277,7 @@
 
                                                             @if($item['badge_image_1'])
                                                             <img src="{{ asset($item['badge_image_1']) }}" alt="" width="464.8px"
-                                                                height="456.4px" />
+                                                                height="456.4px" class="mt-3" />
                                                         @endif
                                                     </div>
 
