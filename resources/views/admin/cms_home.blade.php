@@ -912,6 +912,16 @@
                         }
                     });
 
+                    ///////// dynamic textarea validate /////////////
+                    $('#inputContainer textarea').each(function() {
+                        if ($(this).val() == '') {
+                            isValid = false;
+                            $(this).addClass('is-invalid');
+                        } else {
+                            $(this).removeClass('is-invalid');
+                        }
+                    });
+
 
                     ///////// dynamic file validate /////////////
                     $('#inputContainer input[type="file"]').each(function() {
@@ -922,6 +932,9 @@
                             $(this).removeClass('is-invalid');
                         }
                     });
+
+
+
 
 
                     if (!isValid) {
