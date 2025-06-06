@@ -313,18 +313,39 @@
                                     <textarea id="content3" name="content" class="form-control" rows="5">{{ $items['video_section']['content'] }}</textarea>
                                 </div>
 
+                                <div class="form-group col-md-6">
+                                    <label for="video_1_type_3">Video Type</label>
+                                    <select id="video_1_type_3" name="video_1_type" class="form-control select2"
+                                        style="width: 100%;" name="type">
+                                        <option value="">Select Video Type</option>
+                                        <option value="facebook"
+                                            {{ $items['video_section']['video_1_type'] == 'facebook' ? 'selected' : '' }}>
+                                            Facebook</option>
+                                        <option value="youtube"
+                                            {{ $items['video_section']['video_1_type'] == 'youtube' ? 'selected' : '' }}>
+                                            Youtube</option>
+                                        <option value="vimeo"
+                                            {{ $items['video_section']['video_1_type'] == 'vimeo' ? 'selected' : '' }}>
+                                            Vimeo</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group col-md-6">
+                                    <label for="video_1_3">Video URL</label>
+                                    <input type="url" class="form-control mt-3 uploadFile" name="video_1"
+                                        id="video_1_3" value="{{ $items['video_section']['video_1'] }}">
+                                </div>
+
 
                                 <div class="form-group col-md-12">
-                                    <label for="video_1_3">Video URL</label>
-
-                                    <input type="url" class="form-control mt-3 uploadFile" name="video_1"
-                                        id="video_1_3">
-
                                     <div class="preview_video">
                                         @if ($items['video_section']['video_1'])
                                             <!-- Video container -->
                                             <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
                                                 <!-- Dynamic content will be injected here -->
+                                                <iframe src="{{ $items['video_section']['video_1'] }}" width="560"
+                                                    height="315" frameborder="0" allowfullscreen></iframe>
                                             </div>
                                         @else
                                             <!-- Video container -->
@@ -348,7 +369,6 @@
                                             @endif
                                         </div>
                                     </div> --}}
-
                                 </div>
 
                             </div>
@@ -688,75 +708,47 @@
 
 
             /////////////////// preview video ///////////////////////
-            function getVideoType(url) {
-                if (url.match(/\.(mp4|webm|ogg)$/i)) return 'file';
-                if (url.includes('youtube.com') || url.includes('youtu.be')) return 'youtube';
-                if (url.includes('vimeo.com')) return 'vimeo';
-                if (url.includes('facebook.com')) return 'facebook';
+            function videoUrlConvertToEmbedUrl(url) {
+                // YouTube
+                if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                    const match = url.match(/(?:v=|\/)([0-9A-Za-z_-]{11})/);
+                    if (match && match[1]) {
+                        return `https://www.youtube.com/embed/${match[1]}`;
+                    }
+                }
+
+                // Vimeo
+                if (url.includes('vimeo.com')) {
+                    const match = url.match(/vimeo\.com\/(\d+)/);
+                    if (match && match[1]) {
+                        return `https://player.vimeo.com/video/${match[1]}`;
+                    }
+                }
+
+                // Facebook (basic embed support)
+                if (url.includes('facebook.com')) {
+                    return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=0&width=560`;
+                }
+
                 return null;
             }
 
-            function extractYouTubeId(url) {
-                const match = url.match(/(?:v=|\/)([0-9A-Za-z_-]{11})(?:\?|&|$)/);
-                return match ? match[1] : null;
-            }
-
-            function extractVimeoId(url) {
-                const match = url.match(/vimeo\.com\/(\d+)/);
-                return match ? match[1] : null;
-            }
 
             $('#video_1_3').on('change', function() {
-                const url = $(this).val().trim();
-                const type = getVideoType(url);
-                const $container = $('#videoPlayerContainer_3_video_section');
+                const inputUrl = $(this).val().trim();
+                const embedUrl = convertToEmbedUrl(inputUrl);
 
-                $container.html(''); // Clear previous content
-
-                if (!type) {
-                    $container.html('<p style="color:red;">Unsupported video type</p>');
+                if (!embedUrl) {
+                    $('#videoPlayerContainer_3_video_section').html(
+                        '<p style="color:red;">Unsupported video URL</p>');
                     return;
                 }
 
-                if (type === 'file') {
-                    $container.html(`
-                        <video id="dynamic-player" class="plyr" controls style="height:400px;">
-                            <source src="${url}" type="video/mp4" />
-                        </video>
-                    `);
-                }
+                $('#videoPlayerContainer_3_video_section').html(`
+                    <iframe src="${embedUrl}" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                `);
 
-                if (type === 'youtube') {
-                    const ytId = extractYouTubeId(url);
-                    if (ytId) {
-                        $container.html(`
-                            <div id="dynamic-player" data-plyr-provider="youtube" data-plyr-embed-id="${ytId}" style="height:400px;"></div>
-                            `);
-                    }
-                }
-
-                if (type === 'vimeo') {
-                    const vimeoId = extractVimeoId(url);
-                    if (vimeoId) {
-                        $container.html(`
-                            <div id="dynamic-player" data-plyr-provider="vimeo" data-plyr-embed-id="${vimeoId}" style="height:400px;"></div>
-                            `);
-                    }
-                }
-
-                if (type === 'facebook') {
-                    $container.html(`
-                        <iframe src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=0&width=560"
-                        width="560" height="315" style="border:none;overflow:hidden" scrolling="no"
-                        frameborder="0" allowfullscreen></iframe>
-                    `);
-                    return; // Skip Plyr init for Facebook
-                }
-
-                // Initialize Plyr
-                setTimeout(() => {
-                    const player = new Plyr('#dynamic-player');
-                }, 100);
+                // $('#video_1_3').val(embedUrl);
             });
             /////////////////// end preview video ///////////////////
 
@@ -885,16 +877,13 @@
                     content: {
                         required: true
                     },
-                },
-                messages: {
-                    // email: {
-                    //     required: "Please enter a email address",
-                    //     email: "Please enter a valid email address"
-                    // },
-                    // password: {
-                    //     required: "Please provide a password",
-                    //     minlength: "Your password must be at least 5 characters long"
-                    // },
+                    video_1_type: {
+                        required: true,
+                    },
+                    video_1: {
+                        required: true
+                        urlValidation: true
+                    },
                 },
                 errorElement: 'span',
                 errorPlacement: function(error, element) {
