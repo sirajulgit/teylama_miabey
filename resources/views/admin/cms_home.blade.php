@@ -1116,6 +1116,7 @@
 
 
                 var formData = new FormData();
+                formData.append('badge_id', badge_id);
 
                 // if (badge_file != undefined) {
                 //     formData.append('badge_file', badge_file);
