@@ -66,6 +66,8 @@ class CmsHomePageController extends Controller
                     $items['what_we_do']["badge_data"] = [];
                 }
 
+
+
                 foreach ($cmsBadge as $item2) {
 
                     if (!is_null($item2['badge_file_1'])) {
@@ -91,6 +93,7 @@ class CmsHomePageController extends Controller
                     }
 
 
+                    dd($item2);
 
                     $items['what_we_do']["badge_data"][] = $item2;
                 }
