@@ -869,25 +869,15 @@
 
             $('#what_we_do_form').validate({
                 rules: {
-                    title_1: {
+                    head_title: {
                         required: true,
+                    },
+                    title_1: {
+                        required: false
                     },
                     content: {
                         required: true
                     },
-                    image_1: {
-                        required: false
-                    },
-                },
-                messages: {
-                    // email: {
-                    //     required: "Please enter a email address",
-                    //     email: "Please enter a valid email address"
-                    // },
-                    // password: {
-                    //     required: "Please provide a password",
-                    //     minlength: "Your password must be at least 5 characters long"
-                    // },
                 },
                 errorElement: 'span',
                 errorPlacement: function(error, element) {
@@ -916,15 +906,15 @@
                     });
 
 
-                    /////////// dynamic file validate /////////////
-                    // $('#inputContainer input[type="file"]').each(function() {
-                    //     if ($(this).val() == '') {
-                    //         isValid = false;
-                    //         $(this).addClass('is-invalid');
-                    //     } else {
-                    //         $(this).removeClass('is-invalid');
-                    //     }
-                    // });
+                    ///////// dynamic file validate /////////////
+                    $('#inputContainer input[type="file"]').each(function() {
+                        if ($(this).val() == '') {
+                            isValid = false;
+                            $(this).addClass('is-invalid');
+                        } else {
+                            $(this).removeClass('is-invalid');
+                        }
+                    });
 
 
                     if (!isValid) {
