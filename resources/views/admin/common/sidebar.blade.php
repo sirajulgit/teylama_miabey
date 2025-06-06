@@ -122,6 +122,14 @@
                         </li>
 
                         <li class="nav-item">
+                            <a href="{{ route('cms_about') }}"
+                                class="nav-link {{ $data['activeSubMenu'] == 'cms_about_page' ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>About Page</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a href="{{ route('cms_contact') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_contact_page' ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
