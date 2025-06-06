@@ -105,7 +105,7 @@ class CmsAboutPageController extends Controller
 
 
 
-        return view("admin.cms_home", ["data" => $data, "items" => $items]);
+        return view("admin.cms_about", ["data" => $data, "items" => $items]);
     }
 
     public function post_update(Request $request)
