@@ -85,7 +85,7 @@
                                 </div>
 
 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-12">
                                     <label for="short_description">Event Short Details</label>
                                     <textarea id="short_description" name="short_description" class="form-control" rows="6">{{ old('short_description') }}</textarea>
                                     {{-- <h5 id="maxContentPost" style="text-align:right"></h5> --}}
