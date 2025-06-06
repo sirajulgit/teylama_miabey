@@ -197,6 +197,24 @@
             ///////////////// end preview image  ////////////////////
 
 
+            /////////////////// slug validation ///////////////////////
+            function convertToSlug(text) {
+                return text
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\w\s-]/g, '')
+                    .replace(/[\s_-]+/g, '-')
+                    .replace(/^-+|-+$/g, '');
+            }
+
+            $('#title').on('input', function() {
+                const titleVal = $(this).val();
+                const slug = convertToSlug(titleVal);
+                $('#slug').val(slug);
+            });
+            /////////////////// end slug validation ///////////////////
+
+
 
             ////////////// form validation ////////////////////////
             $('#quickForm').validate({
