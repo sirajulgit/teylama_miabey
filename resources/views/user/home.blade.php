@@ -86,12 +86,12 @@
  <div class="what-we-do" data-aos="fade-up" data-aos-duration="1500">
   <div class="container">
       <div class="about-content-right">
-        {!! $items['what_we_do']['head_title'] !!}
+        {!! $homedata['what_we_do']['head_title'] !!}
       </div>
 
       <div class="middle-text d-flex align-items-sm-start pt-4 pb-5">
-       {!! $items['what_we_do']['title_1'] !!}
-        {!! $items['what_we_do']['content'] !!}
+       {!! $homedata['what_we_do']['title_1'] !!}
+        {!! $homedata['what_we_do']['content'] !!}
       </div>
 
       <div class="tab-area">
