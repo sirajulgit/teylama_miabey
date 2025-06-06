@@ -254,6 +254,7 @@
 
                                                     {{-- Category Icon --}}
                                                     <div class="form-group col-md-4">
+                                                        <label for="badge_icon_1_{{ $item['id'] }}">Category Icon</label>
                                                         <input type="file"
                                                             class="form-control file-input badge_icon_1_{{ $item['id'] }}"
                                                             name="old_badge_icon_1[]" placeholder="Category Icon"
@@ -263,6 +264,7 @@
 
                                                     {{-- Category Image --}}
                                                     <div class="form-group col-md-4">
+                                                        <label for="badge_image_1_{{ $item['id'] }}">Category Image</label>
                                                         <input type="file"
                                                             class="form-control file-input badge_image_1_{{ $item['id'] }}"
                                                             name="old_badge_image_1[]" placeholder="Category Image"
@@ -311,6 +313,7 @@
 
                                                 {{-- Category Icon --}}
                                                 <div class="form-group col-md-4">
+                                                    <label for="badge_icon_1">Category Icon</label>
                                                     <input type="file" class="form-control file-input"
                                                         name="badge_icon_1[]" placeholder="Category Icon"
                                                         accept="image/png, image/jpg, image/jpeg, image/webp">
@@ -318,6 +321,7 @@
 
                                                 {{-- Category Image --}}
                                                 <div class="form-group col-md-4">
+                                                    <label for="badge_image_1">Category Image</label>
                                                     <input type="file" class="form-control file-input"
                                                         name="badge_image_1[]" placeholder="Category Image"
                                                         accept="image/png, image/jpg, image/jpeg, image/webp">
@@ -1083,12 +1087,14 @@
                         </div>
 
                         <div class="form-group col-md-4">
+                            <label for="badge_icon_1">Category Icon</label>
                             <input type="file" class="form-control file-input"
                                 name="badge_icon_1[]" placeholder="Category Icon"
                                 accept="image/png, image/jpg, image/jpeg, image/webp">
                         </div>
 
                         <div class="form-group col-md-4">
+                            <label for="badge_image_1">Category Image</label>
                             <input type="file" class="form-control file-input"
                                 name="badge_image_1[]" placeholder="Category Image"
                                 accept="image/png, image/jpg, image/jpeg, image/webp">
