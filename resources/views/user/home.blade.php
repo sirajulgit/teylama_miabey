@@ -86,12 +86,12 @@
  <div class="what-we-do" data-aos="fade-up" data-aos-duration="1500">
   <div class="container">
       <div class="about-content-right">
-        <h2>What <strong>We Do</strong></h2>
+        {!! $items['what_we_do']['head_title'] !!}
       </div>
 
       <div class="middle-text d-flex align-items-sm-start pt-4 pb-5">
-        <h3> Give a Future full of Choices </h3>
-        <p>We help children thrive in spite of the toughest challenges in the world. Because we know that every child, like every person, matters. </p>
+       {!! $items['what_we_do']['title_1'] !!}
+        {!! $items['what_we_do']['content'] !!}
       </div>
 
       <div class="tab-area">
