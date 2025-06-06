@@ -33,7 +33,7 @@ class EventController extends Controller
 
         $data['items'] = $temp_arr;
 
-        return view("admin.event_list", ["data" => $data]);
+        return view("admin.events.event_list", ["data" => $data]);
     }
 
 
@@ -45,7 +45,7 @@ class EventController extends Controller
         $data['activePageName'] = 'event';
         $data['activeSubMenu'] = '';
 
-        return view("admin.event_create", ["data" => $data]);
+        return view("admin.events.event_create", ["data" => $data]);
     }
 
 
@@ -104,7 +104,7 @@ class EventController extends Controller
 
         $data['item'] = $item;
 
-        return view("admin.event_edit", ["data" => $data]);
+        return view("admin.events.event_edit", ["data" => $data]);
     }
 
 
