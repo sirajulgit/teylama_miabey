@@ -179,7 +179,7 @@
 
                                                     {{-- Category Details --}}
                                                     <div class="form-group col-md-4">
-                                                        <textarea name="old_badge_details_1[]" class="form-control" rows="5 badge_details_1_{{ $item['id'] }}"
+                                                        <textarea name="old_badge_details_1[]" class="form-control badge_details_1_{{ $item['id'] }}" rows="5"
                                                             placeholder="Category Details">{{ $item['badge_details_1'] }}</textarea>
                                                     </div>
 
