@@ -1174,17 +1174,46 @@
 
                 const current_pointer = $(this);
                 var badge_id = $(current_pointer).attr("data-badge-id");
-                var badge_text = $(`.badge_text${badge_id}`).val();
-                var badge_file = $(`.badge_file${badge_id}`).prop('files')[0];
+                var badge_text_1 = $(`.badge_text_1${badge_id}`).val() || "";
+                var badge_text_2 = $(`.badge_text_2${badge_id}`).val() || "";
+                var badge_file_1 = $(`.badge_file_1${badge_id}`).prop('files')[0] || "";
+                var badge_file_2 = $(`.badge_file_2${badge_id}`).prop('files')[0] || "";
+                var badge_icon_1 = $(`.badge_icon_1${badge_id}`).prop('files')[0] || "";
+                var badge_image_1 = $(`.badge_image_1${badge_id}`).prop('files')[0] || "";
+                var badge_title_1 = $(`.badge_title_1${badge_id}`).val() || "";
+                var badge_details_1 = $(`.badge_details_1${badge_id}`).val() || "";
+
 
 
                 var formData = new FormData();
 
-                formData.append('badge_id', badge_id);
-                formData.append('badge_text', badge_text);
+                // if (badge_file != undefined) {
+                //     formData.append('badge_file', badge_file);
+                // }
 
-                if (badge_file != undefined) {
-                    formData.append('badge_file', badge_file);
+                if (badge_text_1 != undefined && badge_text_1 != "") {
+                    formData.append('badge_text_1', badge_text_1);
+                }
+                if (badge_text_2 != undefined && badge_text_2 != "") {
+                    formData.append('badge_text_2', badge_text_2);
+                }
+                if (badge_file_1 != undefined && badge_file_1 != "") {
+                    formData.append('badge_file_1', badge_file_1);
+                }
+                if (badge_file_2 != undefined && badge_file_2 != "") {
+                    formData.append('badge_file_2', badge_file_2);
+                }
+                if (badge_icon_1 != undefined && badge_icon_1 != "") {
+                    formData.append('badge_icon_1', badge_icon_1);
+                }
+                if (badge_image_1 != undefined && badge_image_1 != "") {
+                    formData.append('badge_image_1', badge_image_1);
+                }
+                if (badge_title_1 != undefined  && badge_title_1 != "") {
+                    formData.append('badge_title_1', badge_title_1);
+                }
+                if (badge_details_1 != undefined && badge_details_1 != "") {
+                    formData.append('badge_details_1', badge_details_1);
                 }
 
                 let url = "{{ route('post_badge_update') }}";
