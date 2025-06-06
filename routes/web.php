@@ -278,6 +278,7 @@ Route::prefix('admin')->middleware(['admin.auth'])->group(function () {
     Route::post('/cms-blogs-banner-delete', [CmsBlogPageController::class, 'delete'])->name('cms_blogs_banner_delete');
 
 
+    // ############ | event | ################
     Route::get('/event', [EventController::class, 'index'])->name('event_list');
     Route::get('/event-create', [EventController::class, 'create'])->name('event_create');
     Route::post('/event-create', [EventController::class, 'post_create'])->name('post_event_create');
@@ -286,6 +287,7 @@ Route::prefix('admin')->middleware(['admin.auth'])->group(function () {
     Route::post('/event-delete', [EventController::class, 'delete'])->name('event_delete');
 
 
+    // ############ | blog | ################
     Route::get('/blog', [BlogController::class, 'index'])->name('blog_list');
     Route::get('/blog-create', [BlogController::class, 'create'])->name('blog_create');
     Route::post('/blog-create', [BlogController::class, 'post_create'])->name('post_blog_create');

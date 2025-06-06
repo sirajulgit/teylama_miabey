@@ -9,7 +9,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">Event Add</h3>
+                            <h3 class="card-title">Event Edit</h3>
 
                             <div class="card-tools">
                                 <a href="{{ route('event_list') }}" class="btn btn-primary">Back</a>
@@ -17,23 +17,35 @@
                         </div>
                         <!-- /.card-header -->
 
-                        <form id="quickForm" action="{{ route('post_event_create') }}" method="POST"
+                        <form id="quickForm" action="{{ route('post_event_edit', $data['item']['id']) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
 
                             <div class="card-body row">
                                 <div class="form-group col-md-6">
                                     <label for="title">Event Title</label>
-                                    <input type="text" name="title" class="form-control" id="title" value="{{ old('title') }}">
+                                    <input type="text" name="title" class="form-control" id="title"
+                                        value="{{ $data['item']['title'] }}">
 
                                     @if ($errors->has('title'))
                                         <span class="form_error">{{ $errors->first('title') }}</span>
                                     @endif
                                 </div>
 
+                                <div class="form-group col-md-6">
+                                    <label for="slug">Event Slug</label>
+                                    <input type="text" name="slug" class="form-control" id="slug"
+                                        value="{{ $data['item']['slug'] }}">
+
+                                    @if ($errors->has('slug'))
+                                        <span class="form_error">{{ $errors->first('slug') }}</span>
+                                    @endif
+                                </div>
+
                                 <div class="form-group col-md-3">
                                     <label for="start_date">Event Start Date</label>
-                                    <input type="date" name="start_date" class="form-control" id="start_date" value="{{ old('start_date') }}">
+                                    <input type="date" name="start_date" class="form-control" id="start_date"
+                                        value="{{ Carbon\Carbon::parse($data['item']['start_date'])->format('Y-m-d') }}">
 
                                     @if ($errors->has('start_date'))
                                         <span class="form_error">{{ $errors->first('start_date') }}</span>
@@ -42,7 +54,8 @@
 
                                 <div class="form-group col-md-3">
                                     <label for="end_date">Event End Date</label>
-                                    <input type="date" name="end_date" class="form-control" id="end_date" value="{{ old('end_date') }}">
+                                    <input type="date" name="end_date" class="form-control" id="end_date"
+                                        value="{{ Carbon\Carbon::parse($data['item']['end_date'])->format('Y-m-d') }}">
 
                                     @if ($errors->has('end_date'))
                                         <span class="form_error">{{ $errors->first('end_date') }}</span>
@@ -61,10 +74,8 @@
 
                                         <div class="profile_image">
                                             <img class="profile_img" id="thumbnail_show_image"
-                                                src="{{ asset('asset/images/default_image.png') }}" width="148px"
-                                                height="221px">
+                                                src="{{ $data['item']['image'] }}" width="148px" height="221px">
                                         </div>
-
 
                                     </div>
 
@@ -74,10 +85,24 @@
 
                                 </div>
 
-
                                 <div class="form-group col-md-6">
+                                    <label>Event Status</label>
+                                    <select class="form-control select2" style="width: 100%;" name="status">
+                                        <option value="1" {{ $data['item']['status'] == "active" ? 'selected' : '' }}>Active
+                                        </option>
+                                        <option value="0" {{ $data['item']['status'] == "inactive" ? 'selected' : '' }}>Inactive
+                                        </option>
+                                    </select>
+
+                                    @if ($errors->has('status'))
+                                        <span class="form_error">{{ $errors->first('status') }}</span>
+                                    @endif
+                                </div>
+
+
+                                <div class="form-group col-md-12">
                                     <label for="short_description">Event Short Details</label>
-                                    <textarea id="short_description" name="short_description" class="form-control" rows="6">{{ old('short_description') }}</textarea>
+                                    <textarea id="short_description" name="short_description" class="form-control" rows="5">{{ $data['item']['short_description'] }}</textarea>
                                     {{-- <h5 id="maxContentPost" style="text-align:right"></h5> --}}
 
                                     @if ($errors->has('short_description'))
@@ -87,7 +112,7 @@
 
                                 <div class="form-group col-md-12">
                                     <label for="long_description">Event Long Details</label>
-                                    <textarea id="long_description" name="long_description" class="form-control">{{ old('long_description') }}</textarea>
+                                    <textarea id="long_description" name="long_description" class="form-control">{{ $data['item']['long_description'] }}</textarea>
 
                                     @if ($errors->has('long_description'))
                                         <span class="form_error">{{ $errors->first('long_description') }}</span>
@@ -97,7 +122,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </form>
                     </div>
@@ -188,12 +213,32 @@
             ///////////////// end preview image  ////////////////////
 
 
+            /////////////////// slug validation ///////////////////////
+            function convertToSlug(text) {
+                return text
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^\w\s-]/g, '')
+                    .replace(/[\s_-]+/g, '-')
+                    .replace(/^-+|-+$/g, '');
+            }
+
+            $('#title').on('input', function() {
+                const titleVal = $(this).val();
+                const slug = convertToSlug(titleVal);
+                $('#slug').val(slug);
+            });
+            /////////////////// end slug validation ///////////////////
+
 
             ////////////// form validation ////////////////////////
             $('#quickForm').validate({
 
                 rules: {
                     title: {
+                        required: true,
+                    },
+                    slug: {
                         required: true,
                     },
                     start_date: {
@@ -203,14 +248,17 @@
                         required: true
                     },
                     image: {
-                        required: true
+                        required: false
                     },
                     short_description: {
-                        required: false,
+                        required: true,
                     },
                     long_description: {
                         required: false
-                    }
+                    },
+                    status: {
+                        required: false
+                    },
                 },
                 messages: {
                     // email: {

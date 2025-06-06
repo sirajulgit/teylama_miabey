@@ -142,19 +142,19 @@
 
 
 
-
-
-
-
-
-
-
-
                 <li class="nav-item">
                     <a href="{{ route('blog_list') }}"
                         class="nav-link {{ $data['activePageName'] == 'blog' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-rss"></i>
                         <p>Blogs</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('event_list') }}"
+                        class="nav-link {{ $data['activePageName'] == 'event' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-rss"></i>
+                        <p>Events</p>
                     </a>
                 </li>
 

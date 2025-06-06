@@ -55,6 +55,7 @@ class EventController extends Controller
 
         $request->validate([
             'title' => 'required',
+            'slug' => 'required|unique:blogs,slug',
             'image' => 'required|image|mimes:jpeg,png,jpg,webp',
             'short_description' => 'required',
             'long_description' => 'required',
@@ -73,6 +74,7 @@ class EventController extends Controller
 
         $data = new Event();
         $data->title = $request->title;
+        $data->slug = $request->slug;
         $data->image = $imageName;
         $data->short_description = $request->short_description;
         $data->long_description = $request->long_description;
@@ -111,6 +113,7 @@ class EventController extends Controller
 
         $request->validate([
             'title' => 'required',
+            'slug' => 'required|unique:blogs,slug,' . $request->id,
             'image' => 'image|mimes:jpeg,png,jpg,webp',
             'short_description' => 'required',
             'long_description' => 'required',
@@ -144,6 +147,7 @@ class EventController extends Controller
 
         Event::where("id", $request->id)->update([
             'title' => $request->title,
+            'slug' => $request->slug,
             'image' => $imageName,
             'short_description' => $request->short_description,
             'long_description' => $request->long_description,

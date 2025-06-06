@@ -25,6 +25,7 @@
                                         <th style="width: 1%">No</th>
                                         <th style="width: 10%">Image</th>
                                         <th style="width: 20%">Event Title</th>
+                                        <th style="width: 20%">Event Slug</th>
                                         <th style="width: 10%">Start Date</th>
                                         <th style="width: 10%">End Date</th>
                                         <th style="width: 8%" class="text-center">Event Status</th>
@@ -43,16 +44,19 @@
                                                 {{ $item->title }}
                                             </td>
                                             <td>
+                                                {{ $item->slug }}
+                                            </td>
+                                            <td>
                                                 {{ Carbon\Carbon::parse($item->start_date)->format('d/m/Y') }}
                                             </td>
                                             <td>
                                                 {{ Carbon\Carbon::parse($item->end_date)->format('d/m/Y') }}
                                             </td>
                                             <td class="project-state">
-                                                @if ($item->status == 1)
+                                                @if ($item->status == "active")
                                                     <span class="badge badge-success">Active</span>
                                                 @else
-                                                    <span class="badge badge-danger">Not Active</span>
+                                                    <span class="badge badge-danger">Inactive</span>
                                                 @endif
                                             </td>
                                             <td class="project-actions">
