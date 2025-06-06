@@ -101,7 +101,7 @@ class CmsHomePageController extends Controller
 
 
             $formData = $request->all();
-            // dd($formData);
+            dd($formData);
             $newFormData = [];
             $table_id = "";
 
