@@ -142,13 +142,13 @@
 
       <div class="col-lg-7">
         <div class="video-area" data-aos="fade-right" data-aos-duration="1000">
-          <iframe width="100%" height="480" src="https://www.youtube.com/embed/gErbKpIozNE?si=mLiatg3nJPeLTv4F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="100%" height="480" src="{{ $homedata['video_section']['video_1'] }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
       <div class="col-lg-5">
         <div class="video-content ps-lg-5" data-aos="fade-left" data-aos-duration="1000">
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h3>
-          <p> Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis, sit amet malesuada justo scelerisque a. </p>
+          {!! $homedata['video_section']['title_1'] !!}
+          {!! $homedata['video_section']['content'] !!}
 
           <div class="watch-video mt-5">
             <a href="">
