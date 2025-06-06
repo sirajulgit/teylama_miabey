@@ -413,7 +413,7 @@
 
                                     <div class="admin_upload">
                                         <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image_1"
+                                            <input type="file" class="form-control uploadFile" name="image_1"
                                                 id="image_1_4_info_section" accept="image/png, image/jpg, image/jpeg, image/webp">
                                         </label>
 
