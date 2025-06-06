@@ -10,7 +10,7 @@
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #3498db;">
                             <h3 class="card-title badge badge-success font-weight-bold ">About</h3>
                         </div>
                         <!-- /.card-header -->
@@ -111,7 +111,7 @@
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #3498db;">
                             <h3 class="card-title badge badge-success font-weight-bold">What We Do</h3>
                         </div>
                         <!-- /.card-header -->
@@ -289,7 +289,7 @@
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #3498db;">
                             <h3 class="card-title badge badge-success font-weight-bold">Video Section</h3>
                         </div>
                         <!-- /.card-header -->
@@ -385,7 +385,7 @@
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: #3498db;">
                             <h3 class="card-title badge badge-success font-weight-bold ">Info Section</h3>
                         </div>
                         <!-- /.card-header -->
