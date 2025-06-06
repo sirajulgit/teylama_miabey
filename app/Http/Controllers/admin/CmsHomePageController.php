@@ -23,7 +23,7 @@ class CmsHomePageController extends Controller
         $data['activeSubMenu'] = 'cms_home_page';
 
 
-        $cmsHome = CmsHomePage::orderBy("id", "asc")->get()->toArray();
+        $cmsHome = CmsHomePage::where('page_type','home_page')->orderBy("id", "asc")->get()->toArray();
 
         $items = [];
 
@@ -249,7 +249,7 @@ class CmsHomePageController extends Controller
             // dd($newFormData);
             // dd($table_id);
 
-            CmsHomePage::where("id", $table_id)->update($newFormData);
+            CmsHomePage::where('page_type','home_page')->where("id", $table_id)->update($newFormData);
 
 
 
@@ -260,6 +260,7 @@ class CmsHomePageController extends Controller
 
 
                     $data = new CmsBadge();
+                    $data->page_type= 'home_page';
                     $data->type = 'what_we_do';
 
                     // bade_text_1 (category name)
@@ -310,13 +311,9 @@ class CmsHomePageController extends Controller
                     }
 
 
-
-
-
                     $data->save();
                 }
             }
-
 
 
             // return json_encode(array(
@@ -326,16 +323,11 @@ class CmsHomePageController extends Controller
             //     'table_id' => $table_id,
             // ));
 
-
-
-
             return redirect()->back()->with("success", "Update successfully");
+
         } catch (Exception $e) {
-
             // echo $e->getMessage();
-
             dd($e);
-
             return response()->json(['status' => false, 'error_msg' => $e->getMessage()]);
         }
     }
