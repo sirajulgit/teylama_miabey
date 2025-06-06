@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CmsBanner;
 use App\Models\CmsHomePage;
-
+use App\Models\CmsBadge;
 
 class HomeController extends Controller
 {
@@ -103,7 +103,7 @@ class HomeController extends Controller
                 $items["info_section"] = $item;
             }
         }
-        dd($items);
+        dd($items);exit;
 
         return view('user.home', ['bannerdata' => $temp_arr, 'data' => $data, 'homedata' => $items]);
     }
