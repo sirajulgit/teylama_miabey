@@ -60,7 +60,7 @@
                                 <div class="form-group col-md-12">
                                     <label for="image_1_text_1">Image 1 Text 1</label>
                                     <textarea id="image_1_text_1_1" name="image_1_text_1" class="form-control" rows="5">{{ $items['about']['image_1_text_1'] }}</textarea>
-                                    
+
                                 </div>
 
                                 <div class="form-group col-md-12">
@@ -107,65 +107,77 @@
                 </div>
 
 
-                {{-- /////////////// what_i_teach /////////////////// --}}
+                {{-- /////////////// what_we_do /////////////////// --}}
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title badge badge-success font-weight-bold">What I Teach</h3>
+                            <h3 class="card-title badge badge-success font-weight-bold">What We Do</h3>
                         </div>
                         <!-- /.card-header -->
 
-                        <form id="what_i_teachForm" action="{{ route('post_cms_home') }}" method="POST"
+                        <form id="what_we_do_form" action="{{ route('post_cms_home') }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
 
-                            <input type="hidden" name="id" value="{{ $items['what_i_teach']['id'] }}" />
+                            <input type="hidden" name="id" value="{{ $items['what_we_do']['id'] }}" />
 
                             <div class="card-body row">
-        
+
                                 <div class="form-group col-md-12">
-                                    <label for="head_title">Title</label>
-                                    <textarea id="head_title2" name="head_title" class="form-control" rows="5">{{ $items['what_i_teach']['head_title'] }}</textarea>
+                                    <label for="head_title">Head Title</label>
+                                    <textarea id="head_title2" name="head_title" class="form-control" rows="5">{{ $items['what_we_do']['head_title'] }}</textarea>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <label for="title_1">Title</label>
+                                    <textarea id="title_1_2" name="title_1" class="form-control" rows="5">{{ $items['what_we_do']['title_1'] }}</textarea>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <label for="content">Details</label>
+                                    <textarea id="content2" name="content" class="form-control" rows="5">{{ $items['what_we_do']['content'] }}</textarea>
                                 </div>
 
 
                                 {{-- <div class="form-group col-md-4">
                                     <label for="badge_1_text">Badge 1</label>
                                     <input type="text" name="badge_1_text" class="form-control" id="badge_1_text"
-                                        value="{{ $items['what_i_teach']['badge_1_text'] }}">
+                                        value="{{ $items['what_we_do']['badge_1_text'] }}">
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="badge_2_text">Badge 2</label>
                                     <input type="text" name="badge_2_text" class="form-control" id="badge_2_text"
-                                        value="{{ $items['what_i_teach']['badge_2_text'] }}">
+                                        value="{{ $items['what_we_do']['badge_2_text'] }}">
                                 </div>
 
 
                                 <div class="form-group col-md-4">
                                     <label for="badge_3_text">Badge 3</label>
                                     <input type="text" name="badge_3_text" class="form-control" id="badge_3_text"
-                                        value="{{ $items['what_i_teach']['badge_3_text'] }}">
+                                        value="{{ $items['what_we_do']['badge_3_text'] }}">
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="badge_4_text">Badge 4</label>
                                     <input type="text" name="badge_4_text" class="form-control" id="badge_4_text"
-                                        value="{{ $items['what_i_teach']['badge_4_text'] }}">
+                                        value="{{ $items['what_we_do']['badge_4_text'] }}">
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="badge_5_text">Badge 5</label>
                                     <input type="text" name="badge_5_text" class="form-control" id="badge_5_text"
-                                        value="{{ $items['what_i_teach']['badge_5_text'] }}">
+                                        value="{{ $items['what_we_do']['badge_5_text'] }}">
                                 </div>
 
 
                                 <div class="form-group col-md-4">
                                     <label for="badge_6_text">Badge 6</label>
                                     <input type="text" name="badge_6_text" class="form-control" id="badge_6_text"
-                                        value="{{ $items['what_i_teach']['badge_6_text'] }}">
+                                        value="{{ $items['what_we_do']['badge_6_text'] }}">
                                 </div>
 
 
@@ -180,9 +192,9 @@
                                         </label>
 
                                         <div class="profile_image">
-                                            @if ($items['what_i_teach']['image_1'])
+                                            @if ($items['what_we_do']['image_1'])
                                                 <img class="profile_img" id="thumbnail_show_image_1_what_i_teach"
-                                                    src="{{ $items['what_i_teach']['image_1'] }}" width="569px"
+                                                    src="{{ $items['what_we_do']['image_1'] }}" width="569px"
                                                     height="472px">
                                             @else
                                                 <img class="profile_img" id="thumbnail_show_image_1_what_i_teach"
@@ -195,10 +207,7 @@
                                 </div> --}}
 
 
-                                <div class="form-group col-md-12">
-                                    <label for="content">Details</label>
-                                    <textarea id="content2" name="content" class="form-control" rows="5">{{ $items['what_i_teach']['content'] }}</textarea>
-                                </div>
+
 
 
                                 <div class="form-group col-md-12">
@@ -208,30 +217,63 @@
                                     <button type="button" class="btn btn-primary mb-3" id="addInput">Add Field</button>
 
                                     <div id="inputContainer">
-                                        @if (count($items['what_i_teach']['badge_data']) > 0)
-                                            @foreach ($items['what_i_teach']['badge_data'] as $item)
+                                        @if (count($items['what_we_do']['badge_data']) > 0)
+                                            @foreach ($items['what_we_do']['badge_data'] as $item)
                                                 <div class="row">
 
+                                                    {{-- Category ID --}}
                                                     <input type="hidden" value="{{ $item['id'] }}"
                                                         name="badge_id[]" />
 
-                                                    <!-- Initial input fields -->
-                                                    <div class="form-group col-md-6">
+
+                                                    {{-- Category Name --}}
+                                                    <div class="form-group col-md-4">
                                                         <input type="text"
-                                                            class="form-control text-input badge_text{{ $item['id'] }}"
-                                                            name="old_badge_text[]" value="{{ $item['badge_text'] }}">
+                                                            class="form-control text-input badge_text_1_{{ $item['id'] }}"
+                                                            name="old_badge_text_1[]" value="{{ $item['badge_text_1'] }}"
+                                                            placeholder="Category Name">
                                                     </div>
 
-                                                    <div class="form-group col-md-3">
+
+                                                    {{-- Category Title --}}
+                                                    <div class="form-group col-md-4">
+                                                        <input type="text"
+                                                            class="form-control text-input badge_title_1_{{ $item['id'] }}"
+                                                            name="old_badge_title_1[]"
+                                                            value="{{ $item['badge_title_1'] }}"
+                                                            placeholder="Category Title">
+                                                    </div>
+
+
+                                                    {{-- Category Details --}}
+                                                    <div class="form-group col-md-4">
+                                                        <textarea name="old_badge_details_1[]" class="form-control" rows="5 badge_details_1_{{ $item['id'] }}"
+                                                            placeholder="Category Details" placeholder="">{{ $items['badge_details_1'] }}</textarea>
+                                                    </div>
+
+
+                                                    {{-- Category Icon --}}
+                                                    <div class="form-group col-md-4">
                                                         <input type="file"
-                                                            class="form-control file-input badge_file{{ $item['id'] }}"
-                                                            name="old_badge_file[]" accept="application/pdf">
+                                                            class="form-control file-input badge_icon_1_{{ $item['id'] }}"
+                                                            name="old_badge_icon_1[]" placeholder="Category Icon"
+                                                            accept="image/png, image/jpg, image/jpeg, image/webp">
                                                     </div>
 
-                                                    <div class="form-group col-md-3">
 
-                                                        @if (!is_null($item['badge_file']))
-                                                            <a href="{{ $item['badge_file'] }}"
+                                                    {{-- Category Image --}}
+                                                    <div class="form-group col-md-4">
+                                                        <input type="file"
+                                                            class="form-control file-input badge_file_1_{{ $item['id'] }}"
+                                                            name="old_badge_file_1[]" placeholder="Category Image"
+                                                            accept="image/png, image/jpg, image/jpeg, image/webp">
+                                                    </div>
+
+                                                    {{-- Category Action Button --}}
+                                                    <div class="form-group col-md-4">
+
+                                                        @if (!is_null($item['badge_file_1']))
+                                                            <a href="{{ $item['badge_file_1'] }}"
                                                                 class="btn btn-primary btn-lg " target="__blank"><i
                                                                     class="fa fa-download " aria-hidden="true"></i></a>
                                                         @endif
@@ -249,17 +291,40 @@
                                             <div class="row">
                                                 <input type="hidden" value="" name="badge_id[]" />
 
-                                                <!-- Initial input fields -->
-                                                <div class="form-group col-md-6">
+
+                                                {{-- Category Name --}}
+                                                <div class="form-group col-md-4">
                                                     <input type="text" class="form-control text-input"
-                                                        name="badge_text[]">
+                                                        name="badge_text_1[]" placeholder="Category Name">
                                                 </div>
+
+                                                {{-- Category Title --}}
+                                                <div class="form-group col-md-4">
+                                                    <input type="text" class="form-control text-input"
+                                                        name="badge_title_1[]" placeholder="Category Title">
+                                                </div>
+
+                                                {{-- Category Details --}}
+                                                <div class="form-group col-md-4">
+                                                    <textarea name="badge_details_1[]" class="form-control" rows="5" placeholder="Category Details"></textarea>
+                                                </div>
+
+                                                {{-- Category Icon --}}
                                                 <div class="form-group col-md-4">
                                                     <input type="file" class="form-control file-input"
-                                                        name="badge_file[]" accept="application/pdf" value="aaa.png">
-
+                                                        name="badge_icon_1[]" placeholder="Category Icon"
+                                                        accept="image/png, image/jpg, image/jpeg, image/webp">
                                                 </div>
-                                                <div class="form-group col-md-2">
+
+                                                {{-- Category Image --}}
+                                                <div class="form-group col-md-4">
+                                                    <input type="file" class="form-control file-input"
+                                                        name="badge_file_1[]" placeholder="Category Image"
+                                                        accept="image/png, image/jpg, image/jpeg, image/webp">
+                                                </div>
+
+                                                {{-- Category Action Button --}}
+                                                <div class="form-group col-md-4">
                                                     <button type="button"
                                                         class="btn btn-danger mb-3 removeInput">Remove</button>
                                                 </div>
@@ -528,7 +593,7 @@
     <script>
         $(document).ready(function() {
 
-            
+
             ////////// Summernote /////////////
             $("#head_title1").summernote({
                 height: 100,
@@ -544,11 +609,14 @@
             });
 
 
-            $("#content2").summernote({
-                height: 200,
-            });
             $("#head_title2").summernote({
                 height: 100,
+            });
+            $("#title_1_2").summernote({
+                height: 100,
+            });
+            $("#content2").summernote({
+                height: 200,
             });
 
 
@@ -769,7 +837,7 @@
             ////////////// form validation ////////////////////////
             $('#aboutForm').validate({
                 rules: {
-                    head_title:{
+                    head_title: {
                         required: true,
                     },
                     content: {
@@ -798,8 +866,8 @@
                     form.submit();
                 }
             });
-            
-            $('#what_i_teachForm').validate({
+
+            $('#what_we_do_form').validate({
                 rules: {
                     title_1: {
                         required: true,
@@ -870,7 +938,7 @@
                     // });
 
 
-                    // console.log($("#what_i_teach").serializeArray())
+                    // console.log($("#what_we_do").serializeArray())
                     // event.preventDefault();
 
                     form.submit();
@@ -987,8 +1055,8 @@
 
 
 
-            ///////////////// dynamic add more fields (what_i_teach) ////////////////////////////////
-            var pre_badge_count = '{{ count($items['what_i_teach']['badge_data']) }}';
+            ///////////////// dynamic add more fields (what_we_do) ////////////////////////////////
+            var pre_badge_count = "{{ count($items['what_we_do']['badge_data']) }}";
             var badge_fields_current_length = (Number(pre_badge_count) != 0) ? Number(pre_badge_count) : 1;
             const badge_fields_max_length = 16;
 
@@ -1010,15 +1078,38 @@
                     <div class="row">
                         <input type="hidden" value="" name="badge_id[]" />
 
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control text-input" name="badge_text[]" >
-                        </div>
                         <div class="form-group col-md-4">
-                            <input type="file" class="form-control file-input" name="badge_file[]" accept="application/pdf">
+                            <input type="text" class="form-control text-input"
+                                name="badge_text_1[]" placeholder="Category Name">
                         </div>
-                        <div class="form-group col-md-2">
-                            <button type="button" class="btn btn-danger mb-3 removeInput">Remove</button>
+
+                        <div class="form-group col-md-4">
+                            <input type="text" class="form-control text-input"
+                                name="badge_title_1[]" placeholder="Category Title">
                         </div>
+
+                        <div class="form-group col-md-4">
+                            <textarea name="badge_details_1[]" class="form-control" rows="5" placeholder="Category Details"></textarea>
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <input type="file" class="form-control file-input"
+                                name="badge_icon_1[]" placeholder="Category Icon"
+                                accept="image/png, image/jpg, image/jpeg, image/webp">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <input type="file" class="form-control file-input"
+                                name="badge_file_1[]" placeholder="Category Image"
+                                accept="image/png, image/jpg, image/jpeg, image/webp">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <button type="button"
+                                class="btn btn-danger mb-3 removeInput">Remove</button>
+                        </div>
+
+
                     </div>
                 `);
 
@@ -1127,7 +1218,7 @@
                 });
 
             });
-            ///////////////// End dynamic add more fields (what_i_teach) ////////////////////////////
+            ///////////////// End dynamic add more fields (what_we_do) ////////////////////////////
 
 
 

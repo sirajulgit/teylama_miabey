@@ -57,13 +57,13 @@ class CmsHomePageController extends Controller
 
             if ($item['type'] == "about") {
                 $items["about"] = $item;
-            } elseif ($item['type'] == "what_i_teach") {
-                $items["what_i_teach"] = $item;
+            } elseif ($item['type'] == "what_we_do") {
+                $items["what_we_do"] = $item;
 
-                $cmsBadge = CmsBadge::where('type', 'what_i_teach')->orderBy("id", "asc")->get()->toArray();
+                $cmsBadge = CmsBadge::where('type', 'what_we_do')->orderBy("id", "asc")->get()->toArray();
 
                 if (count($cmsBadge) == 0) {
-                    $items['what_i_teach']["badge_data"] = [];
+                    $items['what_we_do']["badge_data"] = [];
                 }
 
                 foreach ($cmsBadge as $item2) {
@@ -73,7 +73,7 @@ class CmsHomePageController extends Controller
                         $item2['badge_file'] = $default_file;
                     }
 
-                    $items['what_i_teach']["badge_data"][] = $item2;
+                    $items['what_we_do']["badge_data"][] = $item2;
                 }
             } elseif ($item['type'] == "my_expertise") {
                 $items["my_expertise"] = $item;
@@ -236,25 +236,64 @@ class CmsHomePageController extends Controller
 
 
 
-            ////// cms badge modal insert (what_i_teach) //////////////
-            if (array_key_exists("badge_text", $formData)) {
+            ////// cms badge modal insert (what_we_do) //////////////
+            if (array_key_exists("badge_text_1", $formData)) {
 
-                for ($item = 0; $item < count($formData['badge_text']); $item++) {
+                for ($item = 0; $item < count($formData['badge_text_1']); $item++) {
 
 
                     $data = new CmsBadge();
-                    $data->type = 'what_i_teach';
-                    $data->badge_text = $formData['badge_text'][$item];
+                    $data->type = 'what_we_do';
 
-                    if (array_key_exists("badge_file", $formData)) {
-                        if ($formData['badge_file'][$item]) {
-                            $random = Str::random(12);
-                            $fileName = $random . '-' . time() . '.' . $formData['badge_file'][$item]->extension();
-                            $formData['badge_file'][$item]->move(public_path('uploads/files'), $fileName);
-
-                            $data->badge_file = $fileName;
+                    // bade_text_1 (category name)
+                    if(array_key_exists("badge_text_1", $formData)){
+                        if($formData['badge_text_1'][$item]){
+                            $data->badge_text_1 = $formData['badge_text_1'][$item];
                         }
                     }
+
+
+                    // badge_icon_1 (category icon)
+                    if (array_key_exists("badge_icon_1", $formData)) {
+                        if ($formData['badge_icon_1'][$item]) {
+                            $random = Str::random(12);
+                            $fileName = $random . '-' . time() . '.' . $formData['badge_icon_1'][$item]->extension();
+                            $formData['badge_icon_1'][$item]->move(public_path('uploads/files'), $fileName);
+
+                            $data->badge_icon_1 = $fileName;
+                        }
+                    }
+
+
+                    // badge_title_1 (category title)
+                    if(array_key_exists("badge_title_1", $formData)){
+                        if($formData['badge_title_1'][$item]){
+                            $data->badge_title_1 = $formData['badge_title_1'][$item];
+                        }
+                    }
+
+
+                    // badge_details_1 (category details)
+                    if(array_key_exists("badge_details_1", $formData)){
+                        if($formData['badge_details_1'][$item]){
+                            $data->badge_details_1 = $formData['badge_details_1'][$item];
+                        }
+                    }
+
+
+                    // badge_file_1(category image)
+                    if (array_key_exists("badge_file_1", $formData)) {
+                        if ($formData['badge_file_1'][$item]) {
+                            $random = Str::random(12);
+                            $fileName = $random . '-' . time() . '.' . $formData['badge_file_1'][$item]->extension();
+                            $formData['badge_file_1'][$item]->move(public_path('uploads/files'), $fileName);
+
+                            $data->badge_file_1 = $fileName;
+                        }
+                    }
+
+
+                    
 
 
                     $data->save();
