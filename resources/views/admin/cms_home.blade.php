@@ -742,8 +742,8 @@
 
                     const videoUrlType = "{{ $items['video_section']['video_1_type'] }}";
                     const videoUrl = "{{ $items['video_section']['video_1'] }}";
-                    
-                    if (videoUrlType == "facebook") {
+
+                    if (value == videoUrlType) {
                         if (videoUrl) {
                             $("#video_1_3").val(videoUrl);
                             $("#videoPlayerContainer_3_video_section").html(`
@@ -751,22 +751,7 @@
                         `);
                         }
                     }
-                    else if (videoUrlType == "youtube") {
-                        if (videoUrl) {
-                            $("#video_1_3").val(videoUrl);
-                            $("#videoPlayerContainer_3_video_section").html(`
-                        <div id="dynamic-player" data-plyr-provider="youtube" data-plyr-embed-id="${videoUrl}" style="height:400px;"></div>
-                        `);
-                        }
-                    }
-                    else if (videoUrlType == "vimeo") {
-                        if (videoUrl) {
-                            $("#video_1_3").val(videoUrl);
-                            $("#videoPlayerContainer_3_video_section").html(`
-                        <div id="dynamic-player" data-plyr-provider="vimeo" data-plyr-embed-id="${videoUrl}" style="height:400px;"></div>
-                        `);
-                        }
-                    }
+
 
                     $("#video_1_3_container").show();
                 } else {
