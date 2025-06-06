@@ -736,7 +736,7 @@
 
             $('#video_1_3').on('change', function() {
                 const inputUrl = $(this).val().trim();
-                const embedUrl = convertToEmbedUrl(inputUrl);
+                const embedUrl = videoUrlConvertToEmbedUrl(inputUrl);
 
                 if (!embedUrl) {
                     $('#videoPlayerContainer_3_video_section').html(
