@@ -101,7 +101,7 @@
             <div>
   @if (count($homedata['what_we_do']['badge_data']) > 0)
                                             @foreach ($homedata['what_we_do']['badge_data'] as $index => $item)
-              <button class="nav-link text-start active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-medical" type="button" role="tab" aria-controls="v-pills-medical" aria-selected="true">0{{$index + 1}}. {{$item['badge_text_1']}}</button>
+              <button class="nav-link text-start  @if ($index == 0) active @endif" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{$item['badge_text_1']}}" type="button" role="tab" aria-controls="v-pills-{{$item['badge_text_1']}}" aria-selected="true">0{{$index + 1}}. {{$item['badge_text_1']}}</button>
               @endforeach
               @endif
 
@@ -111,20 +111,22 @@
           </div>
           </div>
         <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-medical" role="tabpanel" aria-labelledby="v-pills-medical-tab">
+ @foreach ($homedata['what_we_do']['badge_data'] as $index => $item)
+        <div class="tab-pane fade show @if ($index == 0) active @endif" id="v-pills-{{$item['badge_text_1']}}" role="tabpanel" aria-labelledby="v-pills-{{$item['badge_text_1']}}-tab">
           <div class="row">
             <div class="col-lg-6">
               <div class="tab-content-area">
-                  <img src="{{ asset('asset/frontend/images/medical-icon.png')}}">
-                  <h3>Every child deserves a healthy start</h3>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis, sit amet malesuada justo scelerisque a. </p>
+                  <img src="{{ $item['badge_icon_1']}}">
+                  <h3>{{ $item['badge_title_1']}}</h3>
+                  <p> {{ $item['badge_details_1']}}</p>
               </div>
               </div>
                <div class="col-lg-6">
-                <img src="{{ asset('asset/frontend/images/medical-image.png')}}">
+                <img src=" {{ $item['badge_image_1']}}">
               </div>
           </div>
         </div>
+         @endforeach
 
         </div>
         </div>
