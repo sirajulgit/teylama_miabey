@@ -50,13 +50,13 @@
                                 </div>
 
 
-                                <div class="form-group col-md-6">
+                                {{-- <div class="form-group col-md-6">
                                     <label for="gmail_link">linkedin Link</label>
                                     <input type="url" name="details[]" class="form-control" id="gmail_link"
                                         value="{{ $items['gmail_link']['details'] }}">
 
                                     <input type="hidden" name="id[]" value="{{ $items['gmail_link']['id'] }}" />
-                                </div>
+                                </div> --}}
 
 
                                 <div class="form-group col-md-6">
