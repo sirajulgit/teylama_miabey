@@ -194,7 +194,7 @@
       </div>
 
     <div class="grid-container">
-       @foreach ($homedata['what_we_do']['badge_data'] as $index => $item)
+       @foreach ($gallerydata as $index => $item)
       <div class="item{{$index}}">
         <img src="{{ $item->image}}">
       </div>
