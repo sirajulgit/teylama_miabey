@@ -153,7 +153,7 @@
 
 
                                 {{-- image 1 --}}
-                                <div class="multi_choice_sections">
+                                <div class="multi_choice_sections" style="margin-left: 20px;">
                                     <div class="form-group col-md-12">
                                         <label for="badge_1_text_3">Image 1 Title</label>
                                         <textarea id="badge_1_text_3" name="badge_1_text" class="form-control" rows="5">{{ $items['activities_section']['badge_1_text'] }}</textarea>
@@ -189,7 +189,7 @@
 
 
                                 {{-- image 2 --}}
-                                <div class="multi_choice_sections">
+                                <div class="multi_choice_sections" style="margin-left: 20px;">
                                     <div class="form-group col-md-12">
                                         <label for="badge_2_text_3">Image 2 Title</label>
                                         <textarea id="badge_2_text_3" name="badge_2_text" class="form-control" rows="5">{{ $items['activities_section']['badge_2_text'] }}</textarea>
@@ -225,7 +225,7 @@
 
 
                                 {{-- image 3 --}}
-                                <div class="multi_choice_sections">
+                                <div class="multi_choice_sections" style="margin-left: 20px;">
                                     <div class="form-group col-md-12">
                                         <label for="badge_3_text_3">Image 3 Title</label>
                                         <textarea id="badge_3_text_3" name="badge_3_text" class="form-control" rows="5">{{ $items['activities_section']['badge_3_text'] }}</textarea>
@@ -261,7 +261,7 @@
 
 
                                 {{-- image 4 --}}
-                                <div class="multi_choice_sections">
+                                <div class="multi_choice_sections" style="margin-left: 20px;">
                                     <div class="form-group col-md-12">
                                         <label for="badge_4_text_3">Image 4 Title</label>
                                         <textarea id="badge_4_text_3" name="badge_4_text" class="form-control" rows="5">{{ $items['activities_section']['badge_4_text'] }}</textarea>
