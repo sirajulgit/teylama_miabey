@@ -315,11 +315,28 @@
 
 
                                 <div class="form-group col-md-12">
-                                    <label for="video_1_3">Video</label>
+                                    <label for="video_1_3">Video URL</label>
 
-                                    <div class="admin_upload">
+                                    <input type="url" class="form-control mt-3 uploadFile" name="video_1"
+                                        id="video_1_3">
+
+                                    <div class="preview_video">
+                                        <!-- MP4 / Blob preview -->
+                                        <video id="videoPreview_3_video_section" width="320" height="240" controls>
+                                            <source id="videoSource_3_video_section" src="" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+
+                                        <!-- YouTube & Facebook iframe preview -->
+                                        <div id="iframeContainer_3_video_section" class="iframeContainer">
+                                            <iframe id="iframePreview_3_video_section" src="" frameborder="0"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+
+                                    {{-- <div class="admin_upload">
                                         <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="video_1"
+                                            <input type="text" class="form-control mt-3 uploadFile" name="video_1"
                                                 id="video_1_3" accept="video/mp4, video/webm, video/ogg, video/x-msvideo">
                                         </label>
 
@@ -330,7 +347,7 @@
                                                 <video id="thumbnail_show_video_3_video_section" width="320" height="240" controls src=""></video>
                                             @endif
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                 </div>
 
@@ -671,18 +688,58 @@
 
 
             /////////////////// preview video ///////////////////////
+            // $('#video_1_3').on('change', function() {
+            //     var input = this;
+            //     var url = $(this).val();
+            //     var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+            //     if (input.files && input.files[0] && (ext == "mp4" || ext == "webm" || ext == "ogg" || ext == "x-msvideo")) {
+            //         var reader = new FileReader();
+            //         reader.onload = function(e) {
+            //             $('#thumbnail_show_video_3_video_section').attr('src', e.target.result);
+            //         }
+            //         reader.readAsDataURL(input.files[0]);
+            //     } else {
+            //         $('#thumbnail_show_video_3_video_section').attr('src', '');
+            //     }
+            // });
+
+            function getYouTubeEmbedUrl(url) {
+                const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+                return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+            }
+
+            function getFacebookEmbedUrl(url) {
+                return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=0&width=400`;
+            }
+
             $('#video_1_3').on('change', function() {
-                var input = this;
-                var url = $(this).val();
-                var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
-                if (input.files && input.files[0] && (ext == "mp4" || ext == "webm" || ext == "ogg" || ext == "x-msvideo")) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        $('#thumbnail_show_video_3_video_section').attr('src', e.target.result);
-                    }
-                    reader.readAsDataURL(input.files[0]);
+                const url = $(this).val().trim();
+                const isMp4 = url.endsWith('.mp4') || url.startsWith('blob:');
+                const isYouTube = getYouTubeEmbedUrl(url);
+                const isFacebook = url.includes('facebook.com');
+
+                const $video = $('#videoPreview_3_video_section');
+                const $source = $('#videoSource_3_video_section');
+                const $iframeContainer = $('#iframeContainer_3_video_section');
+                const $iframe = $('#iframePreview_3_video_section');
+
+                // Reset all previews
+                $video.hide();
+                $iframeContainer.hide();
+
+                if (isMp4) {
+                    $source.attr('src', url);
+                    $video[0].load();
+                    $video.show();
+                } else if (isYouTube) {
+                    $iframe.attr('src', isYouTube);
+                    $iframeContainer.show();
+                } else if (isFacebook) {
+                    const fbEmbed = getFacebookEmbedUrl(url);
+                    $iframe.attr('src', fbEmbed);
+                    $iframeContainer.show();
                 } else {
-                    $('#thumbnail_show_video_3_video_section').attr('src', '');
+                    alert("Unsupported video format or link.");
                 }
             });
             /////////////////// end preview video ///////////////////
