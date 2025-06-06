@@ -153,141 +153,149 @@
 
 
                                 {{-- image 1 --}}
-                                <div class="form-group col-md-6">
-                                    <label for="badge_1_text_3">Image 1 Title</label>
-                                    <textarea id="badge_1_text_3" name="badge_1_text" class="form-control" rows="5">{{ $items['activities_section']['badge_1_text'] }}</textarea>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="image_1_text_1_3">Image 1 Details</label>
-                                    <textarea id="image_1_text_1_3" name="image_1_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_1_text_1'] }}</textarea>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="image_1_3_activities_section">Image 1</label>
+                                <div class="multi_choice_sections">
+                                    <div class="form-group col-md-6">
+                                        <label for="badge_1_text_3">Image 1 Title</label>
+                                        <textarea id="badge_1_text_3" name="badge_1_text" class="form-control" rows="5">{{ $items['activities_section']['badge_1_text'] }}</textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image_1_text_1_3">Image 1 Details</label>
+                                        <textarea id="image_1_text_1_3" name="image_1_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_1_text_1'] }}</textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image_1_3_activities_section">Image 1</label>
 
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control uploadFile" name="image_1"
-                                                id="image_1_3_activities_section"
-                                                accept="image/png, image/jpg, image/jpeg, image/webp">
-                                        </label>
+                                        <div class="admin_upload">
+                                            <label class="admin-upload-wrap">
+                                                <input type="file" class="form-control uploadFile" name="image_1"
+                                                    id="image_1_3_activities_section"
+                                                    accept="image/png, image/jpg, image/jpeg, image/webp">
+                                            </label>
 
-                                        <div class="profile_image">
-                                            @if ($items['activities_section']['image_1'])
-                                                <img class="profile_img" id="preview_image_1_3_activities_section"
-                                                    src="{{ $items['activities_section']['image_1'] }}" width="148px"
-                                                    height="221px">
-                                            @else
-                                                <img class="profile_img" id="preview_image_1_3_activities_section"
-                                                    src="{{ asset('asset/images/default_image.png') }}" width="148px"
-                                                    height="221px">
-                                            @endif
+                                            <div class="profile_image">
+                                                @if ($items['activities_section']['image_1'])
+                                                    <img class="profile_img" id="preview_image_1_3_activities_section"
+                                                        src="{{ $items['activities_section']['image_1'] }}"
+                                                        width="148px" height="221px">
+                                                @else
+                                                    <img class="profile_img" id="preview_image_1_3_activities_section"
+                                                        src="{{ asset('asset/images/default_image.png') }}"
+                                                        width="148px" height="221px">
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
 
                                 {{-- image 2 --}}
-                                <div class="form-group col-md-6">
-                                    <label for="badge_2_text_3">Image 2 Title</label>
-                                    <textarea id="badge_2_text_3" name="badge_2_text" class="form-control" rows="5">{{ $items['activities_section']['badge_2_text'] }}</textarea>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="image_2_text_1_3">Image 2 Details</label>
-                                    <textarea id="image_2_text_1_3" name="image_2_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_2_text_1'] }}</textarea>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="image_2_3_activities_section">Image 2</label>
+                                <div class="multi_choice_sections">
+                                    <div class="form-group col-md-6">
+                                        <label for="badge_2_text_3">Image 2 Title</label>
+                                        <textarea id="badge_2_text_3" name="badge_2_text" class="form-control" rows="5">{{ $items['activities_section']['badge_2_text'] }}</textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image_2_text_1_3">Image 2 Details</label>
+                                        <textarea id="image_2_text_1_3" name="image_2_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_2_text_1'] }}</textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image_2_3_activities_section">Image 2</label>
 
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control uploadFile" name="image_2"
-                                                id="image_2_3_activities_section"
-                                                accept="image/png, image/jpg, image/jpeg, image/webp">
-                                        </label>
+                                        <div class="admin_upload">
+                                            <label class="admin-upload-wrap">
+                                                <input type="file" class="form-control uploadFile" name="image_2"
+                                                    id="image_2_3_activities_section"
+                                                    accept="image/png, image/jpg, image/jpeg, image/webp">
+                                            </label>
 
-                                        <div class="profile_image">
-                                            @if ($items['activities_section']['image_2'])
-                                                <img class="profile_img" id="preview_image_2_3_activities_section"
-                                                    src="{{ $items['activities_section']['image_2'] }}" width="148px"
-                                                    height="221px">
-                                            @else
-                                                <img class="profile_img" id="preview_image_2_3_activities_section"
-                                                    src="{{ asset('asset/images/default_image.png') }}" width="148px"
-                                                    height="221px">
-                                            @endif
+                                            <div class="profile_image">
+                                                @if ($items['activities_section']['image_2'])
+                                                    <img class="profile_img" id="preview_image_2_3_activities_section"
+                                                        src="{{ $items['activities_section']['image_2'] }}"
+                                                        width="148px" height="221px">
+                                                @else
+                                                    <img class="profile_img" id="preview_image_2_3_activities_section"
+                                                        src="{{ asset('asset/images/default_image.png') }}"
+                                                        width="148px" height="221px">
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
 
                                 {{-- image 3 --}}
-                                <div class="form-group col-md-6">
-                                    <label for="badge_3_text_3">Image 3 Title</label>
-                                    <textarea id="badge_3_text_3" name="badge_3_text" class="form-control" rows="5">{{ $items['activities_section']['badge_3_text'] }}</textarea>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="image_3_text_1_3">Image 3 Details</label>
-                                    <textarea id="image_3_text_1_3" name="image_3_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_3_text_1'] }}</textarea>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="image_3_3_activities_section">Image 3</label>
+                                <div class="multi_choice_sections">
+                                    <div class="form-group col-md-6">
+                                        <label for="badge_3_text_3">Image 3 Title</label>
+                                        <textarea id="badge_3_text_3" name="badge_3_text" class="form-control" rows="5">{{ $items['activities_section']['badge_3_text'] }}</textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image_3_text_1_3">Image 3 Details</label>
+                                        <textarea id="image_3_text_1_3" name="image_3_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_3_text_1'] }}</textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image_3_3_activities_section">Image 3</label>
 
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control uploadFile" name="image_2"
-                                                id="image_3_3_activities_section"
-                                                accept="image/png, image/jpg, image/jpeg, image/webp">
-                                        </label>
+                                        <div class="admin_upload">
+                                            <label class="admin-upload-wrap">
+                                                <input type="file" class="form-control uploadFile" name="image_2"
+                                                    id="image_3_3_activities_section"
+                                                    accept="image/png, image/jpg, image/jpeg, image/webp">
+                                            </label>
 
-                                        <div class="profile_image">
-                                            @if ($items['activities_section']['image_3'])
-                                                <img class="profile_img" id="preview_image_3_3_activities_section"
-                                                    src="{{ $items['activities_section']['image_3'] }}" width="148px"
-                                                    height="221px">
-                                            @else
-                                                <img class="profile_img" id="preview_image_3_3_activities_section"
-                                                    src="{{ asset('asset/images/default_image.png') }}" width="148px"
-                                                    height="221px">
-                                            @endif
+                                            <div class="profile_image">
+                                                @if ($items['activities_section']['image_3'])
+                                                    <img class="profile_img" id="preview_image_3_3_activities_section"
+                                                        src="{{ $items['activities_section']['image_3'] }}"
+                                                        width="148px" height="221px">
+                                                @else
+                                                    <img class="profile_img" id="preview_image_3_3_activities_section"
+                                                        src="{{ asset('asset/images/default_image.png') }}"
+                                                        width="148px" height="221px">
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
 
                                 {{-- image 4 --}}
-                                <div class="form-group col-md-6">
-                                    <label for="badge_4_text_3">Image 4 Title</label>
-                                    <textarea id="badge_4_text_3" name="badge_4_text" class="form-control" rows="5">{{ $items['activities_section']['badge_4_text'] }}</textarea>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="image_4_text_1_3">Image 4 Details</label>
-                                    <textarea id="image_4_text_1_3" name="image_3_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_3_text_1'] }}</textarea>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="image_4_3_activities_section">Image 4</label>
+                                <div class="multi_choice_sections">
+                                    <div class="form-group col-md-6">
+                                        <label for="badge_4_text_3">Image 4 Title</label>
+                                        <textarea id="badge_4_text_3" name="badge_4_text" class="form-control" rows="5">{{ $items['activities_section']['badge_4_text'] }}</textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image_4_text_1_3">Image 4 Details</label>
+                                        <textarea id="image_4_text_1_3" name="image_3_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_3_text_1'] }}</textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="image_4_3_activities_section">Image 4</label>
 
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control uploadFile" name="image_2"
-                                                id="image_4_3_activities_section"
-                                                accept="image/png, image/jpg, image/jpeg, image/webp">
-                                        </label>
+                                        <div class="admin_upload">
+                                            <label class="admin-upload-wrap">
+                                                <input type="file" class="form-control uploadFile" name="image_2"
+                                                    id="image_4_3_activities_section"
+                                                    accept="image/png, image/jpg, image/jpeg, image/webp">
+                                            </label>
 
-                                        <div class="profile_image">
-                                            @if ($items['activities_section']['image_4'])
-                                                <img class="profile_img" id="preview_image_4_3_activities_section"
-                                                    src="{{ $items['activities_section']['image_4'] }}" width="148px"
-                                                    height="221px">
-                                            @else
-                                                <img class="profile_img" id="preview_image_4_3_activities_section"
-                                                    src="{{ asset('asset/images/default_image.png') }}" width="148px"
-                                                    height="221px">
-                                            @endif
+                                            <div class="profile_image">
+                                                @if ($items['activities_section']['image_4'])
+                                                    <img class="profile_img" id="preview_image_4_3_activities_section"
+                                                        src="{{ $items['activities_section']['image_4'] }}"
+                                                        width="148px" height="221px">
+                                                @else
+                                                    <img class="profile_img" id="preview_image_4_3_activities_section"
+                                                        src="{{ asset('asset/images/default_image.png') }}"
+                                                        width="148px" height="221px">
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                
+
 
                             </div>
                             <!-- /.card-body -->
@@ -470,9 +478,6 @@
                         </form>
                     </div>
                 </div>
-
-
-
 
 
 
