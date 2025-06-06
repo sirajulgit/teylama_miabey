@@ -93,8 +93,8 @@ class CmsHomePageController extends Controller
                 }
             } elseif ($item['type'] == "video_section") {
                 $items["video_section"] = $item;
-            } elseif ($item['type'] == "book") {
-                $items["book"] = $item;
+            } elseif ($item['type'] == "info_section") {
+                $items["info_section"] = $item;
             } elseif ($item['type'] == "event") {
                 $items["event"] = $item;
             }

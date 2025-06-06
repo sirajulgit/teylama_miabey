@@ -381,7 +381,7 @@
                 </div>
 
 
-                {{-- /////////////// book /////////////////// --}}
+                {{-- /////////////// info_section /////////////////// --}}
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
@@ -390,22 +390,44 @@
                         </div>
                         <!-- /.card-header -->
 
-                        <form id="bookForm" action="{{ route('post_cms_home') }}" method="POST"
+                        <form id="info_sectionForm" action="{{ route('post_cms_home') }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
 
-                            <input type="hidden" name="id" value="{{ $items['book']['id'] }}" />
+                            <input type="hidden" name="id" value="{{ $items['info_section']['id'] }}" />
 
                             <div class="card-body row">
 
                                 <div class="form-group col-md-12">
-                                    <label for="head_title">Title</label>
-                                    <textarea id="head_title4" name="head_title" class="form-control" rows="5">{{ $items['book']['head_title'] }}</textarea>
+                                    <label for="title_1_4">Title</label>
+                                    <textarea id="title_1_4" name="title_1" class="form-control" rows="5">{{ $items['info_section']['title_1'] }}</textarea>
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="content">Details</label>
-                                    <textarea id="content4" name="content" class="form-control" rows="5">{{ $items['book']['content'] }}</textarea>
+                                    <label for="content_4">Details</label>
+                                    <textarea id="content_4" name="content" class="form-control" rows="5">{{ $items['info_section']['content'] }}</textarea>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="image_1_4_info_section">Image 1</label>
+
+                                    <div class="admin_upload">
+                                        <label class="admin-upload-wrap">
+                                            <input type="file" class="form-control mt-3 uploadFile" name="image_1"
+                                                id="image_1_4_info_section" accept="image/png, image/jpg, image/jpeg, image/webp">
+                                        </label>
+
+                                        <div class="profile_image">
+                                            @if ($items['info_section']['image_1'])
+                                                <img class="profile_img" id="thumbnail_show_image_1_4_info_section"
+                                                    src="{{ $items['info_section']['image_1'] }}" width="148px" height="221px">
+                                            @else
+                                                <img class="profile_img" id="thumbnail_show_image_1_4_info_section"
+                                                    src="{{ asset('asset/images/default_image.png') }}" width="148px"
+                                                    height="221px">
+                                            @endif
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
@@ -503,11 +525,11 @@
             });
 
 
-            $("#content4").summernote({
-                height: 200,
-            });
-            $("#head_title4").summernote({
+            $("#title_1_4").summernote({
                 height: 100,
+            });
+            $("#content_4").summernote({
+                height: 200,
             });
 
 
@@ -703,6 +725,29 @@
                 }
 
 
+            })
+
+            $("#image_1_4_info_section").on("change", function() {
+                var input = this;
+                var url = $(this).val();
+                var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+                if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg" ||
+                        ext == 'webp')) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#thumbnail_show_image_1_4_info_section').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                    $("#jquery_form_error_msg").text("");
+
+                } else {
+
+                    $('#thumbnail_show_image_1_4_info_section').attr('src',
+                        '/asset/images/default_image.png');
+
+                }
             })
             ///////////////// end preview image  ////////////////////
 
@@ -936,7 +981,7 @@
                 }
             });
 
-            $('#bookForm').validate({
+            $('#info_section').validate({
                 rules: {
                     content: {
                         required: false
