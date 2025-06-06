@@ -154,11 +154,11 @@
 
                                 {{-- image 1 --}}
                                 <div class="multi_choice_sections">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="badge_1_text_3">Image 1 Title</label>
                                         <textarea id="badge_1_text_3" name="badge_1_text" class="form-control" rows="5">{{ $items['activities_section']['badge_1_text'] }}</textarea>
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="image_1_text_1_3">Image 1 Details</label>
                                         <textarea id="image_1_text_1_3" name="image_1_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_1_text_1'] }}</textarea>
                                     </div>
@@ -190,11 +190,11 @@
 
                                 {{-- image 2 --}}
                                 <div class="multi_choice_sections">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="badge_2_text_3">Image 2 Title</label>
                                         <textarea id="badge_2_text_3" name="badge_2_text" class="form-control" rows="5">{{ $items['activities_section']['badge_2_text'] }}</textarea>
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="image_2_text_1_3">Image 2 Details</label>
                                         <textarea id="image_2_text_1_3" name="image_2_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_2_text_1'] }}</textarea>
                                     </div>
@@ -226,11 +226,11 @@
 
                                 {{-- image 3 --}}
                                 <div class="multi_choice_sections">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="badge_3_text_3">Image 3 Title</label>
                                         <textarea id="badge_3_text_3" name="badge_3_text" class="form-control" rows="5">{{ $items['activities_section']['badge_3_text'] }}</textarea>
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="image_3_text_1_3">Image 3 Details</label>
                                         <textarea id="image_3_text_1_3" name="image_3_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_3_text_1'] }}</textarea>
                                     </div>
@@ -262,11 +262,11 @@
 
                                 {{-- image 4 --}}
                                 <div class="multi_choice_sections">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="badge_4_text_3">Image 4 Title</label>
                                         <textarea id="badge_4_text_3" name="badge_4_text" class="form-control" rows="5">{{ $items['activities_section']['badge_4_text'] }}</textarea>
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="image_4_text_1_3">Image 4 Details</label>
                                         <textarea id="image_4_text_1_3" name="image_3_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_3_text_1'] }}</textarea>
                                     </div>
