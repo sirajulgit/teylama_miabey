@@ -13,11 +13,16 @@
    @endforeach
 
 </div>
+@foreach ($bannerdata as $item)
   <div class="home-banner-content">
-    <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png')}}">
-    <h1 data-aos="fade-right" data-aos-duration="2000"> Teylama Miabey  </h1>
-    <p data-aos="fade-right" data-aos-duration="2000"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum, metus nec lobortis gravida, sapien eros scelerisque quam. </p>
+    @if ($item->title_1!=="")
+          <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png')}}">
+    <h1 data-aos="fade-right" data-aos-duration="2000"> {{ $item->title_1 }}  </h1>
+    <p data-aos="fade-right" data-aos-duration="2000"> {{ $item->details }}</p>
+    @endif
+
   </div>
+  @endforeach
  </div>
 
 
