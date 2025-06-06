@@ -331,7 +331,7 @@
                                 </div>
 
 
-                                <div class="form-group col-md-6" id="video_1_3_container" style="display: none">
+                                <div class="form-group col-md-6" id="video_1_3_container" style="{{ $items['video_section']['video_1'] ? '' : 'display: none;' }}">
                                     <label for="video_1_3">Video URL</label>
                                     <input type="url" class="form-control" name="video_1" id="video_1_3"
                                         value="{{ $items['video_section']['video_1'] }}">
