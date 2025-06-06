@@ -55,7 +55,7 @@ class EventController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'slug' => 'required|unique:blogs,slug',
+            'slug' => 'required|unique:events,slug',
             'image' => 'required|image|mimes:jpeg,png,jpg,webp',
             'short_description' => 'required',
             'long_description' => 'required',
@@ -113,7 +113,7 @@ class EventController extends Controller
 
         $request->validate([
             'title' => 'required',
-            'slug' => 'required|unique:blogs,slug,' . $request->id,
+            'slug' => 'required|unique:events,slug,' . $request->id,
             'image' => 'image|mimes:jpeg,png,jpg,webp',
             'short_description' => 'required',
             'long_description' => 'required',
