@@ -276,7 +276,7 @@ class CmsHomePageController extends Controller
                         if ($formData['badge_icon_1'][$item]) {
                             $random = Str::random(12);
                             $fileName = $random . '-' . time() . '.' . $formData['badge_icon_1'][$item]->extension();
-                            $formData['badge_icon_1'][$item]->move(public_path('uploads/files'), $fileName);
+                            $formData['badge_icon_1'][$item]->move(public_path('uploads/images'), $fileName);
 
                             $data->badge_icon_1 = $fileName;
                         }
@@ -304,7 +304,7 @@ class CmsHomePageController extends Controller
                         if ($formData['badge_image_1'][$item]) {
                             $random = Str::random(12);
                             $fileName = $random . '-' . time() . '.' . $formData['badge_image_1'][$item]->extension();
-                            $formData['badge_image_1'][$item]->move(public_path('uploads/files'), $fileName);
+                            $formData['badge_image_1'][$item]->move(public_path('uploads/images'), $fileName);
 
                             $data->badge_image_1 = $fileName;
                         }
