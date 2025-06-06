@@ -28,3 +28,5 @@ composer.lock
 !/public/uploads/images/resize/.gitkeep
 /public/uploads/QR/*
 !/public/uploads/QR/.gitkeep
+/public/uploads/videos/*
+!/public/uploads/videos/.gitkeep

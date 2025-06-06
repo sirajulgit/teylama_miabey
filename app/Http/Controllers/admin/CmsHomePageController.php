@@ -90,8 +90,8 @@ class CmsHomePageController extends Controller
 
                     $items['what_we_do']["badge_data"][] = $item2;
                 }
-            } elseif ($item['type'] == "my_expertise") {
-                $items["my_expertise"] = $item;
+            } elseif ($item['type'] == "video_section") {
+                $items["video_section"] = $item;
             } elseif ($item['type'] == "book") {
                 $items["book"] = $item;
             } elseif ($item['type'] == "event") {

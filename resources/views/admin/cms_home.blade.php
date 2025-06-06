@@ -142,74 +142,6 @@
                                 </div>
 
 
-                                {{-- <div class="form-group col-md-4">
-                                    <label for="badge_1_text">Badge 1</label>
-                                    <input type="text" name="badge_1_text" class="form-control" id="badge_1_text"
-                                        value="{{ $items['what_we_do']['badge_1_text'] }}">
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <label for="badge_2_text">Badge 2</label>
-                                    <input type="text" name="badge_2_text" class="form-control" id="badge_2_text"
-                                        value="{{ $items['what_we_do']['badge_2_text'] }}">
-                                </div>
-
-
-                                <div class="form-group col-md-4">
-                                    <label for="badge_3_text">Badge 3</label>
-                                    <input type="text" name="badge_3_text" class="form-control" id="badge_3_text"
-                                        value="{{ $items['what_we_do']['badge_3_text'] }}">
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <label for="badge_4_text">Badge 4</label>
-                                    <input type="text" name="badge_4_text" class="form-control" id="badge_4_text"
-                                        value="{{ $items['what_we_do']['badge_4_text'] }}">
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <label for="badge_5_text">Badge 5</label>
-                                    <input type="text" name="badge_5_text" class="form-control" id="badge_5_text"
-                                        value="{{ $items['what_we_do']['badge_5_text'] }}">
-                                </div>
-
-
-                                <div class="form-group col-md-4">
-                                    <label for="badge_6_text">Badge 6</label>
-                                    <input type="text" name="badge_6_text" class="form-control" id="badge_6_text"
-                                        value="{{ $items['what_we_do']['badge_6_text'] }}">
-                                </div>
-
-
-                                <div class="form-group col-md-6">
-                                    <label for="image">Image</label>
-
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image_1"
-                                                id="image_1_what_i_teach"
-                                                accept="image/png, image/jpg, image/jpeg, image/webp">
-                                        </label>
-
-                                        <div class="profile_image">
-                                            @if ($items['what_we_do']['image_1'])
-                                                <img class="profile_img" id="thumbnail_show_image_1_what_i_teach"
-                                                    src="{{ $items['what_we_do']['image_1'] }}" width="569px"
-                                                    height="472px">
-                                            @else
-                                                <img class="profile_img" id="thumbnail_show_image_1_what_i_teach"
-                                                    src="{{ asset('asset/images/default_image.png') }}" width="569px"
-                                                    height="472px">
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                </div> --}}
-
-
-
-
-
                                 <div class="form-group col-md-12">
                                     <label for="" class="mt-3 mb-3">Syllabus</label>
                                     <br>
@@ -254,36 +186,38 @@
 
                                                     {{-- Category Icon --}}
                                                     <div class="form-group col-md-4">
-                                                        <label for="badge_icon_1_{{ $item['id'] }}">Category Icon</label>
+                                                        <label for="badge_icon_1_{{ $item['id'] }}">Category
+                                                            Icon</label>
                                                         <input type="file"
                                                             class="form-control file-input badge_icon_1_{{ $item['id'] }}"
                                                             name="old_badge_icon_1[]" placeholder="Category Icon"
                                                             accept="image/png, image/jpg, image/jpeg, image/webp">
 
-                                                        @if($item['badge_icon_1'])
-                                                            <img src="{{ asset($item['badge_icon_1']) }}" alt="" width="128px"
-                                                                height="128px" class="mt-3" />
+                                                        @if ($item['badge_icon_1'])
+                                                            <img src="{{ asset($item['badge_icon_1']) }}" alt=""
+                                                                width="128px" height="128px" class="mt-3" />
                                                         @endif
                                                     </div>
 
 
                                                     {{-- Category Image --}}
                                                     <div class="form-group col-md-4">
-                                                        <label for="badge_image_1_{{ $item['id'] }}">Category Image</label>
+                                                        <label for="badge_image_1_{{ $item['id'] }}">Category
+                                                            Image</label>
                                                         <input type="file"
                                                             class="form-control file-input badge_image_1_{{ $item['id'] }}"
                                                             name="old_badge_image_1[]" placeholder="Category Image"
                                                             accept="image/png, image/jpg, image/jpeg, image/webp">
 
-                                                            @if($item['badge_image_1'])
-                                                            <img src="{{ asset($item['badge_image_1']) }}" alt="" width="464.8px"
-                                                                height="456.4px" class="mt-3" />
+                                                        @if ($item['badge_image_1'])
+                                                            <img src="{{ asset($item['badge_image_1']) }}" alt=""
+                                                                width="464.8px" height="456.4px" class="mt-3" />
                                                         @endif
                                                     </div>
 
                                                     {{-- Category Action Button --}}
                                                     <div class="form-group col-md-4">
-                                                        
+
                                                         <button type="button" class="btn btn-info mb-3 updateInput"
                                                             data-badge-id="{{ $item['id'] }}">Update</button>
 
@@ -351,157 +285,53 @@
                 </div>
 
 
-                {{-- /////////////// my_expertise /////////////////// --}}
+                {{-- /////////////// video_section /////////////////// --}}
                 <div class="col-lg-12 mb-5">
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title badge badge-success font-weight-bold">My Expertise</h3>
+                            <h3 class="card-title badge badge-success font-weight-bold">Video Section</h3>
                         </div>
                         <!-- /.card-header -->
 
-                        <form id="my_expertiseForm" action="{{ route('post_cms_home') }}" method="POST"
+                        <form id="video_sectionForm" action="{{ route('post_cms_home') }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
 
-                            <input type="hidden" name="id" value="{{ $items['my_expertise']['id'] }}" />
+                            <input type="hidden" name="id" value="{{ $items['video_section']['id'] }}" />
 
                             <div class="card-body row">
 
                                 <div class="form-group col-md-12">
-                                    <label for="head_title">Title</label>
-                                    <textarea id="head_title3" name="head_title" class="form-control" rows="5">{{ $items['my_expertise']['head_title'] }}</textarea>
+                                    <label for="title_1">Title</label>
+                                    <textarea id="title_1_3" name="title_1" class="form-control" rows="5">{{ $items['video_section']['title_1'] }}</textarea>
                                 </div>
-
-
-
-                                <div class="form-group col-md-12">
-                                    <label for="image">Left Image</label>
-
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image_1"
-                                                id="image_1_my_expertise"
-                                                accept="image/png, image/jpg, image/jpeg, image/webp">
-                                        </label>
-
-                                        <div class="profile_image">
-                                            @if ($items['my_expertise']['image_1'])
-                                                <img class="profile_img" id="thumbnail_show_image_1_my_expertise"
-                                                    src="{{ $items['my_expertise']['image_1'] }}" width="569px"
-                                                    height="472px">
-                                            @else
-                                                <img class="profile_img" id="thumbnail_show_image_1_my_expertise"
-                                                    src="{{ asset('asset/images/default_image.png') }}" width="569px"
-                                                    height="472px">
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                {{-- <div class="form-group col-md-4">
-                                    <label for="image">Badge Image 1</label>
-
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image_2"
-                                                id="image_2_my_expertise"
-                                                accept="image/png, image/jpg, image/jpeg, image/webp">
-
-                                            @if (!is_null($items['my_expertise']['image_2']))
-                                                <button type="button" data-id="{{ $items['my_expertise']['id'] }}"
-                                                    data-field-name="image_2"
-                                                    class="btn btn-sm btn-danger del_badge_img mt-3 mb-3"><i class="fas fa-trash" aria-hidden="true"></i> Delete</button>
-                                            @endif
-                                        </label>
-
-                                        <div class="profile_image">
-
-                                            @if ($items['my_expertise']['image_2'])
-                                                <img class="profile_img" id="thumbnail_show_image_2_my_expertise"
-                                                    src="{{ $items['my_expertise']['image_2'] }}" width="148px"
-                                                    height="221px">
-                                            @else
-                                                <img class="profile_img" id="thumbnail_show_image_2_my_expertise"
-                                                    src="{{ asset('asset/images/default_image.png') }}" width="148px"
-                                                    height="221px">
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <label for="image">Badge Image 2</label>
-
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image_3"
-                                                id="image_3_my_expertise"
-                                                accept="image/png, image/jpg, image/jpeg, image/webp">
-
-
-                                            @if (!is_null($items['my_expertise']['image_3']))
-                                                <button type="button" data-id="{{ $items['my_expertise']['id'] }}"
-                                                    data-field-name="image_3"
-                                                    class="btn btn-sm btn-danger del_badge_img mt-3 mb-3"><i class="fas fa-trash" aria-hidden="true"></i> Delete</button>
-                                            @endif
-                                        </label>
-
-                                        <div class="profile_image">
-
-                                            @if ($items['my_expertise']['image_3'])
-                                                <img class="profile_img" id="thumbnail_show_image_3_my_expertise"
-                                                    src="{{ $items['my_expertise']['image_3'] }}" width="148px"
-                                                    height="221px">
-                                            @else
-                                                <img class="profile_img" id="thumbnail_show_image_3_my_expertise"
-                                                    src="{{ asset('asset/images/default_image.png') }}" width="148px"
-                                                    height="221px">
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <label for="image">Badge Image 3</label>
-
-                                    <div class="admin_upload">
-                                        <label class="admin-upload-wrap">
-                                            <input type="file" class="form-control mt-3 uploadFile" name="image_4"
-                                                id="image_4_my_expertise"
-                                                accept="image/png, image/jpg, image/jpeg, image/webp">
-
-                                            @if (!is_null($items['my_expertise']['image_4']))
-                                                <button type="button" data-id="{{ $items['my_expertise']['id'] }}"
-                                                    data-field-name="image_4"
-                                                    class="btn btn-sm btn-danger del_badge_img mt-3 mb-3"><i class="fas fa-trash" aria-hidden="true"></i> Delete</button>
-                                            @endif
-                                        </label>
-
-                                        <div class="profile_image">
-
-                                            @if ($items['my_expertise']['image_4'])
-                                                <img class="profile_img" id="thumbnail_show_image_4_my_expertise"
-                                                    src="{{ $items['my_expertise']['image_4'] }}" width="148px"
-                                                    height="221px">
-                                            @else
-                                                <img class="profile_img" id="thumbnail_show_image_4_my_expertise"
-                                                    src="{{ asset('asset/images/default_image.png') }}" width="148px"
-                                                    height="221px">
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                </div> --}}
-
 
 
                                 <div class="form-group col-md-12">
                                     <label for="content">Details</label>
-                                    <textarea id="content3" name="content" class="form-control" rows="5">{{ $items['my_expertise']['content'] }}</textarea>
+                                    <textarea id="content3" name="content" class="form-control" rows="5">{{ $items['video_section']['content'] }}</textarea>
+                                </div>
+
+
+                                <div class="form-group col-md-12">
+                                    <label for="video_1_3">Video</label>
+
+                                    <div class="admin_upload">
+                                        <label class="admin-upload-wrap">
+                                            <input type="file" class="form-control mt-3 uploadFile" name="video_1"
+                                                id="video_1_3" accept="video/mp4, video/webm, video/ogg, video/x-msvideo">
+                                        </label>
+
+                                        <div class="preview_video">
+                                            @if ($items['video_section']['video_1'])
+                                                <video id="thumbnail_show_video_3_video_section" width="320" height="240" controls src="{{ $items['video_section']['video_1'] }}"></video>
+                                            @else
+                                                <video id="thumbnail_show_video_3_video_section" width="320" height="240" controls src=""></video>
+                                            @endif
+                                        </div>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -631,7 +461,7 @@
             $("#content3").summernote({
                 height: 200,
             });
-            $("#head_title3").summernote({
+            $("#title_1_3").summernote({
                 height: 100,
             });
 
@@ -840,6 +670,24 @@
             ///////////////// end preview image  ////////////////////
 
 
+            /////////////////// preview video ///////////////////////
+            $('#video_1_3').on('change', function() {
+                var input = this;
+                var url = $(this).val();
+                var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+                if (input.files && input.files[0] && (ext == "mp4" || ext == "webm" || ext == "ogg" || ext == "x-msvideo")) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#thumbnail_show_video_3_video_section').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                } else {
+                    $('#thumbnail_show_video_3_video_section').attr('src', '');
+                }
+            });
+            /////////////////// end preview video ///////////////////
+
+
 
             ////////////// form validation ////////////////////////
             $('#aboutForm').validate({
@@ -956,7 +804,7 @@
                 }
             });
 
-            $('#my_expertiseForm').validate({
+            $('#video_sectionForm').validate({
                 rules: {
                     title_1: {
                         required: true,
@@ -1231,7 +1079,7 @@
                 if (badge_image_1 != undefined && badge_image_1 != "") {
                     formData.append('badge_image_1', badge_image_1);
                 }
-                if (badge_title_1 != undefined  && badge_title_1 != "") {
+                if (badge_title_1 != undefined && badge_title_1 != "") {
                     formData.append('badge_title_1', badge_title_1);
                 }
                 if (badge_details_1 != undefined && badge_details_1 != "") {
