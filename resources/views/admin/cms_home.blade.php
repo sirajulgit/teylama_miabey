@@ -321,17 +321,17 @@
                                         id="video_1_3">
 
                                     <div class="preview_video">
-                                        <!-- MP4 / Blob preview -->
-                                        <video id="videoPreview_3_video_section" width="320" height="240" controls>
-                                            <source id="videoSource_3_video_section" src="" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-
-                                        <!-- YouTube & Facebook iframe preview -->
-                                        <div id="iframeContainer_3_video_section" class="iframeContainer">
-                                            <iframe id="iframePreview_3_video_section" src="" frameborder="0"
-                                                allowfullscreen></iframe>
-                                        </div>
+                                        @if ($items['video_section']['video_1'])
+                                            <!-- Video container -->
+                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
+                                                <!-- Dynamic content will be injected here -->
+                                            </div>
+                                        @else
+                                            <!-- Video container -->
+                                            <div id="videoPlayerContainer_3_video_section" style="margin-top: 20px;">
+                                                <!-- Dynamic content will be injected here -->
+                                            </div>
+                                        @endif
                                     </div>
 
                                     {{-- <div class="admin_upload">
@@ -688,59 +688,75 @@
 
 
             /////////////////// preview video ///////////////////////
-            // $('#video_1_3').on('change', function() {
-            //     var input = this;
-            //     var url = $(this).val();
-            //     var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
-            //     if (input.files && input.files[0] && (ext == "mp4" || ext == "webm" || ext == "ogg" || ext == "x-msvideo")) {
-            //         var reader = new FileReader();
-            //         reader.onload = function(e) {
-            //             $('#thumbnail_show_video_3_video_section').attr('src', e.target.result);
-            //         }
-            //         reader.readAsDataURL(input.files[0]);
-            //     } else {
-            //         $('#thumbnail_show_video_3_video_section').attr('src', '');
-            //     }
-            // });
-
-            function getYouTubeEmbedUrl(url) {
-                const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-                return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+            function getVideoType(url) {
+                if (url.match(/\.(mp4|webm|ogg)$/i)) return 'file';
+                if (url.includes('youtube.com') || url.includes('youtu.be')) return 'youtube';
+                if (url.includes('vimeo.com')) return 'vimeo';
+                if (url.includes('facebook.com')) return 'facebook';
+                return null;
             }
 
-            function getFacebookEmbedUrl(url) {
-                return `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=0&width=400`;
+            function extractYouTubeId(url) {
+                const match = url.match(/(?:v=|\/)([0-9A-Za-z_-]{11})(?:\?|&|$)/);
+                return match ? match[1] : null;
+            }
+
+            function extractVimeoId(url) {
+                const match = url.match(/vimeo\.com\/(\d+)/);
+                return match ? match[1] : null;
             }
 
             $('#video_1_3').on('change', function() {
                 const url = $(this).val().trim();
-                const isMp4 = url.endsWith('.mp4') || url.startsWith('blob:');
-                const isYouTube = getYouTubeEmbedUrl(url);
-                const isFacebook = url.includes('facebook.com');
+                const type = getVideoType(url);
+                const $container = $('#videoPlayerContainer_3_video_section');
 
-                const $video = $('#videoPreview_3_video_section');
-                const $source = $('#videoSource_3_video_section');
-                const $iframeContainer = $('#iframeContainer_3_video_section');
-                const $iframe = $('#iframePreview_3_video_section');
+                $container.html(''); // Clear previous content
 
-                // Reset all previews
-                $video.hide();
-                $iframeContainer.hide();
-
-                if (isMp4) {
-                    $source.attr('src', url);
-                    $video[0].load();
-                    $video.show();
-                } else if (isYouTube) {
-                    $iframe.attr('src', isYouTube);
-                    $iframeContainer.show();
-                } else if (isFacebook) {
-                    const fbEmbed = getFacebookEmbedUrl(url);
-                    $iframe.attr('src', fbEmbed);
-                    $iframeContainer.show();
-                } else {
-                    alert("Unsupported video format or link.");
+                if (!type) {
+                    $container.html('<p style="color:red;">Unsupported video type</p>');
+                    return;
                 }
+
+                if (type === 'file') {
+                    $container.html(`
+                        <video id="dynamic-player" class="plyr" controls>
+                        <source src="${url}" type="video/mp4" />
+                        </video>
+                    `);
+                }
+
+                if (type === 'youtube') {
+                    const ytId = extractYouTubeId(url);
+                    if (ytId) {
+                        $container.html(`
+                            <div id="dynamic-player" data-plyr-provider="youtube" data-plyr-embed-id="${ytId}"></div>
+                            `);
+                    }
+                }
+
+                if (type === 'vimeo') {
+                    const vimeoId = extractVimeoId(url);
+                    if (vimeoId) {
+                        $container.html(`
+                            <div id="dynamic-player" data-plyr-provider="vimeo" data-plyr-embed-id="${vimeoId}"></div>
+                            `);
+                    }
+                }
+
+                if (type === 'facebook') {
+                    $container.html(`
+                        <iframe src="https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(url)}&show_text=0&width=560"
+                        width="560" height="315" style="border:none;overflow:hidden" scrolling="no"
+                        frameborder="0" allowfullscreen></iframe>
+                    `);
+                    return; // Skip Plyr init for Facebook
+                }
+
+                // Initialize Plyr
+                setTimeout(() => {
+                    const player = new Plyr('#dynamic-player');
+                }, 100);
             });
             /////////////////// end preview video ///////////////////
 
