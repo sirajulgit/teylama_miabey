@@ -52,8 +52,7 @@
                                     <select class="form-control select2" style="width: 100%;" name="status">
                                         <option value="1" {{ $data['item']['status'] == 1 ? 'selected' : '' }}>Active
                                         </option>
-                                        <option value="0" {{ $data['item']['status'] == 0 ? 'selected' : '' }}>No
-                                            Active
+                                        <option value="0" {{ $data['item']['status'] == 0 ? 'selected' : '' }}>Inactive
                                         </option>
                                     </select>
                                 </div>
