@@ -101,7 +101,7 @@
             <div>
   @if (count($homedata['what_we_do']['badge_data']) > 0)
                                             @foreach ($homedata['what_we_do']['badge_data'] as $index => $item)
-              <button class="nav-link text-start active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-medical" type="button" role="tab" aria-controls="v-pills-medical" aria-selected="true">0{{$index}}. {{$item['badge_text_1']}}</button>
+              <button class="nav-link text-start active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-medical" type="button" role="tab" aria-controls="v-pills-medical" aria-selected="true">0{{$index + 1}}. {{$item['badge_text_1']}}</button>
               @endforeach
               @endif
 
