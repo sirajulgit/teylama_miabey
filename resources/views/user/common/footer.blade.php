@@ -7,7 +7,7 @@
           <span class="round-icon"> <i class="bi bi-geo-alt"></i> </span>
           <div>
             <b>Our Location</b>
-            <p>{{!! $settings['address'] !!}} </p>
+            <p>{!! $settings['address'] !!} </p>
           </div>
         </div>
       </div>
