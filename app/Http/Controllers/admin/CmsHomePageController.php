@@ -123,7 +123,7 @@ class CmsHomePageController extends Controller
             ////// cms home modal insert //////////////
             foreach ($formData as $key => $val) {
 
-                $not_allow_keys = ["_token", "badge_text_1", "badge_text_2", "badge_file_1", "badge_file_2", "badge_icon_1", "badge_image_1", "badge_title_1", "badge_details_1", "old_badge_text_1", "old_badge_text_2", "old_badge_file_1", "old_badge_file_2", "old_badge_icon_1", "badge_image_1", "old_badge_title_1", "old_badge_details_1","badge_id"];
+                $not_allow_keys = ["_token", "badge_text_1", "badge_text_2", "badge_file_1", "badge_file_2", "badge_icon_1", "badge_image_1", "badge_title_1", "badge_details_1", "old_badge_text_1", "old_badge_text_2", "old_badge_file_1", "old_badge_file_2", "old_badge_icon_1", "old_badge_image_1", "old_badge_title_1", "old_badge_details_1","badge_id"];
 
                 if (in_array($key, $not_allow_keys)) {
                     continue;
