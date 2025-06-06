@@ -735,11 +735,27 @@
             $("#video_1_type_3").on("change", function() {
                 const value = $(this).val();
                 if (value) {
+                    
+                    const videoUrl = "{{ $items['video_section']['video_1'] }}";
+                    if(videoUrl){
+                        $("#video_1_3").val(videoUrl);
+                        $("#videoPlayerContainer_3_video_section").html(`
+                        <iframe src="${videoUrl}" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                        `);
+                    }else{
+                        $("#video_1_3").val("");
+                        $("#videoPlayerContainer_3_video_section").html("");
+                    }
+
                     $("#video_1_3_container").show();
                 } else {
-                    $("#video_1_3_container").hide();
+                    
+                    $("#video_1_3").val("");
                     $("#videoPlayerContainer_3_video_section").html("");
+
+                    $("#video_1_3_container").hide();
                 }
+                
             });
 
             $('#video_1_3').on('change', function() {
