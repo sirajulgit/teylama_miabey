@@ -5,12 +5,13 @@
 
  <div class="banner-area position-relative">
 <div class="banner-slide">
+
+    @foreach ($bannerdata as $item)
   <div>
-    <img src="{{ asset('asset/frontend/images/banner.png')}}">
+    <img src="{{ $item->image }}">
   </div>
-  <div>
-    <img src="{{ asset('asset/frontend/images/banner.png')}}">
-  </div>
+   @endforeach
+
 </div>
   <div class="home-banner-content">
     <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png')}}">

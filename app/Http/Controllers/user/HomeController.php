@@ -4,7 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\CmsBanner;
 
 class HomeController extends Controller
 {
@@ -16,8 +16,19 @@ class HomeController extends Controller
             'page_title' => 'Home',
         ];
 
+        $items = CmsBanner::where('type', 'home_page')->orderBy("id", "desc")->get();
 
-        return view('user.home', ['data' => $data]);
+        $temp_arr = [];
+        foreach ($items as $item) {
+
+            $default_image = '/uploads/images/' . $item['image'];
+
+            $item->image = $default_image;
+
+            array_push($temp_arr, $item);
+        }
+
+        return view('user.home', ['bannerdata' => $temp_arr, 'data' => $data]);
     }
 
 }
