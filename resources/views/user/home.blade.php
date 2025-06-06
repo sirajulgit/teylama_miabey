@@ -99,10 +99,12 @@
         <div class="d-flex align-items-start">
           <div class="nav flex-column nav-pills me-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <div>
-              <button class="nav-link text-start active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-medical" type="button" role="tab" aria-controls="v-pills-medical" aria-selected="true">01. Medical</button>
-              <button class="nav-link text-start" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-education" type="button" role="tab" aria-controls="v-pills-education" aria-selected="false"> 02. Education </button>
-              <button class="nav-link text-start" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-food" type="button" role="tab" aria-controls="v-pills-food" aria-selected="false"> 03. Food & Nutrition </button>
-              <button class="nav-link text-start" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-emergency" type="button" role="tab" aria-controls="v-pills-emergency" aria-selected="false"> 04. Emergency </button>
+  @if (count($homedata['what_we_do']['badge_data']) > 0)
+                                            @foreach ($homedata['what_we_do']['badge_data'] as $item)
+              <button class="nav-link text-start active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-medical" type="button" role="tab" aria-controls="v-pills-medical" aria-selected="true">01. {{$item->badge_text_1}}</button>
+              @endforeach
+              @endif
+
             </div>
             <div class="button-join">
             <a href="">Join Our Team <i class="bi bi-arrow-right"></i> </a>
@@ -123,48 +125,7 @@
               </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="v-pills-education" role="tabpanel" aria-labelledby="v-pills-education-tab">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="tab-content-area">
-                  <img src="{{ asset('asset/frontend/images/medical-icon.png')}}">
-                  <h3>Education</h3>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis, sit amet malesuada justo scelerisque a. </p>
-              </div>
-              </div>
-               <div class="col-lg-6">
-                <img src="{{ asset('asset/frontend/images/medical-image.png')}}">
-              </div>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="v-pills-food" role="tabpanel" aria-labelledby="v-pills-food-tab">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="tab-content-area">
-                  <img src="{{ asset('asset/frontend/images/medical-icon.png')}}">
-                  <h3>Food</h3>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis, sit amet malesuada justo scelerisque a. </p>
-              </div>
-              </div>
-               <div class="col-lg-6">
-                <img src="{{ asset('asset/frontend/images/medical-image.png')}}">
-              </div>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="v-pills-emergency" role="tabpanel" aria-labelledby="v-pills-emergency-tab">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="tab-content-area">
-                  <img src="{{ asset('asset/frontend/images/medical-icon.png')}}">
-                  <h3>Emergency</h3>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis, sit amet malesuada justo scelerisque a. </p>
-              </div>
-              </div>
-               <div class="col-lg-6">
-                <img src="{{ asset('asset/frontend/images/medical-image.png')}}">
-              </div>
-          </div>
-        </div>
+
         </div>
         </div>
 
