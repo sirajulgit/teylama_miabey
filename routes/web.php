@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\AuthController as AdminAuthController;
 use App\Http\Controllers\admin\BookController;
 use App\Http\Controllers\admin\CmsHomePageController;
+use App\Http\Controllers\admin\CmsAboutPageController;
 use App\Http\Controllers\admin\CmsBannerController;
 use App\Http\Controllers\admin\CmsController;
 use App\Http\Controllers\admin\CmsBookController;
@@ -207,12 +208,21 @@ Route::prefix('admin')->middleware(['admin.auth'])->group(function () {
 
 
 
+    // +++++++++++++++++++++++ |  cms |  ++++++++++++++++++++++++++++++++++++
+    // ############ | cms home page | ################
     Route::get('/cms-home', [CmsHomePageController::class, 'home_page'])->name('cms_home');
     Route::post('/cms-home', [CmsHomePageController::class, 'post_update'])->name('post_cms_home');
     Route::post('/cms-badge-delete', [CmsHomePageController::class, 'post_badge_delete'])->name('post_badge_delete');
     Route::post('/cms-badge-update', [CmsHomePageController::class, 'post_badge_update'])->name('post_badge_update');
     Route::post('/about-right-img-delete', [CmsHomePageController::class, 'post_about_right_img_delete'])->name('post_about_right_img_delete');
     Route::post('/del-badge-img', [CmsHomePageController::class, 'post_del_badge_img'])->name('post_del_badge_img');
+
+    
+    // ############ | cms about page | ################
+    Route::get('/cms-about', [CmsAboutPageController::class, 'about_page'])->name('cms_about');
+    Route::post('/cms-about', [CmsAboutPageController::class, 'post_update'])->name('post_cms_about');
+    Route::post('/cms-about-badge-delete', [CmsAboutPageController::class, 'post_badge_delete'])->name('post_cms_about_badge_delete');
+    Route::post('/cms-about-badge-update', [CmsAboutPageController::class, 'post_badge_update'])->name('post_cms_about_badge_update');
 
 
     Route::get('/cms-banner', [CmsBannerController::class, 'index'])->name('cms_banner_list');
