@@ -52,7 +52,7 @@
       </div>
       <div class="col-lg-6 ">
         <div class="about-content-right ps-lg-5 ms-lg-5" data-aos="fade-left" data-aos-duration="1000">
-          <h2>About <strong>Miabey</strong></h2>
+          <h2>{!! $homedata['about']['head_title'] !!}</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis, sit amet malesuada justo scelerisque a.</p>
           <p> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse faucibus diam nulla, nec dapibus lorem suscipit sed. Proin non risus mi.  </p>
 

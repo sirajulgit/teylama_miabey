@@ -103,7 +103,7 @@ class HomeController extends Controller
                 $items["info_section"] = $item;
             }
         }
-        dd($items);exit;
+        //dd($items);exit;
 
         return view('user.home', ['bannerdata' => $temp_arr, 'data' => $data, 'homedata' => $items]);
     }
