@@ -14,7 +14,7 @@
 
 </div>
 @foreach ($bannerdata as $item)
-  @if ($item->id = 1)
+  @if ($item->id == 1)
   <div class="home-banner-content">
 
           <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png')}}">
