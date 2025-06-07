@@ -31,6 +31,10 @@
 
        <div class="container">
 
+        <div class="logo-image">
+            <img src="images/logo.png">
+        </div>
+
            <!-- MENU -->
            <div class="nav d-flex justify-content-center">
                <ul id="menu-bg">
