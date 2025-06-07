@@ -13,7 +13,7 @@ class ContactQueryController extends Controller
     public function index()
     {
         $data = [
-            'page_title' => 'Contact Query',
+            'pageTitle' => 'Contact Query',
             'activePageName' => 'contact_query',
         ];
 
