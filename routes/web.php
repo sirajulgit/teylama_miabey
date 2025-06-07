@@ -71,9 +71,10 @@ Route::middleware('isGuest')->group(function () {
     Route::get('/about-me', [AboutUsController::class, 'index'])->name('about_us');
     Route::get('/blogs', [UserBlogsController::class, 'index'])->name('blogs');
     Route::get('/blogs/{slug}', [UserBlogsController::class, 'blog_details'])->name('blog_details');
-    Route::get('/contact-me', [ContactUsController::class, 'index'])->name('contact_us');
     Route::get('/events', [UserEventsController::class, 'index'])->name('events');
+    Route::get('/events/{slug}', [UserEventsController::class, 'event_details'])->name('event_details');
     Route::get('/gallery', [UserGalleryController::class, 'index'])->name('gallery');
+    Route::get('/contact-me', [ContactUsController::class, 'index'])->name('contact_us');
     // Route::post('/login', [AuthController::class, 'post_login'])->name('post_user_login');
     // Route::get('/register', [AuthController::class, 'register'])->name('user_register');
     // Route::post('/register', [AuthController::class, 'post_register'])->name('post_user_register');

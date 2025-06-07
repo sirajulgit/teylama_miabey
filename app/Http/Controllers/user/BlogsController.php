@@ -40,7 +40,7 @@ class BlogsController extends Controller
     {
 
         $data = [
-            'page_title' => 'Blogs Details',
+            'page_title' => 'Blog Details',
             'activePageName' => 'blog',
         ];
 
