@@ -62,23 +62,26 @@
     </div>
 
 
-
+    {{-- ############# | ACTIVITIES | ############# --}}
     <div class="activities">
         <div class="container">
             <div class="about-content-right text-center mb-lg-5">
-                <h2> <strong>Activities</strong></h2>
+                {!! $data['page_data']['activities_section']['head_title'] !!}
             </div>
 
             <ul class="d-flex activities-image-list">
-                <li style="background: url({{ asset('asset/frontend/images/activities-image-1.png') }}) no-repeat center;">
+
+              {{-- item 1 --}}
+                <li style="background: url({{ asset($data['page_data']['activities_section']['image_1']) }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/activities-icon-1.png') }}">
 
                     <div class="activities-text">
-                        <h4>Medical</h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar </p>
+                        {!! $data['page_data']['activities_section']['badge_1_text'] !!}
+                        {!! $data['page_data']['activities_section']['image_1_text_1'] !!}
                     </div>
                 </li>
 
+                {{-- item 2 --}}
                 <li style="background: url(images/activities-image-2.png) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/education.png') }}">
 
@@ -88,6 +91,7 @@
                     </div>
                 </li>
 
+                {{-- item 3 --}}
                 <li style="background: url(images/activities-image-3.png) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/Food-Nutrition.png') }}">
 
@@ -97,6 +101,7 @@
                     </div>
                 </li>
 
+                {{-- item 4 --}}
                 <li style="background: url({{ asset('asset/frontend/images/activities-image-4.png') }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/emergency.png') }}">
 
@@ -105,8 +110,6 @@
                         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar </p>
                     </div>
                 </li>
-
-
             </ul>
 
         </div>
