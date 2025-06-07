@@ -19,11 +19,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <!-- toastify -->
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/toastify.min.css') }}" />
+     <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ asset('asset/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/style.css') }}" />
 
-     <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="{{ asset('asset/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
+    
 
 
 </head>

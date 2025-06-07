@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{ asset('asset/frontend/css/font-awesome.min.css') }}">
     <!-- toastify -->
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/toastify.min.css') }}" />
+     <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ asset('asset/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/style.css') }}">
 </head>
@@ -57,23 +59,14 @@
     <script src="{{ asset('asset/plugins/jquery-validation/additional-methods.min.js') }}"></script>
     <!-- toastify -->
     <script type="text/javascript" src="{{ asset('asset/frontend/js/toastify.min.js') }}"></script>
+    <!-- SweetAlert2 -->
+    <script src="{{ asset('asset/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- Custome js -->
     <script src="{{ asset('asset/frontend/js/custome.js') }}"></script>
 
 
     <script>
-        const toaster = Toastify({
-            duration: 3000,
-            close: true,
-            gravity: "bottom",
-            position: "right",
-            stopOnFocus: true,
-            style: {
-                background: "#dc3545",
-                color: "#fff",
-            }
-        });
-
+        
         $(document).ready(function() {
             let error = "{{ Session::has('error') ? Session::get('error') : '' }}";
             let success = "{{ Session::has('success') ? Session::get('success') : '' }}";

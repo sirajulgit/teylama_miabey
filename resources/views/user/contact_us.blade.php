@@ -179,13 +179,23 @@
                         },
                         success: function(response) {
                             console.log(response);
-
-                            // success
-                            toaster.success("Thank you for contacting us.");
+                            Swal.fire({
+                                icon: "success",
+                                title: "Success",
+                                text: "Thank you for contacting us.",
+                                showConfirmButton: true,
+                                confirmButtonText: "OK",
+                            });
                         },
                         error: function(error) {
                             console.log("error" + error);
-                            showToast("Something went wrong. Please try again.", "#dc3545");
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error",
+                                text: "Something went wrong!",
+                                showConfirmButton: true,
+                                confirmButtonText: "OK",
+                            });
                         },
                         complete: function() {
                             form.reset();
