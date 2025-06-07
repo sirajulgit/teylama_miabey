@@ -172,6 +172,9 @@
                         method: "POST",
                         contentType: false,
                         data: form.serialize(),
+                        beforeSend: function() {
+                            form.find('input[type="submit"]').prop('disabled', true);
+                        },
                         success: function(response) {
                             console.log(response);
                             showToast("Thank you for contacting us.", "#28a745"); // green
