@@ -160,20 +160,22 @@
                 },
                 submitHandler: function(form, event) {
                     event.preventDefault();
-                    
+
+                    const formData = new FormData(form);
+                    const url = "{{ route('post_contact_us') }}";
 
                     // ++++++++++++++ | form submit | +++++++++++++++
-                    let url = "{{ route('post_contact_us') }}";
                     $.ajax({
                         headers: {
                             'X-CSRF-TOKEN': "{{ csrf_token() }}"
                         },
                         url: url,
                         method: "POST",
+                        data: formData,
+                        processData: false,
                         contentType: false,
-                        data: form.serialize(),
                         beforeSend: function() {
-                            form.find('input[type="submit"]').prop('disabled', true);
+                            $(form).find('input[type="submit"]').prop('disabled', true);
                         },
                         success: function(response) {
                             console.log(response);
@@ -183,9 +185,11 @@
                         },
                         error: function(error) {
                             console.log("error" + error);
+                            showToast("Something went wrong. Please try again.", "#dc3545");
                         },
                         complete: function() {
                             form.reset();
+                            $(form).find('input[type="submit"]').prop('disabled', false);
                         }
                     });
                 }
