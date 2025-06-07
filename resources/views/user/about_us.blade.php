@@ -71,8 +71,9 @@
 
             <ul class="d-flex activities-image-list">
 
-              {{-- item 1 --}}
-                <li style="background: url({{ asset($data['page_data']['activities_section']['image_1']) }}) no-repeat center;">
+                {{-- item 1 --}}
+                <li
+                    style="background: url({{ asset($data['page_data']['activities_section']['image_1']) }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/activities-icon-1.png') }}">
 
                     <div class="activities-text">
@@ -82,7 +83,7 @@
                 </li>
 
                 {{-- item 2 --}}
-                <li style="background: url(images/activities-image-2.png) no-repeat center;">
+                <li style="background: url({{ asset('asset/frontend/images/activities-image-2.png') }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/education.png') }}">
 
                     <div class="activities-text">
@@ -92,7 +93,7 @@
                 </li>
 
                 {{-- item 3 --}}
-                <li style="background: url(images/activities-image-3.png) no-repeat center;">
+                <li style="background: url({{ asset('asset/frontend/images/activities-image-3.png') }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/Food-Nutrition.png') }}">
 
                     <div class="activities-text">
