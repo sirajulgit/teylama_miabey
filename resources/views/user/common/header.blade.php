@@ -32,7 +32,8 @@
        <div class="container">
 
         <div class="logo-image">
-            <img src="images/logo.png">
+            <img src="{{ asset('asset/frontend/images/logo.png') }}">
+            
         </div>
 
            <!-- MENU -->
