@@ -181,7 +181,7 @@
                             console.log(response);
 
                             // success
-                            showToast("Thank you for contacting us.", "#28a745");
+                            toaster.success("Thank you for contacting us.");
                         },
                         error: function(error) {
                             console.log("error" + error);

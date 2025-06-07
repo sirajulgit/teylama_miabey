@@ -62,6 +62,18 @@
 
 
     <script>
+        const toaster = Toastify({
+            duration: 3000,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "#dc3545",
+                color: "#fff",
+            }
+        });
+
         $(document).ready(function() {
             let error = "{{ Session::has('error') ? Session::get('error') : '' }}";
             let success = "{{ Session::has('success') ? Session::get('success') : '' }}";
