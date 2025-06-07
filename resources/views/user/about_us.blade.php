@@ -2,32 +2,21 @@
 
 
 @section('content')
+    {{-- ############# | CMS BANNER | ############# --}}
     <div class="banner-area position-relative">
-        {{-- @foreach ($data['banner_data'] as $item) --}}
-            <div class="inner-banner">
+        <div class="inner-banner">
+            @foreach ($data['banner_data'] as $item)
                 <div>
-                    <img src="{{ asset('asset/frontend/images/banner.png') }}">
+                    <img src="{{ asset($item['image']) }}">
                 </div>
-            </div>
-            <div class="home-banner-content">
+            @endforeach
+        </div>
+        <div class="home-banner-content">
+            @foreach ($data['banner_data'] as $item)
                 <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png') }}">
-                <h1 data-aos="fade-right" data-aos-duration="2000"> Teylama Miabey </h1>
-            </div>
-        {{-- @endforeach --}}
-    </div>
-
-    <div class="banner-area position-relative">
-        {{-- @foreach ($data['banner_data'] as $item) --}}
-            <div class="inner-banner">
-                <div>
-                    <img src="{{ asset('asset/frontend/images/banner.png') }}">
-                </div>
-            </div>
-            <div class="home-banner-content">
-                <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png') }}">
-                <h1 data-aos="fade-right" data-aos-duration="2000"> Teylama Miabey </h1>
-            </div>
-        {{-- @endforeach --}}
+                <h1 data-aos="fade-right" data-aos-duration="2000"> {{ $item['title_1'] }} </h1>
+            @endforeach
+        </div>
     </div>
 
 
