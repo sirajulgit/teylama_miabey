@@ -113,7 +113,7 @@ class AboutUsController extends Controller
 
         $data['page_data'] = $items;
 
-        dd($data);
+        // dd($data);
 
 
         return view('user.about_us', ['data' => $data]);
