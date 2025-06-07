@@ -166,6 +166,14 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('contact_query_list') }}"
+                        class="nav-link {{ $data['activePageName'] == 'contact_query' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-rss"></i>
+                        <p>Contact Query</p>
+                    </a>
+                </li>
+
 
                 <li class="nav-item">
                     <a href="{{ route('cms_list') }}"

@@ -20,6 +20,7 @@ use App\Http\Controllers\admin\BibliographyController;
 use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\CmsContactController;
 use App\Http\Controllers\admin\GalleryController;
+use App\Http\Controllers\admin\ContactQueryController;
 
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\ProductController;
@@ -305,6 +306,9 @@ Route::prefix('admin')->middleware(['admin.auth'])->group(function () {
     Route::get('/gallery-edit/{id}', [GalleryController::class, 'update'])->name('gallery_edit');
     Route::post('/gallery-edit/{id}', [GalleryController::class, 'post_update'])->name('post_gallery_edit');
     Route::post('/gallery-delete', [GalleryController::class, 'delete'])->name('gallery_delete');
+
+    // ############ | contact query | ################
+    Route::get('/contact-query', [ContactQueryController::class, 'index'])->name('contact_query_list');
 
 
     Route::get('/award', [AwardController::class, 'index'])->name('award_list');
