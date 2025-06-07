@@ -25,9 +25,9 @@
                 <div class="col-lg-12 mb-5">
                     <h1 class="date-blog">
                         <i class="bi bi-calendar-check-fill"></i>
-                        {{ $data['event_data']['start_date'] }}
+                        {{ \Carbon\Carbon::parse($data['event_data']['start_date'])->format('F d, Y h:i A') }}
                         -
-                        {{ $data['event_data']['end_date'] }}
+                        {{ \Carbon\Carbon::parse($data['event_data']['end_date'])->format('F d, Y h:i A') }}
                     </h1>
                 </div>
                 <div class="col-lg-12">
