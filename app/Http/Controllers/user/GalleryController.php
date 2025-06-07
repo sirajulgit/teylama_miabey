@@ -14,6 +14,7 @@ class GalleryController extends Controller
     {
         $data = [
             'page_title' => 'Gallery',
+            'activePageName' => 'gallery',
         ];
 
 

@@ -18,6 +18,7 @@ class AboutUsController extends Controller
     {
         $data = [
             'page_title' => 'About Us',
+            'activePageName' => 'about_us',
             'banner_data' => [],
             'page_data' => [],
             'gallery_data' => [],

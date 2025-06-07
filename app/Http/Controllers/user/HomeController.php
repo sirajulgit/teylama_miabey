@@ -18,6 +18,7 @@ class HomeController extends Controller
     {
         $data = [
             'page_title' => 'Home',
+            'activePageName' => 'home',
         ];
 
         $items = CmsBanner::where('type', 'home_page')->orderBy("id", "asc")->get();

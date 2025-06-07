@@ -14,6 +14,7 @@ class EventsController extends Controller
     {
         $data = [
             'page_title' => 'Events',
+            'activePageName' => 'event',
         ];
 
 

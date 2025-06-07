@@ -14,6 +14,7 @@ class ContactUsController extends Controller
     {
         $data = [
             'page_title' => 'Contact Us',
+            'activePageName' => 'contact_us',
         ];
 
 

@@ -14,6 +14,7 @@ class BlogsController extends Controller
     {
         $data = [
             'page_title' => 'Blogs',
+            'activePageName' => 'blog',
         ];
 
 
@@ -26,6 +27,7 @@ class BlogsController extends Controller
 
         $data = [
             'page_title' => 'Blogs Details',
+            'activePageName' => 'blog',
         ];
 
         return view('user.blog_detail', ['data' => $data]);
