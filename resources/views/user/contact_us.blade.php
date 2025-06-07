@@ -114,9 +114,11 @@
                     },
                     email: {
                         required: true,
+                        email: true,
                     },
                     phone: {
                         required: true,
+                        number: true,
                     },
                     message: {
                         required: true
