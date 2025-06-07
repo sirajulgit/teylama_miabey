@@ -26,14 +26,13 @@
             <div class="row align-items-baseline">
                 <div class="col-lg-4">
                     <div class="testimo-image">
-                        <img src="{{ asset('asset/frontend/images/Mask group.png') }}">
+                        <img src="{{ asset($data['page_data']['section_1']['image_1']) }}">
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="testimo-content">
-                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu
-                            sapien non dignissim. Mauris vel libero pharetra sapien volutpat aliquet</p>
-                        <span>Teylama Miabey</span>
+                        {!! $data['page_data']['section_1']['content'] !!}
+                        <span class="mt-5">{!! $data['page_data']['section_1']['title_1'] !!}</span>
                     </div>
                 </div>
             </div>
