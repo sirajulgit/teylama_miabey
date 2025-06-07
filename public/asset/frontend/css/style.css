@@ -1578,7 +1578,13 @@ footer::after, footer::before
     .logo-mobile 
     {
         display: block;
+        height: 200px;
     }
+
+     .logo-mobile img 
+     {
+        height: 100%;
+     }
 
     .logo-image 
     {
