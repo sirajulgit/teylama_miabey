@@ -2,6 +2,7 @@
 
 
 @section('content')
+    {{-- ############# | CMS BANNER | ############# --}}
     <div class="banner-area position-relative">
         <div class="inner-banner">
             @foreach ($data['banner_data'] as $item)
@@ -58,29 +59,87 @@
                             <h3 class="heading"> Get A Quote</h3>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
-                                <input class="form-control mb-3" type="text" placeholder="Name">
-                            </div>
-                            <div class="col-lg-6">
-                                <input class="form-control mb-3" type="text" placeholder="Email">
-                            </div>
-                            <div class="col-lg-12">
-                                <input class="form-control mb-3" type="text" placeholder="Phone Number">
-                            </div>
-                            <div class="col-lg-12">
-                                <textarea class="form-control mb-3" placeholder="Message" rows="5"></textarea>
-                            </div>
-                            <div class="col-lg-12">
-                                <input class="submit-btn" type="submit" value="Submit">
-                            </div>
+                            <form id="contact_form" action="{{ route('post_contact_us') }}" method="POST">
+                                <div class="col-lg-6">
+                                    <input class="form-control mb-3" type="text" placeholder="Name" name="name">
+
+                                    @if ($errors->has('name'))
+                                        <span class="form_error">{{ $errors->first('name') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-6">
+                                    <input class="form-control mb-3" type="text" placeholder="Email" name="email">
+
+                                    @if ($errors->has('email'))
+                                        <span class="form_error">{{ $errors->first('email') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-12">
+                                    <input class="form-control mb-3" type="text" placeholder="Phone Number" name="phone">
+
+                                    @if ($errors->has('phone'))
+                                        <span class="form_error">{{ $errors->first('phone') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-12">
+                                    <textarea class="form-control mb-3" placeholder="Message" rows="5" name="message"></textarea>
+
+                                    @if ($errors->has('message'))
+                                        <span class="form_error">{{ $errors->first('message') }}</span>
+                                    @endif
+                                </div>
+                                <div class="col-lg-12">
+                                    <input class="submit-btn" type="submit" value="Submit">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
 
-
-
-
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('script_content')
+    <script>
+        $(document).ready(function() {
+
+          ////////////// form validation ////////////////////////
+            $('#contact_form').validate({
+                rules: {
+                    name: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                    },
+                    phone: {
+                        required: true,
+                    },
+                    message: {
+                        required: true
+                    },
+                },
+                errorElement: 'span',
+                errorPlacement: function(error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                },
+                submitHandler: function(form, event) {
+                    event.preventDefault();
+                    form.submit();
+                }
+            });
+            ////////////// end form validation ////////////////////
+
+        });
+    </script>
 @endsection

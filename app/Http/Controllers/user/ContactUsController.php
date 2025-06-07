@@ -42,4 +42,17 @@ class ContactUsController extends Controller
         return view('user.contact_us', ['data' => $data]);
     }
 
+
+    public function post_contact_us(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'message' => 'required',
+        ]);
+
+        return redirect()->back()->with('success', 'Thank you for contacting us.');
+    }
+
 }
