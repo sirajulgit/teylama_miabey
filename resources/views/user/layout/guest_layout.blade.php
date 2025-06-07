@@ -18,6 +18,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/slick-theme.css') }}">
     <!-- Font Awesome JS -->
     <link rel="stylesheet" href="{{ asset('asset/frontend/css/font-awesome.min.css') }}">
+    <!-- toastify -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/toastify.min.css') }}" />
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('asset/frontend/css/style.css') }}">
 </head>
@@ -53,11 +55,47 @@
     <!-- jquery-validation -->
     <script src="{{ asset('asset/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('asset/plugins/jquery-validation/additional-methods.min.js') }}"></script>
+    <!-- toastify -->
+    <script type="text/javascript" src="{{ asset('asset/frontend/js/toastify.min.js') }}"></script>
     <!-- Custome js -->
     <script src="{{ asset('asset/frontend/js/custome.js') }}"></script>
 
 
+    <script>
+        $(document).ready(function() {
+            let error = "{{ Session::has('error') ? Session::get('error') : '' }}";
+            let success = "{{ Session::has('success') ? Session::get('success') : '' }}";
+            let warning = "{{ Session::has('warning') ? Session::get('warning') : '' }}";
 
+            function showToast(message, backgroundColor = "#007bff") {
+                Toastify({
+                    text: message,
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                        background: backgroundColor,
+                        color: "#fff",
+                    }
+                }).showToast();
+            }
+
+            if (error) {
+                showToast(error, "#dc3545"); // red
+            }
+
+            if (success) {
+                showToast(success, "#28a745"); // green
+            }
+
+            if (warning) {
+                showToast(warning, "#ffc107"); // yellow
+            }
+
+        });
+    </script>
 
 
     {{-- custom own page script --}}
