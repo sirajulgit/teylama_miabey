@@ -18,7 +18,7 @@ class BlogsController extends Controller
             'activePageName' => 'blog',
         ];
 
-        $items = Blog::orderBy('id', 'desc')->paginate(1);
+        $items = Blog::orderBy('id', 'desc')->paginate(6);
 
         $items->getCollection()->transform(function ($item) {
             if (!is_null($item->image)) {
