@@ -30,6 +30,7 @@ class BlogsController extends Controller
 
         $data['blog_data'] = $items;
 
+        dd($data);
 
         return view('user.blog', ['data' => $data]);
     }
