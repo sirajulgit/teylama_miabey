@@ -117,9 +117,9 @@ class AboutUsController extends Controller
 
 
         // +++++++++++++++ | GALLERY | +++++++++++++++
-        $cmsGallery = Gallery::orderBy("id", "desc")->limit(5)->get()->toArray();
+        $galleryData = Gallery::orderBy("id", "desc")->limit(5)->get()->toArray();
 
-        foreach ($cmsGallery as $item) {
+        foreach ($galleryData as $item) {
 
             if (!is_null($item['image'])) {
                 $default_image = '/uploads/images/' . $item['image'];
