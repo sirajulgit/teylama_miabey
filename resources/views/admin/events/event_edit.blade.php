@@ -44,8 +44,8 @@
 
                                 <div class="form-group col-md-3">
                                     <label for="start_date">Event Start Date</label>
-                                    <input type="date" name="start_date" class="form-control" id="start_date"
-                                        value="{{ Carbon\Carbon::parse($data['item']['start_date'])->format('Y-m-d') }}">
+                                    <input type="datetime-local" name="start_date" class="form-control" id="start_date"
+                                        value="{{ Carbon\Carbon::parse($data['item']['start_date'])->format('Y-m-d\TH:i') }}">
 
                                     @if ($errors->has('start_date'))
                                         <span class="form_error">{{ $errors->first('start_date') }}</span>
@@ -54,8 +54,8 @@
 
                                 <div class="form-group col-md-3">
                                     <label for="end_date">Event End Date</label>
-                                    <input type="date" name="end_date" class="form-control" id="end_date"
-                                        value="{{ Carbon\Carbon::parse($data['item']['end_date'])->format('Y-m-d') }}">
+                                    <input type="datetime-local" name="end_date" class="form-control" id="end_date"
+                                        value="{{ Carbon\Carbon::parse($data['item']['end_date'])->format('Y-m-d\TH:i') }}">
 
                                     @if ($errors->has('end_date'))
                                         <span class="form_error">{{ $errors->first('end_date') }}</span>
