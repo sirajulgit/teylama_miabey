@@ -59,8 +59,13 @@ class ContactUsController extends Controller
         $data->phone=$request->phone;
         $data->message=$request->message;
         $data->save();
+        
 
-        return redirect()->back()->with('success', 'Thank you for contacting us.');
+        return response()->json([
+            'status' => true,
+            'msg' => 'Thank you for contacting us.',
+        ], 200);
+
     }
 
 }

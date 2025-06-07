@@ -58,7 +58,7 @@
                         <div class="mb-4">
                             <h3 class="heading"> Get A Quote</h3>
                         </div>
-                        <form id="contact_form" action="{{ route('post_contact_us') }}" method="POST">
+                        <form id="contact_form" method="POST">
                             @csrf
 
                             <div class="row">
@@ -160,7 +160,26 @@
                 },
                 submitHandler: function(form, event) {
                     event.preventDefault();
-                    form.submit();
+                    
+
+                    // ++++++++++++++ | form submit | +++++++++++++++
+                    let url = "{{ route('post_contact_us') }}";
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                        },
+                        url: url,
+                        method: "POST",
+                        contentType: false,
+                        data: form.serialize(),
+                        success: function(response) {
+                            console.log(response);
+                            showToast("Thank you for contacting us.", "#28a745"); // green
+                        },
+                        error: function(error) {
+                            console.log("error" + error);
+                        }
+                    });
                 }
             });
             ////////////// end form validation ////////////////////
