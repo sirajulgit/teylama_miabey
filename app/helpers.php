@@ -1,7 +1,8 @@
 
 <?php
 
-
+use App\Models\CmsBadge;
+use App\Models\CmsHomePage;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Imagick\Driver;
 use Intervention\Image\Encoders\AutoEncoder;
@@ -58,3 +59,6 @@ function image_convert_webp($image_file, $quality = 30)
         dd($ex);
     }
 }
+
+
+
