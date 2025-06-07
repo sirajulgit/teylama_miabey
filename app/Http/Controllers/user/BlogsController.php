@@ -36,13 +36,27 @@ class BlogsController extends Controller
     }
 
 
-    public function blog_details($slug, Request $request)
+    public function blog_details($slug)
     {
 
         $data = [
             'page_title' => 'Blogs Details',
             'activePageName' => 'blog',
         ];
+
+
+        $blogData = Blog::where('slug', $slug)->first();
+
+        if(!$blogData){
+            return redirect()->back()->with('error', 'Blog not found');
+        }
+
+        if($blogData->image){
+            $default_image = '/uploads/images/' . $blogData->image;
+            $blogData->image = $default_image;
+        }
+
+        $data['blog_data'] = $blogData;
 
         return view('user.blog_detail', ['data' => $data]);
     }
