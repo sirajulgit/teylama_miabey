@@ -34,9 +34,9 @@
                             <div class="blog-content">
                                 <span class="date-blog">
                                     <i class="bi bi-calendar-check-fill"></i>
-                                    {{ \Carbon\Carbon::parse($item['start_date'])->format('F d, Y') }}
+                                    {{ \Carbon\Carbon::parse($item['start_date'])->format('F d, Y h:i A') }}
                                     -
-                                    {{ \Carbon\Carbon::parse($item['end_date'])->format('F d, Y') }}
+                                    {{ \Carbon\Carbon::parse($item['end_date'])->format('F d, Y h:i A') }}
                                 </span>
                                 <h4> {{ $item['title'] }} </h4>
                                 @if ($item['short_description'])
