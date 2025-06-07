@@ -13,7 +13,11 @@
                 <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png') }}">
                 <h1 data-aos="fade-right" data-aos-duration="2000"> Teylama Miabey </h1>
             </div>
+        {{-- @endforeach --}}
+    </div>
 
+    <div class="banner-area position-relative">
+        {{-- @foreach ($data['banner_data'] as $item) --}}
             <div class="inner-banner">
                 <div>
                     <img src="{{ asset('asset/frontend/images/banner.png') }}">
