@@ -11,7 +11,7 @@ class BlogsController extends Controller
 {
     //
 
-    public function index()
+    public function index(Request $request)
     {
         $data = [
             'page_title' => 'Blogs',
