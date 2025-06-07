@@ -83,7 +83,8 @@
                 </li>
 
                 {{-- item 2 --}}
-                <li style="background: url({{ asset($data['page_data']['activities_section']['image_2']) }}) no-repeat center;">
+                <li
+                    style="background: url({{ asset($data['page_data']['activities_section']['image_2']) }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/education.png') }}">
 
                     <div class="activities-text">
@@ -93,7 +94,8 @@
                 </li>
 
                 {{-- item 3 --}}
-                <li style="background: url({{ asset($data['page_data']['activities_section']['image_3']) }}) no-repeat center;">
+                <li
+                    style="background: url({{ asset($data['page_data']['activities_section']['image_3']) }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/Food-Nutrition.png') }}">
 
                     <div class="activities-text">
@@ -103,7 +105,8 @@
                 </li>
 
                 {{-- item 4 --}}
-                <li style="background: url({{ asset($data['page_data']['activities_section']['image_4']) }}) no-repeat center;">
+                <li
+                    style="background: url({{ asset($data['page_data']['activities_section']['image_4']) }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/emergency.png') }}">
 
                     <div class="activities-text">
@@ -162,9 +165,7 @@
     </div>
 
 
-
-    <!-- Gallery   -->
-
+    {{-- ############# | GALLERY | ############# --}}
     <div class="grid-gallery" data-aos="fade-up" data-aos-duration="1500">
         <div class="container">
 
@@ -173,21 +174,11 @@
             </div>
 
             <div class="grid-container">
-                <div class="item1">
-                    <img src="{{ asset('asset/frontend/images/gallery-1.png') }}">
-                </div>
-                <div class="item2">
-                    <img src="{{ asset('asset/frontend/images/gallery-2.png') }}">
-                </div>
-                <div class="item3">
-                    <img src="{{ asset('asset/frontend/images/gallery-3.png') }}">
-                </div>
-                <div class="item4">
-                    <img src="{{ asset('asset/frontend/images/gallery-4.png') }}">
-                </div>
-                <div class="item5">
-                    <img src="{{ asset('asset/frontend/images/gallery-5.png') }}">
-                </div>
+                @foreach ($data['gallery_data'] as $item)
+                    <div class="item{{ $loop->iteration + 1 }}">
+                        <img src="{{ $item['image'] }}">
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
