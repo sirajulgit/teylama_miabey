@@ -268,7 +268,7 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="image_4_text_1_3">Image 4 Details</label>
-                                        <textarea id="image_4_text_1_3" name="image_3_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_3_text_1'] }}</textarea>
+                                        <textarea id="image_4_text_1_3" name="image_4_text_1" class="form-control" rows="5">{{ $items['activities_section']['image_4_text_1'] }}</textarea>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="image_4_3_activities_section">Image 4</label>
