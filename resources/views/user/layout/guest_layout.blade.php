@@ -72,7 +72,7 @@
                     text: message,
                     duration: 3000,
                     close: true,
-                    gravity: "top",
+                    gravity: "bottom",
                     position: "right",
                     stopOnFocus: true,
                     style: {
