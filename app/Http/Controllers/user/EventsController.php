@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\CmsBanner;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,8 @@ class EventsController extends Controller
         $data = [
             'page_title' => 'Events',
             'activePageName' => 'event',
+            'event_data' => [],
+            'banner_data' => [],
         ];
 
 
@@ -30,6 +33,20 @@ class EventsController extends Controller
         });
 
         $data['event_data'] = $items;
+
+
+        // +++++++++++++++ | CMS BANNER | +++++++++++++++
+        $cmsBanner = CmsBanner::where('type', 'event_page')->orderBy("id", "asc")->get()->toArray();
+
+        foreach ($cmsBanner as $item) {
+
+            if (!is_null($item['image'])) {
+                $default_image = '/uploads/images/' . $item['image'];
+                $item['image'] = $default_image;
+            }
+
+            array_push($data['banner_data'], $item);
+        }
 
 
         return view('user.event', ['data' => $data]);

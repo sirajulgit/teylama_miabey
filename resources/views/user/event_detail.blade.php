@@ -22,6 +22,14 @@
     <div class="details-content">
         <div class="container">
             <div class="row">
+                <div class="col-lg-12 mb-5">
+                    <h1 class="date-blog">
+                        <i class="bi bi-calendar-check-fill"></i>
+                        {{ $data['event_data']['start_date'] }}
+                        -
+                        {{ $data['event_data']['end_date'] }}
+                    </h1>
+                </div>
                 <div class="col-lg-12">
                     <div class="details-content-area">
                         {!! $data['event_data']['long_description'] !!}

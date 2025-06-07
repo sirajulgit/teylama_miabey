@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\CmsBanner;
 use Illuminate\Http\Request;
 
 
@@ -16,6 +17,8 @@ class BlogsController extends Controller
         $data = [
             'page_title' => 'Blogs',
             'activePageName' => 'blog',
+            'blog_data' => [],
+            'banner_data' => [],
         ];
 
         $items = Blog::orderBy('id', 'desc')->paginate(6);
@@ -29,6 +32,22 @@ class BlogsController extends Controller
         });
 
         $data['blog_data'] = $items;
+
+
+        // +++++++++++++++ | CMS BANNER | +++++++++++++++
+        $cmsBanner = CmsBanner::where('type', 'blog_page')->orderBy("id", "asc")->get()->toArray();
+
+        foreach ($cmsBanner as $item) {
+
+            if (!is_null($item['image'])) {
+                $default_image = '/uploads/images/' . $item['image'];
+                $item['image'] = $default_image;
+            }
+
+            array_push($data['banner_data'], $item);
+        }
+
+
 
         // dd($data);
 
