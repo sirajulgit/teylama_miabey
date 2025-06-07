@@ -1582,7 +1582,7 @@ footer::after, footer::before
 
     .logo-image 
     {
-        display: none !important;
+        display: none !important;  
     }
 
 
@@ -1701,7 +1701,8 @@ footer::after, footer::before
     border-radius: 0;
     position: relative;
     z-index: 9;
-    width: 100%;
+    width: 100%; 
+    height: 100%;
 }
 
     /*******************************
