@@ -175,7 +175,7 @@
 
             <div class="grid-container">
                 @foreach ($data['gallery_data'] as $item)
-                    <div class="item{{ $loop->iteration + 1 }}">
+                    <div class="item{{ $loop->iteration }}">
                         <img src="{{ $item['image'] }}">
                     </div>
                 @endforeach
