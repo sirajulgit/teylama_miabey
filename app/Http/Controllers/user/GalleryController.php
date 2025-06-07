@@ -23,7 +23,7 @@ class GalleryController extends Controller
 
 
         // +++++++++++++++ | GALLERY | +++++++++++++++
-        $items = Gallery::orderBy("id", "desc")->paginate(2);
+        $items = Gallery::orderBy("id", "desc")->paginate(6);
 
         $items->getCollection()->transform(function ($item) {
             if (!is_null($item->image)) {
