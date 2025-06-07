@@ -22,7 +22,7 @@ class EventsController extends Controller
         ];
 
 
-        $items = Event::orderBy('id', 'desc')->paginate(6);
+        $items = Event::where('status', 'active')->orderBy('id', 'desc')->paginate(6);
 
         $items->getCollection()->transform(function ($item) {
             if (!is_null($item->image)) {
