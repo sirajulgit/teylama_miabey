@@ -1462,6 +1462,10 @@ footer::after, footer::before
 }
 
 
+.logo-mobile 
+{
+    display: none;
+}
 
 
 /***********Responsive**************/
@@ -1570,6 +1574,17 @@ footer::after, footer::before
 
 
 @media only screen and (max-width: 992px) {
+
+    .logo-mobile 
+    {
+        display: block;
+    }
+
+    .logo-image 
+    {
+        display: none !important;
+    }
+
 
     .secgment
     {
