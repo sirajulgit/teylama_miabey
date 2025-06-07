@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\CmsBadge;
 use App\Models\CmsBanner;
 use App\Models\CmsHomePage;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 
@@ -19,6 +20,7 @@ class AboutUsController extends Controller
             'page_title' => 'About Us',
             'banner_data' => [],
             'page_data' => [],
+            'gallery_data' => [],
         ];
 
         // +++++++++++++++ | CMS BANNER | +++++++++++++++
@@ -113,7 +115,21 @@ class AboutUsController extends Controller
 
         $data['page_data'] = $items;
 
-        // dd($data);
+
+        // +++++++++++++++ | GALLERY | +++++++++++++++
+        $cmsGallery = Gallery::orderBy("id", "desc")->limit(5)->get()->toArray();
+
+        foreach ($cmsGallery as $item) {
+
+            if (!is_null($item['image'])) {
+                $default_image = '/uploads/images/' . $item['image'];
+                $item['image'] = $default_image;
+            }
+
+            array_push($data['gallery_data'], $item);
+        }
+
+        dd($data);
 
 
         return view('user.about_us', ['data' => $data]);

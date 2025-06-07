@@ -31,7 +31,7 @@ class HomeController extends Controller
 
             array_push($temp_arr, $item);
         }
-        $cmsHome = CmsHomePage::where('page_type','home_page')->orderBy("id", "asc")->get()->toArray();
+        $cmsHome = CmsHomePage::where('page_type', 'home_page')->orderBy("id", "asc")->get()->toArray();
 
         $items = [];
 
@@ -107,7 +107,7 @@ class HomeController extends Controller
         }
         //dd($items);exit;
 
-        $gallery = Gallery::orderBy("id", "desc")->get();
+        $gallery = Gallery::orderBy("id", "desc")->limit(5)->get();
 
         $gallery_arr = [];
         foreach ($gallery as $item) {
@@ -120,7 +120,7 @@ class HomeController extends Controller
         }
 
 
-          $blog = Blog::orderBy("id", "desc")->get();
+        $blog = Blog::orderBy("id", "desc")->get();
 
         $blog_arr = [];
         foreach ($blog as $item) {
@@ -140,7 +140,6 @@ class HomeController extends Controller
 
 
 
-        return view('user.home', ['bannerdata' => $temp_arr, 'data' => $data, 'homedata' => $items,'gallerydata' => $gallery_arr,'blogdata'=>$blog_arr]);
+        return view('user.home', ['bannerdata' => $temp_arr, 'data' => $data, 'homedata' => $items, 'gallerydata' => $gallery_arr, 'blogdata' => $blog_arr]);
     }
-
 }
