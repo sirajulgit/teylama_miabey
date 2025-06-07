@@ -252,9 +252,11 @@ page scrool
 /*******************************
 ********NAV BAR*****************
 *****************************/
+
 #pull {
     display: none;
 }
+
 
  
 
@@ -419,7 +421,6 @@ page scrool
     width: 100%;
     display: inline-block;
     vertical-align: top;
-
 }
 
 
@@ -433,6 +434,12 @@ page scrool
     right: -15px;
 }
 
+.logo-image {
+    position: absolute;
+    z-index: 99;
+    left: 55px;
+    top: 60px;
+}
 
 
 
