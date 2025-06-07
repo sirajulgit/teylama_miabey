@@ -123,8 +123,8 @@
             <div class="politi-content">
 
                 <div class="about-content-right">
-                    <h2 class="mb-0"> <strong>Politician</strong></h2>
-                    <p>How we can build a better country together!</p>
+                    {!! $data['page_data']['politician_section']['title_1'] !!}
+                    {!! $data['page_data']['politician_section']['content'] !!}
                 </div>
 
                 <ul class="secgment d-flex">
