@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Models\CmsBanner;
 use App\Models\CmsContact;
+use App\Models\ContactQuery;
 use Illuminate\Http\Request;
 
 
@@ -51,6 +52,13 @@ class ContactUsController extends Controller
             'phone' => 'required',
             'message' => 'required',
         ]);
+
+        $data=new ContactQuery();
+        $data->name=$request->name;
+        $data->email=$request->email;
+        $data->phone=$request->phone;
+        $data->message=$request->message;
+        $data->save();
 
         return redirect()->back()->with('success', 'Thank you for contacting us.');
     }
