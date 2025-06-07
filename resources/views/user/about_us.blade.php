@@ -20,7 +20,7 @@
     </div>
 
 
-
+    {{-- ############# | SECTION 1 | ############# --}}
     <div class="client-speak pb-5 mb-5">
         <div class="container">
             <div class="row align-items-baseline">
@@ -40,32 +40,28 @@
     </div>
 
 
+    {{-- ############# | SECTION 2 | ############# --}}
     <div class="professor position-relative">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
                     <div class="prof-content">
                         <div class="about-content-right mb-4">
-                            <h2> <strong>Professor</strong></h2>
+                            {!! $data['page_data']['section_2']['title_1'] !!}
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar eu sapien non
-                            dignissim. Mauris vel libero pharetra sapien volutpat aliquet. Maecenas vulputate felis felis,
-                            sit amet malesuada justo scelerisque a. Pellentesque habitant morbi tristique senectus et netus
-                            et malesuada ac turpis egestas. Suspendisse faucibus diam nulla, nec dapibus lorem suscipit sed.
-                            Proin non risus mi. Nam luctus porttitor ultricies</p>
-                        <p> Morbi pulvinar laoreet magna non lobortis. Aenean blandit fermentum urna ac placerat. Sed ut
-                            molestie nunc. Morbi velit tellus, interdum eu placerat a, tincidunt sed elit. Donec interdum
-                            justo scelerisque, semper elit vel, congue ex. Nam pellentesque aliquam magna, </p>
+                        {!! $data['page_data']['section_2']['content'] !!}
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="prof-image">
-                        <img src="{{ asset('asset/frontend/images/professor.png') }}">
+                        <img src="{{ asset($data['page_data']['section_2']['image_1']) }}">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <div class="activities">
         <div class="container">
