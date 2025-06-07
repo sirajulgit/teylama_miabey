@@ -83,39 +83,40 @@
                 </li>
 
                 {{-- item 2 --}}
-                <li style="background: url({{ asset('asset/frontend/images/activities-image-2.png') }}) no-repeat center;">
+                <li style="background: url({{ asset($data['page_data']['activities_section']['image_2']) }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/education.png') }}">
 
                     <div class="activities-text">
-                        <h4>Education</h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar </p>
+                        {!! $data['page_data']['activities_section']['badge_2_text'] !!}
+                        {!! $data['page_data']['activities_section']['image_2_text_1'] !!}
                     </div>
                 </li>
 
                 {{-- item 3 --}}
-                <li style="background: url({{ asset('asset/frontend/images/activities-image-3.png') }}) no-repeat center;">
+                <li style="background: url({{ asset($data['page_data']['activities_section']['image_3']) }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/Food-Nutrition.png') }}">
 
                     <div class="activities-text">
-                        <h4> Food & Nutrition </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar </p>
+                        {!! $data['page_data']['activities_section']['badge_3_text'] !!}
+                        {!! $data['page_data']['activities_section']['image_3_text_1'] !!}
                     </div>
                 </li>
 
                 {{-- item 4 --}}
-                <li style="background: url({{ asset('asset/frontend/images/activities-image-4.png') }}) no-repeat center;">
+                <li style="background: url({{ asset($data['page_data']['activities_section']['image_4']) }}) no-repeat center;">
                     <img src="{{ asset('asset/frontend/images/emergency.png') }}">
 
                     <div class="activities-text">
-                        <h4> Emergency </h4>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pulvinar </p>
+                        {!! $data['page_data']['activities_section']['badge_4_text'] !!}
+                        {!! $data['page_data']['activities_section']['image_4_text_1'] !!}
                     </div>
                 </li>
             </ul>
-
         </div>
     </div>
 
+
+    {{-- ############# | POLITICIAN | ############# --}}
     <div class="politician">
         <div class="container">
 
@@ -136,7 +137,6 @@
                         <span>Education</span>
                     </li>
                 </ul>
-
             </div>
 
             <ul class="secgment d-flex justify-content-end">
