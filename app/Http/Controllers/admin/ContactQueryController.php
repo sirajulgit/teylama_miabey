@@ -15,6 +15,7 @@ class ContactQueryController extends Controller
         $data = [
             'pageTitle' => 'Contact Query',
             'activePageName' => 'contact_query',
+            'activeSubMenu' => '',
         ];
 
         $items = ContactQuery::orderBy('created_at', 'desc')->get();
