@@ -129,7 +129,7 @@ class AboutUsController extends Controller
             array_push($data['gallery_data'], $item);
         }
 
-        dd($data);
+        // dd($data);
 
 
         return view('user.about_us', ['data' => $data]);
