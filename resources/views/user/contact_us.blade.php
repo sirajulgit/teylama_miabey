@@ -178,6 +178,9 @@
                         },
                         error: function(error) {
                             console.log("error" + error);
+                        },
+                        complete: function() {
+                            form.reset();
                         }
                     });
                 }
