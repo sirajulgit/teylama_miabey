@@ -58,41 +58,52 @@
                         <div class="mb-4">
                             <h3 class="heading"> Get A Quote</h3>
                         </div>
-                        <div class="row">
-                            <form id="contact_form" action="{{ route('post_contact_us') }}" method="POST">
-                                <div class="col-lg-6">
-                                    <input class="form-control mb-3" type="text" placeholder="Name" name="name">
+                        <form id="contact_form" action="{{ route('post_contact_us') }}" method="POST">
+                            @csrf
 
-                                    @if ($errors->has('name'))
-                                        <span class="form_error">{{ $errors->first('name') }}</span>
-                                    @endif
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group mb-3">
+                                        <input class="form-control mb-3" type="text" placeholder="Name" name="name">
+
+                                        @if ($errors->has('name'))
+                                            <span class="form_error">{{ $errors->first('name') }}</span>
+                                        @endif
+                                    </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input class="form-control mb-3" type="text" placeholder="Email" name="email">
+                                    <div class="form-group mb-3">
+                                        <input class="form-control mb-3" type="text" placeholder="Email" name="email">
 
-                                    @if ($errors->has('email'))
-                                        <span class="form_error">{{ $errors->first('email') }}</span>
-                                    @endif
+                                        @if ($errors->has('email'))
+                                            <span class="form_error">{{ $errors->first('email') }}</span>
+                                        @endif
+                                    </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <input class="form-control mb-3" type="text" placeholder="Phone Number" name="phone">
+                                    <div class="form-group mb-3">
+                                        <input class="form-control mb-3" type="text" placeholder="Phone Number"
+                                            name="phone">
 
-                                    @if ($errors->has('phone'))
-                                        <span class="form_error">{{ $errors->first('phone') }}</span>
-                                    @endif
+                                        @if ($errors->has('phone'))
+                                            <span class="form_error">{{ $errors->first('phone') }}</span>
+                                        @endif
+                                    </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <textarea class="form-control mb-3" placeholder="Message" rows="5" name="message"></textarea>
+                                    <div class="form-group mb-3">
+                                        <textarea class="form-control mb-3" placeholder="Message" rows="5" name="message"></textarea>
 
-                                    @if ($errors->has('message'))
-                                        <span class="form_error">{{ $errors->first('message') }}</span>
-                                    @endif
+                                        @if ($errors->has('message'))
+                                            <span class="form_error">{{ $errors->first('message') }}</span>
+                                        @endif
+                                    </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <input class="submit-btn" type="submit" value="Submit">
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -106,7 +117,7 @@
     <script>
         $(document).ready(function() {
 
-          ////////////// form validation ////////////////////////
+            ////////////// form validation ////////////////////////
             $('#contact_form').validate({
                 rules: {
                     name: {
@@ -124,15 +135,27 @@
                         required: true
                     },
                 },
+                messages: {
+                    name: "Please enter your name",
+                    email: {
+                        required: "Please enter your email",
+                        email: "Please enter a valid email address"
+                    },
+                    phone: {
+                        required: "Please enter your phone number",
+                        number: "Please enter a valid phone number"
+                    },
+                    message: "Please enter your message"
+                },
                 errorElement: 'span',
+                errorClass: 'form_error text-danger',
                 errorPlacement: function(error, element) {
-                    error.addClass('invalid-feedback');
                     element.closest('.form-group').append(error);
                 },
-                highlight: function(element, errorClass, validClass) {
+                highlight: function(element) {
                     $(element).addClass('is-invalid');
                 },
-                unhighlight: function(element, errorClass, validClass) {
+                unhighlight: function(element) {
                     $(element).removeClass('is-invalid');
                 },
                 submitHandler: function(form, event) {
