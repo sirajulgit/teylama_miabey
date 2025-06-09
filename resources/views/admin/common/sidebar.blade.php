@@ -98,9 +98,9 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Blogs Banner</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
-                </li> --}}
+                </li>
 
 
                 <li class="nav-item {{ $data['activePageName'] == 'cms' ? 'menu-open' : '' }} ">
