@@ -5,19 +5,14 @@
 
     {{-- ############# | CMS BANNER | ############# --}}
     <div class="banner-area position-relative">
-        <div class="inner-banner">
+        <div class="banner-slide">
             @foreach ($data['banner_data'] as $item)
                 <div>
                     <img src="{{ asset($item['image']) }}">
                 </div>
             @endforeach
         </div>
-        <div class="home-banner-content">
-            @foreach ($data['banner_data'] as $item)
-                <img data-aos="fade-right" data-aos-duration="2000" src="{{ asset('asset/frontend/images/hello-i-am.png') }}">
-                <h1 data-aos="fade-right" data-aos-duration="2000"> {{ $item['title_1'] }} </h1>
-            @endforeach
-        </div>
+
     </div>
 
 
