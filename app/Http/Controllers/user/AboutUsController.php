@@ -25,7 +25,7 @@ class AboutUsController extends Controller
         ];
 
         // +++++++++++++++ | CMS BANNER | +++++++++++++++
-        $cmsBanner = CmsBanner::where('type', 'about_page')->orderBy("id", "asc")->get()->toArray();
+        $cmsBanner = CmsBanner::where('type', 'book_page')->orderBy("id", "asc")->get()->toArray();
 
 
         foreach ($cmsBanner as $item) {
@@ -111,7 +111,7 @@ class AboutUsController extends Controller
 
                     $items['politician_section']["badge_data"][] = $item2;
                 }
-            } 
+            }
         }
 
         $data['page_data'] = $items;
