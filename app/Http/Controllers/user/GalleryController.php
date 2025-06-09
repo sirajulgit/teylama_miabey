@@ -38,7 +38,7 @@ class GalleryController extends Controller
 
 
         // +++++++++++++++ | CMS BANNER | +++++++++++++++
-        $cmsBanner = CmsBanner::where('type', 'gallery_page')->orderBy("id", "asc")->get()->toArray();
+        $cmsBanner = CmsBanner::where('type', 'awardHonors_page')->orderBy("id", "asc")->get()->toArray();
 
         foreach ($cmsBanner as $item) {
 

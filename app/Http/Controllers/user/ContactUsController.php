@@ -27,7 +27,7 @@ class ContactUsController extends Controller
 
 
         // +++++++++++++++ | CMS BANNER | +++++++++++++++
-        $cmsBanner = CmsBanner::where('type', 'contact_page')->orderBy("id", "asc")->get()->toArray();
+        $cmsBanner = CmsBanner::where('type', 'bibliography_page')->orderBy("id", "asc")->get()->toArray();
 
         foreach ($cmsBanner as $item) {
 
@@ -59,7 +59,7 @@ class ContactUsController extends Controller
         $data->phone=$request->phone;
         $data->message=$request->message;
         $data->save();
-        
+
 
         return response()->json([
             'status' => true,

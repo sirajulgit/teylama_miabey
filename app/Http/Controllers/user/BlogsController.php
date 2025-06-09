@@ -35,7 +35,7 @@ class BlogsController extends Controller
 
 
         // +++++++++++++++ | CMS BANNER | +++++++++++++++
-        $cmsBanner = CmsBanner::where('type', 'blog_page')->orderBy("id", "asc")->get()->toArray();
+        $cmsBanner = CmsBanner::where('type', 'blogs_page')->orderBy("id", "asc")->get()->toArray();
 
         foreach ($cmsBanner as $item) {
 
