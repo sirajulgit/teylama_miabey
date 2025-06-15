@@ -48,8 +48,9 @@
 
     </div>
 
-    <div class="copy-right text-center pt-4 pb-4">
-      <p> Copyright © 2025 Teylama  Miabey  </p>
+    <div class="copy-right text-center pt-4 pb-4 justify-content-between">
+      <p> Copyright © 2025 All Right Reserved  </p>
+      <p> Powered by The Tech On Point, Inc.  <a href="https://www.thetechonpoint.com/"> www.thetechonpoint.com</a>  </p>
     </div>
 
 

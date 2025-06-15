@@ -9,7 +9,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">Book Banner List</h3>
+                            <h3 class="card-title">About Us Banner List</h3>
 
                             <div class="card-tools">
                                 <a href="{{ route('cms_book_banner_create') }}" class="btn btn-primary">Add</a>

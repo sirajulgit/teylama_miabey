@@ -108,7 +108,7 @@ class CmsBookController extends Controller
 
         if ($request->image) {
 
-           
+
             $imageName = image_convert_webp($request->image,85);
 
             // image_resize($imageName, 148, 221);

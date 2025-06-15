@@ -9,7 +9,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">Cms Award Honors Banner Edit</h3>
+                            <h3 class="card-title">Gallery Banner Edit</h3>
 
                             <div class="card-tools">
                                 <a href="{{ route('cms_awardHonors_banner_list') }}" class="btn btn-primary">Back</a>

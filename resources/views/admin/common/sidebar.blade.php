@@ -64,25 +64,25 @@
                                 <p>Home Banner</p>
                             </a>
                         </li>
-                        {{--  <li class="nav-item">
+                          <li class="nav-item">
                             <a href="{{ route('cms_book_banner_list') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_book_banner' ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Book Banner</p>
+                                <p>About Banner</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                      <li class="nav-item">
                             <a href="{{ route('cms_bibliography_banner_list') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_bibliography_banner' ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Bibliography Banner</p>
+                                <p>Contact Banner</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                         <li class="nav-item">
                             <a href="{{ route('cms_awardHonors_banner_list') }}"
                                 class="nav-link {{ $data['activeSubMenu'] == 'cms_awardHonors_banner' ? 'active' : '' }} ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Award & Honors Banner</p>
+                                <p>Gallery Banner</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -100,7 +100,7 @@
                             </a>
                         </li>
                     </ul>
-                </li> --}}
+                </li>
 
 
                 <li class="nav-item {{ $data['activePageName'] == 'cms' ? 'menu-open' : '' }} ">

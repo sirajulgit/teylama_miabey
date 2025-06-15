@@ -36,7 +36,7 @@ class EventsController extends Controller
 
 
         // +++++++++++++++ | CMS BANNER | +++++++++++++++
-        $cmsBanner = CmsBanner::where('type', 'event_page')->orderBy("id", "asc")->get()->toArray();
+        $cmsBanner = CmsBanner::where('type', 'newsEvents_page')->orderBy("id", "asc")->get()->toArray();
 
         foreach ($cmsBanner as $item) {
 

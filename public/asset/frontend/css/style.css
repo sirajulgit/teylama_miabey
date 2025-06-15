@@ -252,9 +252,11 @@ page scrool
 /*******************************
 ********NAV BAR*****************
 *****************************/
+
 #pull {
     display: none;
 }
+
 
  
 
@@ -419,7 +421,6 @@ page scrool
     width: 100%;
     display: inline-block;
     vertical-align: top;
-
 }
 
 
@@ -433,6 +434,12 @@ page scrool
     right: -15px;
 }
 
+.logo-image {
+    position: absolute;
+    z-index: 99;
+    left: 55px;
+    top: 60px;
+}
 
 
 
@@ -1455,6 +1462,10 @@ footer::after, footer::before
 }
 
 
+.logo-mobile 
+{
+    display: none;
+}
 
 
 /***********Responsive**************/
@@ -1563,6 +1574,23 @@ footer::after, footer::before
 
 
 @media only screen and (max-width: 992px) {
+
+    .logo-mobile 
+    {
+        display: block;
+        height: 200px;
+    }
+
+     .logo-mobile img 
+     {
+        height: 100%;
+     }
+
+    .logo-image 
+    {
+        display: none !important;  
+    }
+
 
     .secgment
     {
@@ -1679,7 +1707,8 @@ footer::after, footer::before
     border-radius: 0;
     position: relative;
     z-index: 9;
-    width: 100%;
+    width: 100%; 
+    height: 100%;
 }
 
     /*******************************

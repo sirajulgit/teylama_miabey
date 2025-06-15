@@ -9,7 +9,7 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <h3 class="card-title">Cms Bibliography Banner Add</h3>
+                            <h3 class="card-title">Contact Banner Add</h3>
 
                             <div class="card-tools">
                                 <a href="{{ route('cms_bibliography_banner_list') }}" class="btn btn-primary">Back</a>

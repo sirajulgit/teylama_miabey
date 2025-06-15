@@ -31,8 +31,15 @@
 
        <div class="container">
 
+        <div class="logo-image">
+            <img src="{{ asset('asset/frontend/images/logo_new.png') }}">
+        </div>
+
            <!-- MENU -->
            <div class="nav d-flex justify-content-center">
+                <div class="logo-mobile">
+                    <img src="{{ asset('asset/frontend/images/logo_new.png') }}">
+                </div>
                <ul id="menu-bg">
                    <li class="{{ $data['activePageName'] == 'home' ? 'current-menu-item' : '' }}">
                        <a href="{{ route('home') }}"> Home </a>

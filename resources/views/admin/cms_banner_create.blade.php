@@ -25,8 +25,8 @@
 
                                 <div class="form-group col-md-6">
                                     <label>Banner Type</label>
-                                    <select class="form-control select2" style="width: 100%;" name="type">
-                                        <option value="">Select Banner Type</option>
+                                    <select disabled class="form-control select2" style="width: 100%;" name="type">
+
                                         <option value="home_page">Home Page</option>
                                         <option value="about_page">About Page</option>
                                         <option value="blog_page">Blog Page</option>
@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
 
-                                
+
 
                             </div>
                             <!-- /.card-body -->
