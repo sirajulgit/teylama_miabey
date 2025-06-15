@@ -60,8 +60,8 @@
                 <p><strong>Phone:</strong> {{ $phone }}</p>
             @endif
 
-            @if (!empty($message))
-                <p>{{ $message }}</p>
+            @if (!empty($user_message))
+                <p>{{ $user_message }}</p>
             @endif
             
         </div>

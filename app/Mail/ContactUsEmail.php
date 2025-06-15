@@ -44,7 +44,7 @@ class ContactUsEmail extends Mailable
                 'name' => $this->mailData['name'] ?? '',
                 'email' => $this->mailData['email'] ?? '',
                 'phone' => $this->mailData['phone'] ?? '',
-                'message' => $this->mailData['message'] ?? '',
+                'user_message' => $this->mailData['message'] ?? '',
             ]
         );
     }
