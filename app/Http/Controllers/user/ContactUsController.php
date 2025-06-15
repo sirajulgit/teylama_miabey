@@ -62,10 +62,6 @@ class ContactUsController extends Controller
         $data->phone = $request->phone;
         $data->message = $request->message;
         $data->save();
-<<<<<<< HEAD
-=======
-
->>>>>>> 973b541f8437390e0ec922e252677ed31994c364
 
 
         try {
@@ -77,7 +73,7 @@ class ContactUsController extends Controller
                 ]
             ]));
 
-            
+
             /////////// admin email send /////////////////////
             Mail::to("info@teylamamiabey.com")->send(new ContactUsEmail([
                 'subject' => "New Contact Query",
