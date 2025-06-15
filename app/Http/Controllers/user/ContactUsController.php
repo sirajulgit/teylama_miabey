@@ -66,7 +66,7 @@ class ContactUsController extends Controller
 
         try {
 
-            dd(env('ADMIN_MAIL'));
+            // dd(env('ADMIN_MAIL'));
 
             /////////// user email send /////////////////////
             Mail::to($request->email)->send(new ContactUsEmail([
