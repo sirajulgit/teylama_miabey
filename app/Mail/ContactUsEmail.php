@@ -40,6 +40,9 @@ class ContactUsEmail extends Mailable
     {
         return new Content(
             view: 'emails.ContactUsEmail',
+            with: [
+                'mailData' => $this->mailData,
+            ],
         );
     }
 
