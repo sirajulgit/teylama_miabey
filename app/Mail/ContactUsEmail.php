@@ -19,8 +19,8 @@ class ContactUsEmail extends Mailable
      */
     public function __construct($data)
     {
-        $this->mailData = $data->mailData ?? [];
-        $this->subject = $data->subject ?? 'Contact Us Email';
+        $this->mailData = $data['mailData'] ?? [];
+        $this->subject = $data['subject'] ?? 'Contact Us Email';
     }
 
     /**
