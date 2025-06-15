@@ -48,20 +48,20 @@
     <div class="container">
         
         <div class="message">
-            @if (!empty($name))
-                <p><strong>Name:</strong> {{ $name }}</p>
+            @if (!empty($mailData['name']))
+                <p><strong>Name:</strong> {{ $mailData['name'] }}</p>
             @endif
 
-            @if (!empty($email))
-                <p><strong>Email:</strong> {{ $email }}</p>
+            @if (!empty($mailData['email']))
+                <p><strong>Email:</strong> {{ $mailData['email'] }}</p>
             @endif
 
-            @if (!empty($phone))
-                <p><strong>Phone:</strong> {{ $phone }}</p>
+            @if (!empty($mailData['phone']))
+                <p><strong>Phone:</strong> {{ $mailData['phone'] }}</p>
             @endif
 
-            @if (!empty($user_message))
-                <p>{{ $user_message }}</p>
+            @if (!empty($mailData['message']))
+                <p>{{ $mailData['message'] }}</p>
             @endif
             
         </div>
