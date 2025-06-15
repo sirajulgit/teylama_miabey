@@ -75,7 +75,7 @@ class ContactUsController extends Controller
 
 
             /////////// admin email send /////////////////////
-            Mail::to("info@teylamamiabey.com")->send(new ContactUsEmail([
+            Mail::to("somnath91997@gmail.com")->send(new ContactUsEmail([
                 'subject' => "New Contact Query",
                 'mailData' => [
                     'name' => $request->name,
