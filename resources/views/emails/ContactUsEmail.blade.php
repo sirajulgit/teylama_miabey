@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Contact Us Email</title>
+    <title></title>
     <style>
         /* Inline styles for simplicity, consider using CSS classes for larger templates */
         body {
@@ -48,20 +48,20 @@
     <div class="container">
         
         <div class="message">
-            @if ($name)
-                <p><strong>Name:</strong> {{ $name }}</p>
+            @if ($mailData["name"])
+                <p><strong>Name:</strong> {{ $mailData["name"] }}</p>
             @endif
 
-            @if ($email)
-                <p><strong>Email:</strong> {{ $email }}</p>
+            @if ($mailData["email"])
+                <p><strong>Email:</strong> {{ $mailData["email"] }}</p>
             @endif
 
-            @if ($phone)
-                <p><strong>Phone:</strong> {{ $phone }}</p>
+            @if ($mailData["phone"])
+                <p><strong>Phone:</strong> {{ $mailData["phone"] }}</p>
             @endif
 
-            @if($user_message)
-                <p>{{ $user_message }}</p>
+            @if($mailData["message"])
+                <p>{{ $mailData["message"] }}</p>
             @endif
             
         </div>
