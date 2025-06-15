@@ -41,7 +41,10 @@ class ContactUsEmail extends Mailable
         return new Content(
             view: 'emails.ContactUsEmail',
             with: [
-                'mailData' => $this->mailData,
+                'name' => $this->mailData['name'] ?? '',
+                'email' => $this->mailData['email'] ?? '',
+                'phone' => $this->mailData['phone'] ?? '',
+                'user_message' => $this->mailData['message'] ?? '',
             ],
         );
     }
