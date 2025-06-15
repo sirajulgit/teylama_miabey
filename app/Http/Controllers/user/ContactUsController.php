@@ -7,7 +7,10 @@ use App\Models\CmsBanner;
 use App\Models\CmsContact;
 use App\Models\ContactQuery;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactUsEmail;
+use Exception;
+use Illuminate\Support\Facades\Log;
 
 class ContactUsController extends Controller
 {
@@ -53,19 +56,42 @@ class ContactUsController extends Controller
             'message' => 'required',
         ]);
 
-        $data=new ContactQuery();
-        $data->name=$request->name;
-        $data->email=$request->email;
-        $data->phone=$request->phone;
-        $data->message=$request->message;
+        $data = new ContactQuery();
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->message = $request->message;
         $data->save();
-        
 
+
+        try {
+
+            /////////// user email send /////////////////////
+            Mail::to($request->email)->send(new ContactUsEmail([
+                'mailData' => [
+                    'message' => "Thank you for contacting us. We will get back to you soon.",
+                ]
+            ]));
+
+            
+            /////////// admin email send /////////////////////
+            Mail::to("info@teylamamiabey.com")->send(new ContactUsEmail([
+                'subject' => "New Contact Query",
+                'mailData' => [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                    'message' => $request->message,
+                ],
+            ]));
+        } catch (Exception $ex) {
+            Log::error($ex->getMessage());
+        }
+
+        // Return success response
         return response()->json([
             'status' => true,
             'msg' => 'Thank you for contacting us.',
         ], 200);
-
     }
-
 }
