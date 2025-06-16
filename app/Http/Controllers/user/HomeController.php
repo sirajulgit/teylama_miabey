@@ -108,7 +108,7 @@ class HomeController extends Controller
         }
         //dd($items);exit;
 
-        $gallery = Gallery::orderBy("id", "desc")->limit(5)->get();
+        $gallery = Gallery::orderBy("id", "desc")->limit(8)->get();
 
         $gallery_arr = [];
         foreach ($gallery as $item) {
