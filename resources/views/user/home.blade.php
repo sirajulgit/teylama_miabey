@@ -203,14 +203,26 @@
                 <h2>Our <strong>Gallery</strong></h2>
             </div>
 
-            <div class="grid-container">
+            <!-- <div class="grid-container">
                 @foreach ($gallerydata as $index => $item)
                     <div class="item{{ $index + 1 }}">
                         <img src="{{ $item->image }}">
                     </div>
                 @endforeach
 
+            </div> -->
+
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+            <div class="gallery-holder">
+              <img src="images/rashio-gallery.png" alt="empty">
+              <div class="holder" style="background: url(images/gallery-2.png);">
+                 
+              </div>
             </div>
+          </div>
+
+
+
         </div>
     </div>
 
