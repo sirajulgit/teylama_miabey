@@ -1302,7 +1302,7 @@ footer::after, footer::before
 
 
 .banner-slide .slick-prev {
-    left: 10%;
+    left: 1%;
     z-index: 999;
     border: 2px solid #FFF;
     opacity: 1;
@@ -1313,7 +1313,7 @@ footer::after, footer::before
 }
 
 .banner-slide .slick-next {
-    right: 10%;
+    right: 1%;
     z-index: 999;
     border: 2px solid #FFF;
     opacity: 1;
