@@ -73,6 +73,7 @@ jQuery(document).ready(function ($) {
     adaptiveHeight: true, 
     autoplay: true, 
      fade: true,
+     arrows: true,
       
     });
 
