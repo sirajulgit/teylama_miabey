@@ -1310,6 +1310,7 @@ footer::after, footer::before
     height: 50px;
     border-radius: 50px;
     color: #FFF !important;
+    background: #10b4fb;
 }
 
 .banner-slide .slick-next {
@@ -1321,6 +1322,8 @@ footer::after, footer::before
     height: 50px;
     border-radius: 50px;
     color: #FFF !important;
+    background: #10b4fb;
+    
 }
 
 .banner-slider .slick-prev:before, .banner-slider .slick-next:before {
