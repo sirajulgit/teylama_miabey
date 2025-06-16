@@ -213,54 +213,16 @@
             </div> -->
 
             <div class="row">
-
+ @foreach ($gallerydata as $index => $item)
             <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
                 <div class="gallery-holder">
-                    <img src="{{ asset('asset/frontend/images/rashio-gallery.png') }}" alt="empty"> 
-                    <div class="holder" style="background: url({{ $homedata['info_section']['image_1'] }});">
+                    <img src="{{ asset('asset/frontend/images/rashio-gallery.png') }}" alt="empty">
+                    <div class="holder" style="background: url({{ $item->image }});">
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
-                <div class="gallery-holder">
-                    <img src="{{ asset('asset/frontend/images/rashio-gallery.png') }}" alt="empty"> 
-                    <div class="holder" style="background: url({{ $homedata['info_section']['image_1'] }});">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
-                <div class="gallery-holder">
-                    <img src="{{ asset('asset/frontend/images/rashio-gallery.png') }}" alt="empty"> 
-                    <div class="holder" style="background: url({{ $homedata['info_section']['image_1'] }});">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
-                <div class="gallery-holder">
-                    <img src="{{ asset('asset/frontend/images/rashio-gallery.png') }}" alt="empty"> 
-                    <div class="holder" style="background: url({{ $homedata['info_section']['image_1'] }});">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
-                <div class="gallery-holder">
-                    <img src="{{ asset('asset/frontend/images/rashio-gallery.png') }}" alt="empty"> 
-                    <div class="holder" style="background: url({{ $homedata['info_section']['image_1'] }});">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
-                <div class="gallery-holder">
-                    <img src="{{ asset('asset/frontend/images/rashio-gallery.png') }}" alt="empty"> 
-                    <div class="holder" style="background: url({{ $homedata['info_section']['image_1'] }});">
-                    </div>
-                </div>
-            </div>
+          @endforeach
 
         </div>
 
