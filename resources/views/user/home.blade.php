@@ -214,7 +214,7 @@
 
              <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
             <div class="gallery-holder">
-              <img src="images/rashio-gallery.png" alt="empty">
+              <img src="{{ asset('asset/frontend/images/rashio-gallery.png') }}" alt="empty">
               <div class="holder" style="background: url({{ $homedata['info_section']['image_1'] }});">
                  
               </div>
