@@ -63,7 +63,7 @@
                                 </li>
                                 <li>
                                     <img src="{{ asset('asset/frontend/images/point-icon-2.png') }}">
-                                    <p> Activities </p>
+                                    <p> Panafricanist </p>
                                 </li>
                                 <li>
                                     <img src="{{ asset('asset/frontend/images/point-icon-3.png') }}">
