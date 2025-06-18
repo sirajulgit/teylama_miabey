@@ -414,13 +414,15 @@
                                     <div class="admin_upload">
                                         <label class="admin-upload-wrap">
                                             <input type="file" class="form-control uploadFile" name="image_1"
-                                                id="image_1_4_info_section" accept="image/png, image/jpg, image/jpeg, image/webp">
+                                                id="image_1_4_info_section"
+                                                accept="image/png, image/jpg, image/jpeg, image/webp">
                                         </label>
 
                                         <div class="profile_image">
                                             @if ($items['info_section']['image_1'])
                                                 <img class="profile_img" id="thumbnail_show_image_1_4_info_section"
-                                                    src="{{ $items['info_section']['image_1'] }}" width="148px" height="221px">
+                                                    src="{{ $items['info_section']['image_1'] }}" width="148px"
+                                                    height="221px">
                                             @else
                                                 <img class="profile_img" id="thumbnail_show_image_1_4_info_section"
                                                     src="{{ asset('asset/images/default_image.png') }}" width="148px"
@@ -460,20 +462,20 @@
             });
             $("#content1").summernote({
                 height: 200,
-      toolbar: [
-        ['style', ['style']],
-        ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough']],
-        ['fontname', ['fontname']],
-        ['fontsize', ['fontsize']],
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph', 'lineHeight']], // Include lineHeight here
-        ['table', ['table']],
-        ['insert', ['link', 'picture', 'video']],
-        ['view', ['fullscreen', 'codeview', 'help']],
-        ['height', ['height']]
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph', 'lineHeight']], // Include lineHeight here
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']],
+                    ['height', ['height']]
 
 
-      ]
+                ]
             });
             $("#image_1_text_1_1").summernote({
                 height: 100,
@@ -491,12 +493,42 @@
             });
             $("#content2").summernote({
                 height: 200,
+                ,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph', 'lineHeight']], // Include lineHeight here
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']],
+                    ['height', ['height']]
+
+
+                ]
             });
 
 
 
             $("#content3").summernote({
                 height: 200,
+                ,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph', 'lineHeight']], // Include lineHeight here
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']],
+                    ['height', ['height']]
+
+
+                ]
             });
             $("#title_1_3").summernote({
                 height: 100,
@@ -508,6 +540,21 @@
             });
             $("#content_4").summernote({
                 height: 200,
+                ,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph', 'lineHeight']], // Include lineHeight here
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']],
+                    ['height', ['height']]
+
+
+                ]
             });
 
 
