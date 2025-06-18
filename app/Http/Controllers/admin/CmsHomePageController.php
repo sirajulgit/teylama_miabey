@@ -54,14 +54,14 @@ class CmsHomePageController extends Controller
                 $item['about_badge_icon1'] = $default_image;
             }
 
-            if (!is_null($item['about_badge_icon1'])) {
-                $default_image = '/uploads/images/' . $item['about_badge_icon1'];
-                $item['about_badge_icon1'] = $default_image;
+            if (!is_null($item['about_badge_icon2'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon2'];
+                $item['about_badge_icon2'] = $default_image;
             }
 
-            if (!is_null($item['about_badge_icon1'])) {
-                $default_image = '/uploads/images/' . $item['about_badge_icon1'];
-                $item['about_badge_icon1'] = $default_image;
+            if (!is_null($item['about_badge_icon3'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon3'];
+                $item['about_badge_icon3'] = $default_image;
             }
 
             if (!is_null($item['about_badge_icon4'])) {
