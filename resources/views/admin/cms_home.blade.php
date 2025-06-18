@@ -101,7 +101,7 @@
                                     <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 1</label>
                                         <input type="text" class="form-control text-input" name="badge_1_text"
-                                            value="{{ $items['about_badge_section']['badge_1_text'] }}" placeholder="About Badge Text 1">
+                                            value="{{ $items['about']['badge_1_text'] }}" placeholder="About Badge Text 1">
 
                                         <label for="image">About Badge Icon 1</label>
                                         <div class="admin_upload">
@@ -115,9 +115,9 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about_badge_section']['about_badge_icon1'])
+                                                @if ($items['about']['about_badge_icon1'])
                                                     <img class="profile_img" id="thumbnail_show_image_1_about_badge"
-                                                        src="{{ $items['about_badge_section']['about_badge_icon1'] }}" width="148px"
+                                                        src="{{ $items['about']['about_badge_icon1'] }}" width="148px"
                                                         height="221px">
                                                 @else
                                                     <img class="profile_img" id="thumbnail_show_image_1_about_badge"
@@ -130,7 +130,7 @@
                                     <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 2</label>
                                         <input type="text" class="form-control text-input" name="badge_2_text"
-                                            value="{{ $items['about_badge_section']['badge_2_text'] }}" placeholder="About Badge Text 2">
+                                            value="{{ $items['about']['badge_2_text'] }}" placeholder="About Badge Text 2">
 
                                         <label for="image">About Badge Icon 2</label>
                                         <div class="admin_upload">
@@ -144,9 +144,9 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about_badge_section']['about_badge_icon2'])
+                                                @if ($items['about']['about_badge_icon2'])
                                                     <img class="profile_img" id="thumbnail_show_image_2_about_badge"
-                                                        src="{{ $items['about_badge_section']['about_badge_icon2'] }}" width="148px"
+                                                        src="{{ $items['about']['about_badge_icon2'] }}" width="148px"
                                                         height="221px">
                                                 @else
                                                     <img class="profile_img" id="thumbnail_show_image_2_about_badge"
@@ -159,7 +159,7 @@
                                     <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 3</label>
                                         <input type="text" class="form-control text-input" name="badge_3_text"
-                                            value="{{ $items['about_badge_section']['badge_3_text'] }}" placeholder="About Badge Text 3">
+                                            value="{{ $items['about']['badge_3_text'] }}" placeholder="About Badge Text 3">
 
                                         <label for="image">About Badge Icon 3</label>
                                         <div class="admin_upload">
@@ -174,9 +174,9 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about_badge_section']['about_badge_icon3'])
+                                                @if ($items['about']['about_badge_icon3'])
                                                     <img class="profile_img" id="thumbnail_show_image_3_about_badge"
-                                                        src="{{ $items['about_badge_section']['about_badge_icon3'] }}" width="148px"
+                                                        src="{{ $items['about']['about_badge_icon3'] }}" width="148px"
                                                         height="221px">
                                                 @else
                                                     <img class="profile_img" id="thumbnail_show_image_3_about_badge"
@@ -190,7 +190,7 @@
                                      <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 4</label>
                                         <input type="text" class="form-control text-input" name="badge_4_text"
-                                            value="{{ $items['about_badge_section']['badge_4_text'] }}" placeholder="About Badge Text 4">
+                                            value="{{ $items['about']['badge_4_text'] }}" placeholder="About Badge Text 4">
 
                                         <label for="image">About Badge Icon 4</label>
                                         <div class="admin_upload">
@@ -205,9 +205,9 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about_badge_section']['about_badge_icon4'])
+                                                @if ($items['about']['about_badge_icon4'])
                                                     <img class="profile_img" id="thumbnail_show_image_4_about_badge"
-                                                        src="{{ $items['about_badge_section']['about_badge_icon4'] }}" width="148px"
+                                                        src="{{ $items['about']['about_badge_icon4'] }}" width="148px"
                                                         height="221px">
                                                 @else
                                                     <img class="profile_img" id="thumbnail_show_image_4_about_badge"
