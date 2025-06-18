@@ -461,8 +461,17 @@
             $("#content1").summernote({
                 height: 200,
       toolbar: [
-
+        ['style', ['style']],
+        ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough']],
+        ['fontname', ['fontname']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
         ['para', ['ul', 'ol', 'paragraph', 'lineHeight']], // Include lineHeight here
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video']],
+        ['view', ['fullscreen', 'codeview', 'help']],
+        ['height', ['height']]
+
 
       ]
             });
