@@ -95,13 +95,15 @@ class CmsHomePageController extends Controller
                 $items["video_section"] = $item;
             } elseif ($item['type'] == "info_section") {
                 $items["info_section"] = $item;
+             } elseif ($item['type'] == "about_badge") {
+                $items["about_badge_section"] = $item;
             }
         }
 
 
 
 
-        // dd($items);
+         dd($items);
 
 
 

@@ -107,15 +107,10 @@
                                         <div class="admin_upload">
 
                                             <label class="admin-upload-wrap">
-                                                <input type="file" class="form-control mt-3 uploadFile" name="image_2"
-                                                    id="image_2_about"
+                                                <input type="file" class="form-control mt-3 uploadFile" name="about_badge_icon1"
+                                                    id="about_badge_icon1"
                                                     accept="image/png, image/jpg, image/jpeg, image/webp">
 
-                                                {{-- @if (!is_null($items['about']['image_2']))
-                                                <button type="button" data-id="{{ $items['about']['id'] }}"
-                                                    data-field-name="image_2"
-                                                    class="btn btn-sm btn-danger del_about_right_img mt-3 mb-3"><i class="fas fa-trash" aria-hidden="true"></i> Delete</button>
-                                            @endif --}}
                                             </label>
 
                                             <div class="profile_image">
@@ -134,15 +129,15 @@
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 2</label>
-                                        <input type="text" class="form-control text-input" name="about_badge_text1"
+                                        <input type="text" class="form-control text-input" name="about_badge_text2"
                                             value="" placeholder="About Badge Text 2">
 
                                         <label for="image">About Badge Icon 2</label>
                                         <div class="admin_upload">
 
                                             <label class="admin-upload-wrap">
-                                                <input type="file" class="form-control mt-3 uploadFile" name="image_2"
-                                                    id="image_2_about"
+                                                <input type="file" class="form-control mt-3 uploadFile" name="about_badge_icon2"
+                                                    id="about_badge_icon2"
                                                     accept="image/png, image/jpg, image/jpeg, image/webp">
 
                                             </label>
@@ -163,15 +158,15 @@
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 3</label>
-                                        <input type="text" class="form-control text-input" name="about_badge_text1"
+                                        <input type="text" class="form-control text-input" name="about_badge_text3"
                                             value="" placeholder="About Badge Text 3">
 
                                         <label for="image">About Badge Icon 3</label>
                                         <div class="admin_upload">
 
                                             <label class="admin-upload-wrap">
-                                                <input type="file" class="form-control mt-3 uploadFile" name="image_2"
-                                                    id="image_2_about"
+                                                <input type="file" class="form-control mt-3 uploadFile" name="about_badge_icon3"
+                                                    id="about_badge_icon3"
                                                     accept="image/png, image/jpg, image/jpeg, image/webp">
 
 
@@ -194,15 +189,15 @@
 
                                      <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 4</label>
-                                        <input type="text" class="form-control text-input" name="about_badge_text1"
+                                        <input type="text" class="form-control text-input" name="about_badge_text4"
                                             value="" placeholder="About Badge Text 4">
 
                                         <label for="image">About Badge Icon 4</label>
                                         <div class="admin_upload">
 
                                             <label class="admin-upload-wrap">
-                                                <input type="file" class="form-control mt-3 uploadFile" name="image_2"
-                                                    id="image_2_about"
+                                                <input type="file" class="form-control mt-3 uploadFile" name="about_badge_icon4"
+                                                    id="about_badge_icon4"
                                                     accept="image/png, image/jpg, image/jpeg, image/webp">
 
 
