@@ -133,35 +133,6 @@
                                         </div>
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="image">About Badge Text 1</label>
-                                        <input type="text" class="form-control text-input" name="about_badge_text1"
-                                            value="" placeholder="About Badge Text 1">
-
-                                        <label for="image">About Badge Icon 1</label>
-                                        <div class="admin_upload">
-
-                                            <label class="admin-upload-wrap">
-                                                <input type="file" class="form-control mt-3 uploadFile" name="image_2"
-                                                    id="image_2_about"
-                                                    accept="image/png, image/jpg, image/jpeg, image/webp">
-
-                                            </label>
-
-                                            <div class="profile_image">
-
-                                                @if ($items['about']['image_2'])
-                                                    <img class="profile_img" id="thumbnail_show_image_2_about"
-                                                        src="{{ $items['about']['image_2'] }}" width="148px"
-                                                        height="221px">
-                                                @else
-                                                    <img class="profile_img" id="thumbnail_show_image_2_about"
-                                                        src="{{ asset('asset/images/default_image.png') }}"
-                                                        width="148px" height="221px">
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 2</label>
                                         <input type="text" class="form-control text-input" name="about_badge_text1"
                                             value="" placeholder="About Badge Text 2">
@@ -173,7 +144,6 @@
                                                 <input type="file" class="form-control mt-3 uploadFile" name="image_2"
                                                     id="image_2_about"
                                                     accept="image/png, image/jpg, image/jpeg, image/webp">
-
 
                                             </label>
 
@@ -194,7 +164,7 @@
                                     <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 3</label>
                                         <input type="text" class="form-control text-input" name="about_badge_text1"
-                                            value="" placeholder="About Badge Text 1">
+                                            value="" placeholder="About Badge Text 3">
 
                                         <label for="image">About Badge Icon 3</label>
                                         <div class="admin_upload">
@@ -221,6 +191,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                      <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 4</label>
                                         <input type="text" class="form-control text-input" name="about_badge_text1"
