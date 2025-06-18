@@ -58,6 +58,27 @@ class HomeController extends Controller
                 $item['image_4'] = $default_image;
             }
 
+            if (!is_null($item['about_badge_icon1'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon1'];
+                $item['about_badge_icon1'] = $default_image;
+            }
+
+            if (!is_null($item['about_badge_icon2'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon2'];
+                $item['about_badge_icon2'] = $default_image;
+            }
+
+            if (!is_null($item['about_badge_icon3'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon3'];
+                $item['about_badge_icon3'] = $default_image;
+            }
+
+            if (!is_null($item['about_badge_icon4'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon4'];
+                $item['about_badge_icon4'] = $default_image;
+            }
+
+
             if (!is_null($item['file_1'])) {
                 $default_file = '/uploads/files/' . $item['file_1'];
                 $item['file_1'] = $default_file;
