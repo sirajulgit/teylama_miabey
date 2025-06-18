@@ -69,6 +69,12 @@
                                     <img src="{{ $homedata['about']['about_badge_icon3'] }}">
                                     <p> {{$homedata['about']['badge_3_text']}}  </p>
                                 </li>
+                                @if (!is_null($homedata['about']['about_badge_icon4']))
+                                  <li>
+                                    <img src="{{ $homedata['about']['about_badge_icon4'] }}">
+                                    <p> {{$homedata['about']['badge_4_text']}}  </p>
+                                </li>
+                                @endif
                             </ul>
                         </div>
 
