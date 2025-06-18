@@ -498,7 +498,6 @@
             ////////// Summernote /////////////
             $("#content1").summernote({
                 height: 200,
-                ,
                 toolbar: [
                     ['style', ['style']],
                     ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough']],
@@ -521,7 +520,6 @@
 
             $("#content2").summernote({
                 height: 200,
-                ,
                 toolbar: [
                     ['style', ['style']],
                     ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough']],
@@ -574,7 +572,6 @@
 
             $("#content_4").summernote({
                 height: 200,
-                ,
                 toolbar: [
                     ['style', ['style']],
                     ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough']],
