@@ -115,9 +115,9 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about_badge_section']['about_icon1'])
+                                                @if ($items['about_badge_section']['about_badge_icon1'])
                                                     <img class="profile_img" id="thumbnail_show_image_1_about_badge"
-                                                        src="{{ $items['about_badge_section']['about_icon1'] }}" width="148px"
+                                                        src="{{ $items['about_badge_section']['about_badge_icon1'] }}" width="148px"
                                                         height="221px">
                                                 @else
                                                     <img class="profile_img" id="thumbnail_show_image_1_about_badge"
