@@ -100,7 +100,7 @@
 
                                     <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 1</label>
-                                        <input type="text" class="form-control text-input" name="about_badge_text1"
+                                        <input type="text" class="form-control text-input" name="badge_1_text"
                                             value="{{ $items['about_badge_section']['badge_1_text'] }}" placeholder="About Badge Text 1">
 
                                         <label for="image">About Badge Icon 1</label>
@@ -129,7 +129,7 @@
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 2</label>
-                                        <input type="text" class="form-control text-input" name="about_badge_text2"
+                                        <input type="text" class="form-control text-input" name="badge_2_text"
                                             value="{{ $items['about_badge_section']['badge_2_text'] }}" placeholder="About Badge Text 2">
 
                                         <label for="image">About Badge Icon 2</label>
@@ -158,7 +158,7 @@
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 3</label>
-                                        <input type="text" class="form-control text-input" name="about_badge_text3"
+                                        <input type="text" class="form-control text-input" name="badge_3_text"
                                             value="{{ $items['about_badge_section']['badge_3_text'] }}" placeholder="About Badge Text 3">
 
                                         <label for="image">About Badge Icon 3</label>
@@ -189,7 +189,7 @@
 
                                      <div class="form-group col-md-4">
                                         <label for="image">About Badge Text 4</label>
-                                        <input type="text" class="form-control text-input" name="about_badge_text4"
+                                        <input type="text" class="form-control text-input" name="badge_4_text"
                                             value="{{ $items['about_badge_section']['badge_4_text'] }}" placeholder="About Badge Text 4">
 
                                         <label for="image">About Badge Icon 4</label>
