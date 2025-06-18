@@ -49,6 +49,26 @@ class CmsHomePageController extends Controller
                 $item['image_4'] = $default_image;
             }
 
+            if (!is_null($item['about_badge_icon1'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon1'];
+                $item['about_badge_icon1'] = $default_image;
+            }
+
+            if (!is_null($item['about_badge_icon1'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon1'];
+                $item['about_badge_icon1'] = $default_image;
+            }
+
+            if (!is_null($item['about_badge_icon1'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon1'];
+                $item['about_badge_icon1'] = $default_image;
+            }
+
+            if (!is_null($item['about_badge_icon4'])) {
+                $default_image = '/uploads/images/' . $item['about_badge_icon4'];
+                $item['about_badge_icon4'] = $default_image;
+            }
+
             if (!is_null($item['file_1'])) {
                 $default_file = '/uploads/files/' . $item['file_1'];
                 $item['file_1'] = $default_file;
@@ -95,8 +115,7 @@ class CmsHomePageController extends Controller
                 $items["video_section"] = $item;
             } elseif ($item['type'] == "info_section") {
                 $items["info_section"] = $item;
-             } elseif ($item['type'] == "about_badge") {
-                $items["about_badge_section"] = $item;
+
             }
         }
 
