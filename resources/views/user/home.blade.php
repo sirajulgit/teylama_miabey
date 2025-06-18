@@ -58,16 +58,16 @@
                         <div class="about-poinnt mt-5">
                             <ul class="d-flex flex-wrap">
                                 <li>
-                                    <img src="{{ asset('asset/frontend/images/point-icon-1.png') }}">
-                                    <p> Professor </p>
+                                    <img src="{{ $homedata['about']['about_badge_icon1'] }}">
+                                    <p> {{$homedata['about']['badge_1_text']}} </p>
                                 </li>
                                 <li>
-                                    <img src="{{ asset('asset/frontend/images/point-icon-2.png') }}">
-                                    <p> Pan-Africanist </p>
+                                    <img src="{{ $homedata['about']['about_badge_icon2'] }}">
+                                    <p> {{$homedata['about']['badge_2_text']}} </p>
                                 </li>
                                 <li>
-                                    <img src="{{ asset('asset/frontend/images/point-icon-3.png') }}">
-                                    <p> Politician </p>
+                                    <img src="{{ $homedata['about']['about_badge_icon3'] }}">
+                                    <p> {{$homedata['about']['badge_3_text']}}  </p>
                                 </li>
                             </ul>
                         </div>
