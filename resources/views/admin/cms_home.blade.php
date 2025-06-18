@@ -99,11 +99,13 @@
                                 <div class="form-group col-md-12">
 
                                     <div class="form-group col-md-4">
+                                        <label for="image">About Badge Text 1</label>
                                         <input type="text" class="form-control text-input" name="about_badge_text1"
                                             value="" placeholder="About Badge Text 1">
-                                         <label for="image">Image 2</label>
+
 
                                     <div class="admin_upload">
+                                        <label for="image">About Badge Icon 1</label>
                                         <label class="admin-upload-wrap">
                                             <input type="file" class="form-control mt-3 uploadFile" name="image_2"
                                                 id="image_2_about" accept="image/png, image/jpg, image/jpeg, image/webp">
