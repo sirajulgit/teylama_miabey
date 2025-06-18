@@ -115,9 +115,9 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about_badge_section']['image_1'])
+                                                @if ($items['about_badge_section']['about_icon1'])
                                                     <img class="profile_img" id="thumbnail_show_image_1_about_badge"
-                                                        src="{{ $items['about_badge_section']['image_1'] }}" width="148px"
+                                                        src="{{ $items['about_badge_section']['about_icon1'] }}" width="148px"
                                                         height="221px">
                                                 @else
                                                     <img class="profile_img" id="thumbnail_show_image_1_about_badge"
@@ -144,9 +144,9 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about_badge_section']['image_2'])
+                                                @if ($items['about_badge_section']['about_badge_icon2'])
                                                     <img class="profile_img" id="thumbnail_show_image_2_about_badge"
-                                                        src="{{ $items['about_badge_section']['image_2'] }}" width="148px"
+                                                        src="{{ $items['about_badge_section']['about_badge_icon2'] }}" width="148px"
                                                         height="221px">
                                                 @else
                                                     <img class="profile_img" id="thumbnail_show_image_2_about_badge"
@@ -174,9 +174,9 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about_badge_section']['image_3'])
+                                                @if ($items['about_badge_section']['about_badge_icon3'])
                                                     <img class="profile_img" id="thumbnail_show_image_3_about_badge"
-                                                        src="{{ $items['about_badge_section']['image_3'] }}" width="148px"
+                                                        src="{{ $items['about_badge_section']['about_badge_icon3'] }}" width="148px"
                                                         height="221px">
                                                 @else
                                                     <img class="profile_img" id="thumbnail_show_image_3_about_badge"
@@ -205,9 +205,9 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about_badge_section']['image_4'])
+                                                @if ($items['about_badge_section']['about_badge_icon4'])
                                                     <img class="profile_img" id="thumbnail_show_image_4_about_badge"
-                                                        src="{{ $items['about_badge_section']['image_4'] }}" width="148px"
+                                                        src="{{ $items['about_badge_section']['about_badge_icon4'] }}" width="148px"
                                                         height="221px">
                                                 @else
                                                     <img class="profile_img" id="thumbnail_show_image_4_about_badge"

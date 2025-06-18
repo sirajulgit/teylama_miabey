@@ -214,6 +214,93 @@ class CmsHomePageController extends Controller
 
                         $newFormData[$key] = $imageName;
                     }
+
+                 } elseif ($key == "about_badge_icon1") {
+
+                    $old_image_name = CmsHomePage::find($request->id)->about_badge_icon1;
+
+                    if ($request->about_badge_icon1) {
+
+                        if (is_null($old_image_name)) {
+
+                            $imageName = image_convert_webp($request->about_badge_icon1);
+                        } else {
+
+                            $imageName = image_convert_webp($request->about_badge_icon1);
+
+                            $image_path = public_path('uploads/images/' . $old_image_name);
+                            if (file_exists($image_path)) {
+                                unlink($image_path);
+                            }
+                        }
+
+                        $newFormData[$key] = $imageName;
+                    }
+                 } elseif ($key == "about_badge_icon2") {
+
+                    $old_image_name = CmsHomePage::find($request->id)->about_badge_icon2;
+
+                    if ($request->about_badge_icon2) {
+
+                        if (is_null($old_image_name)) {
+
+                            $imageName = image_convert_webp($request->about_badge_icon2);
+                        } else {
+
+                            $imageName = image_convert_webp($request->about_badge_icon2);
+
+                            $image_path = public_path('uploads/images/' . $old_image_name);
+                            if (file_exists($image_path)) {
+                                unlink($image_path);
+                            }
+                        }
+
+                        $newFormData[$key] = $imageName;
+                    }
+                } elseif ($key == "about_badge_icon3") {
+
+                    $old_image_name = CmsHomePage::find($request->id)->about_badge_icon3;
+
+                    if ($request->about_badge_icon3) {
+
+                        if (is_null($old_image_name)) {
+
+                            $imageName = image_convert_webp($request->about_badge_icon3);
+                        } else {
+
+                            $imageName = image_convert_webp($request->about_badge_icon3);
+
+                            $image_path = public_path('uploads/images/' . $old_image_name);
+                            if (file_exists($image_path)) {
+                                unlink($image_path);
+                            }
+                        }
+
+                        $newFormData[$key] = $imageName;
+                    }
+                } elseif ($key == "about_badge_icon4") {
+
+                    $old_image_name = CmsHomePage::find($request->id)->about_badge_icon4;
+
+                    if ($request->about_badge_icon4) {
+
+                        if (is_null($old_image_name)) {
+
+                            $imageName = image_convert_webp($request->about_badge_icon4);
+                        } else {
+
+                            $imageName = image_convert_webp($request->about_badge_icon4);
+
+                            $image_path = public_path('uploads/images/' . $old_image_name);
+                            if (file_exists($image_path)) {
+                                unlink($image_path);
+                            }
+                        }
+
+                        $newFormData[$key] = $imageName;
+                    }
+
+
                 } elseif ($key == "file_1") {
 
                     $old_file_name = CmsHomePage::find($request->id)->file_1;
