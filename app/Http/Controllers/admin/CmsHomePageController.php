@@ -69,6 +69,16 @@ class CmsHomePageController extends Controller
                 $item['about_badge_icon4'] = $default_image;
             }
 
+             if (!is_null($item['about_profile_image'])) {
+                $default_image = '/uploads/images/' . $item['about_profile_image'];
+                $item['about_profile_image'] = $default_image;
+            }
+
+            if (!is_null($item['about_signature_image'])) {
+                $default_image = '/uploads/images/' . $item['about_signature_image'];
+                $item['about_signature_image'] = $default_image;
+            }
+
             if (!is_null($item['file_1'])) {
                 $default_file = '/uploads/files/' . $item['file_1'];
                 $item['file_1'] = $default_file;
@@ -318,6 +328,52 @@ class CmsHomePageController extends Controller
 
                         $newFormData[$key] = $imageName;
                     }
+
+                } elseif ($key == "about_profile_image") {
+
+                    $old_image_name = CmsHomePage::find($request->id)->about_profile_image;
+
+                    if ($request->about_profile_image) {
+
+                        if (is_null($old_image_name)) {
+
+                            $imageName = image_convert_webp($request->about_profile_image);
+                        } else {
+
+                            $imageName = image_convert_webp($request->about_profile_image);
+
+                            $image_path = public_path('uploads/images/' . $old_image_name);
+                            if (file_exists($image_path)) {
+                                unlink($image_path);
+                            }
+                        }
+
+                        $newFormData[$key] = $imageName;
+                    }
+                } elseif ($key == "about_signature_image") {
+
+                    $old_image_name = CmsHomePage::find($request->id)->about_signature_image;
+
+                    if ($request->about_signature_image) {
+
+                        if (is_null($old_image_name)) {
+
+                            $imageName = image_convert_webp($request->about_signature_image);
+                        } else {
+
+                            $imageName = image_convert_webp($request->about_signature_image);
+
+                            $image_path = public_path('uploads/images/' . $old_image_name);
+                            if (file_exists($image_path)) {
+                                unlink($image_path);
+                            }
+                        }
+
+                        $newFormData[$key] = $imageName;
+                    }
+
+
+
 
 
                 } elseif ($key == "file_1") {

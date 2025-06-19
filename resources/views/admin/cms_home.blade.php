@@ -223,8 +223,8 @@
                                         <div class="admin_upload">
 
                                             <label class="admin-upload-wrap">
-                                                <input type="file" class="form-control mt-3 uploadFile" name="about_badge_icon3"
-                                                    id="about_badge_icon3"
+                                                <input type="file" class="form-control mt-3 uploadFile" name="about_profile_image"
+                                                    id="about_profile_image"
                                                     accept="image/png, image/jpg, image/jpeg, image/webp">
 
 
@@ -232,12 +232,12 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about']['about_badge_icon3'])
-                                                    <img class="profile_img" id="thumbnail_show_image_3_about_badge"
-                                                        src="{{ $items['about']['about_badge_icon3'] }}" width="148px"
+                                                @if ($items['about']['about_profile_image'])
+                                                    <img class="profile_img" id="thumbnail_show_about_profile_image"
+                                                        src="{{ $items['about']['about_profile_image'] }}" width="148px"
                                                         height="221px">
                                                 @else
-                                                    <img class="profile_img" id="thumbnail_show_image_3_about_badge"
+                                                    <img class="profile_img" id="thumbnail_show_about_profile_image"
                                                         src="{{ asset('asset/images/default_image.png') }}"
                                                         width="148px" height="221px">
                                                 @endif
@@ -251,8 +251,8 @@
                                         <div class="admin_upload">
 
                                             <label class="admin-upload-wrap">
-                                                <input type="file" class="form-control mt-3 uploadFile" name="about_badge_icon4"
-                                                    id="about_badge_icon4"
+                                                <input type="file" class="form-control mt-3 uploadFile" name="about_signature_image"
+                                                    id="about_signature_image"
                                                     accept="image/png, image/jpg, image/jpeg, image/webp">
 
 
@@ -260,12 +260,12 @@
 
                                             <div class="profile_image">
 
-                                                @if ($items['about']['about_badge_icon4'])
-                                                    <img class="profile_img" id="thumbnail_show_image_4_about_badge"
-                                                        src="{{ $items['about']['about_badge_icon4'] }}" width="148px"
+                                                @if ($items['about']['about_signature_image'])
+                                                    <img class="profile_img" id="thumbnail_show_about_signature_image"
+                                                        src="{{ $items['about']['about_signature_image'] }}" width="148px"
                                                         height="221px">
                                                 @else
-                                                    <img class="profile_img" id="thumbnail_show_image_4_about_badge"
+                                                    <img class="profile_img" id="thumbnail_show_about_signature_image"
                                                         src="{{ asset('asset/images/default_image.png') }}"
                                                         width="148px" height="221px">
                                                 @endif
@@ -879,6 +879,54 @@
                 } else {
 
                     $('#thumbnail_show_image_4_about_badge').attr('src', '/asset/images/default_image.png');
+
+                }
+
+
+            })
+            $('#about_signature_image').on('change', function() {
+
+                var input = this;
+                var url = $(this).val();
+                var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+                if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg" ||
+                        ext == 'webp')) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#thumbnail_show_about_signature_image').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                    $("#jquery_form_error_msg").text("");
+
+                } else {
+
+                    $('#thumbnail_show_about_signature_image').attr('src', '/asset/images/default_image.png');
+
+                }
+
+
+            })
+            $('#about_profile_image').on('change', function() {
+
+                var input = this;
+                var url = $(this).val();
+                var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+                if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg" ||
+                        ext == 'webp')) {
+
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#thumbnail_show_about_profile_image').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                    $("#jquery_form_error_msg").text("");
+
+                } else {
+
+                    $('#thumbnail_show_about_profile_image').attr('src', '/asset/images/default_image.png');
 
                 }
 
