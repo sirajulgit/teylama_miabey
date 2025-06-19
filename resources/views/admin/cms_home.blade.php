@@ -96,7 +96,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-12">
+                                <div class="form-group row col-md-12">
 
                                     <div class="form-group col-md-6">
                                         <label for="image">About Badge Text 1</label>
@@ -156,7 +156,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-6">
                                         <label for="image">About Badge Text 3</label>
                                         <input type="text" class="form-control text-input" name="badge_3_text"
                                             value="{{ $items['about']['badge_3_text'] }}" placeholder="About Badge Text 3">
@@ -187,7 +187,7 @@
                                         </div>
                                     </div>
 
-                                     <div class="form-group col-md-4">
+                                     <div class="form-group col-md-6">
                                         <label for="image">About Badge Text 4</label>
                                         <input type="text" class="form-control text-input" name="badge_4_text"
                                             value="{{ $items['about']['badge_4_text'] }}" placeholder="About Badge Text 4">
