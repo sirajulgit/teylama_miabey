@@ -217,6 +217,61 @@
                                             </div>
                                         </div>
                                     </div>
+                                     <div class="form-group col-md-6">
+                                        <label for="image">About profile Image</label>
+
+                                        <div class="admin_upload">
+
+                                            <label class="admin-upload-wrap">
+                                                <input type="file" class="form-control mt-3 uploadFile" name="about_badge_icon3"
+                                                    id="about_badge_icon3"
+                                                    accept="image/png, image/jpg, image/jpeg, image/webp">
+
+
+                                            </label>
+
+                                            <div class="profile_image">
+
+                                                @if ($items['about']['about_badge_icon3'])
+                                                    <img class="profile_img" id="thumbnail_show_image_3_about_badge"
+                                                        src="{{ $items['about']['about_badge_icon3'] }}" width="148px"
+                                                        height="221px">
+                                                @else
+                                                    <img class="profile_img" id="thumbnail_show_image_3_about_badge"
+                                                        src="{{ asset('asset/images/default_image.png') }}"
+                                                        width="148px" height="221px">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <div class="form-group col-md-6">
+                                        <label for="image">About Signature Image</label>
+
+                                        <div class="admin_upload">
+
+                                            <label class="admin-upload-wrap">
+                                                <input type="file" class="form-control mt-3 uploadFile" name="about_badge_icon4"
+                                                    id="about_badge_icon4"
+                                                    accept="image/png, image/jpg, image/jpeg, image/webp">
+
+
+                                            </label>
+
+                                            <div class="profile_image">
+
+                                                @if ($items['about']['about_badge_icon4'])
+                                                    <img class="profile_img" id="thumbnail_show_image_4_about_badge"
+                                                        src="{{ $items['about']['about_badge_icon4'] }}" width="148px"
+                                                        height="221px">
+                                                @else
+                                                    <img class="profile_img" id="thumbnail_show_image_4_about_badge"
+                                                        src="{{ asset('asset/images/default_image.png') }}"
+                                                        width="148px" height="221px">
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
 
