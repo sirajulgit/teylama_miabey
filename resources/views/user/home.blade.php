@@ -79,8 +79,8 @@
                         </div>
 
                         <div class="signature-area d-flex align-items-center">
-                            <img src="{{ asset('asset/frontend/images/rounded-client.png') }}">
-                            <img src="{{ asset('asset/frontend/images/signature.png') }}">
+                            <img src="{{ $homedata['about']['about_profile_image'] }}">
+                            <img src="{{ $homedata['about']['about_signature_image'] }}">
                         </div>
 
                     </div>

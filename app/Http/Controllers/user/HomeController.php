@@ -77,6 +77,15 @@ class HomeController extends Controller
                 $default_image = '/uploads/images/' . $item['about_badge_icon4'];
                 $item['about_badge_icon4'] = $default_image;
             }
+              if (!is_null($item['about_profile_image'])) {
+                $default_image = '/uploads/images/' . $item['about_profile_image'];
+                $item['about_profile_image'] = $default_image;
+            }
+
+            if (!is_null($item['about_signature_image'])) {
+                $default_image = '/uploads/images/' . $item['about_signature_image'];
+                $item['about_signature_image'] = $default_image;
+            }
 
 
             if (!is_null($item['file_1'])) {
