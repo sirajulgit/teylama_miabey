@@ -1,0 +1,27 @@
+on:
+    push:
+      branches:
+        - dev
+
+name: 🚀 Deploy website on push
+
+jobs:
+    job1:
+        name: 🎉 SSH connect and clear cache
+        runs-on: ubuntu-latest
+        steps:
+        - name: PHP artisan using ssh
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USERNAME }}
+            password: ${{ secrets.SSH_PASSWORD }}
+            script: |
+              cd /home/teylamamiabey-dev/htdocs/dev.teylamamiabey.com/
+              git pull origin dev
+              cp .env.stating .env
+              composer install
+              php artisan route:cache
+              php artisan view:clear
+              php artisan cache:clear
+              
